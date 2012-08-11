@@ -1,0 +1,10 @@
+[user]
+	name = Aviv Rosenberg
+	email = aviv.rosenberg@gmail.com
+[color]
+	ui = true
+[github]
+	user = avivrosenberg
+	token = ab2b14443727002b3252f5778e3be256
+[core]
+	excludesfile = ~/.gitignore_global
