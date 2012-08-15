@@ -44,6 +44,9 @@ syntax on
 filetype plugin on
 filetype indent on
 
+" Autocommands
+autocmd FileType php let b:surround_63 = "<?php \r ?>" "Use '?' (ascii 63) to surround with php tags.
+
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
