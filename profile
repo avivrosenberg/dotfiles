@@ -1,4 +1,5 @@
-PATH=$PATH:~/bin
+PATH=/opt/local/bin:/opt/local/sbin:$PATH
+PATH=$PATH:~/dev/eclipse/android-sdk-macosx/tools:~/dev/eclipse/android-sdk-macosx/platform-tools
 export PATH
 
 # Variables for git bash
