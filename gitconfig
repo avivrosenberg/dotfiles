@@ -3,8 +3,46 @@
 	email = aviv.rosenberg@gmail.com
 [color]
 	ui = true
-[github]
-	user = avivrosenberg
-	token = ab2b14443727002b3252f5778e3be256
+
+[push]
+	default = simple
+
 [core]
 	excludesfile = ~/.gitignore_global
+[help]
+	format = web
+
+[alias]
+    st = status -sb
+    co = checkout
+    ct = commit
+    dt = difftool --dir-diff
+    dts = difftool --dir-diff --staged
+    gka = !gitk --all&
+
+[diff]
+	tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    #meld with redirected stdout(1) and stderr(2) to /dev/null
+    #cmd = ~/dev/opensource-repos/meld/bin/meld \
+    cmd = meld                   \
+          \"$LOCAL\" \"$REMOTE\" \
+          > /dev/null 2>&1
+
+[merge]
+	tool = meld
+[mergetool]
+    prompt = false
+    keepBackup = false
+[mergetool "meld"]
+    #meld with 3 tabs and redirected stdout(1) and stderr(2) to /dev/null
+    #cmd = ~/dev/opensource-repos/meld/bin/meld  \
+    cmd = meld  \
+        --diff \"$BASE\" \"$LOCAL\"             \
+        --diff \"$BASE\" \"$REMOTE\"            \
+        --diff \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\" \
+        > /dev/null 2>&1
+
+
