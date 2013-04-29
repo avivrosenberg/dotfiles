@@ -13,12 +13,13 @@
 	format = web
 
 [alias]
-    st = status -sb
-    co = checkout
-    ct = commit
-    dt = difftool --dir-diff
+    st  = status -sb
+    co  = checkout
+    ct  = commit
+    dt  = difftool --dir-diff
     dts = difftool --dir-diff --staged
-    gka = !gitk --all&
+    k   = !gitk&
+    ka  = !gitk --all&
 
 [diff]
 	tool = meld
