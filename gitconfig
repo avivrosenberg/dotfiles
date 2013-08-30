@@ -3,23 +3,24 @@
 	email = aviv.rosenberg@gmail.com
 [color]
 	ui = true
-
 [push]
-	default = simple
-
+	default = upstream
 [core]
 	excludesfile = ~/.gitignore_global
+    editor = mvim --nofork
 [help]
 	format = web
 
 [alias]
     st  = status -sb
+    stat= status
     co  = checkout
     ct  = commit
     dt  = difftool --dir-diff
     dts = difftool --dir-diff --staged
     k   = !gitk&
     ka  = !gitk --all&
+	fch = fetch -p origin
 
 [diff]
 	tool = meld
@@ -27,10 +28,9 @@
     prompt = false
 [difftool "meld"]
     #meld with redirected stdout(1) and stderr(2) to /dev/null
-    #cmd = ~/dev/opensource-repos/meld/bin/meld \
-    cmd = meld                   \
-          \"$LOCAL\" \"$REMOTE\" \
-          > /dev/null 2>&1
+    #cmd = meld                   \
+    cmd = ~/dev/opensource-repos/meld/bin/meld \
+          "$LOCAL" "$REMOTE" > /dev/null 2>&1
 
 [merge]
 	tool = meld
@@ -39,11 +39,14 @@
     keepBackup = false
 [mergetool "meld"]
     #meld with 3 tabs and redirected stdout(1) and stderr(2) to /dev/null
-    #cmd = ~/dev/opensource-repos/meld/bin/meld  \
-    cmd = meld  \
-        --diff \"$BASE\" \"$LOCAL\"             \
-        --diff \"$BASE\" \"$REMOTE\"            \
-        --diff \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\" \
-        > /dev/null 2>&1
-
-
+    cmd = ~/dev/opensource-repos/meld/bin/meld --auto-merge \
+        --output="$MERGED" \
+        --label="LOCAL" "$LOCAL" \
+        --label="BASE" "$BASE" \
+        --label="REMOTE" "$REMOTE" > /dev/null 2>&1
+[rebase]
+	autosquash = true
+[rerere]
+	enabled = true
+[credential]
+	helper = cache
