@@ -4,9 +4,8 @@ set nocompatible
 
 " =============== Pathogen Initialization ===============
 " This loads all the plugins in ~/.vim/bundle
-runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
 filetype plugin on
 filetype indent on
