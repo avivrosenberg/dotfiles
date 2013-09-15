@@ -4,3 +4,6 @@
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/bundle/pgsql.vim"]
+	path = vim/bundle/pgsql.vim
+	url = https://github.com/exu/pgsql.vim.git
