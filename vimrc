@@ -50,6 +50,7 @@ colorscheme solarized
 " Autocommands
 autocmd FileType php let b:surround_63 = "<?php \r ?>" "Use '?' (ascii 63) to surround with php tags.
 autocmd FileType php,html,xml let b:surround_45 = "<!-- \r -->" "Use '-' (ascii 45) to surround with comment tags.
+autocmd FileType ruby nmap <F5> :w<CR> :!ruby -w %<CR>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')

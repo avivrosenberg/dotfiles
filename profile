@@ -21,6 +21,10 @@ export GTK_PATH=/usr/local/lib/gtk-2.0
 export LC_ALL='en_US'
 
 ####
+## Ruby
+PATH=$(brew --prefix ruby)/bin:$PATH
+
+####
 ## Environment
 export EDITOR='mvim -p'
 export PATH
