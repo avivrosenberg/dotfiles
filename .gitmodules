@@ -1,0 +1,6 @@
+[submodule "vim/bundle/simpledb"]
+	path = vim/bundle/simpledb
+	url = https://github.com/ivalkeen/vim-simpledb
+[submodule "vim/bundle/vim-ruby"]
+	path = vim/bundle/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
