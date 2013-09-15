@@ -1,1 +1,0 @@
-xmledit-1.9.1.vba: call delete('/Users/aviv/.vim/bundle/xmledit//ftplugin/xml.vim')|call delete('/Users/aviv/.vim/bundle/xmledit//doc/xml-plugin.txt')
