@@ -49,6 +49,13 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 set background=dark
 colorscheme solarized                
 
+" Ruby completion
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+let g:rubycomplete_load_gemfile = 1
+let g:rubycomplete_use_bundler = 1
+
 " Autocommands
 autocmd FileType php let b:surround_63 = "<?php \r ?>" "Use '?' (ascii 63) to surround with php tags.
 autocmd FileType php,html,xml let b:surround_45 = "<!-- \r -->" "Use '-' (ascii 45) to surround with comment tags.
