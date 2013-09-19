@@ -15,7 +15,7 @@ export ANDROIDSDK
 
 ####
 ## Homebrew
-PATH=/usr/local/bin:$PATH #prepend so that brew binaries are found first
+PATH=$(brew --prefix)/bin:$PATH #prepend so that brew binaries are found first
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export GTK_PATH=/usr/local/lib/gtk-2.0
 export LC_ALL='en_US'
