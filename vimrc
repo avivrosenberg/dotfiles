@@ -33,7 +33,7 @@ set hlsearch                        " hilight current search pattern
 set ignorecase                      " case insensitive
 set smartcase                       " choose correct case when searching
 
-" Indentation
+" General Indentation
 set autoindent
 set smartindent
 set smarttab
@@ -41,6 +41,9 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set expandtab
+
+" Ruby Indentation
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " Colors
 set background=dark
