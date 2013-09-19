@@ -25,6 +25,10 @@ export LC_ALL='en_US'
 PATH=$(brew --prefix ruby)/bin:$PATH
 
 ####
+## Postgres
+export PGDATA=/usr/local/var/postgres
+
+####
 ## Environment
 export EDITOR='mvim -p'
 export PATH

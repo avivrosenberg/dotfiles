@@ -19,8 +19,8 @@ alias la='ls -laFG'
 #common typos
 alias gti='git'
 alias mvmi='mvim'
-alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias pgstart='pg_ctl -l $PGDATA/server.log start'
+alias pgstop='pg_ctl stop -s -m fast'
 
 ####
 ## Shell functions
