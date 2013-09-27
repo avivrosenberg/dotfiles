@@ -8,6 +8,8 @@
 [core]
 	excludesfile = ~/.gitignore_global
     editor = mvim --nofork
+	autocrlf = input
+	eol = native
 [help]
 	format = web
 
