@@ -22,7 +22,8 @@ export LC_ALL='en_US'
 
 ####
 ## Ruby
-PATH=$(brew --prefix ruby)/bin:$PATH
+#PATH=$(brew --prefix ruby)/bin:$PATH
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ####
 ## Postgres
