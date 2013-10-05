@@ -66,7 +66,11 @@
 	path = vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
     ignore = dirty
-
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+    ignore = dirty
+[submodule "vim/bundle/vim-rvm"]
+	path = vim/bundle/vim-rvm
+	url = https://github.com/tpope/vim-rvm.git
+    ignore = dirty
