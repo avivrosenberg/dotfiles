@@ -6,6 +6,7 @@ set nocompatible
 " This loads all the plugins in ~/.vim/bundle
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+execute pathogen#helptags()
 
 filetype plugin on
 filetype indent on
@@ -60,6 +61,12 @@ let g:rubycomplete_use_bundler = 1
 autocmd FileType php let b:surround_63 = "<?php \r ?>" "Use '?' (ascii 63) to surround with php tags.
 autocmd FileType php,html,xml let b:surround_45 = "<!-- \r -->" "Use '-' (ascii 45) to surround with comment tags.
 autocmd FileType ruby nmap <F5> :w<CR> :!ruby -w %<CR>
+
+" Shortcuts for plugins
+:let mapleader = "\\"
+nmap <Leader>f :FufFileWithCurrentBufferDir<CR>
+nmap <Leader>b :FufBuffer<CR>
+nmap <Leader>t :NERDTreeToggle<CR>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
