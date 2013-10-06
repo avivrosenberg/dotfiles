@@ -74,3 +74,23 @@
 	path = vim/bundle/vim-rvm
 	url = https://github.com/tpope/vim-rvm.git
     ignore = dirty
+[submodule "vim/bundle/vim-abolish"]
+	path = vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
+    ignore = dirty
+[submodule "vim/bundle/vim-bundler"]
+	path = vim/bundle/vim-bundler
+	url = https://github.com/tpope/vim-bundler.git
+    ignore = dirty
+[submodule "vim/bundle/vim-rails"]
+	path = vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+    ignore = dirty
+[submodule "vim/bundle/vim-endwise"]
+	path = vim/bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
+    ignore = dirty
+[submodule "vim/bundle/vim-rake"]
+	path = vim/bundle/vim-rake
+	url = https://github.com/tpope/vim-rake.git
+    ignore = dirty
