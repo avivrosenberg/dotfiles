@@ -73,6 +73,7 @@ map <C-l> <C-w>l
 nmap <Leader>f :FufFileWithCurrentBufferDir<CR>
 nmap <Leader>b :FufBuffer<CR>
 nmap <Leader>t :NERDTreeToggle<CR>
+nmap <Leader>gs :Gstatus<CR>
 
 " Fugitive
 " This maps '..' to go back when browsing object with fugitive.
