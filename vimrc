@@ -62,11 +62,28 @@ autocmd FileType php let b:surround_63 = "<?php \r ?>" "Use '?' (ascii 63) to su
 autocmd FileType php,html,xml let b:surround_45 = "<!-- \r -->" "Use '-' (ascii 45) to surround with comment tags.
 autocmd FileType ruby nmap <F5> :w<CR> :!ruby -w %<CR>
 
+" Key Maps
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 " Shortcuts for plugins
 :let mapleader = "\\"
 nmap <Leader>f :FufFileWithCurrentBufferDir<CR>
 nmap <Leader>b :FufBuffer<CR>
 nmap <Leader>t :NERDTreeToggle<CR>
+
+" Fugitive
+" This maps '..' to go back when browsing object with fugitive.
+autocmd User fugitive
+  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+" Delete fugitive buffers on exit
+autocmd BufReadPost fugitive://* set bufhidden=delete
+" Add fugitive to status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
