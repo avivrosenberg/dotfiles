@@ -22,12 +22,12 @@ alias pgstop='pg_ctl stop -s -m fast'
 function crc32 { cksum -o3 "$@"|ruby -e 'STDIN.each{|a|a=a.split;printf "%08X\t%s\n",a[0],a[2..-1].join(" ")}'; }
 
 ####
-## RVM
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-####
 ## Completions
 source /usr/share/git-core/git-completion.bash
 source /usr/local/Library/Contributions/brew_bash_completion.sh
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
+####
+## RVM
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
