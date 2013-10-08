@@ -23,6 +23,12 @@
 ######################
 *.log
 
+# Exuberant tags #
+######################
+tags
+tags/
+
+
 # OS generated files #
 ######################
 .DS_Store
