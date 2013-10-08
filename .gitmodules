@@ -94,3 +94,11 @@
 	path = vim/bundle/vim-rake
 	url = https://github.com/tpope/vim-rake.git
     ignore = dirty
+[submodule "vim/bundle/vim-ruby-debugger"]
+	path = vim/bundle/vim-ruby-debugger
+	url = https://github.com/astashov/vim-ruby-debugger.git
+    ignore = dirty
+[submodule "vim/bundle/AnsiEsc.vim"]
+	path = vim/bundle/AnsiEsc.vim
+	url = https://github.com/vim-scripts/AnsiEsc.vim.git
+    ignore = dirty
