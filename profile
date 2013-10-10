@@ -1,3 +1,6 @@
+####
+## Environment
+export EDITOR='mvim -p'
 
 ####
 ## Git prompt
@@ -14,6 +17,10 @@ PATH=$PATH:$ANDROIDSDK/platform-tools
 export ANDROIDSDK
 
 ####
+## Postgres
+export PGDATA=/usr/local/var/postgres
+
+####
 ## Homebrew
 PATH=$(brew --prefix)/bin:$PATH #prepend so that brew binaries are found first
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
@@ -22,14 +29,6 @@ export LC_ALL='en_US'
 
 ####
 ## Ruby
-#PATH=$(brew --prefix ruby)/bin:$PATH
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-####
-## Postgres
-export PGDATA=/usr/local/var/postgres
-
-####
-## Environment
-export EDITOR='mvim -p'
 export PATH
