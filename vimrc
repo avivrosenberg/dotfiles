@@ -12,7 +12,6 @@ filetype plugin on
 filetype indent on
 
 " General VIM settings
-set history=200                     " keep n lines of command line history
 set ruler                           " show the cursor position all the time
 set showcmd                         " display incomplete commands
 set showmode                        " Show current mode down the bottom
@@ -20,9 +19,13 @@ set number                          " line numbers
 set nowrap                          " don't wrap lines
 set linebreak                       " wrap lines at convenient points
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
+set hidden                          " allow hiding buffers with changes
 syntax on                           " syntax highlighting
 
 " Backup
+set history=1000                    " keep n lines of command line history
+set undolevels=1000                 " lots of undo power
+set wildignore=*.swp,*.bak          " extensions to ignore when expanding wildcards
 set backup                          " keep a backup file
 set backupdir=~/.vimtmp             " keep all backups in a separate folder
 set backupext=.vimbackup            " set extention for backup files
@@ -33,18 +36,20 @@ set incsearch                       " do incremental searching
 set hlsearch                        " hilight current search pattern
 set ignorecase                      " case insensitive
 set smartcase                       " choose correct case when searching
+set gdefault                        " global substitution default
+nnoremap / /\v
+vnoremap / /\v
 
 " General Indentation
 set autoindent
+set copyindent
 set smartindent
 set smarttab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
+set shiftround
 set expandtab
-
-" Ruby Indentation
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " Colors
 set background=dark
@@ -73,25 +78,30 @@ map <Leader>rc  :call g:RubyDebugger.continue()<CR>
 map <Leader>re  :call g:RubyDebugger.exit()<CR>
 map <Leader>rd  :call g:RubyDebugger.remove_breakpoints()<CR>
 
-" Autocommands
-autocmd FileType php let b:surround_63 = "<?php \r ?>" "Use '?' (ascii 63) to surround with php tags.
-autocmd FileType php,html,xml let b:surround_45 = "<!-- \r -->" "Use '-' (ascii 45) to surround with comment tags.
+" Autocommands for Ruby
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 "ruby indentation
+autocmd Filetype ruby setlocal foldmethod=syntax "indent one less than max
+autocmd Filetype ruby normal zR
 autocmd FileType ruby nmap <F5> :w<CR> :!ruby -w %<CR>
-autocmd BufEnter * Rvm " automatically switch Ruby versions when switching buffers
+"autocmd BufEnter *.rb Rvm " automatically switch Ruby versions when switching buffers
+
+" Leader Shortcuts 
+:let mapleader = "\\"
+nmap <Leader>ff :FufFileWithCurrentBufferDir<CR>
+nmap <Leader>fb :FufBuffer<CR>
+nmap <Leader>fmf :FufBookmarkFile<CR>
+nmap <Leader>fmd :FufBookmarkDir<CR>
+nmap <Leader>tt :NERDTreeToggle<CR>
+nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gd :Gdiff<CR>
+nmap <Leader><Space> :nohl<CR>
 
 " Key Maps
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
-" Shortcuts for plugins
-:let mapleader = "\\"
-nmap <Leader>ff :FufFileWithCurrentBufferDir<CR>
-nmap <Leader>fb :FufBuffer<CR>
-nmap <Leader>tt :NERDTreeToggle<CR>
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gd :Gdiff<CR>
+map <Leader>ct :!ctags -R --exclude=.git --exclude=logs --exclude=doc .<CR>
 
 " Fugitive
 " This maps '..' to go back when browsing object with fugitive.
@@ -101,7 +111,8 @@ autocmd User fugitive
   \ endif
 " Delete fugitive buffers on exit
 autocmd BufReadPost fugitive://* set bufhidden=delete
-" Add fugitive to status line
+
+" Status line: fugitive and rvm
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%{rvm#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " In many terminal emulators the mouse works just fine, thus enable it.
