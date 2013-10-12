@@ -64,9 +64,9 @@ let g:rubycomplete_use_bundler = 1
 
 " Ruby debugging
 let g:ruby_debugger_progname = 'mvim'
-let g:ruby_debugger_no_maps = 1
 let g:ruby_debugger_builtin_sender = 0
 let g:ruby_debugger_debug_mode = 1
+let g:ruby_debugger_no_maps = 1
 map <Leader>rb  :call g:RubyDebugger.toggle_breakpoint()<CR>
 map <Leader>rv  :call g:RubyDebugger.open_variables()<CR>
 map <Leader>rm  :call g:RubyDebugger.open_breakpoints()<CR>
@@ -79,10 +79,16 @@ map <Leader>re  :call g:RubyDebugger.exit()<CR>
 map <Leader>rd  :call g:RubyDebugger.remove_breakpoints()<CR>
 
 " Autocommands for Ruby
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 "ruby indentation
-autocmd Filetype ruby setlocal foldmethod=syntax "indent one less than max
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2      " ruby indentation
+autocmd Filetype ruby setlocal foldmethod=syntax    " use syntax to auto-fold
 autocmd Filetype ruby normal zR
-autocmd FileType ruby nmap <F5> :w<CR> :!ruby -w %<CR>
+autocmd FileType ruby nmap <M-F5> :w<CR> :!ruby -w %<CR>
+autocmd FileType ruby nmap <F5>     \rc
+autocmd FileType ruby nmap <S-F5>   \re
+autocmd FileType ruby nmap <F10>    \rn
+autocmd FileType ruby nmap <F11>    \rs
+autocmd FileType ruby nmap <S-F11>  \rf
+autocmd FileType ruby nmap <F9>     \rb
 "autocmd BufEnter *.rb Rvm " automatically switch Ruby versions when switching buffers
 
 " Leader Shortcuts 
@@ -101,7 +107,7 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-map <Leader>ct :!ctags -R --exclude=.git --exclude=logs --exclude=doc .<CR>
+map <C-S-F12> :!ctags -R --exclude=.git --exclude=logs --exclude=doc .<CR>
 
 " Fugitive
 " This maps '..' to go back when browsing object with fugitive.
