@@ -20,7 +20,12 @@ set nowrap                          " don't wrap lines
 set linebreak                       " wrap lines at convenient points
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set hidden                          " allow hiding buffers with changes
+set laststatus=2                    " always show statusbar
 syntax on                           " syntax highlighting
+
+" Disable error bells
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 " Backup
 set history=1000                    " keep n lines of command line history
@@ -39,6 +44,8 @@ set smartcase                       " choose correct case when searching
 set gdefault                        " global substitution default
 nnoremap / /\v
 vnoremap / /\v
+nnoremap n nzz
+nnoremap N Nzz
 
 " General Indentation
 set autoindent
@@ -55,11 +62,21 @@ set expandtab
 set background=dark
 colorscheme solarized                
 
+" Leader Shortcuts 
+:let mapleader = ","
+nmap <Leader>ff :FufFileWithCurrentBufferDir<CR>
+nmap <Leader>fb :FufBuffer<CR>
+nmap <Leader>fmf :FufBookmarkFile<CR>
+nmap <Leader>fmd :FufBookmarkDir<CR>
+nmap <Leader>tt :NERDTreeToggle<CR>
+nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gd :Gdiff<CR>
+nmap <Leader><Space> :nohl<CR>
+
 " Ruby completion
-let g:rubycomplete_buffer_loading = 1
+"let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
-let g:rubycomplete_load_gemfile = 1
 let g:rubycomplete_use_bundler = 1
 
 " Ruby debugging
@@ -91,17 +108,6 @@ autocmd FileType ruby nmap <S-F11>  \rf
 autocmd FileType ruby nmap <F9>     \rb
 "autocmd BufEnter *.rb Rvm " automatically switch Ruby versions when switching buffers
 
-" Leader Shortcuts 
-:let mapleader = "\\"
-nmap <Leader>ff :FufFileWithCurrentBufferDir<CR>
-nmap <Leader>fb :FufBuffer<CR>
-nmap <Leader>fmf :FufBookmarkFile<CR>
-nmap <Leader>fmd :FufBookmarkDir<CR>
-nmap <Leader>tt :NERDTreeToggle<CR>
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gd :Gdiff<CR>
-nmap <Leader><Space> :nohl<CR>
-
 " Key Maps
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -118,8 +124,9 @@ autocmd User fugitive
 " Delete fugitive buffers on exit
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" Status line: fugitive and rvm
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%{rvm#statusline()}%=%-14.(%l,%c%V%)\ %P
+" Status line: Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
