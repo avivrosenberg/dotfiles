@@ -7,8 +7,8 @@
 	default = upstream
 [core]
 	excludesfile = ~/.gitignore_global
-    editor = mvim --nofork
 	autocrlf = input
+    editor = vim --nofork
 	eol = native
 [help]
 	format = web
@@ -23,6 +23,9 @@
     k   = !gitk&
     ka  = !gitk --all&
 	fch = fetch -p origin
+    ll  = log --oneline
+    rb  = rebase
+    rbi = rebase --interactive
 
 [diff]
 	tool = meld
@@ -30,8 +33,7 @@
     prompt = false
 [difftool "meld"]
     #meld with redirected stdout(1) and stderr(2) to /dev/null
-    #cmd = meld                   \
-    cmd = ~/dev/opensource-repos/meld/bin/meld \
+    cmd = meld \
           "$LOCAL" "$REMOTE" > /dev/null 2>&1
 
 [merge]
@@ -41,7 +43,7 @@
     keepBackup = false
 [mergetool "meld"]
     #meld with 3 tabs and redirected stdout(1) and stderr(2) to /dev/null
-    cmd = ~/dev/opensource-repos/meld/bin/meld --auto-merge \
+    cmd = meld --auto-merge \
         --output="$MERGED" \
         --label="LOCAL" "$LOCAL" \
         --label="BASE" "$BASE" \
