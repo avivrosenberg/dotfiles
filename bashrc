@@ -2,7 +2,7 @@
 
 ####
 ## Prompt
-source /usr/share/git-core/git-prompt.sh
+source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
 PS1='\u@\h: \W$(__git_ps1 "(%s)")$ '
 
 ####
@@ -24,6 +24,6 @@ alias pgstop='pg_ctl stop -s -m fast'
 
 ####
 ## Completions
-source /usr/share/git-core/git-completion.bash
-source /usr/local/Library/Contributions/brew_bash_completion.sh
+source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+source $(brew --prefix)/Library/Contributions/brew_bash_completion.sh
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
