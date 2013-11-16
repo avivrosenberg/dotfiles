@@ -16,6 +16,7 @@
 [alias]
     st  = status -sb
     stat= status
+    vst = !vim . -c 'Gstatus' -c 'only' #requires fugitive-vim
     co  = checkout
     ct  = commit
     dt  = difftool --dir-diff
