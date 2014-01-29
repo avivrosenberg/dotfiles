@@ -42,10 +42,6 @@ set hlsearch                        " hilight current search pattern
 set ignorecase                      " case insensitive
 set smartcase                       " choose correct case when searching
 set gdefault                        " global substitution default
-nnoremap / /\v
-vnoremap / /\v
-nnoremap n nzz
-nnoremap N Nzz
 
 " General Indentation
 set autoindent
@@ -109,11 +105,19 @@ autocmd FileType ruby nmap <F9>     \rb
 "autocmd BufEnter *.rb Rvm " automatically switch Ruby versions when switching buffers
 
 " Key Maps
+" ==========
+"" Searching
+nnoremap / /\v
+vnoremap / /\v
+nnoremap n nzz
+nnoremap N Nzz
+"" Window switching
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-map <C-S-F12> :!ctags -R --exclude=.git --exclude=logs --exclude=doc .<CR>
+"" CTags
+nnoremap <C-S-F12> :!ctags -R --exclude=.git --exclude=logs --exclude=doc .<CR>
 
 " Fugitive
 " This maps '..' to go back when browsing object with fugitive.
