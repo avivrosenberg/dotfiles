@@ -114,3 +114,7 @@
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
     ignore = dirty
+[submodule "vim/bundle/scratch.vim"]
+	path = vim/bundle/scratch.vim
+	url = https://github.com/mtth/scratch.vim.git
+    ignore = dirty
