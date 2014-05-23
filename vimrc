@@ -1,17 +1,17 @@
+" vim: nowrap fdm=marker
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" =============== Pathogen Initialization ===============
+" Pathogen Initialization {{{1
 " This loads all the plugins in ~/.vim/bundle
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 execute pathogen#helptags()
 
+" General VIM settings {{{1
 filetype plugin on
 filetype indent on
-
-" General VIM settings
 set ruler                           " show the cursor position all the time
 set showcmd                         " display incomplete commands
 set showmode                        " Show current mode down the bottom
@@ -23,11 +23,11 @@ set hidden                          " allow hiding buffers with changes
 set laststatus=2                    " always show statusbar
 syntax on                           " syntax highlighting
 
-" Disable error bells
+" Disable error bells {{{2
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" Backup
+" Backup {{{2
 set history=1000                    " keep n lines of command line history
 set undolevels=1000                 " lots of undo power
 set wildignore=*.swp,*.bak          " extensions to ignore when expanding wildcards
@@ -36,14 +36,14 @@ set backupdir=~/.vimtmp             " keep all backups in a separate folder
 set backupext=.vimbackup            " set extention for backup files
 set noswapfile                      " don't create a swap file (everything in RAM)
 
-" Searching
+" Searching {{{2
 set incsearch                       " do incremental searching
 set hlsearch                        " hilight current search pattern
 set ignorecase                      " case insensitive
 set smartcase                       " choose correct case when searching
 set gdefault                        " global substitution default
 
-" General Indentation
+" General Indentation {{{2
 set autoindent
 set copyindent
 set smartindent
@@ -54,33 +54,61 @@ set tabstop=4
 set shiftround
 set expandtab
 
-" Colors
+" Mouse {{{3
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+    set mouse=a
+endif
+
+" Cursor {{{3
+if !has('gui_running')
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" Colors {{{2
 set background=dark
 colorscheme solarized                
+hi clear CursorLineNr " fixes the ugly yellow default line number color
 
-" Leader Shortcuts 
+" Customizations for Ruby {{{2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2      " ruby indentation
+autocmd Filetype ruby setlocal foldmethod=syntax    " use syntax to auto-fold
+autocmd Filetype ruby normal zR
+autocmd FileType ruby nmap <M-F5> :w<CR> :!ruby -w %<CR>
+" ruby syntax slowness issue
+set regexpengine=1
+
+" Key Mappings {{{1 
+" Searching {{{2
+nnoremap / /\v
+vnoremap / /\v
+nnoremap n nzz
+nnoremap N Nzz
+" Window switching {{{2
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+" CTags {{{2
+nnoremap <C-S-F12> :!ctags -R --exclude=.git --exclude=logs --exclude=doc .<CR>
+
+" Leader Key {{{2
 :let mapleader = ","
+" FuzzyFinder {{{3
 nmap <Leader>ff :FufFileWithCurrentBufferDir<CR>
 nmap <Leader>fb :FufBuffer<CR>
 nmap <Leader>fmf :FufBookmarkFile<CR>
 nmap <Leader>fmd :FufBookmarkDir<CR>
+" NERDTree {{{3
 nmap <Leader>tt :NERDTreeToggle<CR>
+
+" Fugitive {{{3
 nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gd :Gdiff<CR>
-nmap <Leader><Space> :nohl<CR>
+" Tagbar {{{3
 nmap <Leader>tg :TagbarOpen fjc<CR>
-
-" Ruby completion
-"let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
-let g:rubycomplete_use_bundler = 1
-
-" Ruby debugging
-let g:ruby_debugger_progname = 'mvim'
-let g:ruby_debugger_builtin_sender = 0
-let g:ruby_debugger_debug_mode = 1
-let g:ruby_debugger_no_maps = 1
+" Ruby debugger {{{3
 map <Leader>rb  :call g:RubyDebugger.toggle_breakpoint()<CR>
 map <Leader>rv  :call g:RubyDebugger.open_variables()<CR>
 map <Leader>rm  :call g:RubyDebugger.open_breakpoints()<CR>
@@ -91,36 +119,23 @@ map <Leader>rn  :call g:RubyDebugger.next()<CR>
 map <Leader>rc  :call g:RubyDebugger.continue()<CR>
 map <Leader>re  :call g:RubyDebugger.exit()<CR>
 map <Leader>rd  :call g:RubyDebugger.remove_breakpoints()<CR>
+" Other {{{3
+nmap <Leader><Space> :nohl<CR>
 
-" Autocommands for Ruby
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2      " ruby indentation
-autocmd Filetype ruby setlocal foldmethod=syntax    " use syntax to auto-fold
-autocmd Filetype ruby normal zR
-autocmd FileType ruby nmap <M-F5> :w<CR> :!ruby -w %<CR>
-autocmd FileType ruby nmap <F5>     \rc
-autocmd FileType ruby nmap <S-F5>   \re
-autocmd FileType ruby nmap <F10>    \rn
-autocmd FileType ruby nmap <F11>    \rs
-autocmd FileType ruby nmap <S-F11>  \rf
-autocmd FileType ruby nmap <F9>     \rb
-"autocmd BufEnter *.rb Rvm " automatically switch Ruby versions when switching buffers
+" Plugin Customizations {{{1
+" Ruby Completion {{{2
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+let g:rubycomplete_use_bundler = 1
+"let g:rubycomplete_buffer_loading = 1
 
-" Key Maps
-" ==========
-"" Searching
-nnoremap / /\v
-vnoremap / /\v
-nnoremap n nzz
-nnoremap N Nzz
-"" Window switching
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-"" CTags
-nnoremap <C-S-F12> :!ctags -R --exclude=.git --exclude=logs --exclude=doc .<CR>
+" Ruby Debugger {{{2
+let g:ruby_debugger_progname = 'mvim'
+let g:ruby_debugger_builtin_sender = 0
+let g:ruby_debugger_debug_mode = 1
+let g:ruby_debugger_no_maps = 1
 
-" Fugitive
+" Fugitive {{{2
 " This maps '..' to go back when browsing object with fugitive.
 autocmd User fugitive
   \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
@@ -129,19 +144,7 @@ autocmd User fugitive
 " Delete fugitive buffers on exit
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" Status line: Airline
+" Airline {{{2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-    set mouse=a
-endif
-
-if !has('gui_running')
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
-" ruby syntax slowness issue
-set regexpengine=1
