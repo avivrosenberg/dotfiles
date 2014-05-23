@@ -118,3 +118,7 @@
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
     ignore = dirty
+[submodule "vim/bundle/numbers.vim"]
+    path = vim/bundle/numbers.vim
+    url = https://github.com/myusuf3/numbers.vim.git
+    ignore = dirty
