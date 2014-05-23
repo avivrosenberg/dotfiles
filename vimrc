@@ -68,6 +68,7 @@ nmap <Leader>tt :NERDTreeToggle<CR>
 nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gd :Gdiff<CR>
 nmap <Leader><Space> :nohl<CR>
+nmap <Leader>tg :TagbarOpen fjc<CR>
 
 " Ruby completion
 "let g:rubycomplete_buffer_loading = 1
