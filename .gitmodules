@@ -118,3 +118,7 @@
 	path = vim/bundle/scratch.vim
 	url = https://github.com/mtth/scratch.vim.git
     ignore = dirty
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+    ignore = dirty
