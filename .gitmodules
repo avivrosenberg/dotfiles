@@ -130,3 +130,6 @@
     path = vim/bundle/vim-textobj-rubyblock
     url = https://github.com/nelstrom/vim-textobj-rubyblock.git
     ignore = dirty
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
