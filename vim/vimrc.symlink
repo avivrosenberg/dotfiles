@@ -91,7 +91,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 " CTags {{{2
-nnoremap <C-S-F12> :!ctags -R --exclude=.git --exclude=logs --exclude=doc .<CR>
+nnoremap <C-S-F12> :!ctags -R --exclude=.git --exclude=logs --exclude=doc --exclude=vendor .<CR>
 
 " Leader Key {{{2
 :let mapleader = ","
