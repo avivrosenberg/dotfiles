@@ -15,6 +15,7 @@
 
 [alias]
     st  = status -sb
+    br  = branch
     stat= status
     vst = !vim . -c 'Gstatus' -c 'only' #requires fugitive-vim
     co  = checkout
