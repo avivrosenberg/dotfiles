@@ -4,7 +4,7 @@
 [color]
 	ui = true
 [push]
-	default = upstream
+	default = current
 [core]
 	excludesfile = ~/.dotfiles/git/gitignore_global
 	autocrlf = input
