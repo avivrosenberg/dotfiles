@@ -7,7 +7,7 @@ ZSH_THEME="agnoster"
 ZSH_CUSTOM=~/.dotfiles/zsh
 
 # plugins for oh-my-zsh
-plugins=(git osx ruby brew rvm gem bundler rake themes)
+plugins=(git osx ruby brew rvm gem bundler rake themes vim-interaction)
 
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
