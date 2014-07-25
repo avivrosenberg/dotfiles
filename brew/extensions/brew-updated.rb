@@ -3,18 +3,18 @@ require 'cmd/update'
 require 'cmd/outdated'
 
 ###
-# Just a helper to colorize output don't want to depend on external gem
-def colorize(str)
-  console_white="\e[0;37m"
+# Just a helper to print bold output
+def bold(str)
+  console_bold="\e[1m"
   console_reset="\e[0m"
-  "#{console_white}#{str}#{console_reset}"
+  "#{console_bold}#{str}#{console_reset}"
 end
 
 ###
 # Main function
 def brew_updated
   # Update homebrew
-  puts colorize "Updating homebrew..."
+  puts bold "==> Updating homebrew"
   Homebrew.update
 
   # Call homebrew internal function to get number of outdated brews
@@ -22,7 +22,7 @@ def brew_updated
 
   # Print outdated brews
   if num_outdated > 0
-    puts colorize "Outdated brews:"
+    puts bold "==> Outdated brews"
     Homebrew.outdated 
   end
 end
