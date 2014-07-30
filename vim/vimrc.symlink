@@ -91,7 +91,11 @@ map <C-l> <C-w>l
 " CTags {{{2
 nnoremap <C-S-F12> :!ctags -R --exclude=.git --exclude=logs --exclude=doc --exclude=vendor .<CR>
 
-" Leader Key {{{2
+" Commandline Mode {{{2
+" better scrolling of commandline history: Up/Down support partial matching
+cnoremap <C-N> <Down>
+cnoremap <C-P> <Up>
+" Leader Key Mappings {{{2
 :let mapleader = ","
 " FuzzyFinder {{{3
 nmap <Leader>ff :FufFileWithCurrentBufferDir<CR>
