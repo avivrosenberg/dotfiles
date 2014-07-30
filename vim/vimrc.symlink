@@ -75,11 +75,7 @@ hi clear CursorLineNr " fixes the ugly yellow default line number color
 
 " Customizations for Ruby {{{2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2      " ruby indentation
-autocmd Filetype ruby setlocal foldmethod=syntax    " use syntax to auto-fold
-autocmd Filetype ruby normal zR
-autocmd FileType ruby nmap <M-F5> :w<CR> :!ruby -w %<CR>
-" ruby syntax slowness issue
-set regexpengine=1
+autocmd FileType ruby nmap <M-F5> :w<CR> :!ruby %<CR>
 
 " Key Mappings {{{1 
 " Searching {{{2
