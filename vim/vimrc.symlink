@@ -22,6 +22,8 @@ set backspace=indent,eol,start      " allow backspacing over everything in inser
 set hidden                          " allow hiding buffers with changes
 set laststatus=2                    " always show statusbar
 syntax on                           " syntax highlighting
+set wildmenu                        " enhanced commandline completion
+set wildmode=full                   " commandline completion mode
 
 " Disable error bells {{{2
 set noerrorbells visualbell t_vb=
