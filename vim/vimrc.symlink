@@ -100,6 +100,11 @@ cnoremap <C-P> <Up>
 " FuzzyFinder {{{3
 nmap <Leader>ff :FufFileWithCurrentBufferDir<CR>
 nmap <Leader>fb :FufBuffer<CR>
+nmap <Leader>fd :FufFileWithFullCwd<CR>
+nmap <Leader>fj :FufJumpList<CR>
+nmap <Leader>fh :FufHelp<CR>
+nmap <Leader>ftg :FufTag<CR>
+nmap <Leader>ftg :FufBufferTag<CR>
 nmap <Leader>fmf :FufBookmarkFile<CR>
 nmap <Leader>fmd :FufBookmarkDir<CR>
 " NERDTree {{{3
