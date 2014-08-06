@@ -83,11 +83,17 @@ nnoremap / /\v
 vnoremap / /\v
 nnoremap n nzz
 nnoremap N Nzz
-" Window switching {{{2
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+" Window and buffer switching {{{2
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <silent> <Down> :bnext<CR>
+nnoremap <silent> <Up> :bprevious<CR>
+nnoremap <silent> <Left> :tabprevious<CR>
+nnoremap <silent> <Right> :tabnext<CR>
+
 " CTags {{{2
 nnoremap <C-S-F12> :!ctags -R --exclude=.git --exclude=logs --exclude=doc --exclude=vendor .<CR>
 
