@@ -103,6 +103,7 @@ cnoremap <C-N> <Down>
 cnoremap <C-P> <Up>
 " Leader Key Mappings {{{2
 :let mapleader = ","
+noremap \ ,
 " FuzzyFinder {{{3
 nmap <Leader>ff :FufFileWithCurrentBufferDir<CR>
 nmap <Leader>fb :FufBuffer<CR>
