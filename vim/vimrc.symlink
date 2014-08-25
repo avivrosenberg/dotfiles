@@ -101,6 +101,9 @@ nnoremap <C-S-F12> :!ctags -R --exclude=.git --exclude=logs --exclude=doc --excl
 " better scrolling of commandline history: Up/Down support partial matching
 cnoremap <C-N> <Down>
 cnoremap <C-P> <Up>
+" Insert Mode {{{2
+" Delete forward in insert mode
+inoremap <C-l> <Del>
 " Leader Key Mappings {{{2
 :let mapleader = ","
 noremap \ ,
