@@ -24,6 +24,7 @@ set laststatus=2                    " always show statusbar
 syntax on                           " syntax highlighting
 set wildmenu                        " enhanced commandline completion
 set wildmode=full                   " commandline completion mode
+set diffopt+=vertical               " always open diff with vertical split
 
 " Disable error bells {{{2
 set noerrorbells visualbell t_vb=
