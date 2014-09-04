@@ -110,8 +110,9 @@ inoremap <C-l> <Del>
 noremap \ ,
 " FuzzyFinder {{{3
 nmap <Leader>ff :FufFileWithCurrentBufferDir<CR>
+nmap <Leader>fd :FufCoverageFile<CR>
 nmap <Leader>fb :FufBuffer<CR>
-nmap <Leader>fd :FufFileWithFullCwd<CR>
+nmap <Leader>fg :FufFileWithFullCwd<CR>
 nmap <Leader>fj :FufJumpList<CR>
 nmap <Leader>fh :FufHelp<CR>
 nmap <Leader>ftg :FufTag<CR>
