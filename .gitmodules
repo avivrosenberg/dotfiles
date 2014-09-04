@@ -133,3 +133,12 @@
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+    ignore = dirty
+[submodule "vim/bundle/vim-unimpaired"]
+	path = vim/bundle/vim-unimpaired
+	url = git@github.com:tpope/vim-unimpaired.git
+    ignore = dirty
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
+    ignore = dirty
