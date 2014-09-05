@@ -25,6 +25,7 @@ syntax on                           " syntax highlighting
 set wildmenu                        " enhanced commandline completion
 set wildmode=full                   " commandline completion mode
 set diffopt+=vertical               " always open diff with vertical split
+set spelllang=en_us
 
 " Disable error bells {{{2
 set noerrorbells visualbell t_vb=
@@ -135,8 +136,10 @@ nmap <Leader>ge :Gedit<CR>
 nmap <Leader>gw :Gwrite<CR>
 nmap <Leader>gb :Gblame<CR>
 nmap <Leader>gl :Glog<CR>
+
 " Tagbar {{{3
 nmap <Leader>tg :TagbarOpen fjc<CR>
+
 " Ruby debugger {{{3
 map <Leader>rb  :call g:RubyDebugger.toggle_breakpoint()<CR>
 map <Leader>rv  :call g:RubyDebugger.open_variables()<CR>
@@ -148,8 +151,10 @@ map <Leader>rn  :call g:RubyDebugger.next()<CR>
 map <Leader>rc  :call g:RubyDebugger.continue()<CR>
 map <Leader>re  :call g:RubyDebugger.exit()<CR>
 map <Leader>rd  :call g:RubyDebugger.remove_breakpoints()<CR>
+
 " Other {{{3
 nmap <silent> <Leader><Space> :nohl<CR>
+nmap <silent> <Leader>s :set spell!<CR>
 
 " Plugin Customizations {{{1
 " Ruby Completion {{{2
