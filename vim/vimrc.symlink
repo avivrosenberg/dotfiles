@@ -149,7 +149,7 @@ map <Leader>rc  :call g:RubyDebugger.continue()<CR>
 map <Leader>re  :call g:RubyDebugger.exit()<CR>
 map <Leader>rd  :call g:RubyDebugger.remove_breakpoints()<CR>
 " Other {{{3
-nmap <Leader><Space> :nohl<CR>
+nmap <silent> <Leader><Space> :nohl<CR>
 
 " Plugin Customizations {{{1
 " Ruby Completion {{{2
