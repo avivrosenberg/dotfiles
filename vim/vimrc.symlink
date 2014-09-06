@@ -154,7 +154,6 @@ map <Leader>rd  :call g:RubyDebugger.remove_breakpoints()<CR>
 
 " Other {{{3
 nmap <silent> <Leader><Space> :nohl<CR>
-nmap <silent> <Leader>s :set spell!<CR>
 
 " Plugin Customizations {{{1
 " Ruby Completion {{{2
