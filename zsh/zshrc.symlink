@@ -1,7 +1,7 @@
 export ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 
 # set theme
-ZSH_THEME="agnoster"
+ZSH_THEME="philips"
 
 # directory with custom zsh init scripts
 ZSH_CUSTOM=~/.dotfiles/zsh
