@@ -635,7 +635,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>-832 486 384 129 -1280 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>131 73 1010 576 0 0 1280 778 </string>
+	<string>131 51 1010 598 0 0 1280 778 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3574,7 +3574,7 @@
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PassOnControlClick</key>
