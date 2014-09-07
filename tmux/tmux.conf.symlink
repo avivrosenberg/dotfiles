@@ -48,3 +48,9 @@ bind H resize-pane -L 5
 bind J resize-pane -D 5
 bind K resize-pane -U 5
 bind L resize-pane -R 5
+
+# colors
+source-file ~/.dotfiles/tmux/airline-colors.conf
+
+# disable automatic renaming
+set-window-option -g automatic-rename off
