@@ -146,3 +146,7 @@
 	path = vim/bundle/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
     ignore = dirty
+[submodule "vim/bundle/tmuxline.vim"]
+	path = vim/bundle/tmuxline.vim
+	url = git@github.com:edkolev/tmuxline.vim.git
+    ignore = dirty
