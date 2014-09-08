@@ -54,7 +54,11 @@ bind Escape copy-mode
 unbind p
 bind p paste-buffer
 bind -t vi-copy 'v' begin-selection
-bind -t vi-copy 'y' copy-selection
+bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Update default binding of `Enter` to also use copy-pipe
+unbind -t vi-copy Enter
+bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 
 # use reattach wrapper to fix osx clipboard issues
 if-shell 'test "$(uname -s)" = Darwin' 'set-option -g default-command "exec reattach-to-user-namespace -l zsh"'
@@ -64,3 +68,6 @@ source-file ~/.dotfiles/tmux/airline-colors.conf
 
 # disable automatic renaming
 set-window-option -g allow-rename off
+
+# auto resize for different clients
+setw -g aggressive-resize on
