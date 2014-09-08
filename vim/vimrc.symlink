@@ -146,6 +146,7 @@ nmap <Leader>ge :Gedit<CR>
 nmap <Leader>gw :Gwrite<CR>
 nmap <Leader>gb :Gblame<CR>
 nmap <Leader>gl :Glog<CR>
+nmap <Leader>gg :Ggrep <C-R><C-W><CR>
 
 " Tagbar {{{3
 nmap <Leader>tg :TagbarOpen fjc<CR>
