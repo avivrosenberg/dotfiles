@@ -165,7 +165,8 @@ map <Leader>rd  :call g:RubyDebugger.remove_breakpoints()<CR>
 
 " Other {{{3
 nmap <silent> <Leader><Space> :nohl<CR>
-
+nnoremap <Leader>lq :copen<CR>
+nnoremap <Leader>ll :lopen<CR>
 " Plugin Customizations {{{1
 " Ruby Completion {{{2
 let g:rubycomplete_classes_in_global = 1
