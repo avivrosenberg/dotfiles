@@ -63,4 +63,4 @@ if-shell 'test "$(uname -s)" = Darwin' 'set-option -g default-command "exec reat
 source-file ~/.dotfiles/tmux/airline-colors.conf
 
 # disable automatic renaming
-set-window-option -g automatic-rename off
+set-window-option -g allow-rename off
