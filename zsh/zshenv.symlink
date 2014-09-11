@@ -17,7 +17,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     ####
     ## Homebrew
     PATH=$(brew --prefix)/bin:$PATH #prepend so that brew binaries are found first
-    PATH=$PATH:~/.dotfiles/brew/extensions
+    PATH=$PATH:$DOTFILES/brew/extensions
 else
     # Other OSes...
 fi
