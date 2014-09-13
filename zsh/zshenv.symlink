@@ -1,7 +1,7 @@
 ####
 ## Environment
 export EDITOR='vim'
-export DOTFILES='~/.dotfiles'
+export DOTFILES=~/.dotfiles
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     ####
@@ -17,9 +17,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     ####
     ## Homebrew
     PATH=$(brew --prefix)/bin:$PATH #prepend so that brew binaries are found first
-    PATH=$PATH:$DOTFILES/brew/extensions
+    PATH=$PATH:"$DOTFILES/brew/extensions"
 else
     # Other OSes...
+fi
+
+# If this isn't an interactive shell, also source rvm.zsh so RVM config will
+# work in scripts (and from vim's shell which isn't interactive).
+if [[ $- != *i* ]]; then
+    source "$DOTFILES/zsh/rvm.zsh"
 fi
 
 export PATH
