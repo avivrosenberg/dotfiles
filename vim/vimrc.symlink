@@ -116,7 +116,7 @@ cnoremap <C-P> <Up>
 inoremap <C-l> <Del>
 
 " Leader Key Mappings {{{2
-:let mapleader = ","
+let mapleader = ","
 noremap \ ,
 " FuzzyFinder {{{3
 nmap <Leader>ff :FufFileWithCurrentBufferDir<CR>
@@ -197,3 +197,23 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 
+" Tagbar {{{2
+" use 'ripper-tags' (if available) to generate ruby ctags with tagbar
+if executable('ripper-tags')
+ 
+    " Replace ctags leader mapping with ripper-tags mapping (in ruby buffers only)
+    autocmd FileType ruby nnoremap <buffer> <Leader>T :!ripper-tags -R --exclude=vendor<CR>
+
+    " Configure Tagbar to user ripper-tags with ruby
+    let g:tagbar_type_ruby = {
+                \ 'kinds' : [
+                    \ 'm:modules',
+                    \ 'c:classes',
+                    \ 'f:methods',
+                    \ 'F:singleton methods',
+                    \ 'C:constants'
+                \ ],
+                \ 'ctagsbin':  'ripper-tags',
+                \ 'ctagsargs': ['-f', '-']
+                \ }
+endif
