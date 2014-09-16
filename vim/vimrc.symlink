@@ -217,3 +217,11 @@ if executable('ripper-tags')
                 \ 'ctagsargs': ['-f', '-']
                 \ }
 endif
+" CtrlP {{{2
+let g:ctrlp_by_filename = 1 " by default, match filenames (not full path). <C-d> toggles.
+" custom ignore expressions
+let g:ctrlp_custom_ignore = {
+            \ 'dir':  'vendor/bundle'
+            \}
+" add modes
+let g:ctrlp_extensions = ['tag', 'buffertag']
