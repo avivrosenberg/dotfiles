@@ -30,14 +30,6 @@
     path = vim/bundle/vim-surround
     url = https://github.com/tpope/vim-surround.git
     ignore = dirty
-[submodule "vim/bundle/FuzzyFinder"]
-    path = vim/bundle/FuzzyFinder
-    url = https://github.com/vim-scripts/FuzzyFinder.git
-    ignore = dirty
-[submodule "vim/bundle/L9"]
-    path = vim/bundle/L9
-    url = https://github.com/vim-scripts/L9.git
-    ignore = dirty
 [submodule "vim/bundle/xmledit.vim"]
     path = vim/bundle/xmledit.vim
     url = https://github.com/sukima/xmledit.git

@@ -118,23 +118,6 @@ inoremap <C-l> <Del>
 " Leader Key Mappings {{{2
 let mapleader = ","
 noremap \ ,
-" FuzzyFinder {{{3
-nmap <Leader>ff :FufFileWithCurrentBufferDir<CR>
-nmap <Leader>fd :FufCoverageFile<CR>
-nmap <Leader>fb :FufBuffer<CR>
-nmap <Leader>fg :FufFileWithFullCwd<CR>
-nmap <Leader>fj :FufJumpList<CR>
-nmap <Leader>fh :FufHelp<CR>
-nmap <Leader>ftg :FufTag<CR>
-nmap <Leader>ftg :FufBufferTag<CR>
-nmap <Leader>fmf :FufBookmarkFile<CR>
-nmap <Leader>fmd :FufBookmarkDir<CR>
-
-" Augment FuzzyFinder's default excludes (first line) when using CoverageFile mode
-" the variable doesn't exist at this point, so we define it.
-let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-let g:fuf_coveragefile_exclude .= '|\.DS_Store|vendor/bundle/'
-
 " NERDTree {{{3
 nmap <Leader>tt :NERDTreeToggle<CR>
 
@@ -200,7 +183,7 @@ let g:airline#extensions#whitespace#enabled = 0
 " Tagbar {{{2
 " use 'ripper-tags' (if available) to generate ruby ctags with tagbar
 if executable('ripper-tags')
- 
+
     " Replace ctags leader mapping with ripper-tags mapping (in ruby buffers only)
     autocmd FileType ruby nnoremap <buffer> <Leader>T :!ripper-tags -R --exclude=vendor<CR>
 
