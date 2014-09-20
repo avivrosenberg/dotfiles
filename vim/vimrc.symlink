@@ -133,18 +133,6 @@ nmap <Leader>gg :Ggrep <C-R><C-W><CR>
 " Tagbar {{{3
 nmap <Leader>tg :TagbarOpen fjc<CR>
 
-" Ruby debugger {{{3
-map <Leader>rb  :call g:RubyDebugger.toggle_breakpoint()<CR>
-map <Leader>rv  :call g:RubyDebugger.open_variables()<CR>
-map <Leader>rm  :call g:RubyDebugger.open_breakpoints()<CR>
-map <Leader>rt  :call g:RubyDebugger.open_frames()<CR>
-map <Leader>rs  :call g:RubyDebugger.step()<CR>
-map <Leader>rf  :call g:RubyDebugger.finish()<CR>
-map <Leader>rn  :call g:RubyDebugger.next()<CR>
-map <Leader>rc  :call g:RubyDebugger.continue()<CR>
-map <Leader>re  :call g:RubyDebugger.exit()<CR>
-map <Leader>rd  :call g:RubyDebugger.remove_breakpoints()<CR>
-
 " CTags {{{2
 " Create tags, redirect warnings to /dev/null and skip prompt
 nnoremap <Leader>T :!ctags -R --exclude=.git --exclude=logs --exclude=doc --exclude=vendor . 2>/dev/null<CR><CR>
@@ -153,18 +141,14 @@ nnoremap <Leader>T :!ctags -R --exclude=.git --exclude=logs --exclude=doc --excl
 nmap <silent> <Leader><Space> :nohl<CR>
 nnoremap <Leader>lq :copen<CR>
 nnoremap <Leader>ll :lopen<CR>
+
 " Plugin Customizations {{{1
+
 " Ruby Completion {{{2
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
 let g:rubycomplete_use_bundler = 1
 "let g:rubycomplete_buffer_loading = 1
-
-" Ruby Debugger {{{2
-let g:ruby_debugger_progname = 'mvim'
-let g:ruby_debugger_builtin_sender = 0
-let g:ruby_debugger_debug_mode = 1
-let g:ruby_debugger_no_maps = 1
 
 " Fugitive {{{2
 " This maps '..' to go back when browsing object with fugitive.
@@ -204,6 +188,7 @@ if executable('ripper-tags')
                 \ 'ctagsargs': ['-f', '-']
                 \ }
 endif
+
 " CtrlP {{{2
 let g:ctrlp_by_filename = 1 " by default, match filenames (not full path). <C-d> toggles.
 " custom ignore expressions
