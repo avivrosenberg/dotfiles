@@ -122,3 +122,7 @@
 	path = vim/bundle/ctrlp.vim
 	url = git@github.com:kien/ctrlp.vim.git
     ignore = dirty
+[submodule "vim/bundle/gitv"]
+	path = vim/bundle/gitv
+	url = git@github.com:gregsexton/gitv.git
+    ignore = dirty

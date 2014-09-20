@@ -175,6 +175,10 @@ autocmd User fugitive
 " Delete fugitive buffers on exit
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" Gitv {{{2
+let g:Gitv_WipeAllOnClose = 1
+let g:Gitv_DoNotMapCtrlKey = 1
+
 " Airline {{{2
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
