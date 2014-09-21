@@ -191,9 +191,11 @@ endif
 
 " CtrlP {{{2
 let g:ctrlp_by_filename = 1 " by default, match filenames (not full path). <C-d> toggles.
+let g:ctrlp_show_hidden = 1
 " custom ignore expressions
 let g:ctrlp_custom_ignore = {
-            \ 'dir':  'vendor/bundle'
+            \ 'dir':  '\.git$\|vendor/bundle',
+            \ 'file':  '\.DS_Store$'
             \}
 " add modes
 let g:ctrlp_extensions = ['tag', 'buffertag']
