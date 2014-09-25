@@ -65,5 +65,11 @@ set-window-option -g allow-rename off
 # auto resize for different clients
 setw -g aggressive-resize on
 
+# mouse
+set -g mode-mouse on
+set -g mouse-resize-pane on
+set -g mouse-select-pane on
+set -g mouse-select-window on
+
 # source OSX-specific configuration if necessary
 if-shell 'test "$(uname -s)" = Darwin' 'source-file ~/.dotfiles/tmux/tmux-osx.conf'
