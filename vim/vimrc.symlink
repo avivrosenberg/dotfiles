@@ -124,6 +124,7 @@ nmap <Leader>tt :NERDTreeToggle<CR>
 
 " Fugitive {{{3
 nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gS :Gstatus \| only<CR>
 nmap <Leader>gd :Gdiff<CR>
 nmap <Leader>ge :Gedit<CR>
 nmap <Leader>gw :Gwrite<CR>
