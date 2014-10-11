@@ -123,7 +123,7 @@ noremap \ ,
 nmap <Leader>tt :NERDTreeToggle<CR>
 
 " Fugitive {{{3
-nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gs :Gstatus<CR><C-W>K
 nmap <Leader>gS :Gstatus \| only<CR>
 nmap <Leader>gd :Gdiff<CR>
 nmap <Leader>ge :Gedit<CR>
