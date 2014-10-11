@@ -144,6 +144,13 @@ nmap <silent> <Leader><Space> :nohl<CR>
 nnoremap <Leader>lq :copen<CR>
 nnoremap <Leader>ll :lopen<CR>
 
+" CtrlP {{{2
+nnoremap <silent> <Leader>ff :CtrlPMixed<CR>
+nnoremap <silent> <Leader>fb :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>ft :CtrlPBufTagAll<CR>
+nnoremap <silent> <Leader>ft :CtrlPBufTagAll<CR>
+nnoremap <silent> <Leader>fd :CtrlPDir<CR>
+
 " Plugin Customizations {{{1
 
 " Ruby Completion {{{2
