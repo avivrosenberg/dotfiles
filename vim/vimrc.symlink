@@ -208,3 +208,13 @@ let g:ctrlp_custom_ignore = {
             \}
 " add modes
 let g:ctrlp_extensions = ['tag', 'buffertag']
+
+" use ripper-tags for ruby, if available
+if executable('ripper-tags')
+    let g:ctrlp_buftag_types = {
+                \ 'ruby' : {
+                    \ 'bin': 'ripper-tags',
+                    \ 'args': '-f -',
+                    \ },
+                \ }
+endif
