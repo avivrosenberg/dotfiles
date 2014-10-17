@@ -147,8 +147,8 @@ nnoremap <Leader>ll :lopen<CR>
 " CtrlP {{{2
 nnoremap <silent> <Leader>ff :CtrlPMixed<CR>
 nnoremap <silent> <Leader>fb :CtrlPBuffer<CR>
-nnoremap <silent> <Leader>ft :CtrlPBufTagAll<CR>
-nnoremap <silent> <Leader>ft :CtrlPBufTagAll<CR>
+nnoremap <silent> <Leader>ft :CtrlPTag<CR>
+nnoremap <silent> <Leader>fT :CtrlPBufTag<CR>
 nnoremap <silent> <Leader>fd :CtrlPDir<CR>
 
 " Plugin Customizations {{{1
@@ -208,13 +208,3 @@ let g:ctrlp_custom_ignore = {
             \}
 " add modes
 let g:ctrlp_extensions = ['tag', 'buffertag']
-
-" use ripper-tags for ruby, if available
-if executable('ripper-tags')
-    let g:ctrlp_buftag_types = {
-                \ 'ruby' : {
-                    \ 'bin': 'ripper-tags',
-                    \ 'args': '-f -',
-                    \ },
-                \ }
-endif
