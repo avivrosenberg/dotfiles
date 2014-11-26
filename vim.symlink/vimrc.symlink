@@ -29,7 +29,8 @@ set spelllang=en_us
 set clipboard=unnamed               " copy to system clipboard if no register specified
 set scrolloff=2                     " keep a few lines visible when scrolling at the top/bottom
 set ttimeoutlen=50                  " key chord timeout length - speeds up transiton from visual to normal mode
-
+let mapleader = ","                 " define leader key for custom mappings, and remap default to comma
+noremap \ ,
 " Disable error bells {{{2
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
@@ -97,12 +98,9 @@ noremap / /\v
 noremap ? ?\v
 noremap <C-_> /\V
 noremap <C-?> ?\V
-" Window and buffer switching {{{2
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
+" Window and buffer switching {{{2
+nnoremap <Leader><Leader> <C-^>
 nnoremap <silent> <Down> :bnext<CR>
 nnoremap <silent> <Up> :bprevious<CR>
 nnoremap <silent> <Left> :tabprevious<CR>
@@ -116,9 +114,7 @@ cnoremap <C-P> <Up>
 " Delete forward in insert mode
 inoremap <C-l> <Del>
 
-" Leader Key Mappings {{{2
-let mapleader = ","
-noremap \ ,
+" Leader Key Mappings for plugins{{{2
 " NERDTree {{{3
 nmap <Leader>tt :NERDTreeToggle<CR>
 
