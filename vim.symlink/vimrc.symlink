@@ -188,7 +188,8 @@ if executable('ripper-tags')
                     \ 'c:classes',
                     \ 'f:methods',
                     \ 'F:singleton methods',
-                    \ 'C:constants'
+                    \ 'C:constants',
+                    \ 'a:aliases'
                 \ ],
                 \ 'ctagsbin':  'ripper-tags',
                 \ 'ctagsargs': ['-f', '-']
