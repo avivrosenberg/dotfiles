@@ -46,4 +46,10 @@ if [[ -d "$HOME/.rvm" ]]; then
     rvm default 2>/dev/null
 fi
 
+###
+## MATLAB: Add binaries to path
+if [[ -d "/Applications/MATLAB_R2013a.app/" ]]; then
+    PATH=$PATH:/Applications/MATLAB_R2013a.app/bin/maci64/
+fi
+
 export PATH
