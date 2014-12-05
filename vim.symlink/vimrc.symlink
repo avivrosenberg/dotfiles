@@ -211,3 +211,7 @@ let g:ctrlp_extensions = ['tag', 'buffertag']
 " let g:syntastic_ruby_checkers = ['mri', 'rubylint']
 " Show errors from different checkers together
 let g:syntastic_aggregate_errors = 1
+
+" Ack {{{2
+" Use the_silver_searcher (Ag) instead of ack
+let g:ackprg='ag'
