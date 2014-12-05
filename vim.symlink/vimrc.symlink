@@ -117,6 +117,7 @@ inoremap <C-l> <Del>
 " Leader Key Mappings for plugins{{{2
 " NERDTree {{{3
 nmap <Leader>tt :NERDTreeToggle<CR>
+nmap <Leader>tf :NERDTreeFind<CR>
 
 " Fugitive {{{3
 nmap <Leader>gs :Gstatus<CR><C-W>K
