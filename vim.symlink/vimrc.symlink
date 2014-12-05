@@ -205,3 +205,9 @@ let g:ctrlp_custom_ignore = {
             \}
 " add modes
 let g:ctrlp_extensions = ['tag', 'buffertag']
+
+" Syntastic {{{2
+" Use ruby-lint if available
+" let g:syntastic_ruby_checkers = ['mri', 'rubylint']
+" Show errors from different checkers together
+let g:syntastic_aggregate_errors = 1
