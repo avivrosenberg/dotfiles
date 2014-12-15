@@ -4,8 +4,13 @@
 set nocompatible
 
 " Pathogen Initialization {{{1
-" This loads all the plugins in ~/.vim/bundle
+" load pathogen plugin
 runtime bundle/vim-pathogen/autoload/pathogen.vim
+
+" list of bundle names for pathogen to skip loading
+let g:pathogen_disabled = []
+
+" This loads all the plugins in ~/.vim/bundle (except skipped ones)
 execute pathogen#infect()
 execute pathogen#helptags()
 
