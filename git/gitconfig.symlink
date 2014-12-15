@@ -30,6 +30,7 @@
     files = !git status --short | tr -s ' ' | cut -d ' ' -f3- # all modified files, including staged
     vi    = !vim $(git files) # run vim with modified files
     vst   = !vim $(git files) -c 'Gstatus|only' #requires fugitive-vim
+    rmsm  = "!f(){ git rm --cached \"$1\";rm -r \"$1\";git config -f .gitmodules --remove-section \"submodule.$1\";git config -f .git/config --remove-section \"submodule.$1\";git add .gitmodules; }; f"
 
 [diff]
 	tool = meld
