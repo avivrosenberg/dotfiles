@@ -14,20 +14,22 @@
 	format = web
 
 [alias]
-    st  = status -sb
-    br  = branch
-    stat= status
-    vst = !vim . -c 'Gstatus' -c 'only' #requires fugitive-vim
-    co  = checkout
-    ct  = commit
-    dt  = difftool --dir-diff
-    dts = difftool --dir-diff --staged
-    k   = !gitk&
-    ka  = !gitk --all&
-	fch = fetch -p origin
-    ll  = log --oneline
-    rb  = rebase
-    rbi = rebase --interactive
+    st    = status -sb
+    br    = branch
+    stat  = status
+    co    = checkout
+    ct    = commit
+    dt    = difftool --dir-diff
+    dts   = difftool --dir-diff --staged
+    k     = !gitk&
+    ka    = !gitk --all&
+	fch   = fetch -p origin
+    ll    = log --oneline
+    rb    = rebase
+    rbi   = rebase --interactive
+    files = !git status --short | tr -s ' ' | cut -d ' ' -f3- # all modified files, including staged
+    vi    = !vim $(git files) # run vim with modified files
+    vst   = !vim $(git files) -c 'Gstatus|only' #requires fugitive-vim
 
 [diff]
 	tool = meld
