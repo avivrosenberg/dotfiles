@@ -94,13 +94,6 @@ set background=dark
 colorscheme solarized                
 hi clear CursorLineNr " fixes the ugly yellow default line number color
 
-" Customizations for Ruby {{{2
-" ruby indentation
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-" run current ruby file (the 'cd .' part is for RVM, incase a file that RVM
-" looks for exists, it will cause it to be read (files like .rmvrc,
-" .ruby-version and .ruby-gemset).
-autocmd FileType ruby nmap <F5> :w<CR>:!cd . && ruby %<CR>
 
 " Key Mappings {{{1 
 " Searching {{{2
@@ -189,9 +182,6 @@ let g:airline#extensions#tagbar#enabled = 0
 " Tagbar {{{2
 " use 'ripper-tags' (if available) to generate ruby ctags with tagbar
 if executable('ripper-tags')
-
-    " Replace ctags leader mapping with ripper-tags mapping (in ruby buffers only)
-    autocmd FileType ruby nnoremap <buffer> <Leader>T :!ripper-tags -R --exclude=vendor<CR>
 
     " Configure Tagbar to user ripper-tags with ruby
     let g:tagbar_type_ruby = {
