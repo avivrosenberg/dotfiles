@@ -35,6 +35,7 @@ set clipboard=unnamed               " copy to system clipboard if no register sp
 set scrolloff=2                     " keep a few lines visible when scrolling at the top/bottom
 set ttimeoutlen=50                  " key chord timeout length - speeds up transiton from visual to normal mode
 let mapleader = ","                 " define leader key for custom mappings, and remap default to comma
+let maplocalleader = ","            " leader key for mappings which are local to a buffer
 noremap \ ,
 " Disable error bells {{{2
 set noerrorbells visualbell t_vb=
@@ -119,6 +120,7 @@ nnoremap <silent> <Right> :tabnext<CR>
 " better scrolling of commandline history: Up/Down support partial matching
 cnoremap <C-N> <Down>
 cnoremap <C-P> <Up>
+
 " Insert Mode {{{2
 " Delete forward in insert mode
 inoremap <C-l> <Del>
@@ -226,3 +228,6 @@ let g:syntastic_aggregate_errors = 1
 " Ack {{{2
 " Use the_silver_searcher (Ag) instead of ack
 let g:ackprg='ag'
+
+" vim-latex {{{2
+let g:latex_view_general_viewer = 'open'
