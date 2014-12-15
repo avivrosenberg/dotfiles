@@ -219,5 +219,4 @@ let g:syntastic_aggregate_errors = 1
 " Use the_silver_searcher (Ag) instead of ack
 let g:ackprg='ag'
 
-" vim-latex {{{2
-let g:latex_view_general_viewer = 'open'
+

@@ -122,9 +122,6 @@
 	path = vim.symlink/bundle/gitv
 	url = git@github.com:gregsexton/gitv.git
     ignore = dirty
-[submodule "vim.symlink/bundle/vim-latex"]
-	path = vim.symlink/bundle/vim-latex
-	url = git@github.com:lervag/vim-latex.git
 [submodule "vim.symlink/bundle/delimitMate"]
 	path = vim.symlink/bundle/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
