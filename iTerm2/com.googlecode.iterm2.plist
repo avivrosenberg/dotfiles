@@ -468,7 +468,7 @@
 	<key>FocusFollowsMouse</key>
 	<false/>
 	<key>FsTabDelay</key>
-	<real>2.0418293476104736</real>
+	<real>0.58859050273895264</real>
 	<key>GlobalKeyMap</key>
 	<dict>
 		<key>0x54-0x120000</key>
@@ -631,7 +631,7 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1358 159 445 270 0 0 1920 1178 </string>
+	<string>744 0 445 270 0 0 1280 800 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>222 266 924 485 0 0 1280 800 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
@@ -639,7 +639,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 194 592 584 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>131 73 1010 576 0 0 1280 778 </string>
+	<string>131 73 810 476 0 0 1280 778 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2660,11 +2660,11 @@
 			<key>Name</key>
 			<string>Solarized Dark</string>
 			<key>Non Ascii Font</key>
-			<string>MesloLGM-RegularForPowerline 16</string>
+			<string>SauceCodePowerline-Regular 13</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MesloLGM-RegularForPowerline 16</string>
+			<string>SauceCodePowerline-Regular 13</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -3392,11 +3392,11 @@
 			<key>Name</key>
 			<string>Solarized Light</string>
 			<key>Non Ascii Font</key>
-			<string>MesloLGM-RegularForPowerline 16</string>
+			<string>SauceCodePowerline-Regular 13</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MesloLGM-RegularForPowerline 16</string>
+			<string>SauceCodePowerline-Regular 13</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -3639,7 +3639,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-11-21T14:48:27Z</date>
+	<date>2014-12-28T02:22:17Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
