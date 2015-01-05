@@ -1,3 +1,5 @@
+# vim: filetype=gitconfig
+
 [user]
 	name = Aviv Rosenberg
 	email = aviv.rosenberg@gmail.com
@@ -27,10 +29,16 @@
     ll    = log --oneline
     rb    = rebase
     rbi   = rebase --interactive
-    files = !git status --short | tr -s ' ' | cut -d ' ' -f3- # all modified files, including staged
-    vi    = !vim $(git files) # run vim with modified files
-    vst   = !vim $(git files) -c 'Gstatus|only' #requires fugitive-vim
+
+    # remove a submodule in one command
     rmsm  = "!f(){ git rm --cached \"$1\";rm -r \"$1\";git config -f .gitmodules --remove-section \"submodule.$1\";git config -f .git/config --remove-section \"submodule.$1\";git add .gitmodules; }; f"
+
+    # load vim with modified files in buffers (for completion)
+    vi    = !vim $(git modified) # run vim with modified modified
+    vst   = !vim $(git modified) -c 'Gstatus|only' #requires fugitive-vim
+
+    # Print all modified files (staged, unstaged, untracked), excluding deleted files. In case of rename, take new name.
+    modified = !git status --short | sed -En 's/^[ MARCU?]{2}[[:space:]]+//p' | sed -E 's/.*->[[:space:]]+//'
 
 [diff]
 	tool = meld
