@@ -35,7 +35,8 @@
 
     # load vim with modified files in buffers (for completion)
     vi    = !vim $(git modified) # run vim with modified modified
-    vst   = !vim $(git modified) -c 'Gstatus|only' #requires fugitive-vim
+    vst   = !vim $(git modified) -c 'Gstatus' -c 'only' #requires vim-fugitive
+    vct   = !vim $(git modified) -c 'Gcommit' -c 'only' #requires vim-fugitive
 
     # Print all modified files (staged, unstaged, untracked), excluding deleted files. In case of rename, take new name.
     modified = !git status --short | sed -En 's/^[ MARCU?]{2}[[:space:]]+//p' | sed -E 's/.*->[[:space:]]+//'
