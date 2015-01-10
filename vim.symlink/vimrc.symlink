@@ -152,6 +152,10 @@ nnoremap <silent> <Leader>ft :CtrlPTag<CR>
 nnoremap <silent> <Leader>fT :CtrlPBufTag<CR>
 nnoremap <silent> <Leader>fd :CtrlPDir<CR>
 
+" Whitespace removal {{{2
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap _= :call Preserve("normal gg=G")<CR>
+
 " Plugin Customizations {{{1
 
 " Ruby Completion {{{2
@@ -232,3 +236,18 @@ map <silent> <Leader>ls :silent
         \ !/Applications/Skim.app/Contents/SharedSupport/displayline
         \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>"
         \ "%:p" <CR>
+
+" Custom VIM functions {{{1
+
+" preserve: save state and execute command {{{2
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction 
