@@ -146,7 +146,7 @@ nnoremap <Leader>lq :copen<CR>
 nnoremap <Leader>ll :lopen<CR>
 
 " CtrlP {{{2
-nnoremap <silent> <Leader>ff :CtrlPMixed<CR>
+nnoremap <silent> <Leader>ff :CtrlP<CR>
 nnoremap <silent> <Leader>fb :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>ft :CtrlPTag<CR>
 nnoremap <silent> <Leader>fT :CtrlPBufTag<CR>
