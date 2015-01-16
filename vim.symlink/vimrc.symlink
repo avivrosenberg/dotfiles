@@ -171,7 +171,7 @@ autocmd User fugitive
   \   nnoremap <buffer> .. :edit %:h<CR> |
   \ endif
 " Delete fugitive buffers on exit
-autocmd BufReadPost fugitive://* set bufhidden=delete
+autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
 
 " Gitv {{{2
 let g:Gitv_WipeAllOnClose = 1
