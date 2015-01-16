@@ -148,8 +148,8 @@ nnoremap <Leader>ll :lopen<CR>
 " CtrlP {{{2
 nnoremap <silent> <Leader>ff :CtrlP<CR>
 nnoremap <silent> <Leader>fb :CtrlPBuffer<CR>
-nnoremap <silent> <Leader>ft :CtrlPTag<CR>
-nnoremap <silent> <Leader>fT :CtrlPBufTag<CR>
+nnoremap <silent> <Leader>fT :CtrlPTag<CR>
+nnoremap <silent> <Leader>ft :CtrlPBufTag<CR>
 nnoremap <silent> <Leader>fd :CtrlPDir<CR>
 
 " Whitespace removal {{{2
