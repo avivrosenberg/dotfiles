@@ -97,8 +97,12 @@ hi clear CursorLineNr " fixes the ugly yellow default line number color
 
 " Key Mappings {{{1 
 " Searching {{{2
+
+" Search with very-magic by default
 noremap / /\v
 noremap ? ?\v
+
+" If using CTRL-/ and CTRL-?, use very-nomagic
 noremap <C-_> /\V
 noremap <C-?> ?\V
 

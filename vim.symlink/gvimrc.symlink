@@ -6,4 +6,5 @@ set guioptions-=rL " No scollbars
 " Powerline fonts
 " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h16
 " set guifont=Meslo\ LG\ M\ for\ Powerline:h16
+" set guifont=Terminus\ (TTF):h16
 set guifont=Source\ Code\ Pro\ for\ Powerline:h13
