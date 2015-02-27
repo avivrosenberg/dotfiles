@@ -18,7 +18,7 @@ def brew_updated
   Homebrew.update
 
   # Call homebrew internal function to get number of outdated brews
-  num_outdated = Homebrew.outdated_brews.length
+  num_outdated = Homebrew.outdated_brews(Formula.installed).length
 
   # Print outdated brews
   if num_outdated > 0
