@@ -11,3 +11,8 @@ plugins=(git osx ruby brew rvm gem rake themes vim-interaction tmuxinator)
 
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+### custom settings
+# Map C-N and C-P to search history (like up/down)
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
