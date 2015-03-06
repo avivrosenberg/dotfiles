@@ -243,6 +243,12 @@ map <silent> <Leader>ls :silent
         \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>"
         \ "%:p" <CR>
 
+" UltiSnips {{{2
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEnableSnipMate = 0 " Disable snipMate snippets
+
 " Custom VIM functions {{{1
 
 " preserve: save state and execute command {{{2
