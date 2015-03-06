@@ -3,32 +3,63 @@ snippet pry
 require 'pry'; binding.pry
 endsnippet
 
-snippet reqr
+snippet reqr "require_relative ..." b
 require_relative "${1}"
 endsnippet
 
-snippet logd
-logger.debug(${1:LOGTAG}) { ${2:expression} }
+snippet logd "logger.debug(...) { ... }"
+logger.debug(${1:LOGTAG}) { ${2:${VISUAL:# expression}} }
 endsnippet
 
-snippet logi
-logger.info(${1:LOGTAG}) { ${2:expression} }
+snippet logi "logger.info(...) { ... }"
+logger.info(${1:LOGTAG}) { ${2:${VISUAL:# expression}} }
 endsnippet
 
-snippet logw
-logger.warn(${1:LOGTAG}) { ${2:expression} }
+snippet logw "logger.warn(...) { ... }"
+logger.warn(${1:LOGTAG}) { ${2:${VISUAL:# expression}} }
 endsnippet
 
-snippet loge
-logger.error(${1:LOGTAG}) { ${2:expression} }
+snippet loge "logger.error(...) { ... }"
+logger.error(${1:LOGTAG}) { ${2:${VISUAL:# expression}} }
 endsnippet
 
-snippet logf
-logger.fatal(${1:LOGTAG}) { ${2:expression} }
+snippet logf "logger.fatal(...) { ... }"
+logger.fatal(${1:LOGTAG}) { ${2:${VISUAL:# expression}} }
 endsnippet
 
-snippet defi
-def initialize(${1:opts})
-	${2}
-end
+snippet "\b(assert|as)" "assert <test>, <message>" r
+assert(${1:test}${2:, "${3:message}"})
 endsnippet
+
+snippet "\b(assert|ase)" "assert_equal <expected>, <actual>, <message>" r
+assert_equal(${1:expected}, ${2:actual}${3:, "${4:message}"})
+endsnippet
+
+snippet "\b(assert|asm)" "assert_match /<regex>/, <obj>, <message>" r
+assert_match(/${1:regex}/, ${2:obj}${3:, "${4:message}"})
+endsnippet
+
+snippet "\b(assert|asn)" "assert_nil <obj>, <message>" r
+assert_nil(${1:test}${2:, "${3:message}"})
+endsnippet
+
+snippet "\b(assert|asr)" "assert_raises(*exp) { ... }" r
+assert_raises(${1:RuntimeError}) { ${2:expression} }
+endsnippet
+
+snippet "\b(refute|ref)" "refute <test>, <message>" r
+refute(${1:test}${2:, "${3:message}"})
+endsnippet
+
+snippet "\b(refute|refe)" "refute_equal <expected>, <actual>, <message>" r
+refute_equal(${1:expected}, ${2:actual}${3:, "${4:message}"})
+endsnippet
+
+snippet "\b(refute|refm)" "refute_match /<regex>/, <obj>, <message>" r
+refute_match(/${1:regex}/, ${2:obj}${3:, "${4:message}"})
+endsnippet
+
+snippet "\b(refute|refn)" "refute_nil <obj>, <message>" r
+refute_nil(${1:test}${2:, "${3:message}"})
+endsnippet
+
