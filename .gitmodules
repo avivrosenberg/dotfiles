@@ -18,10 +18,6 @@
     path = vim.symlink/bundle/nerdtree.vim
     url = https://github.com/scrooloose/nerdtree.git
     ignore = dirty
-[submodule "vim.symlink/bundle/snipmate.vim"]
-    path = vim.symlink/bundle/snipmate.vim
-    url = https://github.com/msanders/snipmate.vim.git
-    ignore = dirty
 [submodule "vim.symlink/bundle/vim-colors-solarized"]
     path = vim.symlink/bundle/vim-colors-solarized
     url = https://github.com/altercation/vim-colors-solarized.git
