@@ -124,3 +124,6 @@
 [submodule "vim.symlink/bundle/LaTeX-Box"]
 	path = vim.symlink/bundle/LaTeX-Box
 	url = git@github.com:LaTeX-Box-Team/LaTeX-Box.git
+[submodule "vim.symlink/bundle/ultisnips"]
+	path = vim.symlink/bundle/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
