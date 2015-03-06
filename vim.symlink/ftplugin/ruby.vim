@@ -12,3 +12,6 @@ nmap <buffer> <F5> :w<CR>:!cd . && ruby %<CR>
 if executable('ripper-tags')
     nnoremap <buffer> <Leader>T :!ripper-tags -R --exclude=vendor<CR>
 endif
+
+" Spell checking (the vim-ruby plugin makes sure this only affect comments)
+setlocal spell
