@@ -93,11 +93,11 @@ endif
 
 " Colors {{{2
 set background=dark
-colorscheme solarized                
+colorscheme solarized
 hi clear CursorLineNr " fixes the ugly yellow default line number color
 
 
-" Key Mappings {{{1 
+" Key Mappings {{{1
 " Searching {{{2
 
 " Search with very-magic by default
@@ -186,7 +186,7 @@ let g:Gitv_DoNotMapCtrlKey = 1
 " Airline {{{2
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#tagbar#enabled = 0
 
 " Tagbar {{{2
@@ -256,4 +256,4 @@ function! Preserve(command)
   " Clean up: restore previous search history, and cursor position
   let @/=_s
   call cursor(l, c)
-endfunction 
+endfunction
