@@ -35,9 +35,15 @@ set spelllang=en_us                     " language for spell checking
 set clipboard=unnamed                   " copy to system clipboard if no register specified
 set scrolloff=2                         " keep a few lines visible when scrolling at the top/bottom
 set ttimeoutlen=50                      " key chord timeout length - speeds up transiton from visual to normal mode
+
+" Leader Key definition {{{2
 let mapleader = ","                     " define leader key for custom mappings, and remap default to comma
 let maplocalleader = ","                " leader key for mappings which are local to a buffer
 noremap \ ,
+
+" Invisible characters {{{2
+set encoding=utf-8
+set listchars=tab:▸•,eol:¬,trail:•,extends:»,precedes:«,nbsp:¬
 
 " Disable error bells {{{2
 set noerrorbells visualbell t_vb=
