@@ -27,12 +27,32 @@ snippet logf "logger.fatal(...) { ... }"
 logger.fatal(${1:LOGTAG}) { ${2:${VISUAL:# expression}} }
 endsnippet
 
+snippet deft "def test_<name> ... end" w
+def test_${1:name}
+	$0
+end
+endsnippet
+
+snippet classt "class TestXXX < Minitest::Test ... def setup ..." b
+class Test${1:FunctionName} < Minitest::Test
+
+	def setup
+		$2
+	end
+	$0
+end
+endsnippet
+
 snippet "\b(assert|as)" "assert <test>, <message>" r
 assert(${1:test}${2:, "${3:message}"})
 endsnippet
 
 snippet "\b(assert|ase)" "assert_equal <expected>, <actual>, <message>" r
 assert_equal(${1:expected}, ${2:actual}${3:, "${4:message}"})
+endsnippet
+
+snippet "\b(assert|asem)" "assert_empty <obj>, <message>" r
+assert_empty(${1:obj}${2:, "${3:message}"})
 endsnippet
 
 snippet "\b(assert|asm)" "assert_match /<regex>/, <obj>, <message>" r
@@ -47,12 +67,24 @@ snippet "\b(assert|asr)" "assert_raises(*exp) { ... }" r
 assert_raises(${1:RuntimeError}) { ${2:expression} }
 endsnippet
 
+snippet "\b(assert|ask)" "assert_kind_of(<Class>, <obj>, <message>)" r
+assert_kind_of(${1:Class}, ${2:obj}${3:, "${4:message}"})
+endsnippet
+
+snippet "\b(assert|asi)" "assert_instance_of(<Class>, <obj>, <message>)" r
+assert_instance_of(${1:Class}, ${2:obj}${3:, "${4:message}"})
+endsnippet
+
 snippet "\b(refute|ref)" "refute <test>, <message>" r
 refute(${1:test}${2:, "${3:message}"})
 endsnippet
 
 snippet "\b(refute|refe)" "refute_equal <expected>, <actual>, <message>" r
 refute_equal(${1:expected}, ${2:actual}${3:, "${4:message}"})
+endsnippet
+
+snippet "\b(refute|refem)" "refute_empty <obj>, <message>" r
+refute_empty(${1:obj}${2:, "${3:message}"})
 endsnippet
 
 snippet "\b(refute|refm)" "refute_match /<regex>/, <obj>, <message>" r
@@ -63,3 +95,10 @@ snippet "\b(refute|refn)" "refute_nil <obj>, <message>" r
 refute_nil(${1:test}${2:, "${3:message}"})
 endsnippet
 
+snippet "\b(refute|refk)" "refute_kind_of(<Class>, <obj>, <message>)" r
+refute_kind_of(${1:Class}, ${2:obj}${3:, "${4:message}"})
+endsnippet
+
+snippet "\b(refute|refi)" "refute_instance_of(<Class>, <obj>, <message>)" r
+refute_instance_of(${1:Class}, ${2:obj}${3:, "${4:message}"})
+endsnippet
