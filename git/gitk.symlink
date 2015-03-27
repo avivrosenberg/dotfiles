@@ -1,5 +1,5 @@
-set mainfont {Menlo 15}
-set textfont {{DejaVu Sans Mono for Powerline} 14}
+set mainfont {{Source Code Pro for Powerline} 13}
+set textfont {{Source Code Pro for Powerline} 13}
 set uifont {{Lucida Grande} 13 bold}
 set tabstop 8
 set findmergefiles 0
@@ -11,22 +11,23 @@ set autoselect 1
 set autosellen 40
 set showneartags 1
 set maxrefs 20
+set visiblerefs {"master"}
 set hideremotes 0
 set showlocalchanges 1
 set datetimeformat {%Y-%m-%d %H:%M:%S}
 set limitdiffs 1
-set uicolor grey85
+set uicolor #e9e2cb
 set want_ttk 1
-set bgcolor #3f3f3f
-set fgcolor #dcdccc
+set bgcolor #022028
+set fgcolor #708183
 set uifgcolor black
 set uifgdisabledcolor #999
 set colors {#7f9f7f #cc9393 #8cd0d3 #dc8cc3 darkgrey brown #dfaf8f}
-set diffcolors {{#976c6c} #60b48a #8cd0d3}
+set diffcolors {{#cf1b23} #728924 #259185}
 set mergecolors {red blue green purple brown "#009090" magenta "#808000" "#009000" "#ff0080" cyan "#b07070" "#70b0f0" "#70f0b0" "#f0b070" "#ff70b0"}
-set markbgcolor #e0e0ff
+set markbgcolor #092832
 set diffcontext 7
-set selectbgcolor #506070
+set selectbgcolor #465a61
 set foundbgcolor yellow
 set currentsearchhitbgcolor orange
 set extdifftool meld
@@ -50,12 +51,12 @@ set indexcirclecolor green
 set circlecolors {white blue gray blue blue}
 set linkfgcolor blue
 set circleoutlinecolor black
-set geometry(main) 1276x756+-1276+1222
+set geometry(main) 1276x756+0+22
 set geometry(state) zoomed
 set geometry(topwidth) 1276
 set geometry(topheight) 421
 set geometry(pwsash0) "685 1"
-set geometry(pwsash1) "1070 1"
+set geometry(pwsash1) "1039 1"
 set geometry(botwidth) 801
 set geometry(botheight) 330
 set permviews {}
