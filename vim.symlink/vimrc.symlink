@@ -163,6 +163,7 @@ nnoremap <silent> <Leader>fb :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>fT :CtrlPTag<CR>
 nnoremap <silent> <Leader>ft :CtrlPBufTag<CR>
 nnoremap <silent> <Leader>fd :CtrlPDir<CR>
+nnoremap <silent> <Leader>fm :CtrlPMRU<CR>
 
 " Whitespace removal {{{2
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
