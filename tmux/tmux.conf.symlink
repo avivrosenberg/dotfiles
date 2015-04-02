@@ -71,5 +71,6 @@ set -g mouse-resize-pane on
 set -g mouse-select-pane on
 set -g mouse-select-window on
 
-# source OSX-specific configuration if necessary
+# source OS-specific configuration if necessary
 if-shell 'test "$(uname -s)" = Darwin' 'source-file ~/.dotfiles/tmux/tmux-osx.conf'
+if-shell 'test "$(uname -s)" = Linux'  'source-file ~/.dotfiles/tmux/tmux-linux.conf'
