@@ -98,10 +98,17 @@ if !has('gui_running')
 endif
 
 " Colors {{{2
-set background=dark
+
+" Check if we're using a dark or light theme
+" This will only work on OSX with iTerm2, in other cases we'll default to
+" dark.
+if $ITERM_PROFILE =~ "[Ll]ight"
+    set background=light
+else
+    set background=dark
+endif
 colorscheme solarized
 hi clear CursorLineNr " fixes the ugly yellow default line number color
-
 
 " Key Mappings {{{1
 " Searching {{{2
