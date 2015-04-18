@@ -7,7 +7,7 @@ ZSH_THEME="philips"
 ZSH_CUSTOM=~/.dotfiles/zsh
 
 # plugins for oh-my-zsh
-plugins=(git osx ruby brew rvm gem rake themes vim-interaction tmuxinator)
+plugins=(git osx ruby brew rvm themes tmuxinator iterm2_profile)
 
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
