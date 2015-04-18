@@ -1,27 +1,32 @@
+# OSX Specific
 if [[ "$OSTYPE" = darwin* ]] ; then
 
-  function bg_dark() {
-    iterm2_profile "Solarized Dark"
-    update_tmux_colors
-  }
+  # These functions rely on the 'iterm2_profile' zsh function (plugin)
+  if [[ "$(type iterm2_profile)" =~ "function" ]]; then
 
-  function bg_light() {
-    iterm2_profile "Solarized Light"
-    update_tmux_colors
-  }
+    function bg_dark() {
+      iterm2_profile "Solarized Dark"
+      update_tmux_colors
+    }
 
-  function update_tmux_colors() {
-    if [[ -n $TMUX ]]; then
-      local tmux_file=''
+    function bg_light() {
+      iterm2_profile "Solarized Light"
+      update_tmux_colors
+    }
 
-      if [[ "$ITERM_PROFILE" =~ "[Ll]ight" ]]; then
-        tmux_file="$DOTFILES/tmux/airline-colors-light.conf"
-      else
-        tmux_file="$DOTFILES/tmux/airline-colors-dark.conf"
+    function update_tmux_colors() {
+      if [[ -n $TMUX ]]; then
+        local tmux_file=''
+
+        if [[ "$ITERM_PROFILE" =~ "[Ll]ight" ]]; then
+          tmux_file="$DOTFILES/tmux/airline-colors-light.conf"
+        else
+          tmux_file="$DOTFILES/tmux/airline-colors-dark.conf"
+        fi
+
+        tmux source-file "$tmux_file" > /dev/null
       fi
+    }
 
-      tmux source-file "$tmux_file" > /dev/null
-    fi
-  }
-
+  fi
 fi
