@@ -57,7 +57,7 @@ bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
 
 # colors
-source-file ~/.dotfiles/tmux/airline-colors.conf
+source-file ~/.dotfiles/tmux/airline-colors-dark.conf
 
 # disable automatic renaming
 set-window-option -g allow-rename off
