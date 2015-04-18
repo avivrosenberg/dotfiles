@@ -18,7 +18,7 @@ function iterm2_profile() {
   # so that the iTerm2 escape code is passed on into iTerm2.
   local prefix=''
   local suffix=''
-  if [[ $TMUX ]]; then
+  if [[ -n $TMUX ]]; then
     prefix='\033Ptmux;\033'
     suffix='\033\\'
   fi
