@@ -29,6 +29,7 @@
     ll    = log --oneline
     rb    = rebase
     rbi   = rebase --interactive
+    su    = submodule update --init
 
     # remove a submodule in one command
     rmsm  = "!f(){ git rm --cached \"$1\";rm -r \"$1\";git config -f .gitmodules --remove-section \"submodule.$1\";git config -f .git/config --remove-section \"submodule.$1\";git add .gitmodules; }; f"
