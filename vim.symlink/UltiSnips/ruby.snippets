@@ -79,6 +79,10 @@ snippet "\b(assert|asi)" "assert_instance_of(<Class>, <obj>, <message>)" r
 assert_instance_of(${1:Class}, ${2:obj}${3:, "${4:message}"})
 endsnippet
 
+snippet "\b(assert|asd)" "assert_in_delta(<expected>, <actual>, <delta>, <message>)" r
+assert_in_delta(${1:expected}, ${2:actual}, ${3:0.001}${4:, "${5:message}"})
+endsnippet
+
 snippet "\b(refute|ref)" "refute <test>, <message>" r
 refute(${1:test}${2:, "${3:message}"})
 endsnippet
@@ -105,4 +109,8 @@ endsnippet
 
 snippet "\b(refute|refi)" "refute_instance_of(<Class>, <obj>, <message>)" r
 refute_instance_of(${1:Class}, ${2:obj}${3:, "${4:message}"})
+endsnippet
+
+snippet "\b(refute|refd)" "refute_in_delta(<expected>, <actual>, <delta>, <message>)" r
+refute_in_delta(${1:expected}, ${2:actual}, ${3:0.001}${4:, "${5:message}"})
 endsnippet
