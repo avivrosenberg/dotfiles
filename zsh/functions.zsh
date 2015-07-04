@@ -1,8 +1,8 @@
 # OSX Specific
-if [[ "$OSTYPE" = darwin* ]] ; then
+if [[ "$OSTYPE" == darwin* ]] ; then
 
-  # These functions rely on the 'iterm2_profile' zsh function (plugin)
-  if [[ "$(type iterm2_profile)" =~ "function" ]]; then
+  # These functions rely on the 'iterm2' zsh plugin
+  if [[ "$plugins" =~ "iterm2" ]]; then
 
     function bg_dark() {
       iterm2_profile "Solarized Dark"
