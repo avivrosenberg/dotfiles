@@ -1,0 +1,24 @@
+# ~/.tmuxinator/matlab.yml
+
+name: matlab
+root: ~/dev/MATLAB/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: PATH=$PATH:/Applications/MATLAB_R2015a.app/bin/maci64/
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rvm use default@global
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+tmux_options: -u2
+
+windows:
+    - matlab-cmd:
+        layout: main-horizontal
+        panes:
+            - if [[ -z "$(git modified)" ]]; then vim; else git vst; fi
+            - /Applications/MATLAB_R2015a.app/bin/matlab -nosplash -nodesktop
