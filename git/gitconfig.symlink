@@ -43,16 +43,15 @@
     modified = !git status --short | sed -En 's/^[ MARCU?]{2}[[:space:]]+//p' | sed -E 's/.*->[[:space:]]+//'
 
 [diff]
-	tool = meld
+	tool = vimdiff
 [difftool]
     prompt = false
 [difftool "meld"]
     #meld with redirected stdout(1) and stderr(2) to /dev/null
-    cmd = meld \
-          "$LOCAL" "$REMOTE" > /dev/null 2>&1
+    cmd = meld "$LOCAL" "$REMOTE" > /dev/null 2>&1
 
 [merge]
-	tool = meld
+	tool = vimdiff
 [mergetool]
     prompt = false
     keepBackup = false
@@ -69,3 +68,7 @@
 	enabled = true
 [credential]
 	helper = cache
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
