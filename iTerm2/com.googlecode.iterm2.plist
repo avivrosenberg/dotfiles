@@ -624,22 +624,22 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>302</string>
+		<string>287</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>744 0 445 270 0 0 1280 800 </string>
+	<string>491 228 648 213 0 0 1280 800 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>222 266 924 485 0 0 1280 800 </string>
+	<string>287 172 924 485 0 0 1280 800 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>448 487 384 129 0 0 1280 778 </string>
+	<string>448 503 384 129 0 0 1280 800 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 194 592 584 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>131 73 810 476 0 0 1280 778 </string>
+	<string>131 73 810 476 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2660,7 +2660,7 @@
 			<key>Name</key>
 			<string>Solarized Dark</string>
 			<key>Non Ascii Font</key>
-			<string>SauceCodePowerline-Regular 13</string>
+			<string>SauceCodePowerline-Medium 13</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
@@ -3573,10 +3573,14 @@
 	</array>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>453581756.190808</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>458340608.62060702</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
-	<true/>
+	<false/>
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
@@ -3639,7 +3643,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-12-28T02:22:17Z</date>
+	<date>2015-07-12T21:17:09Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -5300,6 +5304,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20141103</string>
+	<string>2.1.1</string>
 </dict>
 </plist>
