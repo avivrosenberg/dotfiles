@@ -16,3 +16,6 @@ source $ZSH/oh-my-zsh.sh
 # Map C-N and C-P to search history (like up/down)
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
+
+# Enable zmv command
+autoload -U zmv

@@ -17,3 +17,6 @@ alias pgstop='pg_ctl stop -s -m fast'
 
 # tmux
 alias tmux='tmux -u2'
+
+# zmv
+alias mmv='noglob zmv -W'
