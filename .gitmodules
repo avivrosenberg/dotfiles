@@ -136,3 +136,6 @@
 [submodule "vim.symlink/bundle/AnsiEsc.vim"]
 	path = vim.symlink/bundle/AnsiEsc.vim
 	url = git@github.com:vim-scripts/AnsiEsc.vim.git
+[submodule "vim.symlink/bundle/rust.vim"]
+	path = vim.symlink/bundle/rust.vim
+	url = git@github.com:rust-lang/rust.vim.git
