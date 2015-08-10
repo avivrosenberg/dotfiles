@@ -2,9 +2,9 @@
 ## Aliases
 
 # shell aliases
-alias l='ls -FG'
-alias ll='ls -lFG'
-alias la='ls -laFG'
+alias l='ls -hFG'
+alias ll='ls -lhFG'
+alias la='ls -lhaFG'
 
 # common typos
 alias gti='git'
