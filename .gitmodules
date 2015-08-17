@@ -142,3 +142,6 @@
 [submodule "vim.symlink/bundle/racer"]
 	path = vim.symlink/bundle/racer
 	url = git@github.com:phildawes/racer.git
+[submodule "vim.symlink/bundle/YouCompleteMe"]
+	path = vim.symlink/bundle/YouCompleteMe
+	url = git@github.com:Valloric/YouCompleteMe.git
