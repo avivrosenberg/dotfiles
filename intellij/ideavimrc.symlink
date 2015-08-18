@@ -1,0 +1,33 @@
+" vim: set ft=vim
+
+" For some reason the leader change doesn't get picked up from ~/.vimrc
+let mapleader = ","
+
+" Source all regular vim settings
+source ~/.vimrc
+
+" Cancel mappings for / and ? as they don't work properly in intelliJ
+noremap / /
+noremap ? ?
+
+" Exchange
+noremap ]e ddp
+noremap ]e ddp
+
+" IDE Features mapping
+noremap <leader>rt :action Refactorings.QuickListPopupAction<CR>
+noremap <leader>ff :action GotoFile<CR>
+noremap <leader>ft :action GotoSymbol<CR>
+noremap <leader>fT :action GotoClass<CR>
+noremap <leader>gi :action GotoImplementation<CR>
+noremap <leader>gI :action GotoSuperMethod<CR>
+
+noremap ]q :action GotoNextError<CR>
+noremap [q :action GotoPreviousError<CR>
+
+nnoremap gw :action EditorNextWordInDifferentHumpsMode<CR>
+nnoremap gb :action EditorPreviousWordInDifferentHumpsMode<CR>
+
+vnoremap gw :action EditorNextWordInDifferentHumpsModeWithSelection<CR>
+vnoremap gb :action EditorPreviousWordInDifferentHumpsModeWithSelection<CR>
+
