@@ -258,9 +258,9 @@ map <silent> <Leader>ls :silent
         \ "%:p" <CR>
 
 " UltiSnips {{{2
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEnableSnipMate = 0 " Disable snipMate snippets
 
 " vim-matlab {{{2
@@ -268,29 +268,6 @@ let g:mlint_path_to_mlint = "/Applications/MATLAB_R2015a.app/bin/maci64/mlint"
 
 " racer {{{2
 let $RUST_SRC_PATH=expand("~/dev/rust/rust/src/")
-
-" Eclim {{{2
-let g:EclimCompletionMethod = 'omnifunc'
-
-" YCM {{{2
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-let g:ycm_filetype_blacklist = {
-    \ 'gitcommit' : 1,
-    \ 'gitrebase' : 1,
-    \ 'tagbar' : 1,
-    \ 'qf' : 1,
-    \ 'notes' : 1,
-    \ 'markdown' : 1,
-    \ 'unite' : 1,
-    \ 'text' : 1,
-    \ 'vimwiki' : 1,
-    \ 'pandoc' : 1,
-    \ 'infolog' : 1,
-    \ 'mail' : 1
-    \}
 
 " Custom VIM functions {{{1
 
