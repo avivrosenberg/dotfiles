@@ -639,7 +639,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 194 592 584 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>131 73 810 476 0 0 1280 777 </string>
+	<string>0 73 810 476 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3576,7 +3576,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453581756.190808</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>458340608.62060702</real>
+	<real>465750987.886208</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -3643,7 +3643,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-07-12T21:17:09Z</date>
+	<date>2015-10-07T09:17:28Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -3687,7 +3687,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>.Lucida Grande UI</string>
+	<string>.Helvetica Neue DeskInterface</string>
 	<key>Window Arrangements</key>
 	<dict>
 		<key>Arrangement 2</key>
