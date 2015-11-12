@@ -139,3 +139,6 @@
 [submodule "vim.symlink/bundle/racer"]
 	path = vim.symlink/bundle/racer
 	url = git@github.com:phildawes/racer.git
+[submodule "vim.symlink/bundle/vimtex"]
+	path = vim.symlink/bundle/vimtex
+	url = git@github.com:lervag/vimtex.git
