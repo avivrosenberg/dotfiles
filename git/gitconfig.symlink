@@ -42,6 +42,9 @@
     # Print all modified files (staged, unstaged, untracked), excluding deleted files. In case of rename, take new name.
     modified = !git status --short | sed -En 's/^[ MARCU?]{2}[[:space:]]+//p' | sed -E 's/.*->[[:space:]]+//'
 
+    # Create gitignore file with gitignore.io API
+    ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+
 [diff]
 	tool = vimdiff
 [difftool]
