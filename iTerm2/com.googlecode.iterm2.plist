@@ -624,7 +624,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>287</string>
+		<string>319</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -633,13 +633,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>491 228 648 213 0 0 1280 800 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>287 172 924 485 0 0 1280 800 </string>
+	<string>599 364 924 485 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>448 503 384 129 0 0 1280 800 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 194 592 584 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 73 810 476 0 0 1920 1057 </string>
+	<string>0 73 810 476 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2666,7 +2666,7 @@
 			<key>Normal Font</key>
 			<string>SauceCodePowerline-Regular 13</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>0</integer>
 			<key>Right Option Key Sends</key>
@@ -3398,7 +3398,7 @@
 			<key>Normal Font</key>
 			<string>SauceCodePowerline-Regular 13</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>0</integer>
 			<key>Right Option Key Sends</key>
@@ -3576,7 +3576,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453581756.190808</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>465750987.886208</real>
+	<real>468315136.60253</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -3639,11 +3639,11 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>http://iterm2.com/appcasts/testing.xml</string>
+	<string>https://iterm2.com/appcasts/testing.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-10-07T09:17:28Z</date>
+	<date>2015-11-04T04:16:49Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -5304,6 +5304,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.1.1</string>
+	<string>2.1.4</string>
 </dict>
 </plist>
