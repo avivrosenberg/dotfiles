@@ -1,7 +1,7 @@
 # ~/.tmuxinator/mobi.yml
 
 name: mobi
-root: ~/dev/mobiwize/mw-server/mw-maptools/
+root: ~/dev/mobiwize/mw-server/
 
 # Optional tmux socket
 # socket_name: foo
@@ -10,7 +10,7 @@ root: ~/dev/mobiwize/mw-server/mw-maptools/
 pre: pg_ctl -l $PGDATA/server.log start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: rvm use @mwmt
+pre_window: rvm default
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -20,11 +20,21 @@ tmux_options: -u2
 # tmux_command: byobu
 
 windows:
-    - zsh:
+    - shell:
         layout: main-horizontal
+        panes:
+            - pwd && git status
+    - mw-maptools:
+        root: ~/dev/mobiwize/mw-server/mw-maptools/
+        panes:
+            - if [[ -z "$(git modified)" ]]; then vim; else git vst; fi
+    - mw-server:
+        root: ~/dev/mobiwize/mw-server/mw-server/
         panes:
             -
             - top -o cpu -stats pid,command,cpu,mem,time,user,th,pstate -U aviv 
-    - vim: if [[ -z "$(git modified)" ]]; then vim; else git vst; fi
+    - pry:
+        root: ~/dev/mobiwize/mw-server/mw-maptools/
+        panes:
+            - pry -I lib -r 'mw_maptools'
     - sql: psql -U mobidba -d mwmap_dev
-    - pry: pry -I lib -r 'mw_maptools'

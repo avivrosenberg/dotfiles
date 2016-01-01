@@ -21,4 +21,4 @@ windows:
         layout: main-horizontal
         panes:
             - if [[ -z "$(git modified)" ]]; then vim; else git vst; fi
-            - /Applications/MATLAB_R2015a.app/bin/matlab -nosplash -nodesktop
+            - /Applications/MATLAB_R2015b.app/bin/matlab -nosplash -nodesktop
