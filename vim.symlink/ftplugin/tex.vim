@@ -8,3 +8,5 @@ nnoremap <buffer> k gk
 nnoremap <buffer> $ g$
 nnoremap <buffer> ^ g^
 
+" Add '$' to quote symbols for delimitMate (so that $ -> $$)
+let b:delimitMate_quotes = "\" ' $"
