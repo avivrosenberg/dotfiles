@@ -24,7 +24,7 @@ windows:
     - thesis-edit:
         root: ~/Google Drive/Documents/Technion II/Thesis/tex/thesis
         panes:
-            - vim thesis.tex -c "NERDTreeToggle"
+            - vim main.tex -c "NERDTreeToggle"
     - matlab:
         root: ~/dev/MATLAB/Technion/MasterThesis/
         panes:
