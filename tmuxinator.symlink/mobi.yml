@@ -38,3 +38,8 @@ windows:
         panes:
             - pry -I lib -r 'mw_maptools'
     - sql: psql -U mobidba -d mwmap_dev
+    - redis:
+        layout: main-horizontal
+        panes:
+            - redis-server /usr/local/etc/redis.conf
+            - redis-cli
