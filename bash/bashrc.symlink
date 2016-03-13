@@ -11,6 +11,7 @@ PS1='\u@\h: \W$(__git_ps1 "(%s)")$ '
 alias l='ls -FG'
 alias ll='ls -lFG'
 alias la='ls -laFG'
+alias gw='./gradlew --daemon --parallel'
 #common typos
 alias gti='git'
 alias mvmi='mvim'
