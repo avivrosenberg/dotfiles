@@ -25,3 +25,6 @@ QRS
 PhysioNet
 rqrs
 gqrs
+periodogram
+Scargle
+resampling
