@@ -122,3 +122,6 @@
 [submodule "vim.symlink/bundle/vimtex"]
 	path = vim.symlink/bundle/vimtex
 	url = git@github.com:lervag/vimtex.git
+[submodule "vim.symlink/bundle/vim-vinegar"]
+	path = vim.symlink/bundle/vim-vinegar
+	url = git@github.com:tpope/vim-vinegar.git
