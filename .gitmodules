@@ -38,29 +38,13 @@
     path = vim.symlink/bundle/vim-markdown
     url = https://github.com/plasticboy/vim-markdown.git
     ignore = dirty
-[submodule "vim.symlink/bundle/vim-rvm"]
-    path = vim.symlink/bundle/vim-rvm
-    url = https://github.com/tpope/vim-rvm.git
-    ignore = dirty
 [submodule "vim.symlink/bundle/vim-abolish"]
     path = vim.symlink/bundle/vim-abolish
     url = https://github.com/tpope/vim-abolish.git
     ignore = dirty
-[submodule "vim.symlink/bundle/vim-bundler"]
-    path = vim.symlink/bundle/vim-bundler
-    url = https://github.com/tpope/vim-bundler.git
-    ignore = dirty
-[submodule "vim.symlink/bundle/vim-rails"]
-    path = vim.symlink/bundle/vim-rails
-    url = https://github.com/tpope/vim-rails.git
-    ignore = dirty
 [submodule "vim.symlink/bundle/vim-endwise"]
     path = vim.symlink/bundle/vim-endwise
     url = https://github.com/tpope/vim-endwise.git
-    ignore = dirty
-[submodule "vim.symlink/bundle/vim-rake"]
-    path = vim.symlink/bundle/vim-rake
-    url = https://github.com/tpope/vim-rake.git
     ignore = dirty
 [submodule "vim.symlink/bundle/ack.vim"]
     path = vim.symlink/bundle/ack.vim
@@ -113,10 +97,6 @@
 [submodule "vim.symlink/bundle/ctrlp.vim"]
 	path = vim.symlink/bundle/ctrlp.vim
 	url = git@github.com:kien/ctrlp.vim.git
-    ignore = dirty
-[submodule "vim.symlink/bundle/gitv"]
-	path = vim.symlink/bundle/gitv
-	url = git@github.com:gregsexton/gitv.git
     ignore = dirty
 [submodule "vim.symlink/bundle/delimitMate"]
 	path = vim.symlink/bundle/delimitMate
