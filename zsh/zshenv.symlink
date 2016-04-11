@@ -2,6 +2,7 @@
 ## Environment
 export EDITOR='vim'
 export DOTFILES=~/.dotfiles
+export LESS="-R -S"
 
 # prevent duplicates in PATH:
 # the zsh 'path' variable is an array and mirrors PATH, setting it to unique removes duplicate entries.
