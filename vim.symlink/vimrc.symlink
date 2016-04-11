@@ -176,6 +176,10 @@ nnoremap <silent> <Leader>fm :CtrlPMRU<CR>
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
 
+" Hebrew
+imap <f12> <c-o>:call ToggleHebrew()<cr>
+map <f12> :call ToggleHebrew()<cr>
+
 " Plugin Customizations {{{1
 
 " Ruby Completion {{{2
@@ -275,3 +279,13 @@ function! Preserve(command)
   call cursor(l, c)
 endfunction
 
+" Hebrew support
+func! ToggleHebrew()
+    if &rl
+        set norl
+        set keymap=
+    else
+        set rl
+        set keymap=hebrew
+    end
+endfunc
