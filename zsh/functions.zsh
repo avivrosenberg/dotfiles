@@ -30,3 +30,11 @@ if [[ "$OSTYPE" == darwin* ]] ; then
 
   fi
 fi
+
+###
+# Echos the full (absolute) path of a given input file
+function fullpath() {
+  if [ -d "$(dirname "$1")" ]; then
+    echo "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
+  fi
+}
