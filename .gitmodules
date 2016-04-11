@@ -121,3 +121,6 @@
 [submodule "vim.symlink/bundle/vim-vinegar"]
 	path = vim.symlink/bundle/vim-vinegar
 	url = git@github.com:tpope/vim-vinegar.git
+[submodule "vim.symlink/bundle/vim-airline-themes"]
+	path = vim.symlink/bundle/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
