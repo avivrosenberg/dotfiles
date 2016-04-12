@@ -138,10 +138,6 @@ cnoremap <C-P> <Up>
 inoremap <C-l> <Del>
 
 " Leader Key Mappings for plugins{{{2
-" NERDTree {{{3
-nmap <Leader>tt :NERDTreeToggle<CR>
-nmap <Leader>tf :NERDTreeFind<CR>
-
 " Fugitive {{{3
 nmap <Leader>gs :Gstatus<CR><C-W>K
 nmap <Leader>gS :Gstatus \| only<CR>
@@ -197,9 +193,6 @@ autocmd User fugitive
 " Delete fugitive buffers on exit
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
 
-" Gitv {{{2
-let g:Gitv_WipeAllOnClose = 1
-let g:Gitv_DoNotMapCtrlKey = 1
 
 " Airline {{{2
 let g:airline_powerline_fonts=1
@@ -246,7 +239,7 @@ let g:syntastic_aggregate_errors = 1
 
 " Ack {{{2
 " Use the_silver_searcher (Ag) instead of ack
-let g:ackprg='ag'
+let g:ackprg='ag --smart-case --silent --vimgrep'
 
 " VimTeX {{{2
 let g:tex_flavor = "latex"
