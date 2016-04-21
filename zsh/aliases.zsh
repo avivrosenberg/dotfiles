@@ -22,4 +22,5 @@ alias tmux='tmux -u2'
 alias mmv='noglob zmv -W'
 
 # gradle
-alias gw='./gradlew --daemon --parallel'
+alias gw='./gradlew --daemon'
+alias gwo='./gradlew --daemon --offline'
