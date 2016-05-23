@@ -1,6 +1,6 @@
 # JIRA issue ID
-snippet ji "SRVR-XXX" b
-SRVR-${1:IssueID}
+snippet ji "SRVR-XXXX" b
+SRVR-${1:`git symbolic-ref --short HEAD | sed -E -ne "s/([0-9]+)\/.*/\1/p"`}
 endsnippet
 
 snippet sq "squash!" b
