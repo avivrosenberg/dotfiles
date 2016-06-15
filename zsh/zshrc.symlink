@@ -1,5 +1,5 @@
 # plugins for oh-my-zsh
-plugins=(git osx ruby brew tmuxinator iterm2 themes)
+plugins=(git osx ruby brew tmuxinator iterm2 themes docker)
 
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh

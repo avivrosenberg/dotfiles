@@ -124,3 +124,6 @@
 [submodule "vim.symlink/bundle/vim-airline-themes"]
 	path = vim.symlink/bundle/vim-airline-themes
 	url = git@github.com:vim-airline/vim-airline-themes.git
+[submodule "zsh/plugins/docker"]
+	path = zsh/plugins/docker
+	url = git@github.com:felixr/docker-zsh-completion.git
