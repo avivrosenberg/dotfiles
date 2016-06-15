@@ -1,15 +1,19 @@
 ####
 ## Aliases
 
-# shell aliases
+# ls
 alias l='ls -hFG'
 alias ll='ls -lhFG'
 alias la='ls -lhaFG'
 
-# common typos
-alias gti='git'
+# vim
+alias v='vim'
 alias vmi='vim'
 alias mvmi='mvim'
+
+# git
+alias g='git'
+alias gti='git'
 
 # postgres
 alias pgstart='pg_ctl -l $PGDATA/server.log start'
@@ -24,3 +28,4 @@ alias mmv='noglob zmv -W'
 # gradle
 alias gw='./gradlew --daemon'
 alias gwo='./gradlew --daemon --offline'
+

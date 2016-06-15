@@ -1,8 +1,16 @@
 ####
 ## Environment
 export EDITOR='vim'
-export DOTFILES=~/.dotfiles
+export DOTFILES="$HOME/.dotfiles"
 export LESS="-R -S"
+
+####
+## zsh
+export ZSH="$DOTFILES/zsh/oh-my-zsh"
+# set theme
+ZSH_THEME="kphoen"
+# directory with custom zsh init scripts
+ZSH_CUSTOM=~/.dotfiles/zsh
 
 # prevent duplicates in PATH:
 # the zsh 'path' variable is an array and mirrors PATH, setting it to unique removes duplicate entries.

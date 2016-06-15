@@ -1,13 +1,5 @@
-export ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
-
-# set theme
-ZSH_THEME="philips"
-
-# directory with custom zsh init scripts
-ZSH_CUSTOM=~/.dotfiles/zsh
-
 # plugins for oh-my-zsh
-plugins=(git osx ruby brew tmuxinator iterm2)
+plugins=(git osx ruby brew tmuxinator iterm2 themes)
 
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
