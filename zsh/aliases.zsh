@@ -9,7 +9,6 @@ alias la='ls -lhaFG'
 # vim
 alias v='vim'
 alias vmi='vim'
-alias mvmi='mvim'
 
 # git
 alias g='git'
@@ -29,3 +28,6 @@ alias mmv='noglob zmv -W'
 alias gw='./gradlew --daemon'
 alias gwo='./gradlew --daemon --offline'
 
+# docker
+alias d='docker'
+alias dc='docker-compose'
