@@ -6,6 +6,7 @@ noremap \ ,
 
 " General
 set number                          " line numbers
+set surround                        " vim-surround plugin emulation
 
 " Searching
 set incsearch                       " do incremental searching
@@ -16,6 +17,7 @@ set gdefault                        " global substitution default
 
 " Mappings
 inoremap <C-l> <Del>
+noremap <leader><Space> :nohl<CR>
 
 " Exchange
 noremap [e ddkP
