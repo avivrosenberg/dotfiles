@@ -20,13 +20,13 @@ windows:
     - thesis-compile:
         root: ~/Google Drive/Documents/Technion II/Thesis/tex/thesis
         panes:
-            - pwd && git status
+            - pwd && ll && git status
+            - make once
     - thesis-edit:
         root: ~/Google Drive/Documents/Technion II/Thesis/tex/thesis
         panes:
-            - vim main.tex -c "NERDTreeToggle"
+            - vim main.tex -c "VimtexTocOpen"
     - matlab:
         root: ~/dev/MATLAB/Technion/MasterThesis/
         panes:
-            - pwd && ll
-            - /Applications/MATLAB_R2015b.app/bin/matlab -nosplash -nodesktop
+            - pwd && ll && git status
