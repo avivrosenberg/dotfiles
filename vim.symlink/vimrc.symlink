@@ -247,6 +247,7 @@ let g:vimtex_latexmk_build_dir = "aux"
 
 " UltiSnips {{{2
 let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEnableSnipMate = 0 " Disable snipMate snippets
