@@ -258,6 +258,13 @@ let g:mlint_path_to_mlint = "/Applications/MATLAB_R2015b.app/bin/maci64/mlint"
 " racer {{{2
 let $RUST_SRC_PATH=expand("~/dev/rust/rust/src/")
 
+" Markdown {{{2
+let g:vim_markdown_folding_level = 6
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_new_list_item_indent = 2
+
 " Custom VIM functions {{{1
 
 " preserve: save state and execute command {{{2
