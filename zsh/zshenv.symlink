@@ -2,7 +2,9 @@
 ## Environment
 export EDITOR='vim'
 export DOTFILES="$HOME/.dotfiles"
-export LESS="-R -S"
+export LESS='-R -S'
+export PAGER='LESS -RSF'
+export LC_ALL=en_US.UTF-8
 
 ####
 ## zsh
