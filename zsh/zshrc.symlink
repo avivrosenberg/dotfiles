@@ -14,4 +14,4 @@ autoload -U zmv
 
 # These vars were set in my zshenv but for some reason get overwritten by OMZ...
 export LESS='-R -S'
-export PAGER='LESS -RSF'
+export PAGER='LESS -RSFX'
