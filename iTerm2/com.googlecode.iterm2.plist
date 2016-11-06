@@ -642,11 +642,11 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>214 309 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>448 503 384 129 0 0 1280 800 </string>
+	<string>438 503 400 129 0 0 1280 800 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>328 288 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1549 221 937 466 1280 0 1920 1080 </string>
+	<string>1549 145 937 512 1280 0 1920 1080 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 194 592 584 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -3584,12 +3584,14 @@
 	</array>
 	<key>NoSyncConfirmBeta</key>
 	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>1</integer>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>1D6CC664-E1C4-46FA-A77B-ACA08EA8B31C</string>
 	<key>NoSyncLastTipTime</key>
-	<real>494854973.19567502</real>
+	<real>496431973.56421798</real>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -3657,6 +3659,22 @@
 		<string>0047</string>
 		<string>0048</string>
 		<string>0049</string>
+		<string>0050</string>
+		<string>0051</string>
+		<string>0052</string>
+		<string>0053</string>
+		<string>0054</string>
+		<string>0055</string>
+		<string>0056</string>
+		<string>0057</string>
+		<string>0058</string>
+		<string>0059</string>
+		<string>0060</string>
+		<string>0061</string>
+		<string>0062</string>
+		<string>0063</string>
+		<string>0064</string>
+		<string>0065</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
@@ -3707,6 +3725,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/aviv/.dotfiles/iTerm2</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -3726,7 +3746,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-09-05T11:03:18Z</date>
+	<date>2016-11-03T13:10:36Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -5389,6 +5409,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.8</string>
+	<string>3.0.10</string>
 </dict>
 </plist>
