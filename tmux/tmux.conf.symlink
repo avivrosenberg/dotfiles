@@ -26,12 +26,16 @@ setw -g pane-base-index 1
 # reload ~/.tmux.conf using PREFIX r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
-# use PREFIX | to split window horizontally and PREFIX - to split vertically
-bind | split-window -h
-bind - split-window -v
+# use | to split window horizontally and - to split vertically, and use current pane's directory
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
 
 # Make the current window the first window
 bind T swap-window -t 1
+
+# Set vi mode
+set -g mode-keys vi
 
 # map Vi movement keys as pane movement keys
 bind h select-pane -L
@@ -39,7 +43,7 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-# and use C-h and C-l to cycle thru panes
+# and use C-h and C-l to cycle thru windows
 bind -r C-h select-window -t :-
 bind -r C-l select-window -t :+
 
