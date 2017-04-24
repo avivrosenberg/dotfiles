@@ -26,6 +26,8 @@ alias pgstop='pg_ctl stop -s -m fast'
 
 ####
 ## Completions
-source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-source $(brew --prefix)/Library/Contributions/brew_bash_completion.sh
+if [[ -x "$(which brew)" ]]; then
+    source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+    source $(brew --prefix)/Library/Contributions/brew_bash_completion.sh
+fi
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion

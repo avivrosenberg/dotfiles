@@ -1,6 +1,33 @@
+# Bash startup file order:
+# https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/
+# Read down the appropriate column. Executes A, then B, then C, etc. The B1,
+# B2, B3 means it executes only the first of those files found.
+#
+#+----------------+-----------+-----------+------+
+#|                |Interactive|Interactive|Script|
+#|                |login      |non-login  |      |
+#+----------------+-----------+-----------+------+
+#|/etc/profile    |   A       |           |      |
+#+----------------+-----------+-----------+------+
+#|/etc/bash.bashrc|           |    A      |      |
+#+----------------+-----------+-----------+------+
+#|~/.bashrc       |           |    B      |      |
+#+----------------+-----------+-----------+------+
+#|~/.bash_profile |   B1      |           |      |
+#+----------------+-----------+-----------+------+
+#|~/.bash_login   |   B2      |           |      |
+#+----------------+-----------+-----------+------+
+#|~/.profile      |   B3      |           |      |
+#+----------------+-----------+-----------+------+
+#|BASH_ENV        |           |           |  A   |
+#+----------------+-----------+-----------+------+
+#|~/.bash_logout  |    C      |           |      |
+#+----------------+-----------+-----------+------+
+
 ####
 ## Environment
-export EDITOR='mvim -p'
+export EDITOR='vim'
+export LC_ALL=en_US.UTF-8
 
 ####
 ## Git prompt
@@ -10,25 +37,21 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=auto
 
 ####
-## Android development
-ANDROIDSDK=/Applications/Android\ Studio.app/sdk
-PATH=$PATH:$ANDROIDSDK/tools
-PATH=$PATH:$ANDROIDSDK/platform-tools
-export ANDROIDSDK
-
-####
 ## Postgres
-export PGDATA=/usr/local/var/postgres
+if [[ -d "/usr/local/var/postgres" ]]; then
+    export PGDATA=/usr/local/var/postgres
+fi
 
 ####
 ## Homebrew
-PATH=$(brew --prefix)/bin:$PATH #prepend so that brew binaries are found first
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-export GTK_PATH=/usr/local/lib/gtk-2.0
-export LC_ALL='en_US'
+if [[ -x "$(which brew)" ]]; then
+    PATH=$(brew --prefix)/bin:$PATH #prepend so that brew binaries are found first
+fi
 
 ####
 ## Ruby
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [[ -d "$HOME/.rvm" ]]; then
+    PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+fi
 
 export PATH
