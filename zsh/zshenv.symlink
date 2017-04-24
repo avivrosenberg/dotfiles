@@ -1,3 +1,32 @@
+# zsh startup file order:
+# https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/
+# On macOS, the /etc/zprofile mofifies the PATH after ~/.zshenv by running
+# /usr/libexec/path_helper. See http://www.softec.lu/site/DevelopersCorner/MasteringThePathHelper.
+# +----------------+-----------+-----------+------+
+# |                |Interactive|Interactive|Script|
+# |                |login      |non-login  |      |
+# +----------------+-----------+-----------+------+
+# |/etc/zshenv     |    A      |    A      |  A   |
+# +----------------+-----------+-----------+------+
+# |~/.zshenv       |    B      |    B      |  B   |
+# +----------------+-----------+-----------+------+
+# |/etc/zprofile   |    C      |           |      | <-- Modifies PATH os macOS
+# +----------------+-----------+-----------+------+
+# |~/.zprofile     |    D      |           |      |
+# +----------------+-----------+-----------+------+
+# |/etc/zshrc      |    E      |    C      |      |
+# +----------------+-----------+-----------+------+
+# |~/.zshrc        |    F      |    D      |      |
+# +----------------+-----------+-----------+------+
+# |/etc/zlogin     |    G      |           |      |
+# +----------------+-----------+-----------+------+
+# |~/.zlogin       |    H      |           |      |
+# +----------------+-----------+-----------+------+
+# |~/.zlogout      |    I      |           |      |
+# +----------------+-----------+-----------+------+
+# |/etc/zlogout    |    J      |           |      |
+# +----------------+-----------+-----------+------+
+
 ####
 ## Environment
 export EDITOR='vim'
@@ -19,14 +48,6 @@ ZSH_CUSTOM=~/.dotfiles/zsh
 typeset -aU path
 
 ####
-## Android development
-if [[ -d "/Applications/Android Studio.app/" ]]; then
-    export ANDROIDSDK=/Applications/Android\ Studio.app/sdk
-    PATH=$PATH:$ANDROIDSDK/tools
-    PATH=$PATH:$ANDROIDSDK/platform-tools
-fi
-
-####
 ## Postgres
 if [[ -d "/usr/local/var/postgres" ]]; then
     export PGDATA=/usr/local/var/postgres
@@ -46,15 +67,9 @@ if [[ -x "$(which brew)" ]]; then
 fi
 
 ###
-## RVM: Setting these in zshenv because I want non-interactive shells
-## (specifically, Vim's shell) to have a working ruby environment.
+## RVM: For non-interactive shells, put the rvm binary on the path
 if [[ -d "$HOME/.rvm" ]]; then
-    # Add RVM to PATH for scripting
     PATH=$PATH:$HOME/.rvm/bin
-    # Load RVM into a shell session *as a function*
-    source "$HOME/.rvm/scripts/rvm"
-    # Set default ruby with RVM
-    rvm default 2>/dev/null
 fi
 
 export PATH

@@ -31,3 +31,6 @@ alias gwo='./gradlew --daemon --offline'
 # docker
 alias d='docker'
 alias dc='docker-compose'
+
+# vagrant
+alias vg='vagrant'

@@ -15,3 +15,10 @@ autoload -U zmv
 # These vars were set in my zshenv but for some reason get overwritten by OMZ...
 export LESS='-R -S'
 export PAGER='less -RSFX'
+
+###
+## RVM: For interactive shells, load rvm as a function
+if [[ -d "$HOME/.rvm" ]]; then
+    source "$HOME/.rvm/scripts/rvm"
+    rvm default 2>/dev/null
+fi
