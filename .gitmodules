@@ -10,10 +10,6 @@
     path = vim.symlink/bundle/matchit.vim
     url = https://github.com/vim-scripts/matchit.zip.git
     ignore = dirty
-[submodule "vim.symlink/bundle/vim-matlab"]
-    path = vim.symlink/bundle/vim-matlab
-    url = https://github.com/sgeb/vim-matlab.git
-    ignore = dirty
 [submodule "vim.symlink/bundle/vim-colors-solarized"]
     path = vim.symlink/bundle/vim-colors-solarized
     url = https://github.com/altercation/vim-colors-solarized.git
@@ -127,3 +123,6 @@
 [submodule "zsh/plugins/docker"]
 	path = zsh/plugins/docker
 	url = git@github.com:felixr/docker-zsh-completion.git
+[submodule "vim.symlink/bundle/MatlabFilesEdition"]
+	path = vim.symlink/bundle/MatlabFilesEdition
+	url = git@github.com:vim-scripts/MatlabFilesEdition.git
