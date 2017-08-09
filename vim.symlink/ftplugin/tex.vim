@@ -3,6 +3,10 @@ setlocal spell
 setlocal wrap
 setlocal textwidth=80
 
+" Add ':' and '-' to iskeyword so that CTRL-N and other completions work with
+" things like 'eq:foo-bar'.
+setlocal iskeyword+=:,-
+
 nnoremap <buffer> j gj
 nnoremap <buffer> k gk
 nnoremap <buffer> $ g$
