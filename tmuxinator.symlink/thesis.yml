@@ -26,7 +26,11 @@ windows:
         root: ~/Google Drive/Documents/Technion II/Thesis/tex/thesis
         panes:
             - vim main.tex -c "VimtexTocOpen"
-    - matlab:
-        root: ~/dev/MATLAB/Technion/MasterThesis/
+    - rhrv:
+        root: ~/dev/MATLAB/Technion/MasterThesis/rhrv
+        panes:
+            - pwd && ll && git status
+    - rhrv-analysis:
+        root: ~/dev/MATLAB/Technion/MasterThesis/rhrv-analysis
         panes:
             - pwd && ll && git status
