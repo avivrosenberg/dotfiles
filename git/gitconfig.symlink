@@ -1,19 +1,20 @@
 # vim: filetype=gitconfig
 
 [user]
-	name = Aviv Rosenberg
-	email = aviv.rosenberg@gmail.com
+    name = Aviv Rosenberg
+    email = aviv.rosenberg@gmail.com
 [color]
-	ui = true
+    ui = true
 [push]
-	default = current
+    default = current
 [core]
-	excludesfile = ~/.dotfiles/git/gitignore_global
-	autocrlf = input
+    excludesfile = ~/.dotfiles/git/gitignore_global
+    autocrlf = input
     editor = vim --nofork
-	eol = native
+    eol = native
+    trustctime = false
 [help]
-	format = web
+    format = web
 
 [alias]
     st    = status -sb
@@ -25,7 +26,7 @@
     dts   = difftool --dir-diff --staged
     k     = !gitk&
     ka    = !gitk --all&
-	fch   = fetch -p origin
+    fch   = fetch -p origin
     ll    = log --oneline
     rb    = rebase
     rbi   = rebase --interactive
@@ -33,6 +34,9 @@
 
     # remove a submodule in one command
     rmsm  = "!f(){ git rm --cached \"$1\";rm -r \"$1\";git config -f .gitmodules --remove-section \"submodule.$1\";git config -f .git/config --remove-section \"submodule.$1\";git add .gitmodules; }; f"
+
+    # List subtrees in repo
+    ls-subtrees = !"git log | grep git-subtree-dir | awk '{ print $2 }' | uniq"
 
     # load vim with modified files in buffers (for completion)
     vi    = !vim $(git modified) # run vim with modified modified
@@ -46,7 +50,7 @@
     ignore = "!gi() { curl -L -s https://www.gitignore.io/api/${@// /,} ;}; gi"
 
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [difftool]
     prompt = false
 [difftool "meld"]
@@ -54,7 +58,7 @@
     cmd = meld "$LOCAL" "$REMOTE" > /dev/null 2>&1
 
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [mergetool]
     prompt = false
     keepBackup = false
@@ -66,12 +70,12 @@
         --label="BASE" "$BASE" \
         --label="REMOTE" "$REMOTE" > /dev/null 2>&1
 [rebase]
-	autosquash = true
+    autosquash = true
 [rerere]
-	enabled = true
+    enabled = true
 [credential]
-	helper = cache
+    helper = cache
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
