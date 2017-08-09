@@ -24,6 +24,9 @@ noremap [e ddkP
 noremap ]e ddp
 
 " IDE Features mapping
+" Use :actionlist [pattern] to see all mappable actions!
+"
+
 noremap <leader>rt :action Refactorings.QuickListPopupAction<CR>
 noremap <leader>rr :action RenameElement<CR>
 noremap <leader>rg :action Generate<CR>
@@ -39,9 +42,11 @@ noremap K :action QuickJavaDoc<CR>
 noremap ]q :action GotoNextError<CR>
 noremap [q :action GotoPreviousError<CR>
 
+# Move between camel humps
 nnoremap gw :action EditorNextWordInDifferentHumpsMode<CR>
 nnoremap gb :action EditorPreviousWordInDifferentHumpsMode<CR>
 
-vnoremap gw :action EditorNextWordInDifferentHumpsModeWithSelection<CR>
-vnoremap gb :action EditorPreviousWordInDifferentHumpsModeWithSelection<CR>
+" Run tests in the context of the cursor position
+noremap <leader>trc :action RunClass<CR>
+noremap <leader>trf :action RerunFailedTests<CR>
 
