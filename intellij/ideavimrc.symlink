@@ -50,3 +50,7 @@ nnoremap gb :action EditorPreviousWordInDifferentHumpsMode<CR>
 noremap <leader>trc :action RunClass<CR>
 noremap <leader>trf :action RerunFailedTests<CR>
 
+" Enable Ctlr-N/P to cycle completion words in insert mode.
+" Make sure C-N and C-P are mapped to Down/Up in the Keymap settings and sent to ideaVim.
+imap <C-n> <ESC>:action HippieCompletion<CR>a
+imap <C-p> <ESC>:action HippieBackwardCompletion<CR>a
