@@ -32,8 +32,8 @@ noremap <leader>rr :action RenameElement<CR>
 noremap <leader>rg :action Generate<CR>
 
 noremap <leader>ff :action GotoFile<CR>
-noremap <leader>ft :action GotoSymbol<CR>
-noremap <leader>fT :action GotoClass<CR>
+noremap <leader>fT :action GotoSymbol<CR>
+noremap <leader>ft :action FileStructurePopup<CR>
 noremap <leader>gi :action GotoImplementation<CR>
 noremap <leader>gI :action GotoSuperMethod<CR>
 
