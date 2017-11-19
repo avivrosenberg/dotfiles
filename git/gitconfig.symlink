@@ -3,6 +3,7 @@
 [user]
     name = Aviv Rosenberg
     email = aviv.rosenberg@gmail.com
+	signingkey = 09562CE4
 [color]
     ui = true
 [push]
