@@ -223,11 +223,18 @@ endif
 let g:ctrlp_working_path_mode = '0'
 let g:ctrlp_by_filename = 1 " by default, match filenames (not full path). <C-d> toggles.
 let g:ctrlp_show_hidden = 1
+
 " custom ignore expressions
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\.git$\|vendor/bundle',
             \ 'file':  '\.DS_Store$'
             \}
+
+" Use the_silver_searcher if possible, it's FAST
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 " add modes
 let g:ctrlp_extensions = ['tag', 'buffertag']
 
