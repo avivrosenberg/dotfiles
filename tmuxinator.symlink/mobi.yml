@@ -20,10 +20,8 @@ tmux_options: -u2
 # tmux_command: byobu
 
 windows:
-    - htop:
+    - shell:
         layout: main-horizontal
-        panes:
-            - htop --sort-key PERCENT_CPU --delay=15
     - mw-server:
         root: ~/dev/mobiwize/mw-server/mw-server/
         panes:

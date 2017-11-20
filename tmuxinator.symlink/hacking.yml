@@ -17,5 +17,7 @@ root: ~/
 tmux_options: -u2
 
 windows:
-    - zsh:
-    - vim: vim
+    - htop: htop --sort-key PERCENT_CPU --delay=15
+    - dotfiles: cd ~/.dotfiles && vim
+    - shell:
+
