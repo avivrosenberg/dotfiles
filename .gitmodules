@@ -132,3 +132,6 @@
 [submodule "vim.symlink/bundle/groovy.vim"]
 	path = vim.symlink/bundle/groovy.vim
 	url = git@github.com:modille/groovy.vim.git
+[submodule "vim.symlink/bundle/vim-gradle"]
+	path = vim.symlink/bundle/vim-gradle
+	url = git@github.com:tfnico/vim-gradle.git
