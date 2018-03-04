@@ -7,7 +7,7 @@ root: ~/dev/mobiwize/mw-server/
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-pre:
+pre: docker-compose up --build -d redis db osmdb
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 pre_window:
@@ -20,8 +20,8 @@ tmux_options: -u2
 # tmux_command: byobu
 
 windows:
-    - shell:
-        layout: main-horizontal
+    - htop: htop --sort-key PERCENT_CPU --delay=15
+    - shell: git status
     - mw-server:
         root: ~/dev/mobiwize/mw-server/mw-server/
         panes:
@@ -32,13 +32,9 @@ windows:
         panes:
             - rvm use @mwmt && vim .
     - sql:
-        root: ~/dev/mobiwize/mw-server/mw-maptools/pgSQL/
-        layout: main-horizontal
         panes:
-            - sleep 60 && psql -U mobidba -d mwmap_dev -h localhost -p 5432
-            - docker run --rm -p 5432:5432 --name mobi_db registry.mobiwize:5000/ci-db-clean
+            - sleep 10 && psql -U mobidba -d mwmap_dev -h localhost -p 5432
     - redis:
         layout: main-horizontal
         panes:
             - sleep 10 && redis-cli -p 6379
-            - docker run --rm -p 6379:6379 --name mobi_redis registry.mobiwize:5000/redis
