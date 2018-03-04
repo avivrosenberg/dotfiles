@@ -129,3 +129,6 @@
 [submodule "vim.symlink/bundle/vim-matlab"]
 	path = vim.symlink/bundle/vim-matlab
 	url = https://github.com/daeyun/vim-matlab
+[submodule "vim.symlink/bundle/groovy.vim"]
+	path = vim.symlink/bundle/groovy.vim
+	url = git@github.com:modille/groovy.vim.git
