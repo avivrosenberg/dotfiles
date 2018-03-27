@@ -4,6 +4,9 @@ set -g default-terminal "screen-256color"
 # set scrollback history to 10000 (10k)
 set -g history-limit 10000
 
+# default shell to zsh if exists
+if-shell 'test -x /usr/local/bin/zsh' 'set -g default-shell /usr/local/bin/zsh'
+
 # set Ctrl-a as the default prefix key combination
 # and unbind C-b to free it up
 set -g prefix C-a
