@@ -72,4 +72,10 @@ if [[ -d "$HOME/.rvm" ]]; then
     PATH=$PATH:$HOME/.rvm/bin
 fi
 
+####
+## Anaconda (python)
+if [[ -d "$HOME/anaconda3" ]]; then
+    PATH="$HOME/anaconda3/bin:$PATH"
+fi
+
 export PATH

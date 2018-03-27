@@ -54,4 +54,10 @@ if [[ -d "$HOME/.rvm" ]]; then
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
+####
+## Anaconda
+if [[ -d "$HOME/anaconda3" ]]; then
+    PATH="$HOME/anaconda3/bin:$PATH"
+fi
+
 export PATH
