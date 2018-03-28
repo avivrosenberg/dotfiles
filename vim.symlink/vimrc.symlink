@@ -246,7 +246,9 @@ let g:syntastic_aggregate_errors = 1
 
 " Ack {{{2
 " Use the_silver_searcher (Ag) instead of ack
-let g:ackprg='ag --smart-case --silent --vimgrep'
+if executable('ag')
+    let g:ackprg='ag --smart-case --silent --vimgrep'
+endif
 
 " VimTeX {{{2
 let g:tex_flavor = "latex"
