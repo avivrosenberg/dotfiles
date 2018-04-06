@@ -43,10 +43,6 @@ ZSH_THEME="kphoen"
 # directory with custom zsh init scripts
 ZSH_CUSTOM=~/.dotfiles/zsh
 
-# prevent duplicates in PATH:
-# the zsh 'path' variable is an array and mirrors PATH, setting it to unique removes duplicate entries.
-typeset -aU path
-
 ####
 ## Postgres
 if [[ -d "/usr/local/var/postgres" ]]; then
@@ -55,15 +51,10 @@ fi
 
 ####
 ## Homebrew
-if [[ -x "$(which brew)" ]]; then
+if [[ -x "/usr/local/bin/brew" ]]; then
     # get homebrew's binary path
-    brewbin="$(brew --prefix)/bin"
-
-    # prepend and remove from path if it's already there
-    path=($brewbin ${path#$brewbin})
-
-    # add custom brew extentions
-    PATH=$PATH:"$DOTFILES/brew/extensions"
+    brewbin="$(/usr/local/bin/brew --prefix)/bin"
+    PATH="$brewbin:$PATH"
 fi
 
 ###
@@ -72,10 +63,12 @@ if [[ -d "$HOME/.rvm" ]]; then
     PATH=$PATH:$HOME/.rvm/bin
 fi
 
-####
-## Anaconda (python)
-if [[ -d "$HOME/anaconda3" ]]; then
-    PATH="$HOME/anaconda3/bin:$PATH"
-fi
+
+# Add custom binaries/scripts
+PATH=$PATH:"~/.bin/"
+
+# prevent duplicates in PATH:
+# the zsh 'path' variable is an array and mirrors PATH, setting it to unique removes duplicate entries.
+typeset -aU path
 
 export PATH
