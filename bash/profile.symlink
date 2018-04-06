@@ -60,4 +60,7 @@ if [[ -d "$HOME/anaconda3" ]]; then
     PATH="$HOME/anaconda3/bin:$PATH"
 fi
 
+# Add custom binaries/scripts
+PATH=$PATH:"~/.bin/"
+
 export PATH
