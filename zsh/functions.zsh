@@ -38,3 +38,27 @@ function fullpath() {
     echo "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
   fi
 }
+
+# Appends/prepends to PATH, removing duplicates
+function pathmunge () {
+  if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
+    if [ "$2" = "after" ] ; then
+      PATH=$PATH:$1
+    else
+      PATH=$1:$PATH
+    fi
+  fi
+}
+
+###
+# Function for activating conda env
+function conda-activate() {
+  source activate $1
+}
+
+###
+# Function for activating conda env
+function conda-deactivate() {
+  source deactivate
+}
+

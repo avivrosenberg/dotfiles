@@ -22,3 +22,12 @@ if [[ -d "$HOME/.rvm" ]]; then
     source "$HOME/.rvm/scripts/rvm"
     rvm default 2>/dev/null
 fi
+
+####
+## Anaconda
+if [[ -d "$HOME/anaconda3" ]]; then
+    PATH="$HOME/anaconda3/bin:$PATH"
+fi
+
+# Remove any duplicates from PATH
+typeset -aU path

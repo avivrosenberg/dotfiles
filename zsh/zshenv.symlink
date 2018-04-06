@@ -1,7 +1,9 @@
 # zsh startup file order:
 # https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/
 # On macOS, the /etc/zprofile mofifies the PATH after ~/.zshenv by running
-# /usr/libexec/path_helper. See http://www.softec.lu/site/DevelopersCorner/MasteringThePathHelper.
+# /usr/libexec/path_helper. See:
+# 1. https://mattprice.me/2015/zsh-path-issues-osx-el-capitan/
+# 2. http://www.softec.lu/site/DevelopersCorner/MasteringThePathHelper.
 # +----------------+-----------+-----------+------+
 # |                |Interactive|Interactive|Script|
 # |                |login      |non-login  |      |
