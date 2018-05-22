@@ -49,16 +49,3 @@ function pathmunge () {
     fi
   fi
 }
-
-###
-# Function for activating conda env
-function conda-activate() {
-  source activate $1
-}
-
-###
-# Function for activating conda env
-function conda-deactivate() {
-  source deactivate
-}
-

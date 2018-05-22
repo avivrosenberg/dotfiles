@@ -14,9 +14,9 @@ alias vmi='vim'
 alias g='git'
 alias gti='git'
 
-# postgres
-alias pgstart='pg_ctl -l $PGDATA/server.log start'
-alias pgstop='pg_ctl stop -s -m fast'
+# python
+alias py='python'
+alias ipy='ipython'
 
 # tmux
 alias tmux='tmux -u2'
