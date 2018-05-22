@@ -53,7 +53,9 @@ export ANACONDA_PATH=$(find $HOME -maxdepth 2 -type d -name '*conda3' | head -n 
 # Set up conda and activate the default environment
 if [[ -d "$ANACONDA_PATH" ]]; then
     source "$ANACONDA_PATH/etc/profile.d/conda.sh"
-    conda activate
+    # Activate the default conda env (specifying env var so I can override the
+    # default per tmux session)
+    conda activate "$CONDA_DEFAULT_ENV"
 fi
 
 # Add custom binaries/scripts
