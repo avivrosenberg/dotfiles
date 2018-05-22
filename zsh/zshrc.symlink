@@ -4,7 +4,7 @@ export ZSH="$DOTFILES/zsh/oh-my-zsh"
 # directory with custom zsh init scripts
 ZSH_CUSTOM=~/.dotfiles/zsh
 # set plugins for oh-my-zsh
-plugins=(git osx ruby brew tmuxinator iterm2 themes docker)
+plugins=(git osx ruby brew tmuxinator iterm2 themes docker python conda)
 # set theme for oh-my-zsh
 ZSH_THEME="kphoen"
 # load oh-my-zsh
