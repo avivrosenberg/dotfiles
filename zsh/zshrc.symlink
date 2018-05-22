@@ -1,32 +1,65 @@
-# plugins for oh-my-zsh
+###
+## zsh
+export ZSH="$DOTFILES/zsh/oh-my-zsh"
+# directory with custom zsh init scripts
+ZSH_CUSTOM=~/.dotfiles/zsh
+# set plugins for oh-my-zsh
 plugins=(git osx ruby brew tmuxinator iterm2 themes docker)
-
+# set theme for oh-my-zsh
+ZSH_THEME="kphoen"
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-### custom settings
-# Map C-N and C-P to search history (like up/down)
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search
-
 # Enable zmv command
 autoload -U zmv
-
+#
 # These vars were set in my zshenv but for some reason get overwritten by OMZ...
 export LESS='-R -S'
 export PAGER='less -RSFX'
 
+### Custom shell settings
+# Map C-N and C-P to search history (like up/down)
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
+
 ###
-## RVM: For interactive shells, load rvm as a function
+## Homebrew
+if [[ -x "$(which brew)" ]]; then
+    # get homebrew's binary path
+    brewbin="$(brew --prefix)/bin"
+    PATH="$brewbin:$PATH"
+fi
+
+###
+## RVM
 if [[ -d "$HOME/.rvm" ]]; then
+    PATH=$PATH:$HOME/.rvm/bin
+    # load rvm as a function and activate default ruby
     source "$HOME/.rvm/scripts/rvm"
     rvm default 2>/dev/null
 fi
 
 
-####
+
+###
 ## Anaconda
-# Activate default environment
+#
+# Find a user-local anaconda3 or miniconda3 installation.
+local ANACONDA_PATH=$(find $HOME -maxdepth 2 -type d -name '*conda3' | head -n 1)
+#
 if [[ -d "$ANACONDA_PATH" ]]; then
+  # Set up conda as a function
+  source "$ANACONDA_PATH/etc/profile.d/conda.sh"
+  # Activate the default conda env
   conda activate
 fi
+
+
+###
+## Custom binaries and scripts
+PATH=$PATH:"~/.bin/"
+
+###
+# prevent duplicates in PATH: the zsh 'path' variable is an array and mirrors
+# PATH, setting it to unique removes duplicate entries.
+typeset -aU path
+export PATH
