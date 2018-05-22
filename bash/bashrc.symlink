@@ -1,11 +1,6 @@
 #!/bin/sh
 
 ####
-## Prompt
-source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
-PS1='\u@\h: \W$(__git_ps1 "(%s)")$ '
-
-####
 ## Aliases
 # bash aliases
 alias l='ls -FG'
@@ -20,18 +15,45 @@ alias pgstart='pg_ctl -l $PGDATA/server.log start'
 alias pgstop='pg_ctl stop -s -m fast'
 
 ####
-## RVM
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+## Homebrew
+if [[ -x "$(which brew)" ]]; then
+    # Path
+    PATH=$(brew --prefix)/bin:$PATH #prepend so that brew binaries are found first
+
+    # Prompt
+    source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+    PS1='\u@\h: \W$(__git_ps1 "(%s)")$ '
+
+    # Completions
+    if [[ -x "$(which brew)" ]]; then
+        source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+        source $(brew --prefix)/etc/bash_completion.d/brew
+    fi
+fi
 
 ####
-## Completions
-if [[ -x "$(which brew)" ]]; then
-    source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-    source $(brew --prefix)/etc/bash_completion.d/brew
-fi
-[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+## RVM
+if [[ -d "$HOME/.rvm" ]]; then
+    # Path
+    PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+    # Load RVM into a shell session *as a function*
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+    # CompletioN
+    [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+fi
+
+####
+## Anaconda
+if [[ -d "$HOME/anaconda3" ]]; then
+    PATH="$HOME/anaconda3/bin:$PATH"
+fi
+
+# Add custom binaries/scripts
+PATH=$PATH:"~/.bin/"
+
+export PATH
 
 ####
 ## Functions

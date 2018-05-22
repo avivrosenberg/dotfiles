@@ -36,31 +36,3 @@ export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=auto
 
-####
-## Postgres
-if [[ -d "/usr/local/var/postgres" ]]; then
-    export PGDATA=/usr/local/var/postgres
-fi
-
-####
-## Homebrew
-if [[ -x "$(which brew)" ]]; then
-    PATH=$(brew --prefix)/bin:$PATH #prepend so that brew binaries are found first
-fi
-
-####
-## Ruby
-if [[ -d "$HOME/.rvm" ]]; then
-    PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-fi
-
-####
-## Anaconda
-if [[ -d "$HOME/anaconda3" ]]; then
-    PATH="$HOME/anaconda3/bin:$PATH"
-fi
-
-# Add custom binaries/scripts
-PATH=$PATH:"~/.bin/"
-
-export PATH
