@@ -1,6 +1,6 @@
 # ~/.tmuxinator/thesis.yml
 
-name: thesis
+name: rhrv
 root: ~/dev/
 
 # Optional tmux socket
@@ -17,20 +17,19 @@ root: ~/dev/
 tmux_options: -u2
 
 windows:
-    - thesis-compile:
-        root: ~/Google Drive/Documents/Technion II/Thesis/tex/thesis
-        panes:
-            - pwd && ll && git status
-            - make once
-    - thesis-edit:
-        root: ~/Google Drive/Documents/Technion II/Thesis/tex/thesis
-        panes:
-            - vim main.tex -c "VimtexTocOpen"
     - rhrv:
-        root: ~/dev/MATLAB/Technion/MasterThesis/rhrv
+        root: ~/dev/matlab/msc-thesis/rhrv/
         panes:
             - pwd && ll && git status
     - rhrv-analysis:
-        root: ~/dev/MATLAB/Technion/MasterThesis/rhrv-analysis
+        root: ~/dev/matlab/msc-thesis/rhrv-analysis/
+        panes:
+            - pwd && ll && git status
+    - physiozoo:
+        root: ~/dev/matlab/msc-thesis/physiozoo-toolbox/
+        panes:
+            - pwd && ll && git status
+    - physiozoo-docs:
+        root: ~/dev/physiozoo.github.io/
         panes:
             - pwd && ll && git status

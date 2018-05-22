@@ -1,0 +1,27 @@
+name: cs236605
+root: ~/dev/cs236605-deeplearning/
+
+# Runs before everything. Use it to start daemons etc.
+# on_project_start:
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+tmux_options: -u2
+
+# Note:
+# 1. The activate command here is for the windows we define below.
+# 2. The setenv is for any subsequent windows that will be created in the
+#    session.
+# I couldn't find a way to do setenv for the session before opening the first
+# window.
+pre_window:
+  - tmux setenv CONDA_DEFAULT_ENV cs236605 
+  - eval "$(tmux showenv CONDA_DEFAULT_ENV)"
+  - conda activate "$CONDA_DEFAULT_ENV"
+
+windows:
+  - shell:
+  - ipython:
+      panes:
+        - jupyter notebook --no-browser
+        - ipython
+

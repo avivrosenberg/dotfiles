@@ -1,6 +1,6 @@
 # ~/.tmuxinator/hacking.yml
 
-name: hacking
+name: config
 root: ~/
 
 # Optional tmux socket
@@ -17,6 +17,10 @@ root: ~/
 tmux_options: -u2
 
 windows:
-    - shell:
-    - dotfiles: cd ~/.dotfiles && vim
+    - shell: 
+        root: ~/.dotfiles
+    - dotfiles:
+        root: ~/.dotfiles
+        panes:
+          - vim
 
