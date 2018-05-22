@@ -46,8 +46,14 @@ fi
 
 ####
 ## Anaconda
-if [[ -d "$HOME/anaconda3" ]]; then
-    PATH="$HOME/anaconda3/bin:$PATH"
+
+# Find a user-local anaconda3 or miniconda3 installation.
+export ANACONDA_PATH=$(find $HOME -maxdepth 2 -type d -name '*conda3' | head -n 1)
+
+# Set up conda and activate the default environment
+if [[ -d "$ANACONDA_PATH" ]]; then
+    source "$ANACONDA_PATH/etc/profile.d/conda.sh"
+    conda activate
 fi
 
 # Add custom binaries/scripts
