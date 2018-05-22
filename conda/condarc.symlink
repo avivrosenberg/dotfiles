@@ -1,0 +1,8 @@
+# vim: ft=yaml
+
+channels:
+  - defaults
+
+ssl_verify: True
+
+changeps1: False
