@@ -8,11 +8,11 @@ alias ll='ls -lFG'
 alias la='ls -laFG'
 alias gw='./gradlew --daemon'
 alias gwo='./gradlew --daemon --offline'
+alias py='python'
+alias ipy='ipython'
 #common typos
 alias gti='git'
 alias mvmi='mvim'
-alias pgstart='pg_ctl -l $PGDATA/server.log start'
-alias pgstop='pg_ctl stop -s -m fast'
 
 ####
 ## Homebrew
