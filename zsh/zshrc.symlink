@@ -23,11 +23,10 @@ if [[ -d "$HOME/.rvm" ]]; then
     rvm default 2>/dev/null
 fi
 
+
 ####
 ## Anaconda
-if [[ -d "$HOME/anaconda3" ]]; then
-    PATH="$HOME/anaconda3/bin:$PATH"
+# Activate default environment
+if [[ -d "$ANACONDA_PATH" ]]; then
+  conda activate
 fi
-
-# Remove any duplicates from PATH
-typeset -aU path
