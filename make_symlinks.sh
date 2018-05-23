@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 DOTFILESDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DESTDIR="$HOME"
@@ -8,8 +8,8 @@ FILES=($(find $DOTFILESDIR -regex "$DOTFILESDIR/.*$EXT" -not -regex ".*\.git.*")
 
 source "$DOTFILESDIR/bin$EXT/colorcodes.sh"
 
-echo "${GREEN}DOTFILESDIR: $DOTFILESDIR${RESTORE}"
-echo "${GREEN}DESTDIR: $DESTDIR${RESTORE}"
+echo -e "${GREEN}DOTFILESDIR: $DOTFILESDIR${RESTORE}"
+echo -e "${GREEN}DESTDIR: $DESTDIR${RESTORE}"
 
 for filepath in "${FILES[@]}"; do
 
@@ -18,7 +18,7 @@ for filepath in "${FILES[@]}"; do
     target_filename="$DESTDIR/.${filename%${EXT}}"
 
     # Create the symlink (override previous ones)
-    echo "${BLUE}$filepath${RESTORE} --> ${GREEN}$target_filename${RESTORE}"
+    echo -e "${BLUE}$filepath${RESTORE} --> ${GREEN}$target_filename${RESTORE}"
     $(
     set -x;
     ln -snFf $filepath $target_filename
