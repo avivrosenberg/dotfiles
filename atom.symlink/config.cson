@@ -1,0 +1,23 @@
+"*":
+  core:
+    disabledPackages: [
+      "markdown-preview"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
+  "exception-reporting":
+    userId: "42ba6965-72ff-4dcb-a579-8e2c6e21fa80"
+  "markdown-preview-plus":
+    mathConfig:
+      enableLatexRenderingByDefault: true
+      latexRenderer: "HTML-CSS"
+    renderer: "pandoc"
+    useGitHubStyle: true
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
+  welcome:
+    showOnStartup: false

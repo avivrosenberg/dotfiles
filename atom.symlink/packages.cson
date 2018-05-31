@@ -1,0 +1,10 @@
+packages: [
+  "ex-mode"
+  "markdown-preview-plus"
+  "markdown-preview-plus-opener"
+  "package-sync"
+  "vim-mode-plus"
+  "vim-mode-plus-keymaps-for-surround"
+  "vim-mode-plus-move-selected-text"
+  "vim-mode-plus-move-to-symbols"
+]
