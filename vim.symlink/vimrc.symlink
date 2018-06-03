@@ -44,7 +44,6 @@ noremap \ ,
 " Invisible characters {{{2
 set encoding=utf-8
 set listchars=tab:▸•,eol:¬,trail:•,extends:»,precedes:«,nbsp:¬
-
 " Disable error bells {{{2
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
@@ -262,12 +261,14 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEnableSnipMate = 0 " Disable snipMate snippets
 
 " Markdown {{{2
-let g:vim_markdown_folding_level = 1
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_override_foldtext = 1
+let g:vim_markdown_folding_level = 6
 let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent = 2
-let g:vim_markdown_fenced_languages = ['python=python', 'bash=sh']
+let g:vim_markdown_fenced_languages = ['python=python', 'bash=sh', 'yaml=yaml']
+let g:vim_markdown_math = 1
 
 " Custom VIM functions {{{1
 
