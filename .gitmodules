@@ -135,3 +135,6 @@
 [submodule "vim.symlink/bundle/vim-gradle"]
 	path = vim.symlink/bundle/vim-gradle
 	url = git@github.com:tfnico/vim-gradle.git
+[submodule "vim.symlink/bundle/tabular"]
+	path = vim.symlink/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
