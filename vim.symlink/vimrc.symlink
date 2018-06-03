@@ -266,7 +266,7 @@ let g:vim_markdown_override_foldtext = 1
 let g:vim_markdown_folding_level = 6
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_new_list_item_indent = 4
 let g:vim_markdown_fenced_languages = ['python=python', 'bash=sh', 'yaml=yaml']
 let g:vim_markdown_math = 1
 
