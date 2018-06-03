@@ -18,10 +18,6 @@
     path = vim.symlink/bundle/vim-surround
     url = https://github.com/tpope/vim-surround.git
     ignore = dirty
-[submodule "vim.symlink/bundle/xmledit.vim"]
-    path = vim.symlink/bundle/xmledit.vim
-    url = https://github.com/sukima/xmledit.git
-    ignore = dirty
 [submodule "vim.symlink/bundle/vim-pathogen"]
     path = vim.symlink/bundle/vim-pathogen
     url = https://github.com/tpope/vim-pathogen.git
@@ -105,12 +101,6 @@
 [submodule "vim.symlink/bundle/AnsiEsc.vim"]
 	path = vim.symlink/bundle/AnsiEsc.vim
 	url = git@github.com:vim-scripts/AnsiEsc.vim.git
-[submodule "vim.symlink/bundle/rust.vim"]
-	path = vim.symlink/bundle/rust.vim
-	url = git@github.com:rust-lang/rust.vim.git
-[submodule "vim.symlink/bundle/racer"]
-	path = vim.symlink/bundle/racer
-	url = git@github.com:phildawes/racer.git
 [submodule "vim.symlink/bundle/vimtex"]
 	path = vim.symlink/bundle/vimtex
 	url = git@github.com:lervag/vimtex.git
@@ -123,12 +113,6 @@
 [submodule "zsh/plugins/docker"]
 	path = zsh/plugins/docker
 	url = git@github.com:felixr/docker-zsh-completion.git
-[submodule "vim.symlink/bundle/MatlabFilesEdition"]
-	path = vim.symlink/bundle/MatlabFilesEdition
-	url = git@github.com:vim-scripts/MatlabFilesEdition.git
-[submodule "vim.symlink/bundle/vim-matlab"]
-	path = vim.symlink/bundle/vim-matlab
-	url = https://github.com/daeyun/vim-matlab
 [submodule "vim.symlink/bundle/groovy.vim"]
 	path = vim.symlink/bundle/groovy.vim
 	url = git@github.com:modille/groovy.vim.git
