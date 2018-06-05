@@ -35,6 +35,7 @@ set spelllang=en_us                     " language for spell checking
 set clipboard=unnamed                   " copy to system clipboard if no register specified
 set scrolloff=2                         " keep a few lines visible when scrolling at the top/bottom
 set ttimeoutlen=50                      " key chord timeout length - speeds up transiton from visual to normal mode
+set foldlevelstart=99                   " To open all folds when opening a file
 
 " Leader Key definition {{{2
 let mapleader = ","                     " define leader key for custom mappings, and remap default to comma
@@ -56,6 +57,11 @@ set backup                          " keep a backup file
 set backupdir=~/.vimtmp             " keep all backups in a separate folder
 set backupext=.vimbackup            " set extention for backup files
 set noswapfile                      " don't create a swap file (everything in RAM)
+
+" Make sure backup dir exists
+if !isdirectory($HOME."/.vimtmp")
+    call mkdir($HOME."/.vimtmp", "p")
+endif
 
 " Searching {{{2
 set incsearch                       " do incremental searching
