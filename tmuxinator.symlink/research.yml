@@ -1,7 +1,7 @@
-# ~/.tmuxinator/avivr.net.yml
+# ~/.tmuxinator/research.yml
 
-name: avivr-net
-root: ~/dev/avivr.net/
+name: research
+root: ~/dev/phd-research/
 
 # Optional tmux socket
 # socket_name: foo
@@ -40,18 +40,18 @@ root: ~/dev/avivr.net/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t avivr.net
+# post: tmux -CC attach -t research
 
 windows:
-  - server:
+  - shell:
       layout: main-horizontal
       panes:
-        - ls -al
+        - git status
         - docker-compose up
-  - editor:
-      layout: main-vertical
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
-      panes:
-        - vim .
+  - tasks:
+    - vim content/tasks.md
+  - meetings:
+    - vim content/meetings.md
+  - notes:
+    - vim content/_posts
+
