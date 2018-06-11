@@ -2,6 +2,7 @@
   core:
     disabledPackages: [
       "markdown-preview"
+      "markdown-preview-plus-opener"
     ]
     telemetryConsent: "limited"
     themes: [
@@ -14,8 +15,15 @@
     mathConfig:
       enableLatexRenderingByDefault: true
       latexRenderer: "HTML-CSS"
+    previewConfig:
+      activatePreviewWithEditor: true
     renderer: "pandoc"
+    syncConfig:
+      syncPreviewOnChange: true
+      syncPreviewOnEditorScroll: true
     useGitHubStyle: true
+  "markdown-preview-plus-opener":
+    closePreviewWhenClosingEditor: true
   "package-sync":
     createOnChange: true
     forceOverwrite: true
