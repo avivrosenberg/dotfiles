@@ -122,3 +122,9 @@
 [submodule "vim.symlink/bundle/tabular"]
 	path = vim.symlink/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "pandoc.symlink/templates/eisvogel"]
+	path = pandoc.symlink/templates/eisvogel
+	url = git@github.com:Wandmalfarbe/pandoc-latex-template.git
+[submodule "vim.symlink/bundle/vim-ragtag"]
+	path = vim.symlink/bundle/vim-ragtag
+	url = git@github.com:tpope/vim-ragtag.git
