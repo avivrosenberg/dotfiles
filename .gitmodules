@@ -128,3 +128,6 @@
 [submodule "vim.symlink/bundle/vim-ragtag"]
 	path = vim.symlink/bundle/vim-ragtag
 	url = git@github.com:tpope/vim-ragtag.git
+[submodule "vim.symlink/bundle/vim-liquid"]
+	path = vim.symlink/bundle/vim-liquid
+	url = git@github.com:tpope/vim-liquid.git
