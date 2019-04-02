@@ -1,7 +1,5 @@
-# ~/.tmuxinator/thesis.yml
-
-name: rhrv
-root: ~/dev/
+name: mhrv
+root: ~/dev/msc/
 
 # Optional tmux socket
 # socket_name: foo
@@ -17,16 +15,16 @@ root: ~/dev/
 tmux_options: -u2
 
 windows:
-    - rhrv:
-        root: ~/dev/matlab/msc-thesis/rhrv/
+    - mhrv:
+        root: ~/dev/msc/mhrv/
         panes:
             - pwd && ll && git status
-    - rhrv-analysis:
-        root: ~/dev/matlab/msc-thesis/rhrv-analysis/
+    - mhrv-analysis:
+        root: ~/dev/msc/mhrv-analysis/
         panes:
             - pwd && ll && git status
     - physiozoo:
-        root: ~/dev/matlab/msc-thesis/physiozoo-toolbox/
+        root: ~/dev/msc/physiozoo-toolbox/
         panes:
             - pwd && ll && git status
     - physiozoo-docs:

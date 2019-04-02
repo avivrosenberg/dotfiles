@@ -14,7 +14,7 @@ tmux_options: -u2
 # I couldn't find a way to do setenv for the session before opening the first
 # window.
 pre_window:
-  - tmux setenv CONDA_DEFAULT_ENV cs236605 
+  - tmux setenv CONDA_DEFAULT_ENV cs236605-hw
   - eval "$(tmux showenv CONDA_DEFAULT_ENV)"
   - conda activate "$CONDA_DEFAULT_ENV"
 
@@ -22,6 +22,27 @@ windows:
   - shell:
   - ipython:
       panes:
-        - jupyter notebook --no-browser
         - ipython
+  - homework:
+      root: ~/dev/cs236605-deeplearning/course_hw/
+      layout: main-horizontal
+      panes:
+        - git status
+        - jupyter lab --no-browser
+  - tutorials:
+      root: ~/dev/cs236605-deeplearning/course_tutorials/
+      layout: main-horizontal
+      panes:
+        - shell:
+          - conda activate cs236605-tutorials
+          - git status
+        - jupyter:
+          - conda activate cs236605-tutorials
+          - jupyter lab --no-browser
+  - website:
+      root: ~/dev/cs236605-deeplearning/website/
+      layout: main-horizontal
+      panes:
+        - git status
+        - docker-compose config
 

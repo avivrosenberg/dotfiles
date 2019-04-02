@@ -1,5 +1,3 @@
-# ~/.tmuxinator/research.yml
-
 # Optional tmux socket
 # socket_name: foo
 
@@ -39,24 +37,18 @@
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t research
 
-name: research
-root: ~/dev/phd/
+name: deeprr
+root: ~/dev/phd/deeprr
 
 pre_window:
-  - tmux setenv CONDA_DEFAULT_ENV phd
+  - tmux setenv CONDA_DEFAULT_ENV deeprr
   - eval "$(tmux showenv CONDA_DEFAULT_ENV)"
   - conda activate "$CONDA_DEFAULT_ENV"
   - which python
 
 windows:
-  - notes:
-      root: ~/dev/phd/research-notes
-      layout: main-horizontal
-      panes:
-        - git status
-        - docker-compose config
   - jupyter:
-        - $CONDA_PREFIX/bin/jupyter lab --no-browser
+        - jupyter lab --no-browser
   - ipython:
         - $CONDA_PREFIX/bin/ipython
   - shell:
