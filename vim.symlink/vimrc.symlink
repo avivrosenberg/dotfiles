@@ -34,7 +34,7 @@ set diffopt+=vertical                   " always open diff with vertical split
 set spelllang=en_us                     " language for spell checking
 set clipboard=unnamed                   " copy to system clipboard if no register specified
 set scrolloff=2                         " keep a few lines visible when scrolling at the top/bottom
-set ttimeoutlen=50                      " key chord timeout length - speeds up transiton from visual to normal mode
+set timeoutlen=200                      " key chord timeout length - speeds up transiton from visual to normal mode
 set foldlevelstart=99                   " To open all folds when opening a file
 
 " Leader Key definition {{{2
@@ -258,10 +258,11 @@ endif
 " VimTeX {{{2
 let g:tex_flavor = "latex"
 let g:vimtex_latexmk_build_dir = "aux"
+let g:vimtex_compiler_latexmk = {'callback' : 0}
 
 " UltiSnips {{{2
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<leader><tab>"
+let g:UltiSnipsListSnippets="<tab><tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEnableSnipMate = 0 " Disable snipMate snippets
@@ -272,7 +273,7 @@ let g:vim_markdown_override_foldtext = 1
 let g:vim_markdown_folding_level = 6
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_new_list_item_indent = 4
+let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_fenced_languages = ['python=python', 'bash=sh', 'yaml=yaml']
 let g:vim_markdown_math = 1
 
