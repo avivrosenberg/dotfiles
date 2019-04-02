@@ -5,7 +5,7 @@
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
 	<key>AllowClipboardAccess</key>
-	<false/>
+	<true/>
 	<key>AnimateDimming</key>
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -639,11 +639,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 476 620 392 0 0 1680 1027 </string>
+	<string>2090 516 620 392 1440 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>655 151 918 512 0 0 1680 1027 </string>
+	<string>2279 217 796 486 1440 -150 1920 1200 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>108 220 1490 807 0 0 1680 1050 </string>
+	<string>78 210 1290 667 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>74 63 1290 667 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
@@ -2217,7 +2219,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-21T08:15:47Z</date>
+	<date>2018-09-12T07:30:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2227,7 +2229,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>
@@ -2252,6 +2254,8 @@
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1531306368</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -3877,9 +3881,11 @@
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.6</string>
+	<string>3.2.0</string>
 </dict>
 </plist>
