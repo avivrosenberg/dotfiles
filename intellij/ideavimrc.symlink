@@ -39,8 +39,13 @@ noremap <leader>gI :action GotoSuperMethod<CR>
 
 noremap K :action QuickJavaDoc<CR>
 
+noremap ]] :action MethodDown<CR>
+noremap [[ :action MethodUp<CR>
+
 noremap ]q :action GotoNextError<CR>
 noremap [q :action GotoPreviousError<CR>
+
+nnoremap gqq :action FillParagraph<CR>
 
 # Move between camel humps
 nnoremap gw :action EditorNextWordInDifferentHumpsMode<CR>
