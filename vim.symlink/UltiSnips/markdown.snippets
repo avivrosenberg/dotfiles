@@ -1,0 +1,5 @@
+extends texmath
+
+snippet imgj "Jekyll Image"
+![${1:pic alt}]({{'assets/images/${2:path}' | absolute_url}} "${3:opt title}")$0
+endsnippet

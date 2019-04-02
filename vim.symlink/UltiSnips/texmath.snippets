@@ -1,0 +1,32 @@
+snippet mat "Matrix macro" w
+\mat{$1}$0
+endsnippet
+
+snippet mattr "Matrix transposed" w
+\mat{$1}^\top$0
+endsnippet
+
+snippet matinv "Matrix inverse" w
+\mat{$1}^{-1}$0
+endsnippet
+
+snippet vec "Vector macro" w
+\vec{$1}$0
+endsnippet
+
+snippet vectr "Vector macro" w
+\vec{$1}^\top$0
+endsnippet
+
+snippet mathmacros "Insert my math macros" w
+\newcommand{\mat}[1]{\boldsymbol {#1}}
+\newcommand{\mattr}[1]{\boldsymbol {#1}^\top}
+\newcommand{\matinv}[1]{\boldsymbol {#1}^{-1}}
+\newcommand{\vec}[1]{\boldsymbol {#1}}
+\newcommand{\vectr}[1]{\boldsymbol {#1}^\top}
+\newcommand{\diag}{\mathop{\mathrm {diag}}}
+\newcommand{\set}[1]{\mathbb {#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+endsnippet
+
