@@ -15,6 +15,7 @@
     mathConfig:
       enableLatexRenderingByDefault: true
       latexRenderer: "HTML-CSS"
+    pandocConfig: {}
     previewConfig:
       activatePreviewWithEditor: true
     renderer: "pandoc"
