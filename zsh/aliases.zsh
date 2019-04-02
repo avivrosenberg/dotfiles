@@ -15,8 +15,10 @@ alias g='git'
 alias gti='git'
 
 # python
-alias py='python'
-alias ipy='ipython'
+# note: single quotes on purpose here
+alias py='$CONDA_PREFIX/bin/python'
+alias ipy='$CONDA_PREFIX/bin/ipython'
+alias wpy='which python'
 
 # tmux
 alias tmux='tmux -u2'
