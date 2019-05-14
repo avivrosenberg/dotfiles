@@ -131,3 +131,6 @@
 [submodule "vim.symlink/bundle/vim-liquid"]
 	path = vim.symlink/bundle/vim-liquid
 	url = git@github.com:tpope/vim-liquid.git
+[submodule "vim.symlink/bundle/dash.vim"]
+	path = vim.symlink/bundle/dash.vim
+	url = https://github.com/rizzatti/dash.vim.git
