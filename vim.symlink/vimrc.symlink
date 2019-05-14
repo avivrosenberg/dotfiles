@@ -34,7 +34,7 @@ set diffopt+=vertical                   " always open diff with vertical split
 set spelllang=en_us                     " language for spell checking
 set clipboard=unnamed                   " copy to system clipboard if no register specified
 set scrolloff=2                         " keep a few lines visible when scrolling at the top/bottom
-set timeoutlen=200                      " key chord timeout length - speeds up transiton from visual to normal mode
+set timeoutlen=400                      " key chord timeout length - speeds up transiton from visual to normal mode
 set foldlevelstart=99                   " To open all folds when opening a file
 
 " Leader Key definition {{{2
