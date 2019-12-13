@@ -134,3 +134,6 @@
 [submodule "vim.symlink/bundle/dash.vim"]
 	path = vim.symlink/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
+[submodule "vim.symlink/bundle/jedi-vim"]
+	path = vim.symlink/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
