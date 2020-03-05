@@ -50,11 +50,10 @@ pre_window:
 
 windows:
   - notes:
-      root: ~/dev/phd/research-notes
+      root: ~/dev/phd/
       layout: main-horizontal
       panes:
-        - git status
-        - docker-compose config
+        - vim notes.md
   - jupyter:
         - $CONDA_PREFIX/bin/jupyter lab --no-browser
   - ipython:

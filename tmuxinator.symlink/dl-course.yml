@@ -1,5 +1,5 @@
-name: cs236605
-root: ~/dev/cs236605-deeplearning/
+name: dl-course
+root: ~/dev/phd/dl-course/
 
 # Runs before everything. Use it to start daemons etc.
 # on_project_start:
@@ -14,7 +14,7 @@ tmux_options: -u2
 # I couldn't find a way to do setenv for the session before opening the first
 # window.
 pre_window:
-  - tmux setenv CONDA_DEFAULT_ENV cs236605-hw
+  - tmux setenv CONDA_DEFAULT_ENV cs236781
   - eval "$(tmux showenv CONDA_DEFAULT_ENV)"
   - conda activate "$CONDA_DEFAULT_ENV"
 
@@ -24,23 +24,24 @@ windows:
       panes:
         - ipython
   - homework:
-      root: ~/dev/cs236605-deeplearning/course_hw/
-      layout: main-horizontal
-      panes:
-        - git status
-        - jupyter lab --no-browser
-  - tutorials:
-      root: ~/dev/cs236605-deeplearning/course_tutorials/
+      root: ~/dev/phd/dl-course/hw/
       layout: main-horizontal
       panes:
         - shell:
-          - conda activate cs236605-tutorials
           - git status
-        - jupyter:
-          - conda activate cs236605-tutorials
-          - jupyter lab --no-browser
+  - tutorials:
+      root: ~/dev/phd/dl-course/tutorials/
+      layout: main-horizontal
+      panes:
+        - shell:
+          - git status
+  - jupyter:
+      root: ~/dev/phd/dl-course
+      layout: main-horizontal
+      panes:
+        - jupyter lab --no-browser
   - website:
-      root: ~/dev/cs236605-deeplearning/website/
+      root: ~/dev/phd/dl-course/website/
       layout: main-horizontal
       panes:
         - git status
