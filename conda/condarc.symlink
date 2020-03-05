@@ -3,6 +3,7 @@
 channels:
   - defaults
 
-ssl_verify: True
+ssl_verify: true
 
-changeps1: False
+changeps1: false
+anaconda_upload: false

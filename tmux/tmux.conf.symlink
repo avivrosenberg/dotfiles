@@ -67,7 +67,7 @@ source-file ~/.dotfiles/tmux/airline-colors-dark.conf
 set-window-option -g allow-rename off
 
 # auto resize for different clients
-setw -g aggressive-resize on
+# setw -g aggressive-resize on
 
 # mouse
 set -g mouse on
