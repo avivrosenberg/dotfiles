@@ -137,3 +137,6 @@
 [submodule "vim.symlink/bundle/jedi-vim"]
 	path = vim.symlink/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "vim.symlink/bundle/csv.vim"]
+	path = vim.symlink/bundle/csv.vim
+	url = git@github.com:chrisbra/csv.vim.git
