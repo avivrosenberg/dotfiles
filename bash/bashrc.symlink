@@ -4,12 +4,13 @@
 ## Aliases
 # bash aliases
 alias l='ls -FG'
-alias ll='ls -lFG'
-alias la='ls -laFG'
-alias gw='./gradlew --daemon'
-alias gwo='./gradlew --daemon --offline'
-alias py='python'
-alias ipy='ipython'
+alias ll='ls -lhFG'
+alias la='ls -lahFG'
+alias g='git'
+alias v='vim'
+alias py='$CONDA_PREFIX/bin/python'
+alias ipy='$CONDA_PREFIX/bin/ipython'
+alias wpy='which python'
 #common typos
 alias gti='git'
 alias mvmi='mvim'
