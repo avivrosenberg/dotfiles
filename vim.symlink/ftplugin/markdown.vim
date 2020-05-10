@@ -14,3 +14,6 @@ setlocal formatlistpat+=\\\|^\\*\\s*
 setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-
 setlocal formatoptions=tcroqln
 
+setlocal shiftwidth=2
+setlocal softtabstop=2
+setlocal tabstop=2
