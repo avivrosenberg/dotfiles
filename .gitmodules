@@ -140,3 +140,9 @@
 [submodule "vim.symlink/bundle/csv.vim"]
 	path = vim.symlink/bundle/csv.vim
 	url = git@github.com:chrisbra/csv.vim.git
+[submodule "vim.symlink/bundle/vim-pandoc"]
+	path = vim.symlink/bundle/vim-pandoc
+	url = git@github.com:vim-pandoc/vim-pandoc.git
+[submodule "vim.symlink/bundle/vim-pandoc-syntax"]
+	path = vim.symlink/bundle/vim-pandoc-syntax
+	url = git@github.com:vim-pandoc/vim-pandoc-syntax.git
