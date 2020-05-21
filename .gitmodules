@@ -82,10 +82,6 @@
 	path = vim.symlink/bundle/tmuxline.vim
 	url = git@github.com:edkolev/tmuxline.vim.git
     ignore = dirty
-[submodule "vim.symlink/bundle/ctrlp.vim"]
-	path = vim.symlink/bundle/ctrlp.vim
-	url = git@github.com:kien/ctrlp.vim.git
-    ignore = dirty
 [submodule "vim.symlink/bundle/delimitMate"]
 	path = vim.symlink/bundle/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
@@ -146,3 +142,9 @@
 [submodule "vim.symlink/bundle/vim-pandoc-syntax"]
 	path = vim.symlink/bundle/vim-pandoc-syntax
 	url = git@github.com:vim-pandoc/vim-pandoc-syntax.git
+[submodule "vim.symlink/bundle/fzf.vim"]
+	path = vim.symlink/bundle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
+[submodule "vim.symlink/bundle/fzf"]
+	path = vim.symlink/bundle/fzf
+	url = git@github.com:junegunn/fzf.git
