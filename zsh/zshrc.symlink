@@ -38,6 +38,26 @@ if [[ -d "$HOME/.rvm" ]]; then
     rvm default 2>/dev/null
 fi
 
+###
+## FZF
+FZF_DIR="$(brew --prefix fzf)"
+if [[ -d "$FZF_DIR" ]]; then
+  FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+  # Use ripgrep if fzf invoked without command
+  if [[ -x "$(which rg)" ]]; then
+    FZF_DEFAULT_COMMAND='rg --files'
+  fi
+
+  # Auto-completion
+  [[ $- == *i* ]] && source "$FZF_DIR/shell/completion.zsh" 2> /dev/null
+
+  # Key bindings
+  source "$FZF_DIR/shell/key-bindings.zsh"
+
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"
+  export FZF_DEFAULT_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
 
 
 ###
