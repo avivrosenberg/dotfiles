@@ -3,7 +3,7 @@
 ####
 ## Aliases
 # bash aliases
-alias l='ls -FG'
+alias l='ls -hFG'
 alias ll='ls -lhFG'
 alias la='ls -lahFG'
 alias g='git'
@@ -57,6 +57,27 @@ if [[ -d "$ANACONDA_PATH" ]]; then
     # Activate the default conda env (specifying env var so I can override the
     # default per tmux session)
     conda activate "$CONDA_DEFAULT_ENV"
+fi
+
+###
+## FZF
+FZF_DIR="$(brew --prefix fzf)"
+if [[ -d "$FZF_DIR" ]]; then
+  FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
+
+  # Use ripgrep if fzf invoked without command
+  if [[ -x "$(which rg)" ]]; then
+    FZF_DEFAULT_COMMAND='rg --files'
+  fi
+
+  # Auto-completion
+  [[ $- == *i* ]] && source "$FZF_DIR/shell/completion.bash" 2> /dev/null
+
+  # Key bindings
+  source "$FZF_DIR/shell/key-bindings.bash"
+
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"
+  export FZF_DEFAULT_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
 # Add custom binaries/scripts
