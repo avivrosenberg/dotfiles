@@ -1,4 +1,4 @@
-" vim: nowrap fdm=marker
+" vim: nowrap fdm=marker ft=vim
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -118,13 +118,9 @@ hi clear CursorLineNr " fixes the ugly yellow default line number color
 " Key Mappings {{{1
 " Searching {{{2
 
-" Search with very-magic by default
-noremap / /\v
-noremap ? ?\v
-
-" If using CTRL-/ and CTRL-?, use very-nomagic
-noremap <C-_> /\V
-noremap <C-?> ?\V
+" If using CTRL-/ and CTRL-?, use very-magic
+noremap <C-_> /\v
+noremap <C-?> ?\v
 
 " Window and buffer switching {{{2
 nnoremap <Leader><Leader> <C-^>
@@ -156,7 +152,7 @@ nmap <Leader>gg :Ggrep <C-R><C-W><CR>
 " Tagbar {{{3
 nmap <Leader>tg :TagbarOpen fjc<CR>
 
-" CTags {{{2
+" CTags {{{3
 " Create tags, redirect warnings to /dev/null and skip prompt
 nnoremap <Leader>T :!ctags -R --exclude=.git --exclude=logs --exclude=doc --exclude=vendor . 2>/dev/null<CR><CR>
 
@@ -165,13 +161,17 @@ nmap <silent> <Leader><Space> :nohl<CR>
 nnoremap <Leader>lq :copen<CR>
 nnoremap <Leader>ll :lopen<CR>
 
-" CtrlP {{{2
-nnoremap <silent> <Leader>ff :CtrlP<CR>
-nnoremap <silent> <Leader>fb :CtrlPBuffer<CR>
-nnoremap <silent> <Leader>fT :CtrlPTag<CR>
-nnoremap <silent> <Leader>ft :CtrlPBufTag<CR>
-nnoremap <silent> <Leader>fd :CtrlPDir<CR>
-nnoremap <silent> <Leader>fm :CtrlPMRU<CR>
+" FZF {{{2
+nnoremap <silent> <Leader>ff :FZFFiles<CR>
+nnoremap <silent> <Leader>fF :FZFRg<CR>
+nnoremap <silent> <Leader>fb :FZFBuffers<CR>
+nnoremap <silent> <Leader>fT :FZFTags<CR>
+nnoremap <silent> <Leader>ft :FZFBTags<CR>
+nnoremap <silent> <Leader>fh :FZFHelptags<CR>
+nnoremap <silent> <Leader>fs :FZFSnippets<CR>
+nnoremap <silent> <Leader>fl :FZFBLines<CR>
+nnoremap <silent> <Leader>fL :FZFLines<CR>
+nnoremap <silent> <Leader>f' :FZFMarks<CR>
 
 " Whitespace removal {{{2
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
@@ -182,6 +182,18 @@ imap <f12> <c-o>:call ToggleHebrew()<cr>
 map <f12> :call ToggleHebrew()<cr>
 
 " Plugin Customizations {{{1
+
+" FZF {{{2
+let g:fzf_command_prefix = 'FZF'
+let g:fzf_tags_command = 'ctags -R --exclude=.git'
+
+if !executable('fzf')
+    " Installs fzf binary in the plugin directory, just for vim
+    runtime bundle/fzf/plugin/fzf.vim
+    execute fzf#install()
+endif
+
+
 
 " Ruby Completion {{{2
 let g:rubycomplete_classes_in_global = 1
@@ -223,25 +235,6 @@ if executable('ripper-tags')
                 \ 'ctagsargs': ['-f', '-']
                 \ }
 endif
-
-" CtrlP {{{2
-let g:ctrlp_working_path_mode = '0'
-let g:ctrlp_by_filename = 1 " by default, match filenames (not full path). <C-d> toggles.
-let g:ctrlp_show_hidden = 1
-
-" custom ignore expressions
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$\|vendor/bundle',
-            \ 'file':  '\.DS_Store$'
-            \}
-
-" Use the_silver_searcher if possible, it's FAST
-if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
-" add modes
-let g:ctrlp_extensions = ['tag', 'buffertag']
 
 " Syntastic {{{2
 " Use ruby-lint if available
