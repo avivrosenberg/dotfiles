@@ -58,10 +58,6 @@
     path = vim.symlink/bundle/vim-textobj-user
     url = https://github.com/kana/vim-textobj-user.git
     ignore = dirty
-[submodule "vim.symlink/bundle/vim-textobj-rubyblock"]
-    path = vim.symlink/bundle/vim-textobj-rubyblock
-    url = https://github.com/nelstrom/vim-textobj-rubyblock.git
-    ignore = dirty
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
