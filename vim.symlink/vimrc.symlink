@@ -22,6 +22,7 @@ set ruler                               " show the cursor position all the time
 set showcmd                             " display incomplete commands
 set showmode                            " Show current mode down the bottom
 set number                              " line numbers
+set relativenumber                      " relative line numbers
 set nowrap                              " don't wrap lines
 set linebreak                           " wrap lines at convenient points
 set backspace=indent,eol,start          " allow backspacing over everything in insert mode
@@ -31,6 +32,7 @@ set wildmenu                            " enhanced commandline completion
 set wildmode=full                       " commandline completion mode
 set completeopt=menu,preview,longest    " completion oinserts text up to the longest match only
 set diffopt+=vertical                   " always open diff with vertical split
+set spell                               " spell checking
 set spelllang=en_us                     " language for spell checking
 set clipboard=unnamed                   " copy to system clipboard if no register specified
 set scrolloff=2                         " keep a few lines visible when scrolling at the top/bottom
