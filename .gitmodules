@@ -1,7 +1,3 @@
-[submodule "vim.symlink/bundle/vim-ruby"]
-    path = vim.symlink/bundle/vim-ruby
-    url = git://github.com/vim-ruby/vim-ruby.git
-    ignore = dirty
 [submodule "vim.symlink/bundle/vim-fugitive"]
     path = vim.symlink/bundle/vim-fugitive
     url = https://github.com/tpope/vim-fugitive.git
@@ -46,10 +42,6 @@
     path = vim.symlink/bundle/syntastic
     url = https://github.com/scrooloose/syntastic.git
     ignore = dirty
-[submodule "vim.symlink/bundle/scratch.vim"]
-    path = vim.symlink/bundle/scratch.vim
-    url = https://github.com/mtth/scratch.vim.git
-    ignore = dirty
 [submodule "vim.symlink/bundle/tagbar"]
     path = vim.symlink/bundle/tagbar
     url = https://github.com/majutsushi/tagbar.git
@@ -90,9 +82,6 @@
 [submodule "vim.symlink/bundle/vim-angry"]
 	path = vim.symlink/bundle/vim-angry
 	url = git@github.com:b4winckler/vim-angry.git
-[submodule "vim.symlink/bundle/AnsiEsc.vim"]
-	path = vim.symlink/bundle/AnsiEsc.vim
-	url = git@github.com:vim-scripts/AnsiEsc.vim.git
 [submodule "vim.symlink/bundle/vimtex"]
 	path = vim.symlink/bundle/vimtex
 	url = git@github.com:lervag/vimtex.git
@@ -105,12 +94,6 @@
 [submodule "zsh/plugins/docker"]
 	path = zsh/plugins/docker
 	url = git@github.com:felixr/docker-zsh-completion.git
-[submodule "vim.symlink/bundle/groovy.vim"]
-	path = vim.symlink/bundle/groovy.vim
-	url = git@github.com:modille/groovy.vim.git
-[submodule "vim.symlink/bundle/vim-gradle"]
-	path = vim.symlink/bundle/vim-gradle
-	url = git@github.com:tfnico/vim-gradle.git
 [submodule "vim.symlink/bundle/tabular"]
 	path = vim.symlink/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
