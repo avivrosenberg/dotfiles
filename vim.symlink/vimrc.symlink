@@ -175,6 +175,20 @@ nnoremap <silent> <Leader>fl :FZFBLines<CR>
 nnoremap <silent> <Leader>fL :FZFLines<CR>
 nnoremap <silent> <Leader>f' :FZFMarks<CR>
 
+" Show mappings in various modes
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" ACK {{{2
+nnoremap <silent> <Leader>/ :Ack!<Space>
+
+
 " Whitespace removal {{{2
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
@@ -188,20 +202,24 @@ map <f12> :call ToggleHebrew()<cr>
 " FZF {{{2
 let g:fzf_command_prefix = 'FZF'
 let g:fzf_tags_command = 'ctags -R --exclude=.git'
+" Note: while fzf is open the following non-configurable maps are available:
+" - use ALT+A to select all, ALT+D to deselect all
+" - use TAB to select multiple items
+" - use ENTER with multiple selected items to open quickfix list with those
+"   items
+let g:fzf_action = {
+    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-x': 'split',
+    \ 'ctrl-v': 'vsplit'}
+
 
 if !executable('fzf')
-    " Installs fzf binary in the plugin directory, just for vim
+    " Incase fzf is not installed system-wide,
+    " installs fzf binary in the plugin directory, just for vim
     runtime bundle/fzf/plugin/fzf.vim
     execute fzf#install()
 endif
 
-
-
-" Ruby Completion {{{2
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
-let g:rubycomplete_use_bundler = 1
-"let g:rubycomplete_buffer_loading = 1
 
 " Fugitive {{{2
 " This maps '..' to go back when browsing object with fugitive.
@@ -219,36 +237,27 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#tagbar#enabled = 0
 
-" Tagbar {{{2
-" use 'ripper-tags' (if available) to generate ruby ctags with tagbar
-if executable('ripper-tags')
-
-    " Configure Tagbar to user ripper-tags with ruby
-    let g:tagbar_type_ruby = {
-                \ 'kinds' : [
-                    \ 'm:modules',
-                    \ 'c:classes',
-                    \ 'f:methods',
-                    \ 'F:singleton methods',
-                    \ 'C:constants',
-                    \ 'a:aliases'
-                \ ],
-                \ 'ctagsbin':  'ripper-tags',
-                \ 'ctagsargs': ['-f', '-']
-                \ }
-endif
-
 " Syntastic {{{2
-" Use ruby-lint if available
-" let g:syntastic_ruby_checkers = ['mri', 'rubylint']
 " Show errors from different checkers together
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": ["python","zsh","sh","tex","latex"],
+    \ "passive_filetypes": [] }
 
 " Ack {{{2
-" Use the_silver_searcher (Ag) instead of ack
-if executable('ag')
-    let g:ackprg='ag --smart-case --silent --vimgrep'
+" Use ripgrep (rg) as a search tool
+if executable('rg')
+    let g:ackprg='rg --vimgrep --no-heading --smart-case'
+    let grepprg='rg --vimgrep --no-heading --smart-case'
 endif
+" Prevent Ack from jumping to first result
+cnoreabbrev Ack Ack!
+
 
 " VimTeX {{{2
 let g:tex_flavor = "latex"
@@ -260,7 +269,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<tab><tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEnableSnipMate = 0 " Disable snipMate snippets
+let g:UltiSnipsEnableSnipMate = 1 " Disable snipMate snippets
+let g:UltiSnipsEditSplit = 'vertical'
 
 " Markdown {{{2
 let g:vim_markdown_folding_style_pythonic = 1
