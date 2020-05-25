@@ -36,7 +36,7 @@ set spell                               " spell checking
 set spelllang=en_us                     " language for spell checking
 set clipboard=unnamed                   " copy to system clipboard if no register specified
 set scrolloff=2                         " keep a few lines visible when scrolling at the top/bottom
-set timeoutlen=400                      " key chord timeout length - speeds up transiton from visual to normal mode
+set timeoutlen=500                      " key chord timeout length - speeds up transiton from visual to normal mode
 set foldlevelstart=99                   " To open all folds when opening a file
 
 " Leader Key definition {{{2
@@ -70,7 +70,6 @@ set incsearch                       " do incremental searching
 set hlsearch                        " hilight current search pattern
 set ignorecase                      " case insensitive
 set smartcase                       " choose correct case when searching
-set gdefault                        " global substitution default
 
 " General Indentation {{{2
 set autoindent
@@ -126,10 +125,10 @@ noremap <C-?> ?\v
 
 " Window and buffer switching {{{2
 nnoremap <Leader><Leader> <C-^>
-nnoremap <silent> <Down> :bnext<CR>
-nnoremap <silent> <Up> :bprevious<CR>
-nnoremap <silent> <Left> :tabprevious<CR>
-nnoremap <silent> <Right> :tabnext<CR>
+nnoremap <silent> <Down> <NOP>
+nnoremap <silent> <Up> <NOP>
+nnoremap <silent> <Left> <NOP>
+nnoremap <silent> <Right> <NOP>
 
 " Commandline Mode {{{2
 " better scrolling of commandline history: Up/Down support partial matching
@@ -181,9 +180,11 @@ xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
 
 " Insert mode completion
+" inoremap <expr> <c-x><c-f> fzf#vim#complete#path('rg --files')
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
 
 " ACK {{{2
 nnoremap <silent> <Leader>/ :Ack!<Space>
@@ -252,8 +253,8 @@ let g:syntastic_mode_map = {
 " Ack {{{2
 " Use ripgrep (rg) as a search tool
 if executable('rg')
-    let g:ackprg='rg --vimgrep --no-heading --smart-case'
-    let grepprg='rg --vimgrep --no-heading --smart-case'
+    let g:ackprg='rg --vimgrep --color=never --no-heading --smart-case'
+    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case\ --color=never
 endif
 " Prevent Ack from jumping to first result
 cnoreabbrev Ack Ack!
@@ -281,6 +282,16 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_fenced_languages = ['python=python', 'bash=sh', 'yaml=yaml']
 let g:vim_markdown_math = 1
+
+" Pandoc {{{2
+let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
+let g:pandoc#filetypes#pandoc_markdown = 1      " use pandoc markdown syntax in .md files
+let g:pandoc#biblio#bibs = [$HOME."/Documents/library.bib"]
+let g:pandoc#syntax#conceal#use = 0
+let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'vim', 'make', 'bash=sh', 'shell=sh', 'html', 'css', 'scss', 'javascript']
+let g:pandoc#syntax#codeblocks#embeds#use = 1
+let g:pandoc#formatting#mode = 'h'  " hard wraps
+let g:pandoc#hypertext#split_open_cmd = 'edit' " open in same buffer
 
 " Custom VIM functions {{{1
 
