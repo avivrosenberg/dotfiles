@@ -1,0 +1,18 @@
+# Note: This file is not automatically used by ripgrep.
+# The env var RIPGREP_CONFIG_PATH must point to this file.
+
+
+# Use case-sensitive search if atleast one capital letter.
+--smart-case
+
+# Show hidden files
+--hidden
+
+# Follow symlinks
+--follow
+
+# Ignore the git objects directory
+--glob=!.git*
+
+# Don't ignore files from .gitignore
+--no-ignore
