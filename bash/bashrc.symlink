@@ -33,21 +33,7 @@ if [[ -x "$(which brew)" ]]; then
 fi
 
 ####
-## RVM
-if [[ -d "$HOME/.rvm" ]]; then
-    # Path
-    PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-    # Load RVM into a shell session *as a function*
-    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-    # CompletioN
-    [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
-fi
-
-####
 ## Anaconda
-
 # Find a user-local anaconda3 or miniconda3 installation.
 export ANACONDA_PATH=$(find $HOME -maxdepth 2 -type d -name '*conda3' | head -n 1)
 
