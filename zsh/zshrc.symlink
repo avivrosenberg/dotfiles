@@ -29,23 +29,19 @@ if [[ -x "$(which brew)" ]]; then
     PATH="$brewbin:$PATH"
 fi
 
-###
-## RVM
-if [[ -d "$HOME/.rvm" ]]; then
-    PATH=$PATH:$HOME/.rvm/bin
-    # load rvm as a function and activate default ruby
-    source "$HOME/.rvm/scripts/rvm"
-    rvm default 2>/dev/null
-fi
 
 ###
 ## FZF
 FZF_DIR="$(brew --prefix fzf)"
 if [[ -d "$FZF_DIR" ]]; then
-  FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+  FZF_LAYOUT='-1 --height 50% --layout=reverse --border --multi --info=inline'
+  FZF_PREVIEW="--preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap'"
+  FZF_BIND="--bind='f3:execute(bat --style=numbers --color=always --paging=always {} || less -f {}),f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up'"
 
   # Use ripgrep if fzf invoked without command
   if [[ -x "$(which rg)" ]]; then
+    # Note that rg will use extra options from ~/.ripgreprc
+    # so here we only need the 'files' options
     FZF_DEFAULT_COMMAND='rg --files'
   fi
 

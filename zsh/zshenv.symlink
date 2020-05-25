@@ -36,4 +36,7 @@ export DOTFILES="$HOME/.dotfiles"
 export LESS='-R -S'
 export PAGER='less -RSFX'
 export LC_ALL=en_US.UTF-8
-
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+export BAT_PAGER='less'
+export BAT_THEME='Solarized (dark)'
+export NOTES_DIR="$HOME/Dropbox/Notes"
