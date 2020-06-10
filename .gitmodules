@@ -135,3 +135,6 @@
 [submodule "vim.symlink/bundle/vim-ipython-cell"]
 	path = vim.symlink/bundle/vim-ipython-cell
 	url = git@github.com:hanschen/vim-ipython-cell.git
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
