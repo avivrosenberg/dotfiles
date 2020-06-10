@@ -240,14 +240,6 @@ let g:fzf_action = {
     \ 'ctrl-v': 'vsplit'}
 
 
-if !executable('fzf')
-    " Incase fzf is not installed system-wide,
-    " installs fzf binary in the plugin directory, just for vim
-    runtime bundle/fzf/plugin/fzf.vim
-    execute fzf#install()
-endif
-
-
 " Fugitive {{{2
 " This maps '..' to go back when browsing object with fugitive.
 autocmd User fugitive
