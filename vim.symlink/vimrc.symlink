@@ -10,6 +10,10 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 " list of bundle names for pathogen to skip loading
 let g:pathogen_disabled = []
 
+" List of languages to skip during vim-polyglot initialization
+" Skip markdown here because I want the vim-pandoc plugin to handle markdown files.
+let g:polyglot_disabled = ['markdown']
+
 " This loads all the plugins in ~/.vim/bundle (except skipped ones)
 execute pathogen#infect()
 execute pathogen#helptags()
@@ -291,25 +295,15 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEnableSnipMate = 1 " Disable snipMate snippets
 let g:UltiSnipsEditSplit = 'vertical'
 
-" Markdown {{{2
-let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_override_foldtext = 1
-let g:vim_markdown_folding_level = 6
-let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_new_list_item_indent = 2
-let g:vim_markdown_fenced_languages = ['python=python', 'bash=sh', 'yaml=yaml']
-let g:vim_markdown_math = 1
-
 " Pandoc {{{2
 let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
 let g:pandoc#filetypes#pandoc_markdown = 1      " use pandoc markdown syntax in .md files
 let g:pandoc#biblio#bibs = [$HOME."/Documents/library.bib"]
+let g:pandoc#formatting#mode = 'h'  " hard wraps
+let g:pandoc#hypertext#split_open_cmd = 'edit' " open in same buffer
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'vim', 'make', 'bash=sh', 'shell=sh', 'html', 'css', 'scss', 'javascript']
 let g:pandoc#syntax#codeblocks#embeds#use = 1
-let g:pandoc#formatting#mode = 'h'  " hard wraps
-let g:pandoc#hypertext#split_open_cmd = 'edit' " open in same buffer
 
 " Custom VIM functions {{{1
 
