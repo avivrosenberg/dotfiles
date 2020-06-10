@@ -37,6 +37,18 @@ function! zettel#newzettel(...)
     call append(line(0), l:front_matter)
 endfunction
 
+function! zettel#linksink(fzf_items)
+    " Takes an fzf selected items and wraps it in a markdown link
+    for l:fzf_item in a:fzf_items
+        if len(l:fzf_item) == 0
+            continue
+        endif
+        let l:fzf_item = split(l:fzf_item, ':')
+        let l:fzf_item = substitute(l:fzf_item[0], g:ztl_zks_dir, './', '')
+        call append(line('.'), "[" . l:fzf_item . "]")
+    endfor
+endfunction
+
 " Create a new zettel, args are the title
 " :ZtlNew this is my title
 command! -nargs=* ZtlNew call zettel#newzettel(<f-args>)
@@ -46,6 +58,7 @@ command! -nargs=1 ZtlTagFiles execute 'silent grep! "^\s+-\s+\#<args>" '.g:ztl_n
 
 let s:ripgrep_cmd = 'rg --column --line-number --no-heading --color=always --smart-case -- '
 let s:fzf_opts = {'options': '--delimiter : --nth 4..'} " this makes fzf ignore matches in filename, only content
+let s:fzf_opts_link = {'sink*': function('zettel#linksink')} " this makes fzf ignore matches in filename, only content
 let s:fzf_preview_opts = 'right:40%'
 
 " Fuzzy search for tags
@@ -60,6 +73,12 @@ command! -bang -nargs=* ZtlGrep
   \ call fzf#vim#grep(
   \   s:ripgrep_cmd . shellescape(<q-args>) . ' ' . g:ztl_notes_dir , 1,
   \   fzf#vim#with_preview(s:fzf_opts, s:fzf_preview_opts), <bang>0
+  \)
+
+command! -bang -nargs=* ZtlLink
+  \ call fzf#vim#grep(
+  \   s:ripgrep_cmd . shellescape(<q-args>) . ' ' . g:ztl_notes_dir , 1,
+  \   fzf#vim#with_preview(extend(s:fzf_opts, s:fzf_opts_link), s:fzf_preview_opts), <bang>0
   \)
 
 augroup zettel

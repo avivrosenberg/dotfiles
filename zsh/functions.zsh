@@ -49,3 +49,8 @@ function pathmunge () {
     fi
   fi
 }
+
+# Zettel
+function zetnew() {
+  vim -c "ZtlNew $*"
+}
