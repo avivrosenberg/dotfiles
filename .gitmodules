@@ -18,10 +18,6 @@
     path = vim.symlink/bundle/vim-pathogen
     url = https://github.com/tpope/vim-pathogen.git
     ignore = dirty
-[submodule "vim.symlink/bundle/vim-markdown"]
-    path = vim.symlink/bundle/vim-markdown
-    url = https://github.com/plasticboy/vim-markdown.git
-    ignore = dirty
 [submodule "vim.symlink/bundle/vim-abolish"]
     path = vim.symlink/bundle/vim-abolish
     url = https://github.com/tpope/vim-abolish.git
