@@ -47,8 +47,8 @@ fi
 
 ###
 ## FZF
-FZF_DIR="$(brew --prefix fzf)"
-if [[ -d "$FZF_DIR" ]]; then
+if [[ -x "$(which brew)" && -d "$(brew --prefix fzf)" ]]; then
+  FZF_DIR="$(brew --prefix fzf)"
   FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
 
   # Use ripgrep if fzf invoked without command

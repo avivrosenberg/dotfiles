@@ -32,8 +32,8 @@ fi
 
 ###
 ## FZF
-FZF_DIR="$(brew --prefix fzf)"
-if [[ -d "$FZF_DIR" ]]; then
+if [[ -x "$(which brew)" && -d "$(brew --prefix fzf)" ]]; then
+  FZF_DIR="$(brew --prefix fzf)"
   FZF_LAYOUT='-1 --height 50% --layout=reverse --border --multi --info=inline'
   FZF_PREVIEW="--preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap'"
   FZF_BIND="--bind='f3:execute(bat --style=numbers --color=always --paging=always {} || less -f {}),f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up'"
