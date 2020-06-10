@@ -120,3 +120,18 @@
 [submodule "vim.symlink/bundle/fzf"]
 	path = vim.symlink/bundle/fzf
 	url = git@github.com:junegunn/fzf.git
+[submodule "vim.symlink/bundle/jedi-vim"]
+	path = vim.symlink/bundle/jedi-vim
+	url = git@github.com:davidhalter/jedi-vim.git
+[submodule "vim.symlink/bundle/ale"]
+	path = vim.symlink/bundle/ale
+	url = git@github.com:dense-analysis/ale.git
+[submodule "vim.symlink/bundle/vim-slime"]
+	path = vim.symlink/bundle/vim-slime
+	url = git@github.com:jpalardy/vim-slime.git
+[submodule "vim.symlink/bundle/vim-polyglot"]
+	path = vim.symlink/bundle/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git
+[submodule "vim.symlink/bundle/vim-ipython-cell"]
+	path = vim.symlink/bundle/vim-ipython-cell
+	url = git@github.com:hanschen/vim-ipython-cell.git
