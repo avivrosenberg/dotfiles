@@ -134,3 +134,6 @@
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim.symlink/bundle/tex-conceal.vim"]
+	path = vim.symlink/bundle/tex-conceal.vim
+	url = git@github.com:KeitaNakamura/tex-conceal.vim.git
