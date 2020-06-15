@@ -1,14 +1,12 @@
 setlocal spell
 setlocal wrap
 setlocal textwidth=80
+setlocal conceallevel=2
 
 nnoremap <buffer> j gj
 nnoremap <buffer> k gk
 nnoremap <buffer> $ g$
 nnoremap <buffer> ^ g^
-
-" Add '$' to quote symbols for delimitMate (so that $ -> $$)
-let b:delimitMate_quotes = "\" ' $"
 
 setlocal formatlistpat+=\\\|^\\*\\s*
 setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-

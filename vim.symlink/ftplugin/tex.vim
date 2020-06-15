@@ -2,6 +2,7 @@
 setlocal spell
 setlocal wrap
 setlocal textwidth=80
+setlocal conceallevel=2
 
 " Add ':' and '-' to iskeyword so that CTRL-N and other completions work with
 " things like 'eq:foo-bar'.

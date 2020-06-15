@@ -42,6 +42,7 @@ set clipboard=unnamed                   " copy to system clipboard if no registe
 set scrolloff=2                         " keep a few lines visible when scrolling at the top/bottom
 set timeoutlen=500                      " key chord timeout length - speeds up transiton from visual to normal mode
 set foldlevelstart=99                   " To open all folds when opening a file
+set conceallevel=0                      " Disable conceal
 
 " Leader Key definition {{{2
 let mapleader = ","                     " define leader key for custom mappings, and remap default to comma
@@ -146,6 +147,15 @@ cnoremap <C-P> <Up>
 " Insert Mode {{{2
 " Delete forward in insert mode
 inoremap <C-l> <Del>
+" Fix spelling mistakes
+inoremap <C-Space> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+
+" Visual Mode {{{2
+" Search for visual selection: yank selection, then escape slashes in yanked register
+" value @" and use very-nomagic search.
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 
 " Leader Key Mappings for plugins{{{2
 " Fugitive {{{3
@@ -282,14 +292,17 @@ endif
 cnoreabbrev Ack Ack!
 
 
-" VimTeX {{{2
+" VimTeX and TeX-Conceal {{{2
 let g:tex_flavor = "latex"
 let g:vimtex_latexmk_build_dir = "aux"
 let g:vimtex_compiler_latexmk = {'callback' : 0}
+let g:tex_superscripts= "[0-9a-zA-W.,:;+-<>/()=]"
+let g:tex_subscripts= "[0-9aehijklmnoprstuvx,+-/().]"
+let g:tex_conceal="abdgm"
 
 " UltiSnips {{{2
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<tab><tab>"
+let g:UltiSnipsListSnippets=""
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEnableSnipMate = 1 " Disable snipMate snippets
