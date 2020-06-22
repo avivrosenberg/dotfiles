@@ -140,3 +140,6 @@
 [submodule "zsh/plugins/conda-zsh-completion"]
 	path = zsh/plugins/conda-zsh-completion
 	url = https://github.com/esc/conda-zsh-completion
+[submodule "vim.symlink/bundle/asyncrun.vim"]
+	path = vim.symlink/bundle/asyncrun.vim
+	url = git@github.com:skywind3000/asyncrun.vim.git
