@@ -136,7 +136,7 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "vim.symlink/bundle/tex-conceal.vim"]
 	path = vim.symlink/bundle/tex-conceal.vim
-	url = git@github.com:KeitaNakamura/tex-conceal.vim.git
+	url = git@github.com:avivrosenberg/tex-conceal.vim.git
 [submodule "zsh/plugins/conda-zsh-completion"]
 	path = zsh/plugins/conda-zsh-completion
 	url = https://github.com/esc/conda-zsh-completion
