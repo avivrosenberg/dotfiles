@@ -5,5 +5,6 @@ channels:
 
 ssl_verify: true
 
-changeps1: false
+changeps1: true
 anaconda_upload: false
+auto_activate_base: false
