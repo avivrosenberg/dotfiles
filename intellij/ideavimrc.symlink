@@ -57,6 +57,43 @@ noremap <leader>trf :action RerunFailedTests<CR>
 
 " Enable Ctlr-N/P to cycle completion words in insert mode.
 " Make sure C-N and C-P are mapped to Down/Up in the Keymap settings and sent to ideaVim.
-" imap <C-n> <ESC>:action HippieCompletion<CR>a
-" imap <C-p> <ESC>:action HippieBackwardCompletion<CR>a
+" Update: This no longer works... If IDE sends these to vim, they stop working for the
+" smart completion menu
+imap <C-n> <ESC>:action HippieCompletion<CR>a
+imap <C-p> <ESC>:action HippieBackwardCompletion<CR>a
 
+" Folding (collapse/expand)
+" --- Actions ---
+" CollapseAll                                        <M-m> <M-->
+" CollapseAllRegions                                 <M-S-m> <M-S-->
+" CollapseBlock                                      <M-S-.>
+" CollapseDocComments
+" CollapseExpandableComponent                        <S-CR> <M-m> <M-->
+" CollapseRegion                                     <M-m> <M-->
+" CollapseRegionRecursively                          <M-A-m> <M-A-->
+" CollapseSelection                                  <M-.>
+" --- Actions ---
+" CollapseExpandableComponent                        <S-CR> <M-m> <M-->
+" ExpandAll                                          <M-k> <M-=>
+" ExpandAllRegions                                   <M-S-k> <M-S-=>
+" ExpandAllToLevel
+" ExpandAllToLevel1                                  <M-A-j> <M-A-j>
+" ExpandAllToLevel2                                  <M-A-j> <M-A-j>
+" ExpandAllToLevel3                                  <M-A-j> <M-A-j>
+" ExpandAllToLevel4                                  <M-A-j> <M-A-j>
+" ExpandAllToLevel5                                  <M-A-j> <M-A-j>
+" ExpandDocComments
+" ExpandExpandableComponent                          <S-CR> <M-k> <M-=>
+" ExpandRegion                                       <M-k> <M-=>
+" ExpandRegionRecursively                            <M-A-k> <M-A-=>
+" ExpandToLevel
+" ExpandToLevel1                                     <M-j> <M-j>
+" ExpandToLevel2                                     <M-j> <M-j>
+" ExpandToLevel3                                     <M-j> <M-j>
+" ExpandToLevel4                                     <M-j> <M-j>
+" ExpandToLevel5                                     <M-j> <M-j>
+noremap zc :action CollapseRegion<CR>
+noremap zC :action CollapseAll<CR>
+noremap zo :action ExpandRegion<CR>
+noremap zO :action ExpandAll<CR>
+noremap zr :action ExpandAllToLevel<CR>
