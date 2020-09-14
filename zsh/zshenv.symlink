@@ -35,6 +35,7 @@ export EDITOR='vim'
 export DOTFILES="$HOME/.dotfiles"
 export LESS='-R -S'
 export PAGER='less -RSFX'
+export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 export BAT_PAGER='less'

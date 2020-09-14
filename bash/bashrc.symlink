@@ -8,12 +8,14 @@ alias ll='ls -lhFG'
 alias la='ls -lahFG'
 alias g='git'
 alias v='vim'
-alias py='$CONDA_PREFIX/bin/python'
-alias ipy='$CONDA_PREFIX/bin/ipython'
+alias nv='nvim'
+alias vmi='vim'
+alias py='python3'
+alias ipy='ipython'
+alias pyt='pytest'
 alias wpy='which python'
 #common typos
 alias gti='git'
-alias mvmi='mvim'
 
 ####
 ## Homebrew
@@ -40,9 +42,6 @@ export ANACONDA_PATH=$(find $HOME -maxdepth 2 -type d -name '*conda3' | head -n 
 # Set up conda and activate the default environment
 if [[ -d "$ANACONDA_PATH" ]]; then
     source "$ANACONDA_PATH/etc/profile.d/conda.sh"
-    # Activate the default conda env (specifying env var so I can override the
-    # default per tmux session)
-    conda activate "$CONDA_DEFAULT_ENV"
 fi
 
 ###
