@@ -6,10 +6,6 @@
     path = vim.symlink/bundle/matchit.vim
     url = https://github.com/vim-scripts/matchit.zip.git
     ignore = dirty
-[submodule "vim.symlink/bundle/vim-colors-solarized"]
-    path = vim.symlink/bundle/vim-colors-solarized
-    url = https://github.com/altercation/vim-colors-solarized.git
-    ignore = dirty
 [submodule "vim.symlink/bundle/vim-surround"]
     path = vim.symlink/bundle/vim-surround
     url = https://github.com/tpope/vim-surround.git
