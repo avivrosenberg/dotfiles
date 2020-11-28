@@ -12,7 +12,7 @@ let g:pathogen_disabled = []
 
 " List of languages to skip during vim-polyglot initialization
 " Skip markdown here because I want the vim-pandoc plugin to handle markdown files.
-let g:polyglot_disabled = ['markdown']
+let g:polyglot_disabled = ['markdown', 'mathematica']
 
 " This loads all the plugins in ~/.vim/bundle (except skipped ones)
 execute pathogen#infect()
@@ -304,7 +304,7 @@ let g:vimtex_latexmk_build_dir = "aux"
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:tex_superscripts= "[0-9a-zA-W.,:;+-<>/()=]"
 let g:tex_subscripts= "[0-9aehijklmnoprstuvx,+-/().]"
-let g:tex_conceal="abdgm"
+let g:tex_conceal="abdgms"
 
 " UltiSnips {{{2
 let g:UltiSnipsExpandTrigger="<tab>"
