@@ -118,8 +118,14 @@ if $ITERM_PROFILE =~ "[Ll]ight"
 else
     set background=dark
 endif
-colorscheme solarized
-" set termguicolors
+
+" True color support (see :help xterm-true-color)
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+
+colorscheme solarized8
+
 
 " Python {{{2
 " For neovim, need to prove a python env with installed pynvim library
