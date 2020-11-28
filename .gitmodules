@@ -143,3 +143,6 @@
 [submodule "vim.symlink/bundle/asyncrun.vim"]
 	path = vim.symlink/bundle/asyncrun.vim
 	url = git@github.com:skywind3000/asyncrun.vim.git
+[submodule "vim.symlink/bundle/vim-solarized8"]
+	path = vim.symlink/bundle/vim-solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git
