@@ -1,12 +1,19 @@
-
 # These snippets are based on this great post:
 # https://castel.dev/post/lecture-notes-1/
+# But heavily modified
+
 global !p
+
+# Basic math zone names
 texMathZones = ['texMathZone' + x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS',
 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS',
 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsB', 'AmsC',
 'AmsD', 'AmsE', 'AmsF', 'AmsG', 'AmsAS', 'AmsBS', 'AmsCS', 'AmsDS', 'AmsES',
 'AmsFS', 'AmsGS' ]]
+
+# Add pandoc latex region (hack for align to work)
+texMathZones += ['pandocLaTeXRegion']
+
 texIgnoreMathZones = ['texMathText']
 texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
 texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
@@ -22,6 +29,7 @@ def math():
 		return first != ignore
 	except StopIteration:
 		return False
+
 endglobal
 
 snippet mathdefs "Insert my math definitions" b
@@ -33,9 +41,9 @@ with open(defs_path, 'r') as f:
 endsnippet
 
 snippet disp "Display math" w
-\[
+$$
 $1
-.\]
+.$$
 $0
 endsnippet
 
@@ -56,7 +64,12 @@ endsnippet
 
 context "math()"
 snippet tra "transposed" wA
-^\T $0
+\T $0
+endsnippet
+
+context "math()"
+snippet grad "transposed" wA
+\nabla $0
 endsnippet
 
 context "math()"
@@ -64,28 +77,31 @@ snippet inv "inverse" wA
 ^{-1} $0
 endsnippet
 
-# context "math()"
-# snippet '(mat|vec|rvec|rvar)\s?(\\?[\w]+)([^\w])' "matrix/vector macros" rA
-# \\`!p
-# snip.rv = f'{match.group(1)}{{{match.group(2)}}}{match.group(3).strip()}'
-# `$0
-# endsnippet
-
 context "math()"
-snippet '(mat|vec|rvec|rvar)\s?(\\?[\'\w]+)\s' "matrix/vector macros" rA
-\\`!p
-snip.rv = f'{match.group(1)}{{{match.group(2)}}}'
+snippet '([^\\])(mat|vec|rvec|rvar)\s?([^\s]+)\s' "matrix/vector macros" rA
+`!p
+snip.rv = f'{match.group(1)}\\{match.group(2)}{{{match.group(3)}}}'
 `$0
 endsnippet
 
 context "math()"
+snippet '([^\s$]+)(tilde|hat|bar|dot)' "symbols above an expr" rwA
+\\`!p snip.rv = f'{match.group(2)}{{{match.group(1)}}}'`$0
+endsnippet
+
+context "math()"
 snippet frac "Fraction" iA
-\frac{${1:${VISUAL}}}{$2} $0
+\frac{${1:${VISUAL}}}{$2}$0
+endsnippet
+
+context "math()"
+snippet sqrt "Fraction" iA
+\sqrt{${1:${VISUAL}}}$0
 endsnippet
 
 context "math()"
 snippet pderiv "Partial derivative" iA
-\pderiv{${1:${VISUAL}}}{$2} $0
+\pderiv{${1:${VISUAL}}}{$2}$0
 endsnippet
 
 context "math()"
@@ -124,17 +140,17 @@ snippet floor "floor" iA
 endsnippet
 
 context "math()"
-snippet )) "lr()" iA
+snippet )) "lr()" i
 \left(${1:${VISUAL}}\right) $0
 endsnippet
 
 context "math()"
-snippet ]] "lr[]" iA
+snippet ]] "lr[]" i
 \left[${1:${VISUAL}}\right] $0
 endsnippet
 
 context "math()"
-snippet }} "lr{}" iA
+snippet }} "lr{}" i
 \left\\{${1:${VISUAL}}\right\\} $0
 endsnippet
 
@@ -164,23 +180,40 @@ snippet '(?<!\\)(mu|phi|psi|Phi|Psi|varphi|sigma|Sigma|omega|Omega)' "greek 2" r
 endsnippet
 
 context "math()"
-snippet '(?<!\\)(pi|Pi|zeta|Zeta|theta|Theta)' "greek 3" rwA
+snippet '(?<!\\)(pi|Pi|zeta|Zeta|theta|Theta|tau|rho|xi|Xi|kappa|chi)' "greek 3" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
 context "math()"
-snippet '(?<!\\)(dots|vdots|cdots|ddots|approx|dagger)' "other" rwA
+snippet '(?<!\\)(approx|dagger)' "symbols" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
 context "math()"
-snippet '(?<!\\)(tilde|hat|bar)' "other" rwA
-\\`!p snip.rv = match.group(1)`{${1:${VISUAL}}}$0
+snippet '(?<!\\)(\.|v|c|d)\.\.' "dots" rwA
+\\`!p snip.rv = match.group(1).replace('.', '')`dots $0
+endsnippet
+
+context "math()"
+snippet mcal "mathcal" iA
+\mathcal{$1}$0
 endsnippet
 
 context "math()"
 snippet dint "integral" wA
 \int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} $0
+endsnippet
+
+context "math()"
+snippet '(p|b|B|v|V)mat' "matrices" rw
+`!p
+mat_type = f'{match.group(1)}matrix'
+snip.rv = '\n' \
+f'\\begin{{{mat_type}}}\n' \
+'  1 & 2 & 3\\\\ \n' \
+'  a & b & c \n' \
+f'\\end{{{mat_type}}}'
+`$0
 endsnippet
 
 context "math()"
@@ -197,22 +230,27 @@ snippet inn "in " iA
 \in 
 endsnippet
 
+context "math()"
 snippet OO "emptyset" iA
 \O
 endsnippet
 
+context "math()"
 snippet NN "n" iA
 \N
 endsnippet
 
+context "math()"
 snippet RR "real" iA
 \R
 endsnippet
 
+context "math()"
 snippet QQ "Q" iA
 \Q
 endsnippet
 
+context "math()"
 snippet ZZ "Z" iA
 \Z
 endsnippet
