@@ -2,7 +2,7 @@
 
 // This file should go in:
 // ~/Library/KeyBindings/DefaultKeyBinding.dict
-// Note: syklink doesn't work
+// Note: symlink doesn't work, use hard-link
 
 // http://www.hcs.harvard.edu/~jrus/Site/cocoa-text.html
 // http://www.hcs.harvard.edu/~jrus/Site/selectors.html
