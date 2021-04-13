@@ -29,13 +29,16 @@
     rb    = rebase
     rbi   = rebase --interactive
     su    = submodule update --init
-    diffs = diff --staged
+    d     = diff
+    ds    = diff --staged
     k     = !gitk&
     ka    = !gitk --all&
     t     = !tig
     ta    = !tig --all
     l     = log --graph --oneline --decorate
     la    = log --graph --oneline --decorate --all
+    undo  = reset HEAD~1
+    sw    = switch --guess
 
     # remove a submodule in one command
     rmsm  = "!f(){ git rm --cached \"$1\";rm -r \"$1\";git config -f .gitmodules --remove-section \"submodule.$1\";git config -f .git/config --remove-section \"submodule.$1\";git add .gitmodules; }; f"
