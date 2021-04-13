@@ -36,7 +36,7 @@ set wildmenu                            " enhanced commandline completion
 set wildmode=full                       " commandline completion mode
 set completeopt=menu,preview,longest    " completion oinserts text up to the longest match only
 set diffopt+=vertical                   " always open diff with vertical split
-set spell                               " spell checking
+set nospell                             " no spell checking by default (set per filetype)
 set spelllang=en_us                     " language for spell checking
 set clipboard=unnamed                   " copy to system clipboard if no register specified
 set scrolloff=2                         " keep a few lines visible when scrolling at the top/bottom
