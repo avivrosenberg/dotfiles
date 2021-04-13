@@ -60,7 +60,7 @@ fi
 ## Anaconda
 #
 # Find a user-local anaconda3 or miniconda3 installation.
-local ANACONDA_PATH=$(find $HOME -maxdepth 2 -type d -name '*conda3' | head -n 1)
+local ANACONDA_PATH=$(find $HOME -maxdepth 2 -type d -name '*conda3' 2>/dev/null | head -n 1)
 #
 if [[ -d "$ANACONDA_PATH" ]]; then
   # Set up conda as a function
