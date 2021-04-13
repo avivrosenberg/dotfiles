@@ -7,16 +7,9 @@ root: ~/dev/phd/dl-course/
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 tmux_options: -u2
 
-# Note:
-# 1. The activate command here is for the windows we define below.
-# 2. The setenv is for any subsequent windows that will be created in the
-#    session.
-# I couldn't find a way to do setenv for the session before opening the first
-# window.
 pre_window:
-  - tmux setenv CONDA_DEFAULT_ENV cs236781
-  - eval "$(tmux showenv CONDA_DEFAULT_ENV)"
-  - conda activate "$CONDA_DEFAULT_ENV"
+  - conda deactivate
+  - conda activate cs236781-hw
 
 windows:
   - shell:
@@ -29,17 +22,20 @@ windows:
       panes:
         - shell:
           - git status
+        - jupyter:
+          - which jupyter
+          - jupyter lab --no-browser
   - tutorials:
       root: ~/dev/phd/dl-course/tutorials/
       layout: main-horizontal
+      pre_window:
+        - conda deactivate
+        - conda activate cs236781-tutorials
       panes:
         - shell:
           - git status
-  - jupyter:
-      root: ~/dev/phd/dl-course
-      layout: main-horizontal
-      panes:
-        - jupyter lab --no-browser
+        - jupyter:
+          - which jupyter
   - website:
       root: ~/dev/phd/dl-course/website/
       layout: main-horizontal

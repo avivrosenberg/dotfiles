@@ -40,21 +40,26 @@
 # post: tmux -CC attach -t research
 
 name: research
-root: ~/dev/phd/
+root: ~/dev/phd/proteins/
 
 pre_window:
-  - 
+  - conda deactivate && conda activate proteins
 
 windows:
-  - notes:
-      root: ~/dev/phd/
+  - shell:
       layout: main-horizontal
       panes:
-        - vim ~/Dropbox/Notes/notes.md
-  - proteins:
-      root: ~/dev/phd/proteins/
+        - default:
+          - which python
+        - jupyter:
+          - which jupyter
+  - ipython:
       panes:
         - default:
-          - conda activate proteins
+          - which python
+          - ipython
+  - shell:
+      panes:
+        - default:
           - which python
 
