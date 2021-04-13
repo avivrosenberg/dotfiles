@@ -231,3 +231,7 @@ subclassing
 v2
 pre
 SGD
+KDEs
+sklearn
+lockfile
+sibylla
