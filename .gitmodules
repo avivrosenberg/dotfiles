@@ -145,3 +145,6 @@
 [submodule "vim.symlink/bundle/night-owl.vim"]
 	path = vim.symlink/bundle/night-owl.vim
 	url = https://github.com/haishanh/night-owl.vim.git
+[submodule "vim.symlink/bundle/supertab"]
+	path = vim.symlink/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
