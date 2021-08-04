@@ -230,12 +230,22 @@ let g:ale_set_quickfix = 1
 
 " vim-slime {{{2
 let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": get(split($TMUX, ','), 0), "target_pane": "{top-right}"} " send to tmux pane in the top-right of the active window
-let g:slime_python_ipython = '' " HACK: due to bug in vim-ipython-cell's Verbose commands, setting to zero doesn't work
+let g:slime_python_ipython = 1
+" always send text to the top-right pane in the current tmux tab without asking
+let g:slime_default_config = {
+            \ 'socket_name': get(split($TMUX, ','), 0),
+            \ 'target_pane': '{top-right}' }
+let g:slime_dont_ask_default = 1
 
 " vim-ipython-cell {{{2
 let g:ipython_cell_delimit_cells_by = 'tags'
-let g:ipython_cell_tag = ['# %%', '#%%', '# <codecell>', '##', '# In[']
+" Use the percent format and allow markdown cells
+" https://jupytext.readthedocs.io/en/latest/formats.html#the-percent-format
+let g:ipython_cell_regex = 1
+let g:ipython_cell_tag = '# %%( [^[].*)?'
+" let g:ipython_cell_tag = '(# %%( [^[].*)?)|(##\%)'
+" let g:ipython_cell_tag = ['# %%', '#%%', '# <codecell>', '##', '# In[']
+let g:ipython_cell_highlight_cells_ft = ['python', 'python.ipy']
 " See also python-specific mappings in custom ftplugin for .ipy
 
 " Jedi {{{2
@@ -324,6 +334,15 @@ let g:pandoc#hypertext#split_open_cmd = 'edit' " open in same buffer
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'vim', 'make', 'bash=sh', 'shell=sh', 'html', 'css', 'scss', 'javascript']
 let g:pandoc#syntax#codeblocks#embeds#use = 1
+
+
+" SuperTab {{{2
+let g:SuperTabDefaultCompletionType = 'context'
+autocmd FileType *
+\ if &omnifunc != '' |
+\   call SuperTabChain(&omnifunc, "<c-n>") |
+\ endif
+
 
 " Custom VIM functions {{{1
 

@@ -2,6 +2,15 @@
 " These are just simply normal python files but I use them to send input
 " to a running IPython process, so extra useful mappings (which are irrelavant
 " for regular python files) are defined herein.
+"
+
+
+" Use the Built-in _EscapeText_python from vim-slime
+" Just adding this custom function because the filetype
+" of .ipy files will be python.ipy and not python.
+function SlimeOverride_EscapeText_python_ipy(text)
+    return _EscapeText_python(a:text)
+endfunction
 
 """"""""""""""""""""""""""""""
 "  IPythonCell key mappings  "
@@ -11,10 +20,10 @@
 nnoremap <buffer> <Leader>S :SlimeSend1 ipython --matplotlib<CR>
 
 " Run entire script
-nnoremap <buffer> <Leader>R :IPythonCellRun<CR>
+nnoremap <buffer> <Leader>R :w<CR>:IPythonCellRun<CR>
 
 " Run script and time the execution
-nnoremap <buffer> <Leader>T :IPythonCellRunTime<CR>
+nnoremap <buffer> <Leader>T :w<CR>:IPythonCellRunTime<CR>
 
 " map CTRL+ENTER and SHIFT+ENTER to execute the current cell without/with
 " jumping to next cell.
@@ -22,16 +31,20 @@ nnoremap <buffer> <Leader>T :IPythonCellRunTime<CR>
 " to send the correct escape sequences (ESC + [13;2u for SHIFT+ENTER and
 " ESC+[13;5u for CTRL+ENTER)
 " see here: https://stackoverflow.com/a/42461580/1230403
-nnoremap <buffer> <C-CR> :IPythonCellExecuteCellVerbose<CR>
-inoremap <buffer> <C-CR> <Esc>:IPythonCellExecuteCellVerbose<CR>
-nnoremap <buffer> <S-CR> :IPythonCellExecuteCellVerboseJump<CR>
-inoremap <buffer> <S-CR> <Esc>:IPythonCellExecuteCellVerboseJump<CR>
+" nnoremap <buffer> <C-CR> :IPythonCellExecuteCellVerbose<CR>
+" inoremap <buffer> <C-CR> <Esc>:IPythonCellExecuteCellVerbose<CR>
+" nnoremap <buffer> <S-CR> :IPythonCellExecuteCellVerboseJump<CR>
+" inoremap <buffer> <S-CR> <Esc>:IPythonCellExecuteCellVerboseJump<CR>
+nnoremap <buffer> <Leader>C :w<CR>:IPythonCellExecuteCellVerbose<CR>
+inoremap <buffer> <Leader>C <Esc>:w<CR>:IPythonCellExecuteCellVerbose<CR>
+nnoremap <buffer> <Leader>c :w<CR>:IPythonCellExecuteCellVerboseJump<CR>
+inoremap <buffer> <Leader>c <Esc>:w<CR>:IPythonCellExecuteCellVerboseJump<CR>
 
 " Clear IPython screen
-nnoremap <buffer> <Leader>L :IPythonCellClear<CR>
+nnoremap <buffer> <Leader>l :IPythonCellClear<CR>
 
 " Close all Matplotlib figure windows
-nnoremap <buffer> <Leader>X :IPythonCellClose<CR>
+nnoremap <buffer> <Leader>x :IPythonCellClose<CR>
 
 " Jump to the previous and next cell header like unimpaired
 nnoremap <buffer> [[ :IPythonCellPrevCell<CR>
@@ -53,5 +66,6 @@ nnoremap <buffer> <Leader>d :SlimeSend1 %debug<CR>
 " Exit debug mode or IPython
 nnoremap <buffer> <Leader>q :SlimeSend1 exit<CR>
 
-
-
+" Insert cells
+nmap <Leader>O :IPythonCellInsertAbove<CR>a
+nmap <Leader>o :IPythonCellInsertBelow<CR>a
