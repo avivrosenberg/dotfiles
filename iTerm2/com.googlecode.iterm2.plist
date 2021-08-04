@@ -1175,17 +1175,21 @@
 	<real>0.58859050273895264</real>
 	<key>GlobalKeyMap</key>
 	<dict>
-		<key>0xd-0x20000</key>
+		<key>0xd-0x20000-0x24</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
+			<key>Label</key>
+			<string></string>
 			<key>Text</key>
 			<string>[13;2u</string>
 		</dict>
-		<key>0xd-0x40000</key>
+		<key>0xd-0x40000-0x24</key>
 		<dict>
 			<key>Action</key>
 			<integer>10</integer>
+			<key>Label</key>
+			<string></string>
 			<key>Text</key>
 			<string>[13;5u</string>
 		</dict>
@@ -4677,8 +4681,6 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
-	<key>PreventEscapeSequenceFromChangingProfile</key>
-	<false/>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnClose</key>
