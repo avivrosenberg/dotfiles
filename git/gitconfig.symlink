@@ -80,7 +80,7 @@
 [rebase]
     autosquash = true
 [rerere]
-    enabled = true
+    enabled = false
 [credential]
     helper = cache
 [filter "lfs"]
@@ -89,3 +89,5 @@
     required = true
 [pull]
 	rebase = false
+[init]
+	defaultBranch = master
