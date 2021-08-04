@@ -39,7 +39,7 @@
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t research
 
-name: research
+name: proteins
 root: ~/dev/phd/proteins/
 
 pre_window:

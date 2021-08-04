@@ -1,7 +1,7 @@
 # ~/.tmuxinator/avivr.net.yml
 
 name: avivr-net
-root: ~/dev/avivr.net/
+root: ~/dev/avivr.net/web
 
 # Optional tmux socket
 # socket_name: foo

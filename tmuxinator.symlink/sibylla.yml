@@ -1,5 +1,5 @@
 name: sibylla
-root: ~/dev/sibylla
+root: ~/dev/sibylla/sibylla-v2/
 
 pre_window:
   - conda deactivate
@@ -7,12 +7,14 @@ pre_window:
   - which python3
 
 windows:
-  - v2:
-      root: ~/dev/sibylla/sibylla-v2/
-      layout: main-horizontal
+  - shell:
       panes:
         - pipenv shell
   - shell:
+      panes:
+        - pipenv shell
   - shell:
+      panes:
+        - pipenv shell
 
 
