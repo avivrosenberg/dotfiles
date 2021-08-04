@@ -17,9 +17,12 @@ alias wpy='which python'
 #common typos
 alias gti='git'
 
+# Default prompt
+PS1='\u@\h: \W$ '
+
 ####
 ## Homebrew
-if [[ -x "$(which brew)" ]]; then
+if [[ -x "$(which brew 2>/dev/null)" ]]; then
     # Path
     PATH=$(brew --prefix)/bin:$PATH #prepend so that brew binaries are found first
 
@@ -28,7 +31,7 @@ if [[ -x "$(which brew)" ]]; then
     PS1='\u@\h: \W$(__git_ps1 "(%s)")$ '
 
     # Completions
-    if [[ -x "$(which brew)" ]]; then
+    if [[ -x "$(which brew 2>/dev/null)" ]]; then
         source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
         source $(brew --prefix)/etc/bash_completion.d/brew
     fi
@@ -46,12 +49,12 @@ fi
 
 ###
 ## FZF
-if [[ -x "$(which brew)" && -d "$(brew --prefix fzf)" ]]; then
+if [[ -x "$(which brew 2>/dev/null)" && -d "$(brew --prefix fzf)" ]]; then
   FZF_DIR="$(brew --prefix fzf)"
   FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
 
   # Use ripgrep if fzf invoked without command
-  if [[ -x "$(which rg)" ]]; then
+  if [[ -x "$(which rg 2>/dev/null)" ]]; then
     FZF_DEFAULT_COMMAND='rg --files'
   fi
 
