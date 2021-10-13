@@ -15,7 +15,12 @@ set ignorecase                      " case insensitive
 set smartcase                       " choose correct case when searching
 set gdefault                        " global substitution default
 
+" Clipboard
+set clipboard+=unnamed
+set clipboard+=ideaput
+
 " Mappings
+nnoremap <leader>V :action IdeaVim.ReloadVimRc.reload<CR>
 inoremap <C-l> <Del>
 noremap <leader><Space> :nohl<CR>
 
@@ -47,7 +52,7 @@ noremap [q :action GotoPreviousError<CR>
 
 nnoremap gqq :action FillParagraph<CR>
 
-# Move between camel humps
+" Move between camel humps
 nnoremap gw :action EditorNextWordInDifferentHumpsMode<CR>
 nnoremap gb :action EditorPreviousWordInDifferentHumpsMode<CR>
 
