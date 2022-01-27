@@ -14,6 +14,9 @@ alias py='python3'
 alias ipy='ipython'
 alias pyt='pytest'
 alias wpy='which python'
+alias m='mamba'
+alias ma='mamba activate'
+alias md='mamba deactivate'
 #common typos
 alias gti='git'
 
@@ -38,14 +41,10 @@ if [[ -x "$(which brew 2>/dev/null)" ]]; then
 fi
 
 ####
-## Anaconda
-# Find a user-local anaconda3 or miniconda3 installation.
-export ANACONDA_PATH=$(find $HOME -maxdepth 2 -type d -name '*conda3' 2>/dev/null | head -n 1)
+## conda/mamba
 
-# Set up conda and activate the default environment
-if [[ -d "$ANACONDA_PATH" ]]; then
-    source "$ANACONDA_PATH/etc/profile.d/conda.sh"
-fi
+# Custom init script based on `mamba init`.
+source "$DOTFILES/conda/conda_init.sh"
 
 ###
 ## FZF

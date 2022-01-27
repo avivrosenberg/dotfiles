@@ -31,3 +31,7 @@ alias mmv='noglob zmv -W'
 alias d='docker'
 alias dc='docker-compose'
 
+# conda/mamba
+alias m='mamba'
+alias ma='mamba activate'
+alias md='mamba deactivate'
