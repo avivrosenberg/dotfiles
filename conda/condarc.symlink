@@ -1,4 +1,5 @@
 # vim: ft=yaml
+# https://docs.conda.io/projects/conda/en/latest/configuration.html
 
 channels:
   - defaults
@@ -8,3 +9,6 @@ ssl_verify: true
 changeps1: true
 anaconda_upload: false
 auto_activate_base: false
+
+channel_priority: strict
+
