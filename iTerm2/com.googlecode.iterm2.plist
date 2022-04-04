@@ -1529,7 +1529,7 @@
 			<key>Columns</key>
 			<integer>100</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/zsh -l</string>
+			<string>zsh -l</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1917,11 +1917,11 @@
 			<key>Name</key>
 			<string>Solarized Dark</string>
 			<key>Non Ascii Font</key>
-			<string>Hack-Regular 17</string>
+			<string>Menlo-Regular 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Retina 13</string>
+			<string>FiraCodeRoman-Medium 14</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -2295,7 +2295,7 @@
 			<key>Columns</key>
 			<integer>128</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/zsh -l</string>
+			<string>zsh -l</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2663,7 +2663,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Retina 13</string>
+			<string>FiraCodeRoman-Medium 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -3126,7 +3126,7 @@
 			<key>Columns</key>
 			<integer>100</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/zsh -l</string>
+			<string>zsh -l</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -3528,11 +3528,11 @@
 			<key>Name</key>
 			<string>Night Owl</string>
 			<key>Non Ascii Font</key>
-			<string>Hack-Regular 17</string>
+			<string>Menlo-Regular 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Retina 13</string>
+			<string>FiraCodeRoman-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -4014,7 +4014,7 @@
 			<key>Columns</key>
 			<integer>100</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/zsh -l</string>
+			<string>zsh -l</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -4686,9 +4686,9 @@
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
-	<true/>
+	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
-	<true/>
+	<false/>
 	<key>RightCommand</key>
 	<integer>8</integer>
 	<key>RightOption</key>
@@ -4707,6 +4707,19 @@
 	<true/>
 	<key>SmartPlacement</key>
 	<false/>
+	<key>Snippets</key>
+	<array>
+		<dict>
+			<key>guid</key>
+			<string>57B3FB7D-AD37-4C92-86B5-E37919EB3CE1</string>
+			<key>title</key>
+			<string>sibylla pods apt-get</string>
+			<key>value</key>
+			<string>apt-get update &amp;&amp; apt-get -y install tmux htop nvtop</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -4715,6 +4728,8 @@
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>6</integer>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>5</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>ThreeFingerEmulates</key>
@@ -4975,7 +4990,7 @@
 											<key>Columns</key>
 											<integer>100</integer>
 											<key>Command</key>
-											<string>/usr/local/bin/zsh -l</string>
+											<string>zsh -l</string>
 											<key>Cursor Color</key>
 											<dict>
 												<key>Blue Component</key>
@@ -5757,7 +5772,7 @@
 											<key>Columns</key>
 											<integer>100</integer>
 											<key>Command</key>
-											<string>/usr/local/bin/zsh -l</string>
+											<string>zsh -l</string>
 											<key>Cursor Color</key>
 											<dict>
 												<key>Blue Component</key>
