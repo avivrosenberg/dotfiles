@@ -64,8 +64,8 @@ noremap <leader>trf :action RerunFailedTests<CR>
 " Make sure C-N and C-P are mapped to Down/Up in the Keymap settings and sent to ideaVim.
 " Update: This no longer works... If IDE sends these to vim, they stop working for the
 " smart completion menu
-imap <C-n> <ESC>:action HippieCompletion<CR>a
-imap <C-p> <ESC>:action HippieBackwardCompletion<CR>a
+imap <C-S-n> <ESC>:action HippieCompletion<CR>a
+imap <C-S-p> <ESC>:action HippieBackwardCompletion<CR>a
 
 " Folding (collapse/expand)
 " --- Actions ---
