@@ -4,7 +4,7 @@ export ZSH="$DOTFILES/zsh/oh-my-zsh"
 # directory with custom zsh init scripts
 ZSH_CUSTOM=~/.dotfiles/zsh
 # set plugins for oh-my-zsh
-plugins=(git osx ruby brew tmuxinator iterm2 themes docker python conda-zsh-completion zsh-syntax-highlighting)
+plugins=(git macos brew tmuxinator iterm2 themes docker python conda-zsh-completion zsh-syntax-highlighting)
 # set theme for oh-my-zsh
 ZSH_THEME="kphoen"
 # load oh-my-zsh
@@ -23,10 +23,9 @@ bindkey "^N" down-line-or-search
 
 ###
 ## Homebrew
-if [[ -x "$(which brew 2>/dev/null)" ]]; then
-    # get homebrew's binary path
-    brewbin="$(brew --prefix)/bin"
-    PATH="$brewbin:$PATH"
+if [[ -x "/opt/homebrew/bin/brew" ]]; then
+    # Adds homebrew to PATH
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 
