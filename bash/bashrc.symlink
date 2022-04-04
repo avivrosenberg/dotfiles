@@ -25,19 +25,9 @@ PS1='\u@\h: \W$ '
 
 ####
 ## Homebrew
-if [[ -x "$(which brew 2>/dev/null)" ]]; then
-    # Path
-    PATH=$(brew --prefix)/bin:$PATH #prepend so that brew binaries are found first
-
-    # Prompt
-    source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
-    PS1='\u@\h: \W$(__git_ps1 "(%s)")$ '
-
-    # Completions
-    if [[ -x "$(which brew 2>/dev/null)" ]]; then
-        source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-        source $(brew --prefix)/etc/bash_completion.d/brew
-    fi
+if [[ -x "/opt/homebrew/bin/brew" ]]; then
+    # Adds homebrew to PATH
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 ####
