@@ -1,6 +1,9 @@
 ####
 ## Aliases
 
+# General
+alias w=which
+
 # ls
 alias l='ls -hFG'
 alias ll='ls -lhFG'
@@ -35,3 +38,12 @@ alias dc='docker-compose'
 alias m='mamba'
 alias ma='mamba activate'
 alias md='mamba deactivate'
+alias mr='mamba run --no-capture-output'
+
+# bat
+alias cat='bat'
+
+# time: don't use zsh builtin
+if [[ -x '/usr/bin/time' ]]; then
+  alias time='/usr/bin/time'
+fi
