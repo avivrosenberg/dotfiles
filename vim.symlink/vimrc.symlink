@@ -119,6 +119,9 @@ else
     set background=dark
 endif
 
+imap <F6> <c-o>:call ToggleBackground()<cr>
+map <F6> :call ToggleBackground()<cr>
+
 " True color support (see :help xterm-true-color)
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -367,5 +370,17 @@ func! ToggleHebrew()
     else
         set rl
         set keymap=hebrew
+    end
+endfunc
+
+
+" Switch background
+func! ToggleBackground()
+    if &background=='dark'
+        set background=light
+        syntax on
+    else
+        set background=dark
+        syntax on
     end
 endfunc
