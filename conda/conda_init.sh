@@ -2,7 +2,7 @@
 
 ##
 # Discover conda base dir and shell name 
-export CONDA_PATH=$(find $HOME -maxdepth 2 -type d -name '*conda3' 2>/dev/null | head -n 1)
+export CONDA_PATH=$(find -E $HOME -maxdepth 1 -type d -regex '([^.]*mamba.*)|([^.]*conda.*)' 2>/dev/null | head -n 1)
 __shellname=$(basename $0)
 
 ##

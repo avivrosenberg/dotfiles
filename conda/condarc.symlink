@@ -10,5 +10,5 @@ changeps1: true
 anaconda_upload: false
 auto_activate_base: false
 
-channel_priority: strict
+# channel_priority: strict
 
