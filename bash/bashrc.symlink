@@ -60,6 +60,11 @@ fi
 # Add custom binaries/scripts
 PATH=$PATH:"~/.bin/"
 
+# Adds rust toolchain to PATH
+if [[ -f "$HOME/.cargo/env" ]]; then
+    . "$HOME/.cargo/env"
+fi
+
 export PATH
 
 ####
@@ -75,4 +80,3 @@ if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
    fi
 fi
 }
-

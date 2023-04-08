@@ -77,6 +77,12 @@ fi
 PATH=$PATH:"~/.bin/"
 
 ###
+# Adds rust toolchain to PATH
+if [[ -f "$HOME/.cargo/env" ]]; then
+    . "$HOME/.cargo/env"
+fi
+
+###
 # prevent duplicates in PATH: the zsh 'path' variable is an array and mirrors
 # PATH, setting it to unique removes duplicate entries.
 typeset -aU path
