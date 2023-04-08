@@ -25,7 +25,7 @@
     ct    = commit
     dt    = difftool --dir-diff
     dts   = difftool --dir-diff --staged
-    fch   = fetch -p
+    fch   = fetch --all --prune
     rb    = rebase
     rbi   = rebase --interactive
     su    = submodule update --init
@@ -38,7 +38,11 @@
     l     = log --graph --oneline --decorate
     la    = log --graph --oneline --decorate --all
     undo  = reset HEAD~1
+    wip   = commit -a -n -m "WIP"
     sw    = switch --guess
+    sha   = rev-parse --short=8
+    rbm   = !git fch && git rbi origin/master
+    au    = add -u .
 
     # remove a submodule in one command
     rmsm  = "!f(){ git rm --cached \"$1\";rm -r \"$1\";git config -f .gitmodules --remove-section \"submodule.$1\";git config -f .git/config --remove-section \"submodule.$1\";git add .gitmodules; }; f"
@@ -48,7 +52,7 @@
 
     # load vim with modified files in buffers (for completion)
     vi    = !vim $(git modified) # run vim with modified modified
-    vst   = !vim $(git modified) -c 'Gstatus' -c 'only' #requires vim-fugitive
+    vst   = !vim $(git modified) -c 'Git' -c 'only' #requires vim-fugitive
     vct   = !vim $(git modified) -c 'Gcommit' -c 'only' #requires vim-fugitive
 
     # Print all modified files (staged, unstaged, untracked), excluding deleted files. In case of rename, take new name.
