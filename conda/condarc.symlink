@@ -1,8 +1,8 @@
 # vim: ft=yaml
 # https://docs.conda.io/projects/conda/en/latest/configuration.html
 
-channels:
-  - defaults
+# channels:
+#   - nodefaults
 
 ssl_verify: true
 
