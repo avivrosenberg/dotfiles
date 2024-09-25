@@ -1,0 +1,11 @@
+#pandoc path/to/input.md -o path/to/output.pdf --template ~/.pandoc/templates/eisvogel/eisvogel.tex -H ~/.pandoc/mathdefs.tex --bibliography ~/Documents/library.bib --to=latex --pdf-engine=pdflatex -M reference-section-title=References -M link-citations=true
+#
+
+template: /Users/avivr/.pandoc/templates/eisvogel/eisvogel.tex
+include-in-header:
+    - /Users/avivr/.pandoc/mathdefs.tex
+cite-method: biblatex
+metadata:
+      bibliography: "/Users/avivr/Library/CloudStorage/GoogleDrive-aviv.rosenberg@gmail.com/My Drive/Paperpile/paperpile.bib"
+      reference-section-title: References
+      link-citations: true

@@ -43,7 +43,7 @@ name: proteins
 root: ~/dev/phd/proteins/
 
 pre_window:
-  - conda deactivate && conda activate proteins
+  - conda deactivate && conda activate pp5
 
 windows:
   - shell:

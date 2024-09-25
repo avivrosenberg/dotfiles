@@ -4,6 +4,10 @@
 <dict>
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
+	<key>AiMaxTokens</key>
+	<integer>4096</integer>
+	<key>AiModel</key>
+	<string>gpt-4o</string>
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>AnimateDimming</key>

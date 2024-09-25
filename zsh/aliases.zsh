@@ -39,6 +39,7 @@ alias m='mamba'
 alias ma='mamba activate'
 alias md='mamba deactivate'
 alias mr='mamba run --no-capture-output'
+alias m64='CONDA_SUBDIR=osx-64 mamba'
 
 # bat
 alias cat='bat'

@@ -5,7 +5,7 @@ let mapleader = ","
 noremap \ ,
 
 " General
-set relativenumber                  " line numbers
+" set relativenumber                  " line numbers
 set surround                        " vim-surround plugin emulation
 
 " Searching

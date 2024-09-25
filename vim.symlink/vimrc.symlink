@@ -363,7 +363,7 @@ function! Preserve(command)
 endfunction
 
 " Hebrew support
-func! ToggleHebrew()
+function! ToggleHebrew()
     if &rl
         set norl
         set keymap=
@@ -371,11 +371,11 @@ func! ToggleHebrew()
         set rl
         set keymap=hebrew
     end
-endfunc
+endfunction
 
 
 " Switch background
-func! ToggleBackground()
+function! ToggleBackground()
     if &background=='dark'
         set background=light
         syntax on
@@ -383,4 +383,4 @@ func! ToggleBackground()
         set background=dark
         syntax on
     end
-endfunc
+endfunction
