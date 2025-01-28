@@ -1,0 +1,10 @@
+# This env installs some python codestyle tools
+name: py-codestyle
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pip
+  - black-jupyter
+  - isort
+  - ruff
