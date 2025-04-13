@@ -3,8 +3,13 @@ name: py-codestyle
 channels:
   - conda-forge
 dependencies:
-  - python
-  - pip
   - black-jupyter
   - isort
+  - mypy
+  - pip
+  - pylsp-mypy
+  - python
+  - python-lsp-black
+  - python-lsp-ruff
+  - python-lsp-server
   - ruff
