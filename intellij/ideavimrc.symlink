@@ -7,6 +7,7 @@ noremap \ ,
 " General
 " set relativenumber                  " line numbers
 set surround                        " vim-surround plugin emulation
+set scrolloff=0
 
 " Searching
 set incsearch                       " do incremental searching
@@ -17,7 +18,7 @@ set gdefault                        " global substitution default
 
 " Clipboard
 set clipboard+=unnamed
-set clipboard+=ideaput
+" set clipboard+=ideaput
 
 " Mappings
 nnoremap <leader>V :action IdeaVim.ReloadVimRc.reload<CR>
