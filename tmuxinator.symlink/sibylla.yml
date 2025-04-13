@@ -3,18 +3,18 @@ root: ~/dev/sibylla/sibylla-v2/
 
 pre_window:
   - conda deactivate
-  - conda activate v2
-  - which python3
+  - conda activate sibylla-v2
+  - set -a; source .env; set +a;
 
 windows:
   - shell:
       panes:
-        - pipenv shell
+        - which python3
   - shell:
       panes:
-        - pipenv shell
+        - which python3
   - shell:
       panes:
-        - pipenv shell
+        - which python3
 
 
