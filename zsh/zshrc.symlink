@@ -66,7 +66,7 @@ source "$DOTFILES/conda/conda_init.sh"
 # https://developer.1password.com/docs/ssh/
 OP_SSH_AGENT_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 OP_HOME="$HOME/.1password"
-if [[ -S "${OP_SSH_AGENT_SOCK}" ]]; then 
+if [[ -S "${OP_SSH_AGENT_SOCK}" ]]; then
   mkdir -p "${OP_HOME}"
   ln -f -s "${OP_SSH_AGENT_SOCK}" "${OP_HOME}/agent.sock"
 fi
@@ -87,4 +87,3 @@ fi
 # PATH, setting it to unique removes duplicate entries.
 typeset -aU path
 export PATH
-
