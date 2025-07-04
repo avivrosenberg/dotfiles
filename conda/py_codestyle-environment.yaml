@@ -1,15 +1,24 @@
-# This env installs some python codestyle tools
+# This env installs python support tools
+# conda env update -n py-codestyle -f conda/py_codestyle-environment.yaml
 name: py-codestyle
 channels:
   - conda-forge
 dependencies:
+  - basedpyright
   - black-jupyter
+  - ipykernel
+  - ipywidgets
   - isort
+  - jupyter-ruff
+  - jupyterlab
+  - jupyterlab_vim
   - mypy
   - pip
   - pylsp-mypy
+  - pylsp-rope
   - python
   - python-lsp-black
   - python-lsp-ruff
   - python-lsp-server
   - ruff
+  - tblib
