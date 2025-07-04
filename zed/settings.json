@@ -1,0 +1,179 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "autosave": "on_focus_change",
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    },
+    "version": "2"
+  },
+  "minimap": { "show": "auto", "display_in": "active_editor" },
+  "show_edit_predictions": true,
+  "tabs": { "git_status": true, "file_icons": false },
+  "wrap_guides": [88],
+  "show_whitespaces": "selection",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 13,
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "buffer_font_weight": 400,
+  "buffer_font_features": {
+    "calt": true // ligatures
+  },
+  "preferred_line_length": 88,
+  "hard_tabs": false,
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Light Soft",
+    "dark": "Gruvbox Dark"
+  },
+  "inlay_hints": {
+    "enabled": false,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "show_background": false
+  },
+  "auto_install_extensions": {
+    "basedpyright": true,
+    "csv": true,
+    "git-firefly": true,
+    "html": true,
+    "latex": true,
+    "log": true,
+    "ltex": true,
+    "make": true,
+    "ruff": true,
+    "toml": true
+  },
+  "languages": {
+    "Python": {
+      "show_edit_predictions": true,
+      "tab_size": 4,
+      "language_servers": ["basedpyright", "!pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": { "language_server": { "name": "ruff" } },
+      "code_actions_on_format": {
+        "source.fixAll.ruff": false,
+        "source.organizeImports.ruff": true
+      }
+    }
+  },
+  "lsp": {
+    "pylsp": {
+      "binary": {
+        // python-lsp-server is installed in its own venv
+        "path": "/Users/avivr/miniforge3/envs/py-codestyle/bin/pylsp"
+      },
+      "settings": {
+        // https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
+        "plugins": {
+          // By default disable eveything. Can enable per-project.
+          "pylsp_mypy": { "enabled": false }, // https://github.com/python-lsp/pylsp-mypy
+          "ruff": { "enabled": false }, // we use separate ruff LSP
+          "autopep8": { "enabled": false },
+          "flake8": { "enabled": false },
+          "jedi": {
+            // Set this in project-specific zed settings:
+            // "environment": "/path/to/venv/bin/python",
+          },
+          "jedi_completion": { "enabled": false },
+          "jedi_definition": { "enabled": false },
+          "jedi_hover": { "enabled": false },
+          "jedi_references": { "enabled": false },
+          "jedi_signature_help": { "enabled": false },
+          "jedi_symbols": { "enabled": false },
+          "mccabe": { "enabled": false },
+          "preload": { "enabled": true },
+          "pycodestyle": { "enabled": false },
+          "pydocstyle": { "enabled": false },
+          "pyflakes": { "enabled": false },
+          "pylint": { "enabled": false },
+          "rope_autoimport": { "enabled": false },
+          "rope_completion": { "enabled": false },
+          "yapf": { "enabled": false }
+        }
+      }
+    },
+    "pyright": {
+      "settings": {
+        "python": {
+          // Set this in project settings
+          //"pythonPath": "/path/to/bin/python",
+          "analysis": {
+            "autoImportCompletions": true,
+            "diagnosticMode": "openFilesOnly", // ["openFilesOnly", "workspace"]
+            "exclude": ["tests/"],
+            "typeCheckingMode": "standard" // ["off", "basic", "standard", "strict"]"
+          }
+        },
+        "pyright": {
+          "disableLanguageServices": false,
+          "disableOrganizeImports": false
+        }
+      }
+    },
+    "basedpyright": {
+      "binary": {
+        "path": "/Users/avivr/miniforge3/envs/py-codestyle/bin/basedpyright-langserver",
+        "arguments": ["--stdio"]
+      },
+      "settings": {
+        // set this in project-specific settings.json
+        // "python": {
+        //     "pythonPath": ""
+        // },
+        "basedpyright": {
+          "disableLanguageServices": false,
+          "disableOrganizeImports": true,
+          "disableTaggedHints": false
+        },
+        "basedpyright.analysis": {
+          "typeCheckingMode": "standard", // ["off", "basic", "standard", "strict", "recommended", "all"]
+          "autoImportCompletions": true,
+          "diagnosticMode": "openFilesOnly", // ["openFilesOnly", "workspace"]
+          "exclude": ["tests/"],
+          "useTypingExtensions": true
+        }
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "showSyntaxErrors": true,
+          "organizeImports": true,
+          "fixAll": true,
+          "lint": { "enable": true }
+        }
+      }
+    },
+    "yaml-language-server": {
+      "settings": {
+        "yaml": { "validate": false }
+      }
+    },
+    "texlab": {
+      "settings": {
+        "texlab": {
+          "build": {
+            "onSave": true,
+            "forwardSearchAfter": true,
+            "forwardSearch": {
+              "executable": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+              "args": ["-r", "%l", "%p", "%f"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

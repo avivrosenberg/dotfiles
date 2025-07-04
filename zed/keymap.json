@@ -1,0 +1,66 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    // "context": "Workspace",
+    "bindings": {
+      //
+      "cmd-h": "workspace::ToggleLeftDock",
+      "cmd-l": "workspace::ToggleRightDock",
+      "cmd-j": "workspace::ToggleBottomDock",
+      "cmd-o": "file_finder::Toggle",
+      "cmd-t": "outline::Toggle", // vim: "g s"
+      "cmd-r": "project_symbols::Toggle", // vim: "g S"
+      "cmd-p": "command_palette::Toggle", // vim: ":"
+      //
+      "cmd-1": "project_panel::ToggleFocus",
+      "cmd-2": "git_panel::ToggleFocus",
+      "cmd-3": "outline_panel::ToggleFocus",
+      "cmd-4": "debug_panel::ToggleFocus",
+      "cmd-5": "agent::ToggleFocus",
+      "cmd-0": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g f": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Picker",
+    "bindings": {
+      // Within picker modals, make it easier to cancel
+      "ctrl-[": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-l": ["workspace::SendKeystrokes", "delete"]
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "shift-enter": "repl::Run",
+      "alt-shift-enter": "repl::RunInPlace"
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-w h": "workspace::ActivatePaneLeft",
+      "ctrl-w l": "workspace::ActivatePaneRight",
+      "ctrl-w k": "workspace::ActivatePaneUp",
+      "ctrl-w j": "workspace::ActivatePaneDown"
+    }
+  }
+]
