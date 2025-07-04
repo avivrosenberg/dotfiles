@@ -18,6 +18,8 @@ RESTORE = "\033[0m"
 SYMLINK_EXT = ".symlink"
 
 # List of files and directories which will be symlinked as dotfiles in the home folder
+# Some of these still have the old symlink extension, which is not easy to remove due to
+# nested submodules
 SRC_FILES = [
     "bash/bash_profile",
     "bash/bashrc",
