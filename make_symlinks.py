@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+from dataclasses import dataclass
 from pathlib import Path
 
 # Get the directory containing this script
@@ -17,29 +18,38 @@ RESTORE = "\033[0m"
 # Old extension to remove
 SYMLINK_EXT = ".symlink"
 
+
+@dataclass
+class Symlink:
+    src_name: str | Path
+    dst_dir: str | Path = DESTDIR
+    prepend_dot: bool = True
+
+
 # List of files and directories which will be symlinked as dotfiles in the home folder
 # Some of these still have the old symlink extension, which is not easy to remove due to
 # nested submodules
 SRC_FILES = [
-    "bash/bash_profile",
-    "bash/bashrc",
-    "bash/profile",
-    "bin",
-    "conda/condarc",
-    "git/gitconfig",
-    "git/gitk",
-    "intellij/ideavimrc",
-    "ipython",
-    "pandoc.symlink",
-    "ripgrep/ripgreprc",
-    "tmux/tmux.conf",
-    "tmuxinator",
-    "vim.symlink",
-    "vim.symlink/vimrc",
-    "vim.symlink/gvimrc",
-    "zsh/zshrc",
-    "zsh/zshenv",
-    "Brewfile",
+    Symlink("bash/bash_profile"),
+    Symlink("bash/bashrc"),
+    Symlink("bash/profile"),
+    Symlink("bin"),
+    Symlink("conda/condarc"),
+    Symlink("git/gitconfig"),
+    Symlink("git/gitk"),
+    Symlink("intellij/ideavimrc"),
+    Symlink("ipython"),
+    Symlink("pandoc.symlink"),
+    Symlink("ripgrep/ripgreprc"),
+    Symlink("tmux/tmux.conf"),
+    Symlink("tmuxinator"),
+    Symlink("vim.symlink"),
+    Symlink("vim.symlink/vimrc"),
+    Symlink("vim.symlink/gvimrc"),
+    Symlink("zsh/zshrc"),
+    Symlink("zsh/zshenv"),
+    Symlink("Brewfile"),
+    Symlink("zed", DESTDIR / ".config", prepend_dot=False),
 ]
 
 
@@ -47,9 +57,9 @@ def make_symlinks(dry_run: bool = True):
     print(f"{GREEN}DOTFILESDIR: {DOTFILESDIR}{RESTORE}")
     print(f"{GREEN}DESTDIR: {DESTDIR}{RESTORE}")
 
-    for src_name in SRC_FILES:
+    for sym_spec in SRC_FILES:
         # Get the full path to the source file
-        src_filepath = DOTFILESDIR / src_name
+        src_filepath = DOTFILESDIR / sym_spec.src_name
 
         # Make sure it exists
         if not src_filepath.exists():
@@ -57,7 +67,11 @@ def make_symlinks(dry_run: bool = True):
             exit(1)
 
         # Take the file name and prepend the DESTDIR with a dot
-        dst_filepath = DESTDIR / f".{src_filepath.name}"
+        dst_filename = src_filepath.name
+        if sym_spec.prepend_dot:
+            dst_filename = f".{dst_filename}"
+
+        dst_filepath = Path(sym_spec.dst_dir) / dst_filename
 
         # Remove old symlink extension if it exists
         if dst_filepath.suffix == SYMLINK_EXT:
@@ -86,6 +100,7 @@ def make_symlinks(dry_run: bool = True):
         if not dry_run:
             # Create the symlink (override previous ones)
             print(f"{GREEN}Linking:{RESTORE} {src_tgt_str}")
+            dst_filepath.parent.mkdir(parents=True, exist_ok=True)
             dst_filepath.symlink_to(src_filepath)
         else:
             print(f"{YELLOW}Would link:{RESTORE} {src_tgt_str}")
