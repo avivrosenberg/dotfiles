@@ -13,6 +13,7 @@ dependencies:
   - jupyterlab
   - jupyterlab_vim
   - mypy
+  - nb_conda_kernels # autodetect conda envs with ipykernel installed
   - pip
   - pylsp-mypy
   - pylsp-rope
