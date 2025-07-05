@@ -46,5 +46,14 @@
     "shell": "system",
     // Represents the tags for inline runnable indicators, or spawning multiple tasks at once.
     "tags": []
+  },
+  {
+    "label": "Jupyter Lab",
+    "command": "mamba run -a '' -n py-codestyle jupyter-lab --no-browser",
+    "reveal": "always",
+    "reveal_target": "dock",
+    "hide": "never",
+    "shell": "system",
+    "tags": []
   }
 ]
