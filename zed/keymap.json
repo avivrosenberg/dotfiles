@@ -63,9 +63,9 @@
     }
   },
   {
-    "context": "Picker",
+    "context": "Picker || Editor",
     "bindings": {
-      // Within picker modals, make it easier to cancel
+      // Within various modals, make it easier to cancel with the familiar vim keymap
       "ctrl-[": ["workspace::SendKeystrokes", "escape"]
     }
   },
