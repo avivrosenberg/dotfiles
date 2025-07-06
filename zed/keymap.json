@@ -29,11 +29,25 @@
   {
     "context": "VimControl && !menu",
     "bindings": {
-      "g f": "file_finder::Toggle",
-      "g s": "outline::Toggle",
-      "g a": "project_symbols::Toggle",
-      "g r": "task::Spawn",
-      "g shift-f": "editor::OpenSelectedFilename",
+      // space-leader shortcuts
+      "space": null,
+      "space f": "file_finder::Toggle",
+      "space d": "tab_switcher::ToggleAll",
+      "space s": "outline::Toggle",
+      "space a": "project_symbols::Toggle",
+      "space r": "task::Spawn",
+      "space space": "command_palette::Toggle",
+      // git
+      "space g d": "git::Diff",
+      "space g s": "git::ToggleStaged",
+      "space g shift-s": "git::StageAndNext",
+      "space g shift-r": "git::Restore",
+      "space g shift-a": "git::StageAll",
+      "space g shift-u": "git::UnstageAll",
+      "space g c": "git::Commit",
+      "space g b": "git::Switch",
+      "space g p": "git::Push",
+      // g shortcuts
       "g shift-r": "editor::Rename"
     }
   },
