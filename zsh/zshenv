@@ -31,7 +31,7 @@
 
 ####
 ## Environment
-export EDITOR='vim'
+export EDITOR='nvim'
 export DOTFILES="$HOME/.dotfiles"
 export LESS='-R -S'
 export PAGER='less -RSFX'

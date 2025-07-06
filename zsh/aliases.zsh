@@ -10,8 +10,8 @@ alias ll='ls -lhFG'
 alias la='ls -lhaFG'
 
 # vim
-alias v='vim'
-alias vmi='vim'
+alias v='nvim'
+alias vmi='nvim'
 alias nv='nvim'
 
 # git
@@ -32,13 +32,13 @@ alias mmv='noglob zmv -W'
 
 # docker
 alias d='docker'
-alias dc='docker-compose'
+alias dc='docker compose'
 
 # conda/mamba
 alias m='mamba'
 alias ma='mamba activate'
 alias md='mamba deactivate'
-alias mr='mamba run --no-capture-output'
+alias mr='mamba run -a ""'
 alias m64='CONDA_SUBDIR=osx-64 mamba'
 
 # bat
