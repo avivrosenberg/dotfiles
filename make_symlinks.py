@@ -15,9 +15,6 @@ YELLOW = "\033[0;33m"
 RED = "\033[0;31m"
 RESTORE = "\033[0m"
 
-# Old extension to remove
-SYMLINK_EXT = ".symlink"
-
 
 @dataclass
 class Symlink:
@@ -43,9 +40,9 @@ SRC_FILES = [
     Symlink("ripgrep/ripgreprc"),
     Symlink("tmux/tmux.conf"),
     Symlink("tmuxinator"),
-    Symlink("vim.symlink"),
-    Symlink("vim.symlink/vimrc"),
-    Symlink("vim.symlink/gvimrc"),
+    Symlink("vim"),
+    Symlink("vim/vimrc"),
+    Symlink("vim/gvimrc"),
     Symlink("zsh/zshrc"),
     Symlink("zsh/zshenv"),
     Symlink("Brewfile"),
@@ -56,7 +53,7 @@ SRC_FILES = [
 
 def make_symlinks(dry_run: bool = True):
     print(f"{GREEN}DOTFILESDIR: {DOTFILESDIR}{RESTORE}")
-    print(f"{GREEN}DESTDIR: {DESTDIR}{RESTORE}")
+    print(f"{GREEN}DESTDIR: {DESTDIR}{RESTORE}\n")
 
     for sym_spec in SRC_FILES:
         # Get the full path to the source file
@@ -73,10 +70,6 @@ def make_symlinks(dry_run: bool = True):
             dst_filename = f".{dst_filename}"
 
         dst_filepath = Path(sym_spec.dst_dir) / dst_filename
-
-        # Remove old symlink extension if it exists
-        if dst_filepath.suffix == SYMLINK_EXT:
-            dst_filepath = dst_filepath.with_suffix("")
 
         # Remove target if it exists
         if dst_filepath.is_symlink():
