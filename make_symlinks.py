@@ -23,9 +23,7 @@ class Symlink:
     prepend_dot: bool = True
 
 
-# List of files and directories which will be symlinked as dotfiles in the home folder
-# Some of these still have the old symlink extension, which is not easy to remove due to
-# nested submodules
+# List of files and directories which will be symlinked as dotfiles in the home folder.
 SRC_FILES = [
     Symlink("bash/bash_profile"),
     Symlink("bash/bashrc"),
