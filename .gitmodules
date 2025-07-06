@@ -1,41 +1,41 @@
 [submodule "vim.symlink/bundle/vim-fugitive"]
-    path = vim.symlink/bundle/vim-fugitive
+	path = vim/bundle/vim-fugitive
     url = https://github.com/tpope/vim-fugitive.git
     ignore = dirty
 [submodule "vim.symlink/bundle/matchit.vim"]
-    path = vim.symlink/bundle/matchit.vim
+	path = vim/bundle/matchit.vim
     url = https://github.com/vim-scripts/matchit.zip.git
     ignore = dirty
 [submodule "vim.symlink/bundle/vim-surround"]
-    path = vim.symlink/bundle/vim-surround
+	path = vim/bundle/vim-surround
     url = https://github.com/tpope/vim-surround.git
     ignore = dirty
 [submodule "vim.symlink/bundle/vim-pathogen"]
-    path = vim.symlink/bundle/vim-pathogen
+	path = vim/bundle/vim-pathogen
     url = https://github.com/tpope/vim-pathogen.git
     ignore = dirty
 [submodule "vim.symlink/bundle/vim-abolish"]
-    path = vim.symlink/bundle/vim-abolish
+	path = vim/bundle/vim-abolish
     url = https://github.com/tpope/vim-abolish.git
     ignore = dirty
 [submodule "vim.symlink/bundle/vim-endwise"]
-    path = vim.symlink/bundle/vim-endwise
+	path = vim/bundle/vim-endwise
     url = https://github.com/tpope/vim-endwise.git
     ignore = dirty
 [submodule "vim.symlink/bundle/ack.vim"]
-    path = vim.symlink/bundle/ack.vim
+	path = vim/bundle/ack.vim
     url = https://github.com/mileszs/ack.vim
     ignore = dirty
 [submodule "vim.symlink/bundle/vim-airline"]
-    path = vim.symlink/bundle/vim-airline
+	path = vim/bundle/vim-airline
     url = https://github.com/bling/vim-airline.git
     ignore = dirty
 [submodule "vim.symlink/bundle/tagbar"]
-    path = vim.symlink/bundle/tagbar
+	path = vim/bundle/tagbar
     url = https://github.com/majutsushi/tagbar.git
     ignore = dirty
 [submodule "vim.symlink/bundle/vim-textobj-user"]
-    path = vim.symlink/bundle/vim-textobj-user
+	path = vim/bundle/vim-textobj-user
     url = https://github.com/kana/vim-textobj-user.git
     ignore = dirty
 [submodule "zsh/oh-my-zsh"]
@@ -43,108 +43,108 @@
 	url = https://github.com/robbyrussell/oh-my-zsh.git
     ignore = dirty
 [submodule "vim.symlink/bundle/vim-unimpaired"]
-	path = vim.symlink/bundle/vim-unimpaired
+	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
     ignore = dirty
 [submodule "vim.symlink/bundle/vim-repeat"]
-	path = vim.symlink/bundle/vim-repeat
+	path = vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
     ignore = dirty
 [submodule "vim.symlink/bundle/vim-commentary"]
-	path = vim.symlink/bundle/vim-commentary
+	path = vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
     ignore = dirty
 [submodule "vim.symlink/bundle/tmuxline.vim"]
-	path = vim.symlink/bundle/tmuxline.vim
+	path = vim/bundle/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim.git
     ignore = dirty
 [submodule "vim.symlink/bundle/delimitMate"]
-	path = vim.symlink/bundle/delimitMate
+	path = vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
 [submodule "vim.symlink/bundle/ultisnips"]
-	path = vim.symlink/bundle/ultisnips
+	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
 [submodule "vim.symlink/bundle/vim-snippets"]
-	path = vim.symlink/bundle/vim-snippets
+	path = vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
 [submodule "vim.symlink/bundle/vim-angry"]
-	path = vim.symlink/bundle/vim-angry
+	path = vim/bundle/vim-angry
 	url = https://github.com/b4winckler/vim-angry.git
 [submodule "vim.symlink/bundle/vimtex"]
-	path = vim.symlink/bundle/vimtex
+	path = vim/bundle/vimtex
 	url = https://github.com/lervag/vimtex.git
 [submodule "vim.symlink/bundle/vim-vinegar"]
-	path = vim.symlink/bundle/vim-vinegar
+	path = vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
 [submodule "vim.symlink/bundle/vim-airline-themes"]
-	path = vim.symlink/bundle/vim-airline-themes
+	path = vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "zsh/plugins/docker"]
 	path = zsh/plugins/docker
 	url = https://github.com/felixr/docker-zsh-completion.git
 [submodule "vim.symlink/bundle/tabular"]
-	path = vim.symlink/bundle/tabular
+	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
 [submodule "pandoc.symlink/templates/eisvogel"]
 	path = pandoc/templates/eisvogel
 	url = https://github.com/Wandmalfarbe/pandoc-latex-template.git
 [submodule "vim.symlink/bundle/vim-ragtag"]
-	path = vim.symlink/bundle/vim-ragtag
+	path = vim/bundle/vim-ragtag
 	url = https://github.com/tpope/vim-ragtag.git
 [submodule "vim.symlink/bundle/vim-liquid"]
-	path = vim.symlink/bundle/vim-liquid
+	path = vim/bundle/vim-liquid
 	url = https://github.com/tpope/vim-liquid.git
 [submodule "vim.symlink/bundle/dash.vim"]
-	path = vim.symlink/bundle/dash.vim
+	path = vim/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
 [submodule "vim.symlink/bundle/csv.vim"]
-	path = vim.symlink/bundle/csv.vim
+	path = vim/bundle/csv.vim
 	url = https://github.com/chrisbra/csv.vim.git
 [submodule "vim.symlink/bundle/vim-pandoc"]
-	path = vim.symlink/bundle/vim-pandoc
+	path = vim/bundle/vim-pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc.git
 [submodule "vim.symlink/bundle/vim-pandoc-syntax"]
-	path = vim.symlink/bundle/vim-pandoc-syntax
+	path = vim/bundle/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
 [submodule "vim.symlink/bundle/fzf.vim"]
-	path = vim.symlink/bundle/fzf.vim
+	path = vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
 [submodule "vim.symlink/bundle/fzf"]
-	path = vim.symlink/bundle/fzf
+	path = vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.git
 [submodule "vim.symlink/bundle/jedi-vim"]
-	path = vim.symlink/bundle/jedi-vim
+	path = vim/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "vim.symlink/bundle/ale"]
-	path = vim.symlink/bundle/ale
+	path = vim/bundle/ale
 	url = https://github.com/dense-analysis/ale.git
 [submodule "vim.symlink/bundle/vim-slime"]
-	path = vim.symlink/bundle/vim-slime
+	path = vim/bundle/vim-slime
 	url = https://github.com/jpalardy/vim-slime.git
 [submodule "vim.symlink/bundle/vim-polyglot"]
-	path = vim.symlink/bundle/vim-polyglot
+	path = vim/bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
 [submodule "vim.symlink/bundle/vim-ipython-cell"]
-	path = vim.symlink/bundle/vim-ipython-cell
+	path = vim/bundle/vim-ipython-cell
 	url = https://github.com/hanschen/vim-ipython-cell.git
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "vim.symlink/bundle/tex-conceal.vim"]
-	path = vim.symlink/bundle/tex-conceal.vim
+	path = vim/bundle/tex-conceal.vim
 	url = https://github.com/avivrosenberg/tex-conceal.vim.git
 [submodule "zsh/plugins/conda-zsh-completion"]
 	path = zsh/plugins/conda-zsh-completion
 	url = https://github.com/esc/conda-zsh-completion
 [submodule "vim.symlink/bundle/asyncrun.vim"]
-	path = vim.symlink/bundle/asyncrun.vim
+	path = vim/bundle/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim.git
 [submodule "vim.symlink/bundle/vim-solarized8"]
-	path = vim.symlink/bundle/vim-solarized8
+	path = vim/bundle/vim-solarized8
 	url = https://github.com/lifepillar/vim-solarized8.git
 [submodule "vim.symlink/bundle/night-owl.vim"]
-	path = vim.symlink/bundle/night-owl.vim
+	path = vim/bundle/night-owl.vim
 	url = https://github.com/haishanh/night-owl.vim.git
 [submodule "vim.symlink/bundle/supertab"]
-	path = vim.symlink/bundle/supertab
+	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
