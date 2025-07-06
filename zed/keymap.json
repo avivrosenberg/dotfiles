@@ -29,7 +29,23 @@
   {
     "context": "VimControl && !menu",
     "bindings": {
-      "g f": "file_finder::Toggle"
+      "g f": "file_finder::Toggle",
+      "g s": "outline::Toggle",
+      "g a": "project_symbols::Toggle",
+      "g r": "task::Spawn",
+      "g shift-f": "editor::OpenSelectedFilename",
+      "g shift-r": "editor::Rename"
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "ctrl-l": ["workspace::SendKeystrokes", "delete"],
+      "ctrl-x ctrl-o": "editor::ShowCompletions",
+      "ctrl-x ctrl-a": "assistant::InlineAssist", // zed specific
+      "ctrl-x ctrl-l": "editor::ShowEditPrediction", // zed specific
+      "ctrl-x ctrl-c": "editor::ToggleCodeActions", // zed specific
+      "ctrl-x ctrl-x": "editor::Cancel"
     }
   },
   {
@@ -39,19 +55,18 @@
       "ctrl-[": ["workspace::SendKeystrokes", "escape"]
     }
   },
-
-  {
-    "context": "Editor",
-    "bindings": {
-      "ctrl-l": ["workspace::SendKeystrokes", "delete"]
-    }
-  },
   {
     "context": "Editor && jupyter && !ContextEditor",
     "use_key_equivalents": true,
     "bindings": {
       "shift-enter": "repl::Run",
       "alt-shift-enter": "repl::RunInPlace"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k cmd-p": "pane::TogglePinTab"
     }
   },
   {
