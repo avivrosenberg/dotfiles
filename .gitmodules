@@ -86,7 +86,7 @@
 	path = vim.symlink/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
 [submodule "pandoc.symlink/templates/eisvogel"]
-	path = pandoc.symlink/templates/eisvogel
+	path = pandoc/templates/eisvogel
 	url = https://github.com/Wandmalfarbe/pandoc-latex-template.git
 [submodule "vim.symlink/bundle/vim-ragtag"]
 	path = vim.symlink/bundle/vim-ragtag
