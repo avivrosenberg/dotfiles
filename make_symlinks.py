@@ -39,7 +39,7 @@ SRC_FILES = [
     Symlink("git/gitk"),
     Symlink("intellij/ideavimrc"),
     Symlink("ipython"),
-    Symlink("pandoc.symlink"),
+    Symlink("pandoc"),
     Symlink("ripgrep/ripgreprc"),
     Symlink("tmux/tmux.conf"),
     Symlink("tmuxinator"),
@@ -105,6 +105,8 @@ def make_symlinks(dry_run: bool = True):
             dst_filepath.symlink_to(src_filepath)
         else:
             print(f"{YELLOW}Would link:{RESTORE} {src_tgt_str}")
+
+    print(f"\n{GREEN}Done, {len(SRC_FILES)} links created.{RESTORE}")
 
 
 if __name__ == "__main__":
