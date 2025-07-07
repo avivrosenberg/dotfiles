@@ -14,9 +14,9 @@
       "cmd-l": "workspace::ToggleRightDock",
       "cmd-j": "workspace::ToggleBottomDock",
       "cmd-o": "file_finder::Toggle",
-      "cmd-t": "outline::Toggle", // vim: "g s"
-      "cmd-r": "project_symbols::Toggle", // vim: "g S"
-      "cmd-p": "command_palette::Toggle", // vim: ":"
+      "cmd-t": "outline::Toggle",
+      "cmd-r": "project_symbols::Toggle",
+      "cmd-p": "command_palette::Toggle",
       //
       "cmd-1": "project_panel::ToggleFocus",
       "cmd-2": "git_panel::ToggleFocus",
@@ -30,24 +30,26 @@
     "context": "VimControl && !menu",
     "bindings": {
       // leader shortcuts (using space as leader)
+      // Finding files and symbols
       "space": null,
-      "space f": "file_finder::Toggle",
-      "space d": "tab_switcher::ToggleAll",
-      "space s": "outline::Toggle",
-      "space a": "project_symbols::Toggle",
-      "space r": "task::Spawn",
+      "space f f": "file_finder::Toggle",
+      "space f d": "tab_switcher::ToggleAll",
+      "space f s": "outline::Toggle",
+      "space f a": "project_symbols::Toggle",
+      "space f r": "task::Spawn",
+      "space f g": "pane::DeploySearch",
       "space space": "command_palette::Toggle",
-      // git
+      // Git
       "space g d": "git::Diff",
       "space g s": "git::ToggleStaged",
-      "space g shift-s": "git::StageAndNext",
+      "space g g": "git::StageAndNext",
       "space g shift-r": "git::Restore",
       "space g shift-a": "git::StageAll",
       "space g shift-u": "git::UnstageAll",
       "space g c": "git::Commit",
       "space g b": "git::Switch",
       "space g p": "git::Push",
-      "space g e": "editor::ToggleSelectedDiffHunks",
+      "space g h": "editor::ToggleSelectedDiffHunks",
       // g shortcuts
       "g shift-r": "editor::Rename",
       // Subword motions
@@ -83,6 +85,7 @@
       "ctrl-x ctrl-a": "assistant::InlineAssist", // zed specific
       "ctrl-x ctrl-l": "editor::ShowEditPrediction", // zed specific
       "ctrl-x ctrl-c": "editor::ToggleCodeActions", // zed specific
+      "ctrl-x ctrl-s": "editor::ShowSignatureHelp", // zed specific
       "ctrl-x ctrl-x": "editor::Cancel",
       "ctrl-x ctrl-n": "editor::NextEditPrediction",
       "ctrl-x ctrl-p": "editor::PreviousEditPrediction"
