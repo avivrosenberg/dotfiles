@@ -29,7 +29,7 @@
   {
     "context": "VimControl && !menu",
     "bindings": {
-      // space-leader shortcuts
+      // leader shortcuts (using space as leader)
       "space": null,
       "space f": "file_finder::Toggle",
       "space d": "tab_switcher::ToggleAll",
@@ -47,8 +47,32 @@
       "space g c": "git::Commit",
       "space g b": "git::Switch",
       "space g p": "git::Push",
+      "space g e": "editor::ToggleSelectedDiffHunks",
       // g shortcuts
-      "g shift-r": "editor::Rename"
+      "g shift-r": "editor::Rename",
+      // Subword motions
+      "g w": "vim::NextSubwordStart",
+      "g b": "vim::PreviousSubwordStart",
+      "g e": "vim::NextSubwordEnd",
+      "g shift-e": "vim::PreviousSubwordEnd"
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      // vim-sneak movements: s<a><b> to move to 'ab'
+      // https://github.com/justinmk/vim-sneak
+      // Not all funcionality works
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward"
+      // vim-exchange also works by default (cx<motion>, cxx, cxc)
+      // https://github.com/tommcdo/vim-exchange
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": ["vim::PushAddSurrounds", {}]
     }
   },
   {
@@ -59,7 +83,9 @@
       "ctrl-x ctrl-a": "assistant::InlineAssist", // zed specific
       "ctrl-x ctrl-l": "editor::ShowEditPrediction", // zed specific
       "ctrl-x ctrl-c": "editor::ToggleCodeActions", // zed specific
-      "ctrl-x ctrl-x": "editor::Cancel"
+      "ctrl-x ctrl-x": "editor::Cancel",
+      "ctrl-x ctrl-n": "editor::NextEditPrediction",
+      "ctrl-x ctrl-p": "editor::PreviousEditPrediction"
     }
   },
   {
