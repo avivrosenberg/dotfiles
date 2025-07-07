@@ -7,7 +7,24 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  // Editor
   "autosave": "on_focus_change",
+  "minimap": { "show": "auto", "display_in": "active_editor" },
+  "tabs": { "git_status": true, "file_icons": false },
+  "show_whitespaces": "selection",
+  "wrap_guides": [88],
+  "preferred_line_length": 88,
+  "hard_tabs": false,
+  "scroll_beyond_last_line": "one_page", // or "off"
+  "inlay_hints": {
+    "enabled": false,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "show_background": false
+  },
+
+  // AI
   "agent": {
     "default_profile": "ask",
     "default_model": {
@@ -16,12 +33,21 @@
     },
     "version": "2"
   },
-  "minimap": { "show": "auto", "display_in": "active_editor" },
   "show_edit_predictions": true,
-  "tabs": { "git_status": true, "file_icons": false },
-  "wrap_guides": [88],
-  "show_whitespaces": "selection",
+  "edit_predictions": {
+    "enabled": true,
+    "mode": "eager"
+  },
+
+  // Vim
   "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "on_yank",
+    "highlight_on_yank_duration": 500,
+    "toggle_relative_line_numbers": true
+  },
+
+  // UI
   "ui_font_size": 16,
   "buffer_font_size": 13,
   "buffer_font_family": "FiraCode Nerd Font Mono",
@@ -29,20 +55,13 @@
   "buffer_font_features": {
     "calt": true // ligatures
   },
-  "preferred_line_length": 88,
-  "hard_tabs": false,
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light Soft",
     "dark": "Gruvbox Dark"
   },
-  "inlay_hints": {
-    "enabled": false,
-    "show_type_hints": true,
-    "show_parameter_hints": true,
-    "show_other_hints": true,
-    "show_background": false
-  },
+
+  // Extensions
   "auto_install_extensions": {
     "basedpyright": true,
     "csv": true,
@@ -55,9 +74,10 @@
     "ruff": true,
     "toml": true
   },
+
+  // Languages
   "languages": {
     "Python": {
-      "show_edit_predictions": true,
       "tab_size": 4,
       "language_servers": ["basedpyright", "!pyright", "ruff"],
       "format_on_save": "on",
@@ -68,6 +88,8 @@
       }
     }
   },
+
+  // LSPs
   "lsp": {
     "pylsp": {
       "binary": {
