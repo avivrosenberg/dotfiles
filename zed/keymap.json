@@ -7,7 +7,7 @@
 // from the command palette.
 [
   {
-    // "context": "Workspace",
+    // General bindings
     "bindings": {
       //
       "cmd-h": "workspace::ToggleLeftDock",
@@ -27,7 +27,26 @@
     }
   },
   {
+    "context": "Editor && jupyter && !ContextEditor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "shift-enter": "repl::Run",
+      "alt-shift-enter": "repl::RunInPlace"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k cmd-p": "pane::TogglePinTab"
+    }
+  },
+
+  // Vim Bindings
+  // Note: lots of great default bindings here:
+  // https://zed.dev/docs/vim#zed-specific-features
+  {
     "context": "VimControl && !menu",
+    // VimControl means normal, visual or operator modes
     "bindings": {
       // leader shortcuts (using space as leader)
       // Finding files and symbols
@@ -49,19 +68,19 @@
       "space g c": "git::Commit",
       "space g b": "git::Switch",
       "space g p": "git::Push",
-      "space g h": "editor::ToggleSelectedDiffHunks",
+      "space g h": "editor::ToggleSelectedDiffHunks"
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual && !menu",
+    "bindings": {
       // g shortcuts
-      "g shift-r": "editor::Rename",
+      // Note: multi-cursor support defaults to ga, gl, gL
       // Subword motions
       "g w": "vim::NextSubwordStart",
       "g b": "vim::PreviousSubwordStart",
       "g e": "vim::NextSubwordEnd",
-      "g shift-e": "vim::PreviousSubwordEnd"
-    }
-  },
-  {
-    "context": "vim_mode == normal || vim_mode == visual",
-    "bindings": {
+      "g shift-e": "vim::PreviousSubwordEnd",
       // vim-sneak movements: s<a><b> to move to 'ab'
       // https://github.com/justinmk/vim-sneak
       // Not all funcionality works
@@ -72,7 +91,7 @@
     }
   },
   {
-    "context": "vim_mode == visual",
+    "context": "vim_mode == visual && !menu",
     "bindings": {
       "shift-s": ["vim::PushAddSurrounds", {}]
     }
@@ -92,24 +111,22 @@
     }
   },
   {
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    // Configure quote and bracket text objects, e.g. for commands like
+    // yib/yab/ciq/caq etc.
+    // q matches ', ", or `
+    // b matches (, [, {, or <
+    "bindings": {
+      // mini.ai plugin behavior (uses tree-sitter for context aware matching)
+      "q": "vim::MiniQuotes", // Traditional Vim behavior: "vim::AnyQuotes",
+      "b": "vim::MiniBrackets" // Traditional Vim behavior: "vim::AnyBrackets"
+    }
+  },
+  {
     "context": "Picker || Editor",
     "bindings": {
       // Within various modals, make it easier to cancel with the familiar vim keymap
       "ctrl-[": ["workspace::SendKeystrokes", "escape"]
-    }
-  },
-  {
-    "context": "Editor && jupyter && !ContextEditor",
-    "use_key_equivalents": true,
-    "bindings": {
-      "shift-enter": "repl::Run",
-      "alt-shift-enter": "repl::RunInPlace"
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "cmd-k cmd-p": "pane::TogglePinTab"
     }
   },
   {

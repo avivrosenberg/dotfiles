@@ -33,6 +33,11 @@
     "body": "for ${1:item} in ${2:iterable}:\n    $0",
     "description": "For loop"
   },
+  "Enumerated For loop": {
+    "prefix": "fore",
+    "body": "for ${1:i}, ${2:item} in enumerate(${2:iterable}):\n    $0",
+    "description": "Enumerated For loop"
+  },
   "While loop": {
     "prefix": "while",
     "body": "while ${1:condition}:\n    $0",

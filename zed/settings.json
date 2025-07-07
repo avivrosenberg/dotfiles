@@ -64,6 +64,9 @@
     "light": "Gruvbox Light Soft",
     "dark": "Gruvbox Dark"
   },
+  "title_bar": {
+    "show_branch_icon": true
+  },
 
   // Extensions
   "auto_install_extensions": {
