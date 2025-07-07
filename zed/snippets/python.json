@@ -1,0 +1,184 @@
+{
+  // Imports
+  "Import module": {
+    "prefix": "imp",
+    "body": "import ${1:module}",
+    "description": "Import a module"
+  },
+  "Import from module": {
+    "prefix": "impf",
+    "body": "from ${1:module} import ${2:item}",
+    "description": "Import specific item from a module"
+  },
+  "Import data science": {
+    "prefix": "impdatasci",
+    "body": [
+      "import numpy as np",
+      "import pandas as pd",
+      "import sklearn as sk",
+      "import torch",
+      "import matplotlib.pyplot as plt",
+      "import seaborn as sns"
+    ],
+    "description": "Import data science libraries"
+  },
+  // Constructs
+  "Main check": {
+    "prefix": "main",
+    "body": "if __name__ == \"__main__\":\n    $0",
+    "description": "Python __main__ entrypoint"
+  },
+  "For loop": {
+    "prefix": "for",
+    "body": "for ${1:item} in ${2:iterable}:\n    $0",
+    "description": "For loop"
+  },
+  "While loop": {
+    "prefix": "while",
+    "body": "while ${1:condition}:\n    $0",
+    "description": "While loop"
+  },
+  "If statement": {
+    "prefix": "if",
+    "body": "if ${1:condition}:\n    $0",
+    "description": "If statement"
+  },
+  "If else statement": {
+    "prefix": "ifel",
+    "body": "if ${1:condition}:\n    ${2:pass}\nelse:\n    $0",
+    "description": "If-else statement"
+  },
+  "Elif / else": {
+    "prefix": "elif",
+    "body": "elif ${1:condition}:\n    $0",
+    "description": "Elif block"
+  },
+  "Try except": {
+    "prefix": "try",
+    "body": "try:\n    ${1:pass}\nexcept ${2:Exception} as ${3:e}:\n    $0",
+    "description": "Try/except block"
+  },
+  "Try except finally": {
+    "prefix": "tryf",
+    "body": "try:\n    ${1:pass}\nexcept ${2:Exception} as ${3:e}:\n    ${4:pass}\nfinally:\n    $0",
+    "description": "Try/except/finally block"
+  },
+  "List comprehension": {
+    "prefix": "lc",
+    "body": "[${1:x} for ${2:x} in ${3:xs}]",
+    "description": "List comprehension"
+  },
+  "Print statement": {
+    "prefix": "print",
+    "body": "print(${1:\"msg\"})",
+    "description": "Print statement"
+  },
+  "F-string": {
+    "prefix": "fstr",
+    "body": "f\"{${1:var}=}\"",
+    "description": "F-string"
+  },
+  // Function and classes
+  "Function definition": {
+    "prefix": "def",
+    "body": "def ${1:func}(${2:arg}: ${3:type}) -> ${4:rtype}:\n    $0",
+    "description": "Function definition"
+  },
+  "Class definition": {
+    "prefix": "class",
+    "body": "class ${1:ClassName}(${2:object}):\n    def __init__(self, ${3:args}):\n        $0",
+    "description": "Class definition"
+  },
+  "Property (getter)": {
+    "prefix": "prop",
+    "body": "@property\ndef ${1:attr}(self):\n    $0",
+    "description": "Property getter"
+  },
+  "Method definition": {
+    "prefix": "meth",
+    "body": "def ${1:method}(self, ${2:arg}: ${3:type}) -> ${4:rtype}:\n    $0",
+    "description": "Method definition"
+  },
+  "Dataclass": {
+    "prefix": "dataclass",
+    "body": "from dataclasses import dataclass\n\n@dataclass\nclass ${1:Name}:\n    ${2:field}: ${3:type}",
+    "description": "Python dataclass"
+  },
+  "Decorator": {
+    "prefix": "deco",
+    "body": "def ${1:decorator}(func):\n    def wrapper(*args, **kwargs):\n        $0\n        return func(*args, **kwargs)\n    return wrapper",
+    "description": "Decorator function"
+  },
+  "Lambda/function expression": {
+    "prefix": "lam",
+    "body": "lambda ${1:x}: ${2:x + 1}",
+    "description": "Lambda expression"
+  },
+  "Docstring": {
+    "prefix": "doc",
+    "body": "\"\"\"\n${1:Summary}\n\n:param ${2:arg}:\n    \n:returns: ${3}\n\"\"\"$4",
+    "description": "Function docstring template"
+  },
+  // Contexts
+  "With context manager": {
+    "prefix": "with",
+    "body": "with ${1:open('file')} as ${2:f}:\n    $0",
+    "description": "With context manager"
+  },
+  "Context manager": {
+    "prefix": "ctxf",
+    "body": "@contextmanager\ndef ctx_manager():\n    try:\n        ${1:yield}\n    finally:\n        ${2:pass}",
+    "description": "Context manager function"
+  },
+  "Context manager class": {
+    "prefix": "ctxc",
+    "body": "class ${1:ContextManager}:\n    def __enter__(self):\n        $2\n        return self\n    def __exit__(self, exc_type, exc_value, traceback):\n        $0",
+    "description": "Context manager class (with __enter__/__exit__)"
+  },
+  // Logging
+  "Create Logger": {
+    "prefix": "logger",
+    "description": "Create a logger instance",
+    "body": [
+      "import logging",
+      "logging.basicConfig(level=logging.INFO)",
+      "_LOG = logging.getLogger(__name__)"
+    ]
+  },
+  "Logging info": {
+    "prefix": "logi",
+    "body": "_LOG.info(f\"${1:msg}\")",
+    "description": "Logging info message"
+  },
+  "Logging debug": {
+    "prefix": "logd",
+    "body": "_LOG.debug(f\"${1:msg}\")",
+    "description": "Logging debug message"
+  },
+  "Logging warning": {
+    "prefix": "logw",
+    "body": "_LOG.warning(f\"${1:msg}\")",
+    "description": "Logging warning message"
+  },
+  "Logging error": {
+    "prefix": "loge",
+    "body": "_LOG.error(f\"${1:msg}\")",
+    "description": "Logging error message"
+  },
+  // Tests
+  "Pytest function": {
+    "prefix": "pyt",
+    "body": "def test_${1:func}():\n    $0",
+    "description": "Pytest function"
+  },
+  "Pytest parametrize": {
+    "prefix": "ptyp",
+    "body": "@pytest.mark.parametrize(\"${1:param}\", [${2:values}])\ndef test_${3:func}(${1:param}):\n    $0",
+    "description": "Pytest parametrize"
+  },
+  "Pytest fixture": {
+    "prefix": "pytf",
+    "body": "@pytest.fixture\ndef ${1:my_fixture}():\n    $0",
+    "description": "Pytest fixture"
+  }
+}

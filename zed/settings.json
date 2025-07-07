@@ -11,6 +11,10 @@
   "autosave": "on_focus_change",
   "minimap": { "show": "auto", "display_in": "active_editor" },
   "tabs": { "git_status": true, "file_icons": false },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false
+  },
   "show_whitespaces": "selection",
   "wrap_guides": [88],
   "preferred_line_length": 88,
