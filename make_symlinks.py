@@ -46,6 +46,7 @@ SRC_FILES = [
     Symlink("Brewfile"),
     Symlink("zed", DESTDIR / ".config", prepend_dot=False),
     Symlink("nvim", DESTDIR / ".config", prepend_dot=False),
+    Symlink("ghostty", DESTDIR / ".config", prepend_dot=False),
 ]
 
 
