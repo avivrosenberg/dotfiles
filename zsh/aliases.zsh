@@ -5,9 +5,14 @@
 alias w=which
 
 # ls
-alias l='ls -hFG'
-alias ll='ls -lhFG'
-alias la='ls -lhaFG'
+if [[ -x "$(which lsd)" ]]; then
+    LS="$(which lsd)"
+else
+    LS='ls'
+fi
+alias l="$LS -hFG"
+alias ll="$LS -lhFG"
+alias la="$LS -lhaFG"
 
 # vim
 alias v='nvim'
