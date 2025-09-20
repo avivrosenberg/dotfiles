@@ -21,9 +21,10 @@
       "cmd-1": "project_panel::ToggleFocus",
       "cmd-2": "git_panel::ToggleFocus",
       "cmd-3": "outline_panel::ToggleFocus",
-      "cmd-4": "debug_panel::ToggleFocus",
-      "cmd-5": "agent::ToggleFocus",
-      "cmd-0": "terminal_panel::ToggleFocus"
+      //
+      "cmd-8": "terminal_panel::ToggleFocus",
+      "cmd-9": "debug_panel::ToggleFocus",
+      "cmd-0": "agent::ToggleFocus"
     }
   },
   {
@@ -136,6 +137,16 @@
       "ctrl-w l": "workspace::ActivatePaneRight",
       "ctrl-w k": "workspace::ActivatePaneUp",
       "ctrl-w j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k cmd-,": "zed::OpenProjectSettings",
+      "cmd-k cmd-m": "zed::OpenKeymap",
+      "cmd-k cmd-x": "zed::Extensions",
+      "cmd-k cmd-t": "toolchain::Select",
+      "cmd-k cmd-o": "projects::OpenRecent"
     }
   }
 ]
