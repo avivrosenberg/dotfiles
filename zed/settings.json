@@ -30,11 +30,11 @@
 
   // AI
   "agent": {
-    "default_profile": "ask",
+    "use_modifier_to_send": true,
     "default_model": {
-      "provider": "zed.dev",
+      "provider": "copilot_chat",
       "model": "claude-sonnet-4"
-    },
+    }
   },
   "show_edit_predictions": true,
   "edit_predictions": {
@@ -61,7 +61,7 @@
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light Soft",
-    "dark": "Gruvbox Dark"
+    "dark": "Gruvbox Dark Hard"
   },
   "title_bar": {
     "show_branch_icon": true
@@ -69,7 +69,6 @@
 
   // Extensions
   "auto_install_extensions": {
-    "basedpyright": true,
     "csv": true,
     "git-firefly": true,
     "html": true,
@@ -77,7 +76,6 @@
     "log": true,
     "ltex": true,
     "make": true,
-    "ruff": true,
     "toml": true
   },
 
@@ -132,34 +130,8 @@
         }
       }
     },
-    "pyright": {
-      "settings": {
-        "python": {
-          // Set this in project settings
-          //"pythonPath": "/path/to/bin/python",
-          "analysis": {
-            "autoImportCompletions": true,
-            "diagnosticMode": "openFilesOnly", // ["openFilesOnly", "workspace"]
-            "exclude": ["tests/"],
-            "typeCheckingMode": "standard" // ["off", "basic", "standard", "strict"]"
-          }
-        },
-        "pyright": {
-          "disableLanguageServices": false,
-          "disableOrganizeImports": false
-        }
-      }
-    },
     "basedpyright": {
-      "binary": {
-        "path": "/Users/avivr/miniforge3/envs/py-codestyle/bin/basedpyright-langserver",
-        "arguments": ["--stdio"]
-      },
       "settings": {
-        // set this in project-specific settings.json
-        // "python": {
-        //     "pythonPath": ""
-        // },
         "basedpyright": {
           "disableLanguageServices": false,
           "disableOrganizeImports": true,
