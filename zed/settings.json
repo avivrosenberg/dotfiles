@@ -29,7 +29,12 @@
   },
 
   // AI
+  "features": {
+    // Can't configure this per project
+    "edit_prediction_provider": "copilot"
+  },
   "agent": {
+    "default_profile": "ask",
     "use_modifier_to_send": true,
     "default_model": {
       "provider": "copilot_chat",
@@ -38,7 +43,6 @@
   },
   "show_edit_predictions": true,
   "edit_predictions": {
-    "enabled": true,
     "mode": "eager"
   },
 
