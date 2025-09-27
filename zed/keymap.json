@@ -146,7 +146,8 @@
       "cmd-k cmd-m": "zed::OpenKeymap",
       "cmd-k cmd-x": "zed::Extensions",
       "cmd-k cmd-t": "toolchain::Select",
-      "cmd-k cmd-o": "projects::OpenRecent"
+      "cmd-k cmd-o": "projects::OpenRecent",
+      "cmd-k cmd-c": "theme_selector::Toggle"
     }
   }
 ]
