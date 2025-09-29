@@ -54,13 +54,6 @@ if [[ -x "$(which brew 2>/dev/null)" && -d "$(brew --prefix fzf)" ]]; then
   export FZF_DEFAULT_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
-
-###
-## conda/mamba
-
-# Custom init script based on `mamba init`.
-source "$DOTFILES/conda/conda_init.sh"
-
 ###
 ## 1Password SSH Agent
 # https://developer.1password.com/docs/ssh/

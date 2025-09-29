@@ -40,3 +40,10 @@ export LC_ALL=en_US.UTF-8
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 export BAT_PAGER='less'
 export BAT_THEME='Solarized (dark)'
+
+###
+## conda/mamba
+# Custom init script based on `conda/mamba init`.
+# This needs to be in zshenv so that conda/mamba is available in all shells
+# (interactive login, interactive non-login, and scripts).
+source "$DOTFILES/conda/conda_init.sh"
