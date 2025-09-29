@@ -87,7 +87,7 @@
   "languages": {
     "Python": {
       "tab_size": 4,
-      "language_servers": ["basedpyright", "!pyright", "ruff"],
+      "language_servers": ["basedpyright", "ruff"],
       "format_on_save": "on",
       "formatter": { "language_server": { "name": "ruff" } },
       "code_actions_on_format": {
