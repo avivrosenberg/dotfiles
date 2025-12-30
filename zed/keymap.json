@@ -24,22 +24,22 @@
       //
       "cmd-8": "terminal_panel::ToggleFocus",
       "cmd-9": "debug_panel::ToggleFocus",
-      "cmd-0": "agent::ToggleFocus"
-    }
+      "cmd-0": "agent::ToggleFocus",
+    },
   },
   {
     "context": "Editor && jupyter && !ContextEditor",
     "use_key_equivalents": true,
     "bindings": {
       "shift-enter": "repl::Run",
-      "alt-shift-enter": "repl::RunInPlace"
-    }
+      "alt-shift-enter": "repl::RunInPlace",
+    },
   },
   {
     "context": "Pane",
     "bindings": {
-      "cmd-k cmd-p": "pane::TogglePinTab"
-    }
+      "cmd-k cmd-p": "pane::TogglePinTab",
+    },
   },
 
   // Vim Bindings
@@ -69,8 +69,9 @@
       "space g c": "git::Commit",
       "space g b": "git::Switch",
       "space g p": "git::Push",
-      "space g h": "editor::ToggleSelectedDiffHunks"
-    }
+      "space g h": "editor::ToggleSelectedDiffHunks",
+      "space g shift-b": "git::Blame",
+    },
   },
   {
     "context": "vim_mode == normal || vim_mode == visual && !menu",
@@ -86,16 +87,16 @@
       // https://github.com/justinmk/vim-sneak
       // Not all funcionality works
       "s": "vim::PushSneak",
-      "shift-s": "vim::PushSneakBackward"
+      "shift-s": "vim::PushSneakBackward",
       // vim-exchange also works by default (cx<motion>, cxx, cxc)
       // https://github.com/tommcdo/vim-exchange
-    }
+    },
   },
   {
     "context": "vim_mode == visual && !menu",
     "bindings": {
-      "shift-s": ["vim::PushAddSurrounds", {}]
-    }
+      "shift-s": ["vim::PushAddSurrounds", {}],
+    },
   },
   {
     "context": "vim_mode == insert",
@@ -108,8 +109,8 @@
       "ctrl-x ctrl-s": "editor::ShowSignatureHelp", // zed specific
       "ctrl-x ctrl-x": "editor::Cancel",
       "ctrl-x ctrl-n": "editor::NextEditPrediction",
-      "ctrl-x ctrl-p": "editor::PreviousEditPrediction"
-    }
+      "ctrl-x ctrl-p": "editor::PreviousEditPrediction",
+    },
   },
   {
     "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
@@ -120,15 +121,15 @@
     "bindings": {
       // mini.ai plugin behavior (uses tree-sitter for context aware matching)
       "q": "vim::MiniQuotes", // Traditional Vim behavior: "vim::AnyQuotes",
-      "b": "vim::MiniBrackets" // Traditional Vim behavior: "vim::AnyBrackets"
-    }
+      "b": "vim::MiniBrackets", // Traditional Vim behavior: "vim::AnyBrackets"
+    },
   },
   {
     "context": "Picker || Editor",
     "bindings": {
       // Within various modals, make it easier to cancel with the familiar vim keymap
-      "ctrl-[": ["workspace::SendKeystrokes", "escape"]
-    }
+      "ctrl-[": ["workspace::SendKeystrokes", "escape"],
+    },
   },
   {
     "context": "Dock",
@@ -136,8 +137,8 @@
       "ctrl-w h": "workspace::ActivatePaneLeft",
       "ctrl-w l": "workspace::ActivatePaneRight",
       "ctrl-w k": "workspace::ActivatePaneUp",
-      "ctrl-w j": "workspace::ActivatePaneDown"
-    }
+      "ctrl-w j": "workspace::ActivatePaneDown",
+    },
   },
   {
     "context": "Workspace",
@@ -147,7 +148,19 @@
       "cmd-k cmd-x": "zed::Extensions",
       "cmd-k cmd-t": "toolchain::Select",
       "cmd-k cmd-o": "projects::OpenRecent",
-      "cmd-k cmd-c": "theme_selector::Toggle"
-    }
-  }
+      "cmd-k cmd-c": "theme_selector::Toggle",
+      "cmd-k cmd-f": [
+        "task::Spawn",
+        { "task_name": "FZF File Finder", "reveal_target": "center" },
+      ],
+      "cmd-k cmd-g": [
+        "task::Spawn",
+        { "task_name": "FZF Live Grep", "reveal_target": "center" },
+      ],
+      "cmd-k cmd-shift-g": [
+        "task::Spawn",
+        { "task_name": "LazyGit", "reveal_target": "center" },
+      ],
+    },
+  },
 ]
