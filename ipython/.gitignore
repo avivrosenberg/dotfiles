@@ -3,3 +3,4 @@
 !.gitignore
 !*/
 !*/*_config.py
+!profile_default/startup/*.py
