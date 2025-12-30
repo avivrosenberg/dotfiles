@@ -45,7 +45,7 @@
     //     }
     "shell": "system",
     // Represents the tags for inline runnable indicators, or spawning multiple tasks at once.
-    "tags": []
+    "tags": [],
   },
   {
     "label": "Jupyter Lab",
@@ -54,6 +54,43 @@
     "reveal_target": "dock",
     "hide": "never",
     "shell": "system",
-    "tags": []
-  }
+    "tags": [],
+  },
+  {
+    "label": "IPython",
+    "command": "ipython",
+    "reveal": "always",
+    "reveal_target": "dock",
+    "hide": "never",
+    "shell": "system",
+    "use_new_terminal": false,
+    "tags": ["python"],
+  },
+  {
+    "label": "LazyGit",
+    "command": "lazygit",
+    "shell": {
+      "program": "sh",
+    },
+    "hide": "on_success",
+    "reveal_target": "center",
+    "show_summary": false,
+    "show_command": false,
+    "allow_concurrent_runs": true,
+    "use_new_terminal": true,
+  },
+  {
+    "label": "FZF File Finder",
+    "command": "zed \"$(fd --type f | fzf --preview 'bat --color=always {}')\"",
+    "hide": "always",
+    "allow_concurrent_runs": true,
+    "use_new_terminal": true,
+  },
+  {
+    "label": "FZF Live Grep",
+    "command": "zed \"$(fzf --ansi --disabled --bind 'start:reload:rg --line-number --color=always {q}' --bind 'change:reload:rg --line-number --color=always {q} || true' --delimiter : --preview 'bat --color=always {1} --highlight-line {2}' --preview-window '+{2}/2' | cut -d: -f1-2)\"",
+    "hide": "always",
+    "allow_concurrent_runs": true,
+    "use_new_terminal": true,
+  },
 ]
