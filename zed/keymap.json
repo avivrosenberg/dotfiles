@@ -14,9 +14,9 @@
       "cmd-l": "workspace::ToggleRightDock",
       "cmd-j": "workspace::ToggleBottomDock",
       "cmd-o": "file_finder::Toggle",
-      "cmd-t": "outline::Toggle",
-      "cmd-r": "project_symbols::Toggle",
-      "cmd-p": "command_palette::Toggle",
+      // "cmd-t": "outline::Toggle",
+      // "cmd-r": "project_symbols::Toggle",
+      // "cmd-p": "command_palette::Toggle",
       //
       "cmd-1": "project_panel::ToggleFocus",
       "cmd-2": "git_panel::ToggleFocus",
@@ -143,24 +143,27 @@
   {
     "context": "Workspace",
     "bindings": {
+      // Shortcuts for zed features
       "cmd-k cmd-,": "zed::OpenProjectSettings",
       "cmd-k cmd-m": "zed::OpenKeymap",
       "cmd-k cmd-x": "zed::Extensions",
       "cmd-k cmd-t": "toolchain::Select",
       "cmd-k cmd-o": "projects::OpenRecent",
       "cmd-k cmd-c": "theme_selector::Toggle",
-      "cmd-k cmd-f": [
+      // Shortcuts for custom tasks
+      "cmd-r cmd-f": [
         "task::Spawn",
         { "task_name": "FZF File Finder", "reveal_target": "center" },
       ],
-      "cmd-k cmd-g": [
+      "cmd-r cmd-/": [
         "task::Spawn",
         { "task_name": "FZF Live Grep", "reveal_target": "center" },
       ],
-      "cmd-k cmd-shift-g": [
+      "cmd-r cmd-g": [
         "task::Spawn",
         { "task_name": "LazyGit", "reveal_target": "center" },
       ],
+      "cmd-r cmd-i": ["task::Spawn", { "task_name": "IPython" }],
     },
   },
 ]
