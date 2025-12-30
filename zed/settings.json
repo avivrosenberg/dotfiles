@@ -8,12 +8,30 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // Editor
+  "snippet_sort_order": "top",
+  "diagnostics": {
+    "include_warnings": true,
+  },
+  "sticky_scroll": {
+    "enabled": false,
+  },
+  "search": {
+    "regex": true,
+    "include_ignored": false,
+  },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "project_panel": {
+    "show_diagnostics": "all",
+    "entry_spacing": "comfortable",
+  },
   "autosave": "on_focus_change",
   "minimap": { "show": "auto", "display_in": "active_editor" },
-  "tabs": { "git_status": true, "file_icons": false },
+  "tabs": { "show_diagnostics": "errors", "git_status": true, "file_icons": true },
   "tab_bar": {
     "show": true,
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": false,
   },
   "show_whitespaces": "selection",
   "wrap_guides": [88],
@@ -25,25 +43,38 @@
     "show_type_hints": true,
     "show_parameter_hints": true,
     "show_other_hints": true,
-    "show_background": false
+    "show_background": false,
   },
+
+  // Completions
+  "completions": {
+    "words": "enabled",
+    "words_min_length": 3,
+    "lsp": true,
+    "lsp_fetch_timeout_ms": 0,
+    "lsp_insert_mode": "replace_suffix",
+  },
+
+  // Git
+  "git": { "blame": { "show_avatar": true } },
 
   // AI
   "features": {
     // Can't configure this per project
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "copilot",
   },
   "agent": {
+    "always_allow_tool_actions": true,
     "default_profile": "ask",
     "use_modifier_to_send": true,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
-    }
+      "model": "claude-opus-4.5",
+    },
   },
   "show_edit_predictions": true,
   "edit_predictions": {
-    "mode": "eager"
+    "mode": "eager",
   },
 
   // Vim
@@ -51,24 +82,30 @@
   "vim": {
     "use_system_clipboard": "on_yank",
     "highlight_on_yank_duration": 500,
-    "toggle_relative_line_numbers": true
+    "toggle_relative_line_numbers": true,
   },
 
   // UI
+  "colorize_brackets": true,
   "ui_font_size": 16,
   "buffer_font_size": 13,
   "buffer_font_family": "FiraCode Nerd Font Mono",
   "buffer_font_weight": 400,
   "buffer_font_features": {
-    "calt": true // ligatures
+    "calt": true, // ligatures
   },
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light Soft",
-    "dark": "Gruvbox Dark Hard"
+    "dark": "Gruvbox Dark Hard",
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha",
   },
   "title_bar": {
-    "show_branch_icon": true
+    "show_branch_icon": true,
   },
 
   // Extensions
@@ -80,7 +117,7 @@
     "log": true,
     "ltex": true,
     "make": true,
-    "toml": true
+    "toml": true,
   },
 
   // Languages
@@ -92,9 +129,9 @@
       "formatter": { "language_server": { "name": "ruff" } },
       "code_actions_on_format": {
         "source.fixAll.ruff": false,
-        "source.organizeImports.ruff": true
-      }
-    }
+        "source.organizeImports.ruff": true,
+      },
+    },
   },
 
   // LSPs
@@ -102,7 +139,7 @@
     "pylsp": {
       "binary": {
         // python-lsp-server is installed in its own venv
-        "path": "/Users/avivr/miniforge3/envs/py-codestyle/bin/pylsp"
+        "path": "/Users/avivr/miniforge3/envs/py-codestyle/bin/pylsp",
       },
       "settings": {
         // https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
@@ -130,25 +167,37 @@
           "pylint": { "enabled": false },
           "rope_autoimport": { "enabled": false },
           "rope_completion": { "enabled": false },
-          "yapf": { "enabled": false }
-        }
-      }
+          "yapf": { "enabled": false },
+        },
+      },
     },
     "basedpyright": {
       "settings": {
         "basedpyright": {
           "disableLanguageServices": false,
           "disableOrganizeImports": true,
-          "disableTaggedHints": false
+          "disableTaggedHints": false,
         },
         "basedpyright.analysis": {
           "typeCheckingMode": "standard", // ["off", "basic", "standard", "strict", "recommended", "all"]
-          "autoImportCompletions": true,
+          "autoImportCompletions": false,
           "diagnosticMode": "openFilesOnly", // ["openFilesOnly", "workspace"]
-          "exclude": ["tests/"],
-          "useTypingExtensions": true
-        }
-      }
+          "useTypingExtensions": true,
+        },
+      },
+    },
+    "ty": {
+      "settings": {
+        // "disableLanguageServices": true
+        "diagnosticMode": "openFilesOnly",
+        "inlayHints": {
+          "variableTypes": true,
+          "callArgumentNames": true,
+        },
+        "experimental": {
+          "autoImport": false,
+        },
+      },
     },
     "ruff": {
       "initialization_options": {
@@ -156,14 +205,14 @@
           "showSyntaxErrors": true,
           "organizeImports": true,
           "fixAll": true,
-          "lint": { "enable": true }
-        }
-      }
+          "lint": { "enable": true },
+        },
+      },
     },
     "yaml-language-server": {
       "settings": {
-        "yaml": { "validate": false }
-      }
+        "yaml": { "validate": false },
+      },
     },
     "texlab": {
       "settings": {
@@ -173,11 +222,11 @@
             "forwardSearchAfter": true,
             "forwardSearch": {
               "executable": "/Applications/Skim.app/Contents/SharedSupport/displayline",
-              "args": ["-r", "%l", "%p", "%f"]
-            }
-          }
-        }
-      }
-    }
-  }
+              "args": ["-r", "%l", "%p", "%f"],
+            },
+          },
+        },
+      },
+    },
+  },
 }
