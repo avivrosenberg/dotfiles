@@ -17,6 +17,7 @@ ALIASES = {
     "torch": "torch",
     "scipy": "scipy",
     "it": "itertools",
+    "pickle": "pickle",
 }
 
 
