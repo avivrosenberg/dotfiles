@@ -68,7 +68,7 @@
   },
   {
     "label": "LazyGit",
-    "command": "lazygit",
+    "command": "lazygit log",
     "shell": {
       "program": "sh",
     },
