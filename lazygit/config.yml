@@ -5,3 +5,29 @@ git:
 
 gui:
   timeFormat: 2006-01-02
+
+customCommands:
+  - key: "<f7>"
+    command: "git fetch --all --prune"
+    context: "global"
+    loadingText: "Fetching all remotes..."
+    output: logWithPty
+
+  - key: "<f9>"
+    description: "Push to a specific remote repository"
+    context: "global"
+    loadingText: "Pushing ..."
+    prompts:
+      - type: "menuFromCommand"
+        title: "Which remote repository to push to?"
+        command: bash -c "git remote --verbose | grep '/.* (push)'"
+        filter: '(?P<remote>.*)\s+(?P<url>.*) \(push\)'
+        valueFormat: "{{ .remote }}"
+        labelFormat: "{{ .remote | bold | cyan }} {{ .url }}"
+      - type: "menu"
+        title: "How to push?"
+        options:
+          - value: "push"
+          - value: "push --force-with-lease"
+          - value: "push --force"
+    command: "git {{index .PromptResponses 1}} {{index .PromptResponses 0}}"

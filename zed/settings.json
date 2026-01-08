@@ -8,6 +8,9 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // Editor
+  "git_panel": {
+    "tree_view": true
+  },
   "snippet_sort_order": "top",
   "diagnostics": {
     "include_warnings": true,
