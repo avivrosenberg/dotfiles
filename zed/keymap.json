@@ -160,4 +160,10 @@
       "cmd-r cmd-i": ["task::Spawn", { "task_name": "IPython" }],
     },
   },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-r": null
+    }
+  }
 ]

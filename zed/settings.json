@@ -8,8 +8,17 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // Editor
+  "agent_servers": {
+    "claude": {
+      "default_model": "default",
+      "default_mode": "plan",
+      "favorite_models": ["default"],
+      "default_config_options": {},
+      "favorite_config_option_values": {},
+    },
+  },
   "git_panel": {
-    "tree_view": true
+    "tree_view": true,
   },
   "snippet_sort_order": "top",
   "diagnostics": {
@@ -47,6 +56,7 @@
     "show_parameter_hints": true,
     "show_other_hints": true,
     "show_background": false,
+    "show_value_hints": false,
   },
 
   // Completions
@@ -62,11 +72,13 @@
   "git": { "blame": { "show_avatar": true } },
 
   // AI
-  "features": {
-    // Can't configure this per project
-    "edit_prediction_provider": "copilot",
-  },
   "agent": {
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "claude-opus-4.5",
+      },
+    ],
     "always_allow_tool_actions": true,
     "default_profile": "ask",
     "use_modifier_to_send": true,
@@ -77,6 +89,7 @@
   },
   "show_edit_predictions": true,
   "edit_predictions": {
+    "provider": "copilot",
     "mode": "eager",
   },
 
@@ -87,6 +100,7 @@
     "highlight_on_yank_duration": 500,
     "toggle_relative_line_numbers": true,
   },
+  "which_key": { "enabled": true, "delay_ms": 200 },
 
   // UI
   "colorize_brackets": true,
@@ -127,7 +141,7 @@
   "languages": {
     "Python": {
       "tab_size": 4,
-      "language_servers": ["basedpyright", "ruff"],
+      "language_servers": ["ty", "!basedpyright", "ruff"],
       "format_on_save": "on",
       "formatter": { "language_server": { "name": "ruff" } },
       "code_actions_on_format": {
@@ -139,41 +153,6 @@
 
   // LSPs
   "lsp": {
-    "pylsp": {
-      "binary": {
-        // python-lsp-server is installed in its own venv
-        "path": "/Users/avivr/miniforge3/envs/py-codestyle/bin/pylsp",
-      },
-      "settings": {
-        // https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
-        "plugins": {
-          // By default disable eveything. Can enable per-project.
-          "pylsp_mypy": { "enabled": false }, // https://github.com/python-lsp/pylsp-mypy
-          "ruff": { "enabled": false }, // we use separate ruff LSP
-          "autopep8": { "enabled": false },
-          "flake8": { "enabled": false },
-          "jedi": {
-            // Set this in project-specific zed settings:
-            // "environment": "/path/to/venv/bin/python",
-          },
-          "jedi_completion": { "enabled": false },
-          "jedi_definition": { "enabled": false },
-          "jedi_hover": { "enabled": false },
-          "jedi_references": { "enabled": false },
-          "jedi_signature_help": { "enabled": false },
-          "jedi_symbols": { "enabled": false },
-          "mccabe": { "enabled": false },
-          "preload": { "enabled": true },
-          "pycodestyle": { "enabled": false },
-          "pydocstyle": { "enabled": false },
-          "pyflakes": { "enabled": false },
-          "pylint": { "enabled": false },
-          "rope_autoimport": { "enabled": false },
-          "rope_completion": { "enabled": false },
-          "yapf": { "enabled": false },
-        },
-      },
-    },
     "basedpyright": {
       "settings": {
         "basedpyright": {
