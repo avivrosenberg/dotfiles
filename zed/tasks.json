@@ -81,14 +81,14 @@
   },
   {
     "label": "FZF File Finder",
-    "command": "zed \"$(fd --type f | fzf --preview 'bat --color=always {}')\"",
+    "command": "zed \"$(fd --type f | fzf --query \"${ZED_SELECTED_TEXT:-}\" --preview 'bat --color=always {}')\"",
     "hide": "always",
     "allow_concurrent_runs": false,
     "use_new_terminal": false,
   },
   {
     "label": "FZF Live Grep",
-    "command": "zed \"$(fzf --ansi --disabled --bind 'start:reload:rg --line-number --color=always {q}' --bind 'change:reload:rg --line-number --color=always {q} || true' --delimiter : --preview 'bat --color=always {1} --highlight-line {2}' --preview-window '+{2}/2' | cut -d: -f1-2)\"",
+    "command": "zed \"$(fzf --query \"${ZED_SELECTED_TEXT:-}\" --ansi --disabled --bind 'start:reload:rg --line-number --color=always {q}' --bind 'change:reload:rg --line-number --color=always {q} || true' --delimiter : --preview 'bat --color=always {1} --highlight-line {2}' --preview-window '+{2}/2' | cut -d: -f1-2)\"",
     "hide": "always",
     "allow_concurrent_runs": false,
     "use_new_terminal": false,
