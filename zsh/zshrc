@@ -31,27 +31,20 @@ fi
 
 ###
 ## FZF
+# Default options are in ~/.fzfrc (via FZF_DEFAULT_OPTS_FILE set in zshenv)
 if [[ -x "$(which brew 2>/dev/null)" && -d "$(brew --prefix fzf)" ]]; then
   FZF_DIR="$(brew --prefix fzf)"
-  FZF_LAYOUT='-1 --height 50% --layout=reverse --border --multi --info=inline'
-  FZF_PREVIEW="--preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap'"
-  FZF_BIND="--bind='f3:execute(bat --style=numbers --color=always --paging=always {} || less -f {}),f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up'"
 
   # Use ripgrep if fzf invoked without command
   if [[ -x "$(which rg 2>/dev/null)" ]]; then
-    # Note that rg will use extra options from ~/.ripgreprc
-    # so here we only need the 'files' options
-    FZF_DEFAULT_COMMAND='rg --files'
+    export FZF_DEFAULT_COMMAND='rg --files'
   fi
 
   # Auto-completion
   [[ $- == *i* ]] && source "$FZF_DIR/shell/completion.zsh" 2> /dev/null
 
-  # Key bindings
+  # Key bindings (provides Ctrl-T, Ctrl-R, Alt-C)
   source "$FZF_DIR/shell/key-bindings.zsh"
-
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"
-  export FZF_DEFAULT_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
 ###

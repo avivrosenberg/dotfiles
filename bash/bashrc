@@ -38,13 +38,13 @@ source "$DOTFILES/conda/conda_init.sh"
 
 ###
 ## FZF
+# Default options are in ~/.fzfrc (via FZF_DEFAULT_OPTS_FILE set in profile)
 if [[ -x "$(which brew 2>/dev/null)" && -d "$(brew --prefix fzf)" ]]; then
   FZF_DIR="$(brew --prefix fzf)"
-  FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
 
   # Use ripgrep if fzf invoked without command
   if [[ -x "$(which rg 2>/dev/null)" ]]; then
-    FZF_DEFAULT_COMMAND='rg --files'
+    export FZF_DEFAULT_COMMAND='rg --files'
   fi
 
   # Auto-completion
@@ -52,9 +52,6 @@ if [[ -x "$(which brew 2>/dev/null)" && -d "$(brew --prefix fzf)" ]]; then
 
   # Key bindings
   source "$FZF_DIR/shell/key-bindings.bash"
-
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"
-  export FZF_DEFAULT_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
 # Add custom binaries/scripts

@@ -32,6 +32,7 @@ export LC_ALL=en_US.UTF-8
 export DOTFILES="$HOME/.dotfiles"
 export LESS='-R -S'
 export PAGER='less -RSFX'
+export FZF_DEFAULT_OPTS_FILE="$HOME/.fzfrc"
 
 ####
 ## Git prompt
@@ -39,4 +40,3 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=auto
-

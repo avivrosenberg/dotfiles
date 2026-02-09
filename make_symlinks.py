@@ -35,6 +35,7 @@ SRC_FILES = [
     Symlink("intellij/ideavimrc"),
     Symlink("ipython"),
     Symlink("pandoc"),
+    Symlink("fzf/fzfrc"),
     Symlink("ripgrep/ripgreprc"),
     Symlink("tmux/tmux.conf"),
     Symlink("tmuxinator"),

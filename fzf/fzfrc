@@ -1,0 +1,26 @@
+# FZF default options
+# Referenced via FZF_DEFAULT_OPTS_FILE env var
+# Precedence: this file < FZF_DEFAULT_OPTS env var < CLI args
+#
+# IMPORTANT: Use spaces (not =) for option values and quote complex values
+# Example: --height 50% (not --height=50%)
+
+# Layout options
+-1                   # Exit immediately if there's only one match
+# --height 50%         # Use 50% of terminal height (not fullscreen)
+--layout reverse     # Display results bottom-up (input at bottom)
+--border             # Draw border around the finder window
+--multi              # Enable multi-select with Tab/Shift-Tab
+--info inline        # Display info inline with the prompt
+
+# Preview options
+# Detects binary files and shows appropriate preview
+# Uses bat for syntax highlighting, falls back to cat
+--preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300'
+--preview-window 'right:hidden:wrap'  # Preview on right, hidden by default, text wraps
+
+# Key bindings (while fzf is open)
+--bind 'f3:execute(bat --style=numbers --color=always --paging=always {} || less -f {})'  # F3: Open file in pager
+--bind 'f2:toggle-preview'      # F2: Toggle preview window visibility
+--bind 'ctrl-d:half-page-down'  # Ctrl-D: Scroll preview down
+--bind 'ctrl-u:half-page-up'    # Ctrl-U: Scroll preview up
