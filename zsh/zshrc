@@ -60,7 +60,8 @@ fi
 
 ###
 ## Custom binaries and scripts
-PATH=$PATH:"~/.bin/"
+PATH=$PATH:"$HOME/.bin/"
+PATH=$PATH:"$HOME/.local/bin/"
 
 ###
 # Adds rust toolchain to PATH
