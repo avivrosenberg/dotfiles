@@ -163,7 +163,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-r": null
-    }
-  }
+      "cmd-r": null,
+    },
+  },
 ]

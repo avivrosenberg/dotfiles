@@ -8,6 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // Editor
+  "diff_view_style": "unified",
   "agent_servers": {
     "claude": {
       "default_model": "default",
@@ -73,22 +74,28 @@
 
   // AI
   "agent": {
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.6",
+    },
     "favorite_models": [
       {
         "provider": "copilot_chat",
-        "model": "claude-opus-4.5",
+        "model": "claude-opus-4.6",
       },
     ],
-    "always_allow_tool_actions": true,
     "default_profile": "ask",
     "use_modifier_to_send": true,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-opus-4.5",
+      "model": "claude-sonnet-4.6",
     },
   },
   "show_edit_predictions": true,
   "edit_predictions": {
+    "copilot": {
+      "enable_next_edit_suggestions": true,
+    },
     "provider": "copilot",
     "mode": "eager",
   },
@@ -99,8 +106,10 @@
     "use_system_clipboard": "on_yank",
     "highlight_on_yank_duration": 500,
     "toggle_relative_line_numbers": true,
+    "gdefault": true,
   },
   "which_key": { "enabled": true, "delay_ms": 200 },
+  "cursor_blink": false,
 
   // UI
   "colorize_brackets": true,
