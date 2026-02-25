@@ -141,6 +141,7 @@
       "ctrl-w l": "workspace::ActivatePaneRight",
       "ctrl-w k": "workspace::ActivatePaneUp",
       "ctrl-w j": "workspace::ActivatePaneDown",
+      "ctrl-w ctrl-w": "editor::DeleteToPreviousWordStart",
     },
   },
   {
@@ -164,6 +165,13 @@
     "context": "Workspace",
     "bindings": {
       "cmd-r": null,
+    },
+  },
+  {
+    "context": "Editor && vim_mode != insert",
+    "bindings": {
+      // Only allow ctrl-w to delete in vim insert mode
+      "ctrl-w": null,
     },
   },
 ]

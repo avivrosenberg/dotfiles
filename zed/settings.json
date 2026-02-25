@@ -74,6 +74,17 @@
 
   // AI
   "agent": {
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "always_allow": [
+            {
+              "pattern": "^ls\\b",
+            },
+          ],
+        },
+      },
+    },
     "inline_assistant_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4.6",
