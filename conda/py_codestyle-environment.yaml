@@ -12,6 +12,7 @@ dependencies:
   - jupyter-ruff
   - jupyterlab
   - jupyterlab_vim
+  - jupytext
   - mypy
   - nb_conda_kernels # autodetect conda envs with ipykernel installed
   - pip
