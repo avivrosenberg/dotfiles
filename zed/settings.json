@@ -168,6 +168,7 @@
         "source.fixAll.ruff": false,
         "source.organizeImports.ruff": true,
       },
+      "document_symbols": "on",
     },
   },
 
