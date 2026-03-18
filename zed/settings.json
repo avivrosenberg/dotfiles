@@ -72,35 +72,20 @@
   // Git
   "git": { "blame": { "show_avatar": true } },
 
+  // terminal
+  "terminal": {
+    "minimum_contrast": 0,
+  },
+
   // AI
   "agent": {
-    "tool_permissions": {
-      "tools": {
-        "terminal": {
-          "always_allow": [
-            {
-              "pattern": "^ls\\b",
-            },
-          ],
-        },
-      },
-    },
-    "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6",
-    },
-    "favorite_models": [
-      {
-        "provider": "copilot_chat",
-        "model": "claude-opus-4.6",
-      },
-    ],
-    "default_profile": "ask",
-    "use_modifier_to_send": true,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6",
+      "model": "claude-opus-4.6",
+      "enable_thinking": false
     },
+    "favorite_models": [],
+    "model_parameters": []
   },
   "show_edit_predictions": true,
   "edit_predictions": {
