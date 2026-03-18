@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 import os
 from dataclasses import dataclass
 from pathlib import Path
@@ -118,7 +119,16 @@ def make_symlink_file(
 
 
 def main():
-    make_symlinks(dry_run=False)
+    parser = argparse.ArgumentParser(
+        description="Create symlinks for dotfiles in the home directory."
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Print what would be done without making any changes.",
+    )
+    args = parser.parse_args()
+    make_symlinks(dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
