@@ -29,6 +29,7 @@ SRC_FILES = [
     Symlink("bash/bashrc"),
     Symlink("bash/profile"),
     Symlink("bin"),
+    Symlink("claude/*", dst_dir=DESTDIR / ".claude", prepend_dot=False),
     Symlink("conda/condarc"),
     Symlink("git/gitconfig"),
     Symlink("git/gitk"),
