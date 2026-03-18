@@ -10,13 +10,14 @@
   // Editor
   "diff_view_style": "unified",
   "agent_servers": {
-    "claude": {
-      "default_model": "default",
+    "claude-acp": {
+      "type": "registry",
       "default_mode": "plan",
-      "favorite_models": ["default"],
-      "default_config_options": {},
-      "favorite_config_option_values": {},
-    },
+      "default_model": "default",
+      "favorite_models": [
+        "default"
+      ]
+    }
   },
   "git_panel": {
     "tree_view": true,
