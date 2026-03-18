@@ -18,7 +18,7 @@ RESTORE = "\033[0m"
 
 @dataclass
 class Symlink:
-    src_name: str | Path
+    src_name: str | Path  # can be a glob pattern
     dst_dir: str | Path = DESTDIR
     prepend_dot: bool = True
 
@@ -56,53 +56,69 @@ def make_symlinks(dry_run: bool = True):
     print(f"{GREEN}DOTFILESDIR: {DOTFILESDIR}{RESTORE}")
     print(f"{GREEN}DESTDIR: {DESTDIR}{RESTORE}\n")
 
+    total_links = 0
     for sym_spec in SRC_FILES:
         # Get the full path to the source file
-        src_filepath = DOTFILESDIR / sym_spec.src_name
 
-        # Make sure it exists
-        if not src_filepath.exists():
-            print(f"{RED}ERROR: source file {src_filepath!s} does not exist{RESTORE}")
-            exit(1)
-
-        # Take the file name and prepend the DESTDIR with a dot
-        dst_filename = src_filepath.name
-        if sym_spec.prepend_dot:
-            dst_filename = f".{dst_filename}"
-
-        dst_filepath = Path(sym_spec.dst_dir) / dst_filename
-
-        # Remove target if it exists
-        if dst_filepath.is_symlink():
-            if not dry_run:
-                print(f"{YELLOW}Removing existing symlink {dst_filepath!s}{RESTORE}")
-                dst_filepath.unlink()
-            else:
-                print(
-                    f"{YELLOW}Would remove existing symlink {dst_filepath!s}{RESTORE}"
-                )
-
-        elif dst_filepath.exists():
-            print(
-                f"{RED}ERROR: target file {dst_filepath!s} exists but is not a symlink!{RESTORE}"
+        src_filepath_glob = DOTFILESDIR.glob(str(sym_spec.src_name))
+        for src_filepath in src_filepath_glob:
+            make_symlink_file(
+                src_filepath,
+                dst_dir=Path(sym_spec.dst_dir),
+                prepend_dot=sym_spec.prepend_dot,
+                dry_run=dry_run,
             )
-            exit(1)
+            total_links += 1
 
-        # Create symlink
-        src_tgt_str = (
-            f"{BLUE}{src_filepath!s}{RESTORE} --> {GREEN}{dst_filepath!s}{RESTORE}"
-        )
+    print(f"\n{GREEN}Done, {total_links} links created.{RESTORE}")
+
+
+def make_symlink_file(
+    src_filepath: Path, dst_dir: Path, prepend_dot: bool, dry_run: bool
+):
+
+    # Make sure it exists
+    if not src_filepath.exists():
+        print(f"{RED}ERROR: source file {src_filepath!s} does not exist{RESTORE}")
+        exit(1)
+
+    # Take the file name and prepend the DESTDIR with a dot
+    dst_filename = src_filepath.name
+    if prepend_dot:
+        dst_filename = f".{dst_filename}"
+
+    dst_filepath = Path(dst_dir) / dst_filename
+
+    # Remove target if it exists
+    if dst_filepath.is_symlink():
         if not dry_run:
-            # Create the symlink (override previous ones)
-            print(f"{GREEN}Linking:{RESTORE} {src_tgt_str}")
-            dst_filepath.parent.mkdir(parents=True, exist_ok=True)
-            dst_filepath.symlink_to(src_filepath)
+            print(f"{YELLOW}Removing existing symlink {dst_filepath!s}{RESTORE}")
+            dst_filepath.unlink()
         else:
-            print(f"{YELLOW}Would link:{RESTORE} {src_tgt_str}")
+            print(f"{YELLOW}Would remove existing symlink {dst_filepath!s}{RESTORE}")
 
-    print(f"\n{GREEN}Done, {len(SRC_FILES)} links created.{RESTORE}")
+    elif dst_filepath.exists():
+        print(
+            f"{RED}ERROR: target file {dst_filepath!s} exists but is not a symlink!{RESTORE}"
+        )
+        exit(1)
+
+    # Create symlink
+    src_tgt_str = (
+        f"{BLUE}{src_filepath!s}{RESTORE} --> {GREEN}{dst_filepath!s}{RESTORE}"
+    )
+    if not dry_run:
+        # Create the symlink (override previous ones)
+        print(f"{GREEN}Linking:{RESTORE} {src_tgt_str}")
+        dst_filepath.parent.mkdir(parents=True, exist_ok=True)
+        dst_filepath.symlink_to(src_filepath)
+    else:
+        print(f"{YELLOW}Would link:{RESTORE} {src_tgt_str}")
+
+
+def main():
+    make_symlinks(dry_run=False)
 
 
 if __name__ == "__main__":
-    # Run the main function if this script is executed directly
-    make_symlinks(dry_run=False)
+    main()
