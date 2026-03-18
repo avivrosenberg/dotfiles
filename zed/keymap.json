@@ -159,6 +159,7 @@
       "cmd-r cmd-/": ["task::Spawn", { "task_name": "FZF Live Grep" }],
       "cmd-r cmd-g": ["task::Spawn", { "task_name": "LazyGit" }],
       "cmd-r cmd-i": ["task::Spawn", { "task_name": "IPython" }],
+      "cmd-r cmd-c": ["task::Spawn", { "task_name": "Claude Code" }],
     },
   },
   {
