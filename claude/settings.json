@@ -1,13 +1,23 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(wc:*)",
-      "Bash(xargs:*)"
-    ]
+    "allow": ["Bash(wc:*)", "Bash(xargs:*)"]
   },
   "model": "sonnet",
   "statusLine": {
     "type": "command",
-    "command": "bash /Users/avivr/.claude/statusline-command.sh"
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Glass.aiff"
+          }
+        ]
+      }
+    ]
   }
 }
