@@ -31,11 +31,19 @@
     },
   },
   {
-    "context": "Editor && jupyter && !ContextEditor",
+    "context": "Editor && jupyter && !ContextEditor && !Terminal",
     "use_key_equivalents": true,
     "bindings": {
       "shift-enter": "repl::Run",
       "alt-shift-enter": "repl::RunInPlace",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      // For Claude Code
+      "shift-enter": ["terminal::SendText", "\u001b\r"],
+      "alt-p": ["terminal::SendText", "\u001bp"],
     },
   },
   {

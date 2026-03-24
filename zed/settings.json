@@ -14,10 +14,8 @@
       "type": "registry",
       "default_mode": "plan",
       "default_model": "default",
-      "favorite_models": [
-        "default"
-      ]
-    }
+      "favorite_models": ["default"],
+    },
   },
   "git_panel": {
     "tree_view": true,
@@ -83,10 +81,10 @@
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-opus-4.6",
-      "enable_thinking": false
+      "enable_thinking": false,
     },
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "show_edit_predictions": true,
   "edit_predictions": {

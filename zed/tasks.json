@@ -99,7 +99,7 @@
     "reveal_target": "dock",
     "show_summary": false,
     "show_command": false,
-    "allow_concurrent_runs": false,
-    "use_new_terminal": false,
+    "allow_concurrent_runs": true,
+    "use_new_terminal": true,
   },
 ]
