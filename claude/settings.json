@@ -9,7 +9,9 @@
       "Bash(pytest *)",
       "Bash(wc *)"
     ],
-    "deny": ["Read(*.env)"]
+    "deny": [
+      "Read(*.env)"
+    ]
   },
   "model": "sonnet",
   "hooks": {
