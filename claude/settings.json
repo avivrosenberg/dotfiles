@@ -1,12 +1,17 @@
 {
   "permissions": {
-    "allow": ["Bash(wc:*)", "Bash(xargs:*)"]
+    "allow": [
+      "Bash(conda run -n * ty *)",
+      "Bash(conda run -n * ruff *)",
+      "Bash(conda run -n * pytest *)",
+      "Bash(ty *)",
+      "Bash(ruff *)",
+      "Bash(pytest *)",
+      "Bash(wc *)"
+    ],
+    "deny": ["Read(*.env)"]
   },
   "model": "sonnet",
-  "statusLine": {
-    "type": "command",
-    "command": "bash ~/.claude/statusline-command.sh"
-  },
   "hooks": {
     "Notification": [
       {
@@ -14,10 +19,14 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /System/Library/Sounds/Glass.aiff"
+            "command": "afplay /System/Library/Sounds/Glass.aiff -v 0.1"
           }
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
   }
 }
