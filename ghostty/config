@@ -1,3 +1,5 @@
 shell-integration-features = no-cursor
 cursor-style = block
-theme = light:GruvboxLight,dark:GruvboxDarkHard
+theme = light:Gruvbox Light,dark:Gruvbox Dark Hard
+macos-option-as-alt = true
+font-family = FiraCode Nerd Font Mono
