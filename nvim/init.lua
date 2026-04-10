@@ -25,6 +25,8 @@ require("lazy").setup({
     { import = "plugins" },
 }, lazy_config)
 
+require("oil").setup()
+
 -- load theme
 require("base46").load_all_highlights()
 

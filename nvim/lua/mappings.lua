@@ -15,3 +15,6 @@ map("i", "<C-l>", "<Del>", { desc = "Delete forward" })
 map("i", "<C-h>", "<BS>", { desc = "Backspace" })
 map("i", "<C-b>", "<Left>", { desc = "Move left" })
 map("i", "<C-f>", "<Right>", { desc = "Move right" })
+
+-- Keymaps for plugins
+map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
