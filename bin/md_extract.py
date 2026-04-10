@@ -15,6 +15,24 @@ def try_parse_datetime(s: str) -> datetime | str:
         return s
 
 
+def apply_comment_stripping(
+    body_lines: list[str],
+    strip_comments: str | None,
+    strip_comments_multiline: str | None,
+) -> list[str]:
+    if strip_comments:
+        body_lines = [l for l in body_lines if not l.startswith(strip_comments)]
+    if strip_comments_multiline:
+        body_text = re.sub(
+            re.escape(strip_comments_multiline) + r'.*?' + re.escape(strip_comments_multiline),
+            '',
+            ''.join(body_lines),
+            flags=re.DOTALL,
+        )
+        body_lines = body_text.splitlines(keepends=True)
+    return body_lines
+
+
 def parse_heading(line: str) -> tuple[int, str] | None:
     """Return (level, text) if line is an ATX heading, else None."""
     m = re.match(r'^(#{1,6})\s+(.+?)(?:\s+#+)?\s*$', line.rstrip('\n\r'))
@@ -177,6 +195,31 @@ Examples:
         action="store_false",
         help="Do not attempt datetime parsing (default)",
     )
+    parser.add_argument(
+        "--drop-empty",
+        dest="drop_empty",
+        action="store_true",
+        default=False,
+        help="Skip sections whose body is empty (whitespace-only) after comment stripping",
+    )
+    parser.add_argument(
+        "--no-drop-empty",
+        dest="drop_empty",
+        action="store_false",
+        help="Keep empty sections (default)",
+    )
+    parser.add_argument(
+        "--strip-comments",
+        default=None,
+        metavar="PREFIX",
+        help="Remove lines starting with PREFIX (e.g. --strip-comments=%%)",
+    )
+    parser.add_argument(
+        "--strip-comments-multiline",
+        default=None,
+        metavar="DELIM",
+        help="Remove blocks delimited by DELIM (e.g. --strip-comments-multiline=%%%%)",
+    )
 
     args = parser.parse_args()
 
@@ -218,6 +261,15 @@ Examples:
             stem = filepath.stem
 
             for level, text, start, end in sections:
+                body_lines = apply_comment_stripping(
+                    list(lines[start + 1:end]),
+                    args.strip_comments,
+                    args.strip_comments_multiline,
+                )
+
+                if args.drop_empty and not "".join(body_lines).strip():
+                    continue
+
                 if not first_section:
                     out.write("\n")
                 first_section = False
@@ -250,11 +302,11 @@ Examples:
                         parser.error(f"unknown variable {e} in --heading-format; "
                                      f"available: {{filename}}, {{header}}")
                     out.write(f"{'#' * level} {heading_text}\n")
-                    for i in range(start + 1, end):
-                        out.write(lines[i])
+                    for l in body_lines:
+                        out.write(l)
                 else:
-                    for i in range(start + 1, end):
-                        out.write(lines[i])
+                    for l in body_lines:
+                        out.write(l)
 
             if args.strip_input and sections:
                 stripped = list(lines)
