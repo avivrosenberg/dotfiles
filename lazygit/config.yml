@@ -8,7 +8,7 @@ gui:
 
 customCommands:
   - key: "<f7>"
-    command: "git fetch --tags --all --prune"
+    command: "git fetch --all --prune --tags --force"
     context: "global"
     loadingText: "Fetching all remotes..."
     output: logWithPty
