@@ -53,7 +53,7 @@ def find_sections(
     exclusive — points to the next heading at the same or higher level, or EOF.
     """
     compare_names = {n.lower() for n in heading_names} if ignore_case else heading_names
-    any_level = heading_levels == [-1]
+    any_level = 0 in heading_levels
     sections = []
 
     for i, line in enumerate(lines):
@@ -100,9 +100,25 @@ Examples:
     )
     parser.add_argument(
         "--input-heading-level",
-        default="-1",
+        default="0",
         metavar="LEVELS",
-        help="Heading level(s) to match: -1 for any, or comma-separated (e.g. 2,3)",
+        help="Heading level(s) to match: 0 for any (default), or comma-separated (e.g. 2,3)",
+    )
+    parser.add_argument(
+        "--output-filename-level",
+        type=int,
+        default=0,
+        metavar="LEVEL",
+        help="Heading level for the filename heading in output; "
+             "0 means auto (input level - 1, or same level if --no-keep-heading)",
+    )
+    parser.add_argument(
+        "--output-heading-level",
+        type=int,
+        default=0,
+        metavar="LEVEL",
+        help="Heading level for the extracted section heading in output; "
+             "0 means auto (same as input level)",
     )
     parser.add_argument(
         "--sort-inputs",
@@ -226,15 +242,12 @@ Examples:
     if not args.headings:
         parser.error("at least one --heading is required")
 
-    # Parse heading levels
+    # Parse heading levels; 0 means any level
     level_str = args.input_heading_level.strip()
-    if level_str == "-1":
-        heading_levels = [-1]
-    else:
-        try:
-            heading_levels = [int(x.strip()) for x in level_str.split(",")]
-        except ValueError:
-            parser.error(f"invalid --input-heading-level value: {level_str!r}")
+    try:
+        heading_levels = [int(x.strip()) for x in level_str.split(",")]
+    except ValueError:
+        parser.error(f"invalid --input-heading-level value: {level_str!r}")
 
     files = [Path(f) for f in args.files]
     if args.sort_inputs:
@@ -282,10 +295,14 @@ Examples:
                 else:
                     fmt_vars = {"filename": stem, "header": text}
 
-                if args.keep_heading:
+                if args.output_filename_level != 0:
+                    filename_level = args.output_filename_level
+                elif args.keep_heading:
                     filename_level = max(1, level - 1)
                 else:
                     filename_level = level
+
+                heading_level = args.output_heading_level if args.output_heading_level != 0 else level
 
                 if args.keep_filename:
                     try:
@@ -301,7 +318,7 @@ Examples:
                     except KeyError as e:
                         parser.error(f"unknown variable {e} in --heading-format; "
                                      f"available: {{filename}}, {{header}}")
-                    out.write(f"{'#' * level} {heading_text}\n")
+                    out.write(f"{'#' * heading_level} {heading_text}\n")
                     for l in body_lines:
                         out.write(l)
                 else:
