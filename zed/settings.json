@@ -7,7 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "feature_flags": {
+    "tabular-data-preview": "on",
+    "notebooks": "on",
+  },
   // Editor
+  "outline_panel": {
+    "dock": "left",
+  },
   "diff_view_style": "unified",
   "agent_servers": {
     "claude-acp": {
@@ -18,6 +25,7 @@
     },
   },
   "git_panel": {
+    "dock": "left",
     "tree_view": true,
   },
   "snippet_sort_order": "top",
@@ -32,9 +40,11 @@
     "include_ignored": false,
   },
   "collaboration_panel": {
+    "dock": "left",
     "button": false,
   },
   "project_panel": {
+    "dock": "left",
     "show_diagnostics": "all",
     "entry_spacing": "comfortable",
   },
@@ -78,10 +88,14 @@
 
   // AI
   "agent": {
+    "default_profile": "ask",
+    "sidebar_side": "right",
+    "dock": "right",
     "default_model": {
+      "effort": "high",
       "provider": "copilot_chat",
-      "model": "claude-opus-4.6",
-      "enable_thinking": false,
+      "model": "claude-sonnet-4.6",
+      "enable_thinking": true,
     },
     "favorite_models": [],
     "model_parameters": [],
@@ -126,7 +140,7 @@
     "dark": "Catppuccin Mocha",
   },
   "title_bar": {
-    "show_branch_icon": true,
+    "show_branch_status_icon": true,
   },
 
   // Extensions
