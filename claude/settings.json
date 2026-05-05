@@ -7,12 +7,31 @@
       "Bash(ty *)",
       "Bash(ruff *)",
       "Bash(pytest *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(cat *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(head *)",
+      "Bash(tail *)",
       "Bash(wc *)"
     ],
     "deny": [
-      "Read(*.env)"
-    ]
+      "Read(**/.ssh/**)",
+      "Read(**/.env)",
+      "Read(**/*.env)",
+      "Bash(rm -rf *)",
+      "Bash(git push --force *)",
+      "Bash(git push * --force)",
+      "Bash(git reset --hard *)",
+      "Bash(git checkout .)"
+    ],
+    "defaultMode": "auto"
   },
+  "model": "sonnet[1m]",
   "hooks": {
     "Notification": [
       {
@@ -30,5 +49,21 @@
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
-  "effortLevel": "medium"
+  "enabledPlugins": {
+    "skill-creator@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "obsidian-skills": {
+      "source": {
+        "source": "github",
+        "repo": "kepano/obsidian-skills"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "theme": "auto",
+  "editorMode": "vim",
+  "preferredNotifChannel": "ghostty",
+  "remoteControlAtStartup": false,
+  "skipAutoPermissionPrompt": true
 }
