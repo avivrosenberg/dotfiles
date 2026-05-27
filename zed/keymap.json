@@ -13,7 +13,6 @@
       "cmd-h": "workspace::ToggleLeftDock",
       "cmd-l": "workspace::ToggleRightDock",
       "cmd-j": "workspace::ToggleBottomDock",
-      // "cmd-alt-l": "agents_sidebar::ToggleThreadSwitcher",
       // Searching
       // "cmd-t": "outline::Toggle",
       "cmd-i": "tab_switcher::ToggleAll",
