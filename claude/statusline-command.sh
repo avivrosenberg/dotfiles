@@ -95,7 +95,7 @@ if [ -n "$git_branch" ]; then
   git_part=" on ${ESC}[32m${git_branch}${ESC}[0m"
 fi
 
-# Format: [user@host:path on git-branch] | model | 5h bar | 7d bar | ctx bar
+# Format: [user@host:path on git-branch] \n model | 5h bar | 7d bar | ctx bar
 # Colors: red=user, magenta=host, blue=path — mirroring kphoen
-printf "[${ESC}[31m%s${ESC}[0m@${ESC}[35m%s${ESC}[0m:${ESC}[34m%s${ESC}[0m%s] | %s%s%s%s" \
+printf "[${ESC}[31m%s${ESC}[0m@${ESC}[35m%s${ESC}[0m:${ESC}[34m%s${ESC}[0m%s] \n %s%s%s%s" \
   "$user" "$host" "$short_cwd" "$git_part" "$model" "$five_bar" "$week_bar" "$ctx_bar"
