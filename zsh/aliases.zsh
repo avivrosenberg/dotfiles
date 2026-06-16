@@ -36,16 +36,17 @@ alias tmux='tmux -u2'
 # zmv
 alias mmv='noglob zmv -W'
 
-# docker
-alias d='docker'
-alias dc='docker compose'
-
 # conda/mamba
 alias m='mamba'
 alias ma='mamba activate'
 alias md='mamba deactivate'
 alias mr='mamba run -a ""'
 alias m64='CONDA_SUBDIR=osx-64 mamba'
+
+# other
+alias dc='docker compose'
+alias cc='claude'
+
 
 # bat
 alias cat='bat'
