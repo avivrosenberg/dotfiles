@@ -45,7 +45,7 @@ local function insert_project_file_path(prefix)
             actions.select_default:replace(function()
                 local entry = state.get_selected_entry()
                 actions.close(prompt_bufnr)
-                local rel = entry and (entry.path or entry[1]) -- already relative to cwd/root
+                local rel = entry and (entry[1] or (entry.path and vim.fs.relpath(root, entry.path)))
                 if rel then vim.api.nvim_paste(resolved_prefix .. rel, true, -1) end
             end)
             return true
