@@ -153,15 +153,16 @@
   //   },
   // },
   {
-    "context": "Workspace",
+    "context": "Workspace || Editor",
     "bindings": {
       // Shortcuts for zed features
       "cmd-k cmd-,": "zed::OpenProjectSettings",
-      "cmd-k cmd-m": "zed::OpenKeymap",
+      "cmd-k cmd-k": "zed::OpenKeymap",
       "cmd-k cmd-x": "zed::Extensions",
       "cmd-k cmd-t": "toolchain::Select",
       "cmd-k cmd-o": "projects::OpenRecent",
       "cmd-k cmd-c": "theme_selector::Toggle",
+      "cmd-k cmd-b": "git::CheckoutBranch",
       "cmd-§": "multi_workspace::ToggleWorkspaceSidebar",
       // Shortcuts for custom tasks
       "cmd-r cmd-f": ["task::Spawn", { "task_name": "FZF File Finder" }],
