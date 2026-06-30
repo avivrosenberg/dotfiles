@@ -62,6 +62,7 @@
     }
   },
   "effortLevel": "xhigh",
+  "tui": "fullscreen",
   "theme": "auto",
   "editorMode": "vim",
   "preferredNotifChannel": "ghostty",
