@@ -15,8 +15,9 @@
       "cmd-j": "workspace::ToggleBottomDock",
       // Searching
       // "cmd-t": "outline::Toggle",
-      "cmd-i": "tab_switcher::ToggleAll",
+      "cmd-t": "tab_switcher::ToggleAll",
       "cmd-o": "file_finder::Toggle",
+      "cmd-shift-o": "text_finder::Toggle",
       "cmd-p": "project_symbols::Toggle",
       "cmd-shift-p": "command_palette::Toggle",
       // Left panes
