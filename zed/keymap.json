@@ -102,6 +102,10 @@
       "shift-s": "vim::PushSneakBackward",
       // vim-exchange also works by default (cx<motion>, cxx, cxc)
       // https://github.com/tommcdo/vim-exchange
+      //
+      // Map j to gj and k to gk (equivalent)
+      "j": ["vim::Down", {"display_lines": true}],
+      "k": ["vim::Up", {"display_lines": true}],
     },
   },
   {

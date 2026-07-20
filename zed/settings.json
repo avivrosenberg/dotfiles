@@ -99,6 +99,11 @@
 
   // AI
   "agent": {
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "claude-opus-4.8",
+      "enable_thinking": false
+    },
     "use_modifier_to_send": true,
     "play_sound_when_agent_done": "when_hidden",
     "default_profile": "write",
@@ -134,6 +139,7 @@
   "cursor_blink": false,
 
   // UI
+  "markdown_preview_font_size": 16,
   "colorize_brackets": true,
   "ui_font_size": 16,
   "buffer_font_size": 13,
