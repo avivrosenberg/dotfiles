@@ -22,7 +22,7 @@ alias nv='nvim'
 # git
 alias g='git'
 alias gti='git'
-alias lg='lazygit'
+alias lg='lazygit log --screen-mode=full'
 
 # python
 alias py='python3'
