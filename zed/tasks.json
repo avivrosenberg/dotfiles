@@ -67,7 +67,7 @@
   },
   {
     "label": "LazyGit",
-    "command": "lazygit log",
+    "command": "lazygit log --screen-mode=full",
     "shell": {
       "program": "sh",
     },
