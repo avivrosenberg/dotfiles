@@ -20,13 +20,16 @@
   "diff_view_style": "unified",
   "agent_servers": {
     "claude-acp": {
-      "type": "registry",
-      "default_mode": "plan",
-      "default_model": "default",
-      "favorite_models": ["default"],
-    },
+      "default_config_options": {
+        "mode": "auto",
+        "effort": "xhigh",
+        "model": "sonnet"
+      },
+      "type": "registry"
+    }
   },
   "git_panel": {
+    "group_by": "status",
     "dock": "left",
     "tree_view": true,
   },
@@ -88,7 +91,10 @@
   },
 
   // Git
-  "git": { "blame": { "show_avatar": true } },
+  "git": {
+    "blame": { "show_avatar": true },
+    "worktree_directory": "../worktrees",
+  },
 
   // terminal
   "terminal": {
@@ -101,7 +107,7 @@
   "agent": {
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "claude-opus-4.8",
+      "model": "gpt-5.3-codex",
       "enable_thinking": false
     },
     "use_modifier_to_send": true,
@@ -124,7 +130,7 @@
       "enable_next_edit_suggestions": true,
     },
     "provider": "copilot",
-    "mode": "eager",
+    "mode": "subtle",
   },
 
   // Vim
@@ -139,7 +145,10 @@
   "cursor_blink": false,
 
   // UI
-  "markdown_preview_font_size": 16,
+  "markdown_preview": {
+    "font_size": 16,
+    "open_markdown_files_in_preview": true,
+  },
   "colorize_brackets": true,
   "ui_font_size": 16,
   "buffer_font_size": 13,

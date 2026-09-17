@@ -168,6 +168,7 @@
       "cmd-k cmd-o": "projects::OpenRecent",
       "cmd-k cmd-c": "theme_selector::Toggle",
       "cmd-k cmd-b": "git::CheckoutBranch",
+      "cmd-k cmd-w": "git::Worktree",
       "cmd-§": "multi_workspace::ToggleWorkspaceSidebar",
       // Shortcuts for custom tasks
       "cmd-r cmd-f": ["task::Spawn", { "task_name": "FZF File Finder" }],
