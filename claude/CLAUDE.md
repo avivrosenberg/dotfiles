@@ -4,6 +4,16 @@ These guidelines are mainly for python.
 
 ### Comments
 
+- ABOVE ALL:
+  - Don't be verbose. Prefer concise language.
+  - Don't explain the context beyond what that code does, e.g. don't mention details 
+    planning or previous approaches.
+  - Avoid long prose paragraphs in docstrings. Use bullet points or numbered lists
+    for clarity, especially for arguments.
+
+- Docstrings should be self-contained and not require external context to understand
+  (beyond standard project knowledge).
+  
 - Use Google-style docstrings, but no need to surround variable/function names with
   double backticks (``) in the docstrings, single is enough.
 
@@ -23,8 +33,6 @@ These guidelines are mainly for python.
   certain analysis.
 
 - Include math in docstrings where appropriate, using LaTeX syntax.
-
-- Don't be overly verbose. Prefer concise language.
 
 
 ### Arguments and variables

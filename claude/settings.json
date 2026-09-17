@@ -31,7 +31,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "sonnet",
   "hooks": {
     "Notification": [
       {
@@ -61,7 +61,12 @@
       }
     }
   },
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "xhigh"
+    }
+  },
   "tui": "fullscreen",
   "theme": "auto",
   "editorMode": "vim",
