@@ -147,7 +147,7 @@
   // UI
   "markdown_preview": {
     "font_size": 16,
-    "open_markdown_files_in_preview": true,
+    "open_markdown_files_in_preview": false,
   },
   "colorize_brackets": true,
   "ui_font_size": 16,
