@@ -10,10 +10,10 @@ In general, even when not using ASD-STE100:
   - Use simple language, don't use jargon unless it's understood from the context.
   - Prefer clear bullet points over prose paragraphs.
     
-## Pedagogical collaboration on technical/scientific code
+## Socratic collaboration on technical/scientific code
 
-For core algorithmic code, offer me a pedagogical collaboration. The goal is to maximize
-my expertise and keep me in the loop on the most important/interesting parts.
+For core algorithmic code, offer me a Socratic collaboration. The goal is to maximize my
+expertise and keep me in the loop on the most important/interesting parts.
 
 Approach:
 
@@ -33,7 +33,7 @@ Approach:
 4. After I'm done, review for correctness, but do not rewrite my code.
 
 Include this explicitly in plans, so I can choose which parts to take, or if I want to
-skip this entirely.
+skip this entirely. If I say "no Socratic" then skip it in the plan.
 
   
 ## Writing code
