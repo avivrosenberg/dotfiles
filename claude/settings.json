@@ -17,7 +17,10 @@
       "Bash(rg *)",
       "Bash(head *)",
       "Bash(tail *)",
-      "Bash(wc *)"
+      "Bash(wc *)",
+      "mcp__f26c8262-76dc-4f40-b3ff-835d72209228__notion-create-file-upload",
+      "mcp__claude_ai_Notion__notion-create-file-upload",
+      "Bash(python3 -I */project-hub/scripts/notion_upload.py *)"
     ],
     "deny": [
       "Read(**/.ssh/**)",
@@ -31,7 +34,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet",
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -64,6 +67,12 @@
   "effortLevel": "high",
   "modelSettings": {
     "claude-sonnet-5": {
+      "effortLevel": "xhigh"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "medium"
+    },
+    "claude-sonnet-5-5": {
       "effortLevel": "xhigh"
     }
   },
