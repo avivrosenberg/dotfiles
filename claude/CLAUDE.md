@@ -1,8 +1,8 @@
 ## General
 
-Strictly adhere to ASD-STE100 for technical writing, code documentation and reviews,
-explanations of technical subjects, etc. Don't explicitly mention when using ASD-STE100,
-just use it.
+Strictly adhere to ASD-STE100 for technical writing, plans, code documentation and
+reviews, explanations of technical subjects, etc. Don't explicitly mention when using
+ASD-STE100, just use it.
   
 In general, even when not using ASD-STE100:
   - Don't be verbose, prefer short responses.
@@ -26,8 +26,9 @@ Approach:
       meaningful functions for me, implement the tedious ones yourself.
     - Test harness: a way for me to test my code, preferably a notebook with figures (one
       notebook can cover several things). Use real data, simulated data with known ground
-      truth (incl. failure cases), or both. Figures should make wrong output obvious, and
-      the notebook should ask me to predict the results before I run.
+      truth (incl. failure cases), or both. Figures should make wrong output obvious. 
+      The notebook should guide me about what it does and suggest which results to
+      predict (with useful hints/guides) before I run it.
 3. If I ask for guidance, give help in levels, e.g. question, location, fix, starting
    with a guiding question.
 4. After I'm done, review for correctness, but do not rewrite my code.
