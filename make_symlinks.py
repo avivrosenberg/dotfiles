@@ -22,6 +22,9 @@ class Symlink:
     src_name: str | Path  # can be a glob pattern
     dst_dir: str | Path = DESTDIR
     prepend_dot: bool = True
+    # If the source is a directory and the target is an existing real directory,
+    # link the source children into the target directory (recursively).
+    merge_dirs: bool = False
 
 
 # List of files and directories which will be symlinked as dotfiles in the home folder.
@@ -31,7 +34,9 @@ SRC_FILES = [
     Symlink("bash/profile"),
     Symlink("bin"),
     Symlink("Brewfile"),
-    Symlink("claude/*", dst_dir=DESTDIR / ".claude", prepend_dot=False),
+    Symlink(
+        "claude/*", dst_dir=DESTDIR / ".claude", prepend_dot=False, merge_dirs=True
+    ),
     Symlink("conda/condarc"),
     Symlink("fzf/fzfrc"),
     Symlink("ghostty", DESTDIR / ".config", prepend_dot=False),
@@ -64,20 +69,33 @@ def make_symlinks(dry_run: bool = True):
 
         src_filepath_glob = DOTFILESDIR.glob(str(sym_spec.src_name))
         for src_filepath in src_filepath_glob:
-            make_symlink_file(
+            total_links += make_symlink_file(
                 src_filepath,
                 dst_dir=Path(sym_spec.dst_dir),
                 prepend_dot=sym_spec.prepend_dot,
+                merge_dirs=sym_spec.merge_dirs,
                 dry_run=dry_run,
             )
-            total_links += 1
 
     print(f"\n{GREEN}Done, {total_links} links created.{RESTORE}")
 
 
 def make_symlink_file(
-    src_filepath: Path, dst_dir: Path, prepend_dot: bool, dry_run: bool
-):
+    src_filepath: Path,
+    dst_dir: Path,
+    prepend_dot: bool,
+    dry_run: bool,
+    merge_dirs: bool = False,
+) -> int:
+    """Link one source path into dst_dir.
+
+    If merge_dirs is True, src_filepath is a directory, and the target is an
+    existing real directory, link each child of the source into the target
+    directory instead (recursively). The dot prefix applies only to the top level.
+
+    Returns:
+        The number of symlinks created (or that would be created on a dry run).
+    """
 
     # Make sure it exists
     if not src_filepath.exists():
@@ -90,6 +108,21 @@ def make_symlink_file(
         dst_filename = f".{dst_filename}"
 
     dst_filepath = Path(dst_dir) / dst_filename
+
+    # Merge into an existing real directory: link each child separately
+    is_real_dir = dst_filepath.is_dir() and not dst_filepath.is_symlink()
+    if merge_dirs and src_filepath.is_dir() and is_real_dir:
+        print(f"{BLUE}Merging into existing directory {dst_filepath!s}{RESTORE}")
+        return sum(
+            make_symlink_file(
+                src_child,
+                dst_dir=dst_filepath,
+                prepend_dot=False,
+                dry_run=dry_run,
+                merge_dirs=True,
+            )
+            for src_child in sorted(src_filepath.iterdir())
+        )
 
     # Remove target if it exists
     if dst_filepath.is_symlink():
@@ -116,6 +149,8 @@ def make_symlink_file(
         dst_filepath.symlink_to(src_filepath)
     else:
         print(f"{YELLOW}Would link:{RESTORE} {src_tgt_str}")
+
+    return 1
 
 
 def main():
