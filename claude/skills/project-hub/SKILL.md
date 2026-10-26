@@ -56,17 +56,19 @@ Notion mechanics (figure upload, markdown syntax, safe edits) are in `notion.md`
 ## Repo conventions and project sources
 
 This skill works in any analysis repo. Two inputs say where the code and outputs are:
-- **Repo conventions:** `.claude/project-hub.md` at the root of each analysis repo. It gives
-  the analysis and figure folders, the notebook format, where the runs are defined and how to
-  get their metrics, which other repos to record SHAs for, and extra items for the methods
-  checklist (`structure.md`).
+- **Repo conventions:** the "project-hub" section of the `CLAUDE.local.md` at the root of each
+  analysis repo. It gives the analysis and figure folders, the notebook format, where the runs
+  are defined and how to get their metrics, which other repos to record SHAs for, extra items
+  for the methods checklist (`structure.md`), and if the repo commits the figure manifests.
+  The rest of `CLAUDE.local.md` (environment, notebooks) also applies.
 - **Project sources:** the sources in the hub provenance line (`structure.md`): the repos and
   the analysis folders of the project, as repo names and repo-relative paths.
 
-If the analysis repo is not the working directory and you do not know where it is, ask Aviv.
-If a repo has no conventions file, find the conventions from the repo (its `CLAUDE.md`, folder
-layout and notebooks). Tell Aviv what you found, and get his confirmation before the first
-write to Notion. Then propose to save them as `.claude/project-hub.md`.
+`CLAUDE.local.md` is in the context when its repo is the working directory. For another
+analysis repo, read its `CLAUDE.local.md`. If you do not know where that repo is, ask Aviv.
+If a repo has no "project-hub" section, find the conventions from the repo (its `CLAUDE.md`,
+folder layout and notebooks). Tell Aviv what you found, and get his confirmation before the
+first write to Notion. Then propose to add them to its `CLAUDE.local.md`.
 
 ## Keep the context small
 
@@ -100,7 +102,8 @@ coordinates and each sub-page gets its own sub-agent with a clean context.
   - the instruction to follow this skill (`SKILL.md`, `structure.md`, `notion.md`) for one
     page, steps 1 to 6, and not to edit the hub;
   - the page URL (or "new page under the hub", with the hub id), the analysis folder, the
-    notebooks, the repos and the SHAs to diff from, and the repo conventions files;
+    notebooks, the repos and the SHAs to diff from, and the repo conventions (the "project-hub" section of each
+    `CLAUDE.local.md`, word for word);
   - the hub questions that this page answers (their text and current answer), and the
     Review page URL if it exists;
   - Aviv's request for this page, word for word;
@@ -143,8 +146,8 @@ strength of the page.
   goals and questions to Aviv first, and write them only after he approves.
 - **Hub in an older format** (for example a "Writeup" section, or no questions table): do not
   restructure it on your own. Tell Aviv, and restructure only when he asks.
-- Sources: the sources in the hub provenance line, and the `.claude/project-hub.md` of each
-  analysis repo (see "Repo conventions and project sources").
+- Sources: the sources in the hub provenance line, and the "project-hub" section of the
+  `CLAUDE.local.md` of each analysis repo (see "Repo conventions and project sources").
 - Project notes: read them only if Aviv points to them.
 - Code: the analysis folder. Read the notebooks and the supporting modules that they import.
   If the notebooks are paired with scripts (for example jupytext), read the script for code
@@ -189,8 +192,8 @@ strength of the page.
 **Read:**
 - Read the implementation of the items in scope, not only the notebook markdown: the notebook,
   the analysis modules, and the shared code that loads and filters the data or computes the
-  metrics (in the analysis repo and in the other repos that its conventions list). The methods and math on the page must describe
-  what the code does. Collect each item of the methods checklist (`structure.md`) for each
+  metrics (in the analysis repo and in the other repos that its conventions list). The
+  methods and math on the page must describe what the code does. Collect each item of the methods checklist (`structure.md`) for each
   step: data subset, filters with counts, math, estimators, parameter values and where the
   code implements them.
 - If the code does not show a method detail, do not guess. Write it down as unknown and ask

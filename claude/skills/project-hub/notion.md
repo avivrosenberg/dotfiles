@@ -45,7 +45,8 @@ If an upload is blocked, stop and tell Aviv. Do not work around it (no other upl
 **Figure manifest.** Each page has a manifest in the repo that holds its figures:
 `<repo root>/.notion-figures/<page id without dashes>.json`. It records the hash and the Notion
 file name of each figure on the page, keyed by the path relative to the repo root. Pass it
-with its path from the repo root. The repo conventions say if the repo commits it.
+with its path from the repo root. The repo conventions (`CLAUDE.local.md`) say if the repo commits
+it.
 
 **Find the figures to upload** (new page: all; update: only new and changed):
 ```bash

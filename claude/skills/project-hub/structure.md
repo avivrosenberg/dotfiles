@@ -39,8 +39,7 @@ supports it.
    below. Sources: `<repo>:<analysis folder>`, ... Last update `<date>`." Each source is a repo
    name and a path relative to the repo root, never a local path.
 2. **Context:** 2-4 lines. Why this project matters, what the problem is.
-3. **Goals:** clear, testable goals (for example "better `ssl_il` metrics, with no PH cost and no
-   PTSD degradation"). Aviv approves each goal.
+3. **Goals:** clear, testable goals. Aviv approves each goal.
 4. **Status:** 2-4 lines. The progress against each goal, the main open problem, and the next
    experiments.
 5. **Questions table:** one row per project question. Aviv approves each question.
@@ -129,7 +128,7 @@ results. The Methods toggle of each step must hold all the details needed to do 
 again. Write it from the code, not from the notebook markdown. If the code does not show a
 detail, write "unknown" and ask Aviv. Never guess.
 
-**Checklist** (each item, or "n/a"; the repo conventions in `.claude/project-hub.md` can add
+**Checklist** (each item, or "n/a"; the repo conventions in `CLAUDE.local.md` can add
 items):
 - **Data:**
   - the runs: their ids, and the checkpoint or epoch;
@@ -185,7 +184,7 @@ Use them to make the page less dense and the main flow short:
 - **Toggles and toggle headings:** long derivations, metric definitions, per-session figures,
   raw traces. A toggle heading can hold a whole secondary step.
 - **Callouts:** blue = short answer, yellow = caveat / strongest case against,
-  green = recommendation for the team (for example "Recommendation for DCX").
+  green = recommendation for the team.
 - **Tables:** all key numbers. Add a noise floor or null column when one exists.
 
 ## Writing rules

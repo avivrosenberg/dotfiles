@@ -47,8 +47,9 @@ but with less evidence or a smaller effect), `minor` (no conclusion changes).
 - Fetch the hub and every sub-page (all of them, also outside the scope).
 - Fetch the Review page if the hub has one. Load its open flags, closed flags and the code
   version of the last run.
-- Read the sources in the hub provenance line, and the `.claude/project-hub.md` of each
-  analysis repo (see "Repo conventions and project sources" in the `project-hub` skill).
+- Read the sources in the hub provenance line, and the "project-hub" section of the
+  `CLAUDE.local.md` of each analysis repo (see "Repo conventions and project sources" in the
+  `project-hub` skill). Put that section in each subagent brief.
 - From each sub-page provenance line, get the notebooks and the repos with their SHAs. Map each
   section to its code: notebooks, analysis modules, shared modules of the analysis repo, and
   the code in the other repos that defines the metrics, data and runs that the results use.
