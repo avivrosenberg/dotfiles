@@ -74,7 +74,7 @@ first write to Notion. Then propose to add them to its `CLAUDE.local.md`.
 
 Each model call reads the full session context again, so the context size times the number of
 calls is the main cost and the main delay. Notion calls are fast. Rules:
-- **One sub-agent per page when a run touches two or more sub-pages** (see "Several pages").
+- **One sub-agent per page when a run touches two or more sub-pages** (see `multi-page.md`).
   For one sub-page, do the work in the main agent.
 - **Read large pages from a working copy,** not in full (see "Read pages from a working copy"
   in `notion.md`). Read only the sections you edit.
@@ -88,53 +88,11 @@ calls is the main cost and the main delay. Notion calls are fast. Rules:
 - Read notebooks, code and Bash output in parts (grep, offset and limit), not in full, when
   they are large.
 
-## Several pages: one sub-agent per page
+## Several pages
 
-When a run creates or updates two or more sub-pages (also in refresh mode), the main agent
-coordinates and each sub-page gets its own sub-agent with a clean context.
-
-**Main agent:**
-- Fetches the hub once. It does not fetch the sub-pages: each sub-page is fetched only by its
-  sub-agent.
-- Makes the page list from Aviv's request and the code diff (step 1).
-- Briefs one sub-agent per page. Use the same model as the main agent (writing exact methods
-  and conclusions is the hard part; do not use a cheaper model). The brief has:
-  - the instruction to follow this skill (`SKILL.md`, `structure.md`, `notion.md`) for one
-    page, steps 1 to 6, and not to edit the hub;
-  - the page URL (or "new page under the hub", with the hub id), the analysis folder, the
-    notebooks, the repos and the SHAs to diff from, and the repo conventions (the "project-hub" section of each
-    `CLAUDE.local.md`, word for word);
-  - the hub questions that this page answers (their text and current answer), and the
-    Review page URL if it exists;
-  - Aviv's request for this page, word for word;
-  - the report format below.
-- **Serial or parallel:** serial is the default. Run sub-agents in parallel only if their pages
-  share no notebooks or analysis files (step 4 can change them), and no page cites a result
-  that another page in the run changes. Writes to different Notion pages do not conflict.
-- **Outline step:** a sub-agent cannot ask Aviv. It stops after step 3 and returns its outline
-  and questions. The main agent shows them to Aviv, then continues the same sub-agent
-  (`SendMessage`) with his answer, word for word.
-- After all sub-agents return: update the hub (step 7) from their reports only. Then relay
-  each page report to Aviv without shortening it, plus the hub changes.
-
-**Sub-agent report** (the main agent updates the hub from this report alone, so it must be
-complete; the main agent cannot see the page):
-1. **Page:** title, URL, provenance line (SHAs, date).
-2. **All global conclusions, word for word as on the page,** each with:
-   - its evidence: the sections that support it (section number, heading and block link if
-     known), and the key numbers with their noise floor or null;
-   - the evidence against it or the open alternatives, as the page states them;
-   - the flags it depends on ("conditional on F3"), and whether it is a hypothesis;
-   - the hub question(s) it bears on, and whether it changed in this run (old text if so).
-3. **The short-answer callout,** word for word.
-4. **Other findings and open questions** (candidate leads), with their section links.
-5. **The change report** from step 6: added, flag fixes, changed, removed, and every comment
-   (anchor, text, what changed or the answer).
-6. **Checks:** the post-write checks and their results (image count, outline, grep for
-   literal format errors), the method details that are still unknown, and any problem seen.
-
-Do not summarize or soften the conclusions in the report: the hub must keep the exact claim
-strength of the page.
+When a run creates or updates two or more sub-pages, or in refresh mode ("refresh the hub",
+or the sub-pages changed outside this skill), read `multi-page.md` first. It runs one
+sub-agent per page.
 
 ## Workflow
 
@@ -193,11 +151,9 @@ strength of the page.
 - Read the implementation of the items in scope, not only the notebook markdown: the notebook,
   the analysis modules, and the shared code that loads and filters the data or computes the
   metrics (in the analysis repo and in the other repos that its conventions list). The
-  methods and math on the page must describe what the code does. Collect each item of the methods checklist (`structure.md`) for each
-  step: data subset, filters with counts, math, estimators, parameter values and where the
-  code implements them.
-- If the code does not show a method detail, do not guess. Write it down as unknown and ask
-  Aviv (in the outline, or in the chat report).
+  methods and math on the page must describe what the code does. Collect each item of the
+  methods checklist (`structure.md`) for each step. Ask about unknown details in the outline
+  or the chat report.
 - Look at every figure in scope. Read a smaller copy in the scratchpad, not the original:
   `sips -Z 1000 "<figure>.png" --out "<scratchpad>/fig/<name>.png"` (long side 1000 px; use the
   original only if small text is not readable). Write down what it shows before you read
@@ -235,32 +191,26 @@ working in the same files at the moment, list the changes instead of making them
 
 ### 5. Write and publish
 - Write the page with `structure.md`.
-- **Every figure and table goes on the page,** except the ones Aviv tells you to skip and WIP
-  results. Put figures and tables that are clearly tangential or redundant in the appendix.
 - **Make tables for results that the notebook only prints.** If the notebook gives the numbers
   but no table (for example printed values over several cells), build the table on the page.
-- **Keep the page short with Notion layout blocks:** tabs for variants of one figure, columns
-  for side-by-side comparisons, toggles and toggle headings for details, derivations and
-  per-condition figures (see `structure.md`).
 - **Methods check before you publish:** each step has its Methods toggle, and the toggle covers
   every item of the methods checklist in `structure.md` (or says "n/a"). Each symbol is defined.
   Each equation names the function that implements it.
 - **Consistency check before you publish:** each conclusion must agree with the numbers and
   figures on the page, and with the open flags of its section (flag markers). A conclusion that
   depends on an open flag is conditional or a hypothesis.
-- Upload figures (see `notion.md`: uploads need two permission rules; if an upload is blocked,
-  stop and tell Aviv, do not work around it). Upload with `--manifest`, so the figure manifest
-  of the page records each file. Create the page under the hub, or update the existing page.
+- Upload figures with `--manifest` (see `notion.md`). Create the page under the hub, or update
+  the existing page.
 - **Before the write call, check the content against the write checklist in `notion.md`.** A
   failed write of a full page costs a second full send.
 - After a create or a `replace_content`, fetch the page once into a working copy and check it
   with grep, not by reading it in full: the outline (block order, tabs and toggles), the
-  number of images, and no literal `{color=`, `` $` `` or `\{`. After an `update_content` with
-  no warnings, do not fetch.
+  number of images, and no literal `{color=`, `` $` `` or `\{` (fix them before you report).
+  After an `update_content` with no warnings, do not fetch.
 
 ### 6. Iterate
-- Before each update, fetch the page and read its open comments again (step 2, item 5). Aviv
-  may have edited the text or left new comments since you planned. Keep his edits.
+- Before each update, fetch the page and read its open comments again (step 2, item 5). Keep
+  Aviv's edits.
 - **Apply every comment item of the change list.** A comment that asks for a change of
   structure (move, split or merge sections, a different layout) needs the outline step (step 3)
   only if it changes the questions or the section order; a layout change of one figure or
@@ -282,8 +232,6 @@ working in the same files at the moment, list the changes instead of making them
   work. `update_content` cannot change images (see `notion.md`).
 - **Upload only the figures that changed:** run `notion_upload.py --check` on the figures of
   the page (see `notion.md`). Unchanged figures keep their fetched `<image source=...>` block.
-- Keep the flag markers (see `structure.md`). If you change or move a section that has a
-  marker, keep the marker with it.
 - **Flag fixes from the change list:** on the Review page, set the flag status to `fix pending
   review` and add one line to its details: what changed, at which SHA. In the experiment page,
   mark the flag in its marker line as pending (format in `structure.md`). Never set a flag to
@@ -310,9 +258,7 @@ Do this after each new or updated sub-page. The hub must always agree with its s
 - Fetch the hub (once per run). Find the questions that the sub-page change affects: the
   questions that the page answers, and the questions whose evidence cites a changed section.
 - **Source of the hub content:** the sub-page you just wrote, or, with sub-agents, their
-  reports ("Several pages"). Use the conclusions and evidence word for word as the report
-  gives them. If a report does not give the evidence for a conclusion, ask that sub-agent
-  (`SendMessage`), do not fill it in yourself.
+  reports (`multi-page.md`). Use the conclusions and evidence word for word.
 - For each affected question, update its table row and its details section (format in
   `structure.md`): answer, status, evidence links, evidence for and against, open flags, next
   check. Change only the affected questions.
@@ -330,9 +276,3 @@ Do this after each new or updated sub-page. The hub must always agree with its s
 - Edit the hub with targeted `update_content` (see "Hub edits" in `notion.md`).
 - **Hub changes** for the chat report: each answer or status that changed, the old and the new
   text, and why. Also the proposed new questions or goal changes.
-
-**Refresh mode** ("refresh the hub", or when the sub-pages changed outside this skill):
-rebuild the questions table and the details from the current conclusions and flags of all
-sub-pages. Use one read-only sub-agent per sub-page: it fetches its page and returns items 1-4
-of the sub-agent report, and does not edit the page. The main agent fetches the hub and the
-Review page. Report the hub changes as above.

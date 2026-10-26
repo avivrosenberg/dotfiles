@@ -20,8 +20,8 @@ the outlines.
    validation, then the main results, then the explanations of those results. The notebook
    order can be a good order, but do not assume it.
 5. **Show everything, clearly.** Every figure and table goes on the page (tangential or
-   redundant ones in the appendix). Numbers go in tables, not only in prose. The reader must
-   not miss a result.
+   redundant ones in the appendix), except the ones Aviv tells you to skip and WIP results.
+   Numbers go in tables, not only in prose. The reader must not miss a result.
 6. **Facts apart from interpretation.** Observations are facts with numbers. Conclusions are
    interpretation. Mark a hypothesis as a hypothesis.
 7. **Unexpected findings get documented.** They do not answer the question, but they feed
@@ -199,24 +199,11 @@ Use them to make the page less dense and the main flow short:
 
 ## Common mistakes
 
+Only mistakes that the rules above do not already show:
+
 | Mistake | Fix |
 |---|---|
-| All methods and data up front, far from the results | Put each method in the Methods toggle of the step that uses it |
 | "Bandpass filter", "we use MMD", "z-scored" with no details | Give the filter parameters, the estimator and kernel, what the mean and SD are computed over |
-| A symbol with no definition, or no shape | Define each symbol where it first appears, with its shape and index sets |
 | Counts that change between steps with no reason | List each filter with the counts before and after |
-| Methods copied from the notebook markdown | Write them from the code, and name the function for each equation |
-| A method detail that is guessed | Write "unknown" and ask Aviv |
-| A hub answer with no link, or stronger than its sub-pages | Link the sections; match the strength of the sub-page conclusions |
-| Methods on the hub | Methods only in the sub-pages; the hub links them |
-| Steps in notebook order without a check | Order step by step, each step building on the previous ones |
 | The same result described in several places (curve list, table, summary) | One step per result. The global conclusions cite it, they do not restate it |
 | "Panel 1: X. Panel 2: Y." as the description of a figure | "How to interpret" once, then observations about what the figure shows |
-| Observations that restate every value in the figure or table | The few most important facts, with numbers only where they add clarity |
-| Observations and conclusions in one paragraph | Separate **Observations** and **Conclusion** |
-| No expectation, so a surprise looks like a normal result | Write the expectation before the figure |
-| A figure or table from the notebook is missing | Put it in the main flow or the appendix, or list it as left out, with the reason |
-| Long text-only pages | Tabs, columns and toggles for variants and details |
-| Conclusions far from their evidence | Local conclusion in the step. Global conclusions link the sections |
-| A conclusion stronger than its section's flag allows | Make it conditional or a hypothesis |
-| "Step N:" in headings | "N. Question?" |

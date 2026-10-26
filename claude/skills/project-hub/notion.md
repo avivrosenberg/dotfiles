@@ -2,9 +2,14 @@
 
 ## Pages
 
-- The format to write is in "Format to write" and "Layout blocks" below. Do not guess the
-  syntax. Read `notion://docs/notion-flavored-markdown-spec` only for a block type that this
-  file does not cover.
+- **New sub-page:** `notion-create-pages` with `parent: {type: "page_id", page_id: <hub id>}`.
+  Set the title in `properties.title`, not in the content. The title is the experiment question
+  or topic, short. No date, no notebook number (they go in the provenance line).
+- **New hub:** if Aviv names no destination, create it with `creation_mode: "draft"` (private).
+  Tell him it is private.
+- Icons: hub 🗂️, sub-pages one emoji that fits the content (📊 metrics, 🔬 analysis, 🧪
+  intervention runs). Optional.
+- Do not make pages public or move them. Aviv does that.
 
 ## Read pages from a working copy
 
@@ -20,18 +25,8 @@ A page fetch can be 10-60k characters. In the context, it is read again on every
   limit, or grep). Do not Read the saved file or the working copy in full.
 - **Small fetch (in the context):** use it as it is.
 - **The working copy is ephemeral.** Put it in the session scratchpad, never in a git
-  repository. Use it for one edit round only. Aviv can edit the page and leave
-  comments at any time: before the next edit round, fetch again and make a new working copy.
-- Copy each `old_str` from the working copy: it is the fetched text, so it matches.
+  repository. Use it for one edit round only.
 - Comments do not come with the fetch: get them with `notion-get-comments` (see "Comments").
-- **New sub-page:** `notion-create-pages` with `parent: {type: "page_id", page_id: <hub id>}`.
-  Set the title in `properties.title`, not in the content. The title is the experiment question
-  or topic, short. No date, no notebook number (they go in the provenance line).
-- **New hub:** if Aviv names no destination, create it with `creation_mode: "draft"` (private).
-  Tell him it is private.
-- Icons: hub 🗂️, sub-pages one emoji that fits the content (📊 metrics, 🔬 analysis, 🧪
-  intervention runs). Optional.
-- Do not make pages public or move them. Aviv does that.
 
 ## Figures
 
@@ -74,11 +69,9 @@ the code makes again after the page date as changed, then record the rest with `
 - Upload URLs expire about 10 minutes after `notion-create-file-upload`. Write the page
   content before you create the uploads, then create, send and write without other work in
   between.
-- A blocked upload stops the work: tell Aviv, do not work around it.
 
 **Change figures on an existing page:** `update_content` cannot match image blocks (every image
-`old_str` gives `no_match`). All figure changes go in one `replace_content` (see SKILL.md,
-step 6).
+`old_str` gives `no_match`). All figure changes go in one `replace_content` (SKILL.md, step 6).
 
 ## Format to write (check it before you write)
 
@@ -92,9 +85,7 @@ The Notion server's parser can differ from `notion://docs/notion-flavored-markdo
 - Outside code and math, escape these characters with a backslash: `\ * ~ ` $ [ ] < > { } | ^`.
 
 **Rule:** write colored blocks and math in the format above (or copy it from the page you
-already fetched; do not fetch another page for it). After a create or a `replace_content`,
-grep the working copy for literal `{color=`, `` $` `` or `\{`. If any appear, fix them before
-you report.
+already fetched; do not fetch another page for it).
 
 ## Layout blocks
 
@@ -160,22 +151,15 @@ Check the content against this list before each `notion-create-pages` or `replac
 
 ## Safe edits
 
-- Fetch the page before each edit. Aviv may have changed it.
-- Copy each `old_str` from the latest fetch, not from the content you wrote. The fetch format
-  can differ from the input format (for example `<b>`, `<code>`, `$x$` instead of `**`, `` ` ``,
-  `` $`x`$ ``), and `update_content` matches the fetched text.
-- Choose the edit mode before the first edit (table in SKILL.md, step 6). With
-  `update_content`, use the smallest unique `old_str`. With `replace_content`, build the new
-  content from one fresh fetch, so that Aviv's edits stay.
+- Copy each `old_str` from the latest fetch (the working copy), not from the content you wrote.
+  The fetch format can differ from the input format (for example `<b>`, `<code>`, `$x$` instead
+  of `**`, `` ` ``, `` $`x`$ ``), and `update_content` matches the fetched text. Use the
+  smallest unique `old_str`.
 - `update_content` reports an `old_str` that does not match as a `no_match` warning, not as an
   error. Read the warnings after each call.
 - After `replace_content`, fetch the page and check the block order: Notion can move unchanged
   blocks (for example a table to the top of the page). Fix the order with `update_content`.
-- Never remove a `<page>` tag on the hub: that removes the child page.
 - If an edit would delete content that Aviv wrote, ask first.
-- After a `replace_content` or a create, fetch again into a working copy and check images,
-  math, tabs and toggles with grep and the outline. After an `update_content` with no
-  warnings, do not fetch again.
 
 ## Hub edits
 
@@ -187,6 +171,7 @@ Check the content against this list before each `notion-create-pages` or `replac
 - Table rows: copy the `old_str` of a row from the latest fetch (the fetch can return the
   table as `<table>` HTML). Links in cells use the sub-page URL, with `#<block id>` for a
   section when the id is known.
+
 ## Comments
 
 - **Get all open comments:** `notion-get-comments` with `{"page_id": <id>, "include_all_blocks":
@@ -198,4 +183,3 @@ Check the content against this list before each `notion-create-pages` or `replac
   place. Read only the comments that are not resolved (the default).
 - **`by-you="true"` does not mean Claude wrote it.** The Notion connection runs as Aviv's
   account, so his own comments show `by-you="true"`. Treat every open comment as Aviv's.
-- Answer or resolve a comment in Notion only if Aviv asks (`notion-set-discussion-resolved`).

@@ -10,10 +10,11 @@ that makes their results, and the figures. The flags go to one Review page under
 hub, with markers in the experiment pages. Aviv calls this skill when he has enough results.
 It is separate from writing the reports, so that report updates stay fast.
 
-**REQUIRED BACKGROUND:** read the `project-hub` skill first (`SKILL.md` and
-`structure.md`, and `notion.md` for the Notion mechanics). It defines the project structure
-that this review works on: hub (project), sub-pages (experiments), sections (steps), and the
-local and global conclusions.
+**REQUIRED BACKGROUND:** read `structure.md` and `notion.md` in the `project-hub` skill folder
+first. `structure.md` defines the project structure that this review works on: hub (project),
+sub-pages (experiments), sections (steps), local and global conclusions, and flag markers.
+`notion.md` has the Notion mechanics. Do not read the `project-hub` `SKILL.md`: its write
+workflow does not apply here.
 
 ## Full-project context is the point
 
@@ -48,8 +49,8 @@ but with less evidence or a smaller effect), `minor` (no conclusion changes).
 - Fetch the Review page if the hub has one. Load its open flags, closed flags and the code
   version of the last run.
 - Read the sources in the hub provenance line, and the "project-hub" section of the
-  `CLAUDE.local.md` of each analysis repo (see "Repo conventions and project sources" in the
-  `project-hub` skill). Put that section in each subagent brief.
+  `CLAUDE.local.md` of each analysis repo. If a repo has no such section, find the analysis
+  and figure folders from the repo, and tell Aviv. Put that section in each subagent brief.
 - From each sub-page provenance line, get the notebooks and the repos with their SHAs. Map each
   section to its code: notebooks, analysis modules, shared modules of the analysis repo, and
   the code in the other repos that defines the metrics, data and runs that the results use.
