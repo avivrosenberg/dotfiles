@@ -49,7 +49,7 @@ python3 -I "<skill dir>/scripts/notion_upload.py" --check "<manifest>" <figure f
 ```
 It prints `new`, `changed` or `unchanged` for each file. An `unchanged` figure keeps its
 `<image source="notion-file-block://...&name=<notion name>">` block from the page fetch: find
-it by its `name=`. A page with no manifest (made before 2026-10-21): treat every figure that
+it by its `name=`. A page with no manifest: treat every figure that
 the code makes again after the page date as changed, then record the rest with `--record`.
 
 **Upload a figure:**
@@ -75,8 +75,8 @@ the code makes again after the page date as changed, then record the rest with `
 
 ## Format to write (check it before you write)
 
-The Notion server's parser can differ from `notion://docs/notion-flavored-markdown-spec`. Since
-2026-10-21 it reads (and `notion-fetch` returns) an HTML-like format:
+The Notion server's parser can differ from `notion://docs/notion-flavored-markdown-spec`. It
+reads (and `notion-fetch` returns) an HTML-like format:
 - **Gray or colored paragraph:** `<p color="gray">` on its own line, the text, `</p>`. A trailing
   `{color="gray"}` is stored as literal text.
 - **Inline math:** `$x_i = I Z_i + c$`. The `` $`...`$ `` form is stored as literal text.
@@ -89,19 +89,19 @@ already fetched; do not fetch another page for it).
 
 ## Layout blocks
 
-This is the format that `notion-fetch` returns and that writes accept (checked 2026-10-21).
+This is the format that `notion-fetch` returns and that writes accept.
 Each image is its own block, with a blank line before it and a blank line or a closing tag
 after it.
 
 ```
 <tabs>
 <tab>
-cls
+train
 
 ![Caption.](file-upload://<id>)
 </tab>
 <tab>
-reps\_pooled
+held\_out
 
 <image source="notion-file-block://...&name=021-x.png">
 Caption of an unchanged figure, copied from the fetch.

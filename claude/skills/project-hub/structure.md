@@ -46,7 +46,7 @@ supports it.
 
    | # | Question | Current best answer | Status | Evidence |
    |---|---|---|---|---|
-   | Q1 | Does more IL in training move IL away from PH? | Yes, in location, not in spread (conditional on F3) | partly answered | [Embedding gap, 2](...), [IL metrics, 4](...) |
+   | Q1 | Does augmentation X reduce the train/test gap? | Yes, in location, not in spread (conditional on F3) | partly answered | [Domain gap, 2](...), [Eval metrics, 4](...) |
 
    - **Current best answer:** 1-2 short sentences, with the main number if it helps.
    - **Status:** `open` (no evidence yet), `partly answered`, `answered`, or `contradicted`
@@ -142,8 +142,8 @@ items):
 - **Math:**
   - block equations for the key quantities, inline math for small ones;
   - each symbol defined where it first appears: what it is, its shape, and its index sets (for
-    example "$X \in \mathbb{R}^{n \times d}$: the session embeddings of the PH test set, one
-    row per session");
+    example "$X \in \mathbb{R}^{n \times d}$: the sample embeddings of the test set, one
+    row per sample");
   - the estimator, not only the quantity (for example the unbiased MMD estimator, the kernel,
     and the bandwidth rule);
   - the statistics: the test, the CI method, the number of resamples or folds, the seeds.

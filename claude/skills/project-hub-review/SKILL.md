@@ -104,7 +104,7 @@ Create it under the hub if it does not exist (title "Review", icon ⚑). Content
 
    | ID | Sev. | Category | Where | Issue | Status |
    |---|---|---|---|---|---|
-   | F3 | weakens | correctness | Embedding gap, 2 | Null weights differ from IL view | open |
+   | F3 | weakens | correctness | Domain gap, 2 | Null uses different sample weights than the test | open |
 
    "Where" links the page (and the section, see below). "Status": `open`, `fix next iteration`,
    `waived` (set by Aviv), or `fix pending review` (set by `project-hub` after an update).
