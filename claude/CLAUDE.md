@@ -19,6 +19,8 @@ Strictly adhere to **ASD-STE100** for technical writing, plans, code documentati
 reviews, explanations of technical subjects, etc. Don't explicitly mention when using
 ASD-STE100, just use it.
 
+DO NOT USE non-keyboard characters such as em/en dashes or non-standard whitespace.
+
 ## Code
 
 Before you write or change any Python code or notebook code, also small edits, load the
