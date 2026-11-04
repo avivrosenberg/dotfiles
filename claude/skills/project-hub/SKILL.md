@@ -178,6 +178,11 @@ Before you write a new page, or restructure an existing one, send Aviv a short o
 No result summaries in the outline: results go on the page. Write the page only after Aviv
 approves the outline. For an update that keeps the structure, skip this step.
 
+**Conclusions are Aviv's.** Write only conclusions (local, global, group, hub answers) that Aviv
+agreed to, from the chat or the project records. Do not propose conclusions on a page. If a
+section has no agreed conclusion, write "Conclusion: not yet discussed" and list the section
+under "Questions for Aviv" in the chat report.
+
 ### 4. Prepare the outputs (small code changes are allowed)
 You may change the notebook or analysis code a little, to make the outputs fit for the page:
 - clearer axis labels, legends and figure titles;
@@ -266,8 +271,11 @@ Do this after each new or updated sub-page. The hub must always agree with its s
   - No new claims on the hub. Each answer combines the global conclusions of the sub-pages,
     and links the sections that support it.
   - The strength of the words must agree with the evidence: "reduces", not "removes"; "is
-    consistent with", not "shows", when other explanations are open.
-  - If two pages disagree, show both, and set the status to `contradicted`. Do not choose one.
+    consistent with", not "shows", when other explanations are open; "no change beyond noise",
+    not "no effect". Don't turn a hypothesis into a fact.
+  - Standing caveats of a project (e.g. one seed per training run): state them once, on the
+    provenance line. Don't repeat them per answer, don't downgrade a status for them, and don't
+    propose them as a next check. A specific, quantified noise concern is still fine.  - If two pages disagree, show both, and set the status to `contradicted`. Do not choose one.
   - An answer that uses a flagged result is conditional on that flag.
 - Add new leads (unexpected findings and open questions of the sub-page). A lead that could
   become a project question goes to Aviv as a proposal in the chat report, not on the hub.

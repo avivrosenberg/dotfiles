@@ -111,14 +111,17 @@ share one "Why" and one "How").
 - **How:** 1-2 sentences in the main flow. The method in simple words, with the one equation
   that the reader needs to understand the result.
 - **Methods** toggle, directly after the "How" sentence: the full methods of this step (see
-  "Methods" below).
+  "Methods" below). Never move it to a sub-page: Aviv opens it live when asked how a result
+  was made. The same applies to slides (one claim per slide; title = the claim). Agree on the
+  structure with Aviv before figure edits.
 - **Figure(s) or table(s).** Directly below each figure: **How to interpret** (axes, colors,
   what one point or curve is, what "good" looks like). For a table: what each column means, and
   the rule for bold values.
 - **Observations:** facts only, short and focused. Highlight the few most important facts; do
   not describe everything in the figure or table. Give a number only when it adds clarity
   beyond what the figure or table already shows.
-- **Conclusion** (local): what this result means for the step question. Mark hypotheses.
+- **Conclusion** (local): what this result means for the step question, as agreed with Aviv
+  (see "Conclusions are Aviv's" in `SKILL.md`). Mark hypotheses.
 - **Flag marker** (if the section has open flags), as the last line (see "Flag markers").
 
 ## Methods
