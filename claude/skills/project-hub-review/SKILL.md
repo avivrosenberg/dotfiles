@@ -1,6 +1,6 @@
 ---
 name: project-hub-review
-description: Use when Aviv asks to review a project hub in Notion (the hub page and its experiment sub-pages), or one experiment of a project, for correctness, conceptual issues, bugs and wrong conclusions. Trigger on "review the project", "review the project reports", "run a review on the embedding gap experiment", "check the analysis for issues", or "update the review page".
+description: Use when Aviv asks to review a project hub in Notion (the hub page and its experiment sub-pages), or one experiment of a project, for correctness, conceptual issues, bugs and wrong conclusions. Trigger on "review the project", "review the project reports", "run a review on the embedding gap experiment", or "update the review page". Not for an audit of results in the chat before any report (use analysis-audit).
 ---
 
 # Project hub review
