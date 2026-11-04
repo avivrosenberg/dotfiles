@@ -10,7 +10,8 @@ main agent coordinates, and each sub-page gets its own sub-agent with a clean co
 - Makes the page list from Aviv's request and the code diff (step 1).
 - Briefs one sub-agent per page. Use the same model as the main agent (writing exact methods
   and conclusions is the hard part; do not use a cheaper model). The brief has:
-  - the instruction to follow this skill (`SKILL.md`, `structure.md`, `notion.md`) for one
+  - the instruction to follow this skill (`SKILL.md`, `structure.md`, `notion.md`, and
+    `research-collab-report/report.md` and `index.md`) for one
     page, steps 1 to 6, and not to edit the hub;
   - the page URL (or "new page under the hub", with the hub id), the analysis folder, the
     notebooks, the repos and the SHAs to diff from, and the repo conventions (the

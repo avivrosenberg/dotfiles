@@ -10,8 +10,12 @@ tracks the project (status, questions, current best answers, evidence), and one 
 experiment** with all its current methods and results. Aviv uses the sub-pages to recall the
 exact methods and to scrutinize the results, so the methods must be complete and exact.
 
-- Page design (hub, sub-page, step block, methods checklist, flags, writing rules):
-  `structure.md`. Read it before you write or restructure a page. It is a guideline, not a form.
+- Page design, shared with the local reports: `../research-collab-report/report.md`
+  (principles, step block, Methods checklist, writing rules) and
+  `../research-collab-report/index.md` (question-level parts).
+- Notion-specific design (hub page, sub-page from the reports, flag markers, Notion layout):
+  `structure.md`. Read all three before you write or restructure a page. They are guidelines,
+  not forms.
 - Notion mechanics (working copy, figure upload, markdown, safe edits, comments): `notion.md`.
 - Two or more sub-pages in one run, or a hub refresh: `multi-page.md` (one sub-agent per page).
 
@@ -43,6 +47,11 @@ exact methods and to scrutinize the results, so the methods must be complete and
 - **Spec:** the research spec of the experiment (from `research-collab`), if one exists. It is
   the first source for the question, the hypotheses and predictions (the "Expectation" of each
   step) and the method intent. The code is the source of truth for what was done.
+- **Reports:** the local `research-collab-report` pages of the analysis, if they exist
+  (`reports/index.html` and one per notebook or script). They are the first source for the
+  steps, methods, how-to-interpret texts and observations. A sub-page regroups them by
+  experiment question. Check them against the current code (provenance SHAs) before you use
+  them.
 - **Repo conventions:** the "project-hub" section of each analysis repo's `CLAUDE.local.md`:
   analysis and figure folders, notebook format, runs and their metrics, other repos to record
   SHAs for, extra methods-checklist items. If a repo has no such section, infer the conventions
@@ -91,7 +100,7 @@ New page: read the full analysis. Update: work on the delta only. Make a **chang
 
 Then read the implementation of the items in scope (notebook, analysis modules, the shared code
 that loads data and computes metrics, also in other repos), and collect the methods checklist
-of each step (`structure.md`). Look at each figure in scope and note what it shows before you
+of each step (`research-collab-report/report.md`). Look at each figure in scope and note what it shows before you
 read Aviv's markdown about it. Report obvious problems (numbers that disagree, broken figures)
 in chat. A full correctness review is `project-hub-review`, only when Aviv calls it.
 

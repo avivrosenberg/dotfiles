@@ -10,9 +10,11 @@ that makes their results, and the figures. The flags go to one Review page under
 hub, with markers in the experiment pages. Aviv calls this skill when he has enough results.
 It is separate from writing the reports, so that report updates stay fast.
 
-**REQUIRED BACKGROUND:** read `structure.md` and `notion.md` in the `project-hub` skill folder
-first. `structure.md` defines the project structure that this review works on: hub (project),
-sub-pages (experiments), sections (steps), local and global conclusions, and flag markers.
+**REQUIRED BACKGROUND:** read `structure.md` and `notion.md` in the `project-hub` skill folder,
+and `report.md` in the `research-collab-report` skill folder, first. `structure.md` defines the
+project structure that this review works on: hub (project), sub-pages (experiments), and flag
+markers. `report.md` defines the sections (steps), the Methods checklist and the local
+conclusions.
 `notion.md` has the Notion mechanics. Do not read the `project-hub` `SKILL.md`: its write
 workflow does not apply here.
 

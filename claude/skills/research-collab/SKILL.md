@@ -9,7 +9,11 @@ Aviv works like a PI. We iterate on data, figures, tables and methods until the 
 sense. He does not review code. A final written report is a separate, later step, not part of
 this loop.
 
-**Mandatory:** use the `presenting-results` skill for everything you show in this loop.
+**Two ways to present results to Aviv:**
+- Inline in the chat, while we iterate: the `presenting-results` skill (mandatory for
+  everything you show in this loop).
+- A local HTML report per notebook or script, with all its results, for review at any time:
+  the `research-collab-report` skill. Build it when Aviv asks.
 
 **Project setup:** the project instructions (AGENTS.md, CLAUDE.md) say where specs, analysis
 code, scripts and run configs go, and which project skills to use for them. Follow them. If
@@ -79,6 +83,8 @@ Never open a PR unless explicitly asked.
 - Present results one at a time, or in small groups, in the order of the spec
   (`presenting-results`).
 - Look at the figures yourself and present observations.
+- Build a report of a notebook or script (`research-collab-report`). After you
+  change and re-run a notebook or script that has a report, offer to update the report.
 - Do not present conclusions. Ask Aviv for his conclusion, discuss it, challenge it, and
   find a consensus.
 - Aviv's feedback decides the next step: another figure, a change to the method, back to the

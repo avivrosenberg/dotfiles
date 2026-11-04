@@ -15,7 +15,8 @@ tables or diagrams, with short text. Use text alone only when a visual adds noth
 - The file must be inside a folder of the current session, or Aviv can't open it. If it is
   not, add the folder to the session first.
 - Put each figure directly below the text it supports.
-- Do not use file cards or Artifacts for results, unless Aviv asks.
+- Do not use file cards or published Artifacts for results, unless Aviv asks. For one view of
+  all the results of a notebook or script, use `research-collab-report`.
 - Save figures in the project's output folder (the project instructions say where), not in a
   temporary folder.
 - Follow the `self-explanatory-figures` skill. Render each figure and look at it before you
