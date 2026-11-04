@@ -98,31 +98,30 @@ Default outline:
 
 ## Step block
 
-Use this shape as a guideline for each step. Drop or reshape parts that do not apply (for
-example, a sanity check usually needs no expectation, and a step with two related figures can
-share one "Why" and one "How").
+Core parts of each step:
 
 - **Heading:** a number and the question or check, for example `# 1. Can we trust the
-  embeddings?` (no "Step" word). Grouped sections use H2 with the same numbering. The numbers
-  let the conclusions refer to sections ("section 2").
+  embeddings?` (no "Step" word). Grouped sections use H2 with the same numbering, so the
+  conclusions can refer to sections ("section 2").
 - **Why:** 1-2 lines. What this result probes, and how it helps answer the main question.
-- **Expectation:** what we expect to see if the model or hypothesis is true. Write it before the
-  figure, so the reader can see if the result is a surprise.
-- **How:** 1-2 sentences in the main flow. The method in simple words, with the one equation
-  that the reader needs to understand the result.
-- **Methods** toggle, directly after the "How" sentence: the full methods of this step (see
-  "Methods" below). Never move it to a sub-page: Aviv opens it live when asked how a result
-  was made. The same applies to slides (one claim per slide; title = the claim). Agree on the
-  structure with Aviv before figure edits.
+- **How:** 1-2 sentences in simple words, with the one equation the reader needs. Directly
+  after it, the **Methods** toggle with the full methods of the step (see "Methods"). Never move
+  it to a sub-page: Aviv opens it live when asked how a result was made.
 - **Figure(s) or table(s).** Directly below each figure: **How to interpret** (axes, colors,
   what one point or curve is, what "good" looks like). For a table: what each column means, and
   the rule for bold values.
-- **Observations:** facts only, short and focused. Highlight the few most important facts; do
-  not describe everything in the figure or table. Give a number only when it adds clarity
-  beyond what the figure or table already shows.
-- **Conclusion** (local): what this result means for the step question, as agreed with Aviv
-  (see "Conclusions are Aviv's" in `SKILL.md`). Mark hypotheses.
-- **Flag marker** (if the section has open flags), as the last line (see "Flag markers").
+- **Observations:** facts only. The few most important ones, with numbers only where they add
+  to the figure or table.
+
+Add when they apply:
+
+- **Expectation** (before the figure): what we expect if the hypothesis is true, from the
+  spec's predictions, so the reader can see a surprise. Usually not needed for a sanity check.
+- **Conclusion** (local): as agreed with Aviv (see "Conclusions are Aviv's" in `SKILL.md`).
+  Mark hypotheses.
+- **Flag marker:** the last line, if the section has open flags (see "Flag markers").
+
+Two related figures can share one "Why" and one "How".
 
 ## Methods
 
@@ -194,6 +193,8 @@ Use them to make the page less dense and the main flow short:
 
 - ASD-STE100: short sentences, simple words, active voice, bullets over prose.
 - No em or en dashes. Use keyboard characters only.
+- Verb strength matches the evidence: "reduces", not "removes"; "is consistent with", not
+  "shows", when other explanations are open; "no change beyond noise", not "no effect".
 - Numbers: give units, and the noise floor or null next to a difference. Say "within noise"
   when it is.
 - Use the code names of metrics and variables in `backticks`, and define each one where it
