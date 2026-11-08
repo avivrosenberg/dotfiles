@@ -39,7 +39,8 @@ the project records. Otherwise write "Conclusion: not yet discussed".
 4. **Look at every figure** and note what it shows before you read the notebook markdown.
 5. **Write** the report with `report.md`. Check before you finish: each step has its Methods
    toggle with the full checklist (or "n/a"), each symbol defined, each equation linked to its
-   function, each figure with "How to interpret".
+   function, each figure with "How to interpret", each non-trivial method with its diagram
+   (reused from `out/diagrams/`, or made now and saved there).
 6. **Index:** create or update `index.html` with `index.md`.
 7. **Check the render once** in the browser pane (light and dark): every image loads, math
    renders, toggles and tabs work, links between pages work, nothing overlaps. Make one pass of

@@ -56,6 +56,10 @@ Core parts:
 - **How:** 1-2 sentences in simple words, with the one equation the reader needs. Directly
   after it, the **Methods** toggle with the full methods of the step (see "Methods"). Aviv opens
   it when he asks how a result was made.
+- **Method diagram** (when the step uses a non-trivial method): the diagram of the idea, from
+  `<analysis>/out/diagrams/` (inputs, steps, output, what the key quantity measures). Directly
+  after "How". If none exists, make it (`presenting-results`: style and file rules), save it
+  there, and tell Aviv. Presentations reuse it.
 - **Figure(s) or table(s).** Caption: one line on what it shows. Directly below:
   **How to interpret** (axes, colors, what one point or curve is, what "good" or "no effect"
   looks like). For a table: what each column means, and the rule for bold values.
@@ -133,7 +137,8 @@ A long Methods toggle is fine: use the toggle for length, not for less detail.
   axis units, named statistics and legends, use `self-explanatory-figures`; it wins where the
   two disagree.
 - **Diagrams** (a method, a pipeline, a data split): inline SVG, with the `artifact-diagramming`
-  skill. Static PNG figures from the analysis code follow `self-explanatory-figures`.
+  skill. Reuse the SVG files of `<analysis>/out/diagrams/` (inline the file). A diagram that is
+  missing is made once, saved there, and then used. Static PNG figures from the analysis code follow `self-explanatory-figures`.
 
 ## Writing rules
 
