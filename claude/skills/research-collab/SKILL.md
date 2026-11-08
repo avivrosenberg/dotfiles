@@ -58,7 +58,7 @@ instructions give.
 - Iterate with Aviv until he approves it. Record the approval in the spec frontmatter
   (`status: approved YYYY-MM-DD`).
 - **Socratic option.** If the spec has a core method that is interesting to implement, offer
-  Aviv the Socratic collaboration of the global CLAUDE.md in one line. Default in this loop: skip.
+  Aviv the Socratic collaboration (`socratic-collab` skill) in one line. Default in this loop: skip.
 
 ## 3. Implement
 
