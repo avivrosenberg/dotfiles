@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DECK NAME</title>
+<!-- reveal.js (library, not custom code). Version pinned; cdnjs only. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/6.0.2/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/6.0.2/theme/white.min.css">
+<style>
+/* Theme tokens only: the reveal.js theme variables, light and dark (follows the system). */
+:root {
+  --r-background-color: #f7f8f7; --r-main-color: #1b2220; --r-heading-color: #1b2220;
+  --r-link-color: #1f6f6a; --r-link-color-hover: #14504c; --r-selection-background-color: #e2efed;
+  --r-main-font: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --r-heading-font: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --r-code-font: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --r-main-font-size: 28px; --r-heading-text-transform: none; --r-heading-font-weight: 600;
+  --muted: #5b6763; --rule: #d5dcd9; --warn-bg: #fbf3dc; --warn-rule: #b8860b;
+  --info-bg: #e7eff8; --info-rule: #2f6db0; --accent-soft: #e2efed;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --r-background-color: #121615; --r-main-color: #e3e8e6; --r-heading-color: #e3e8e6;
+    --r-link-color: #6cc3bb; --r-link-color-hover: #9adbd5; --r-selection-background-color: #1d2f2d;
+    --muted: #9aa7a3; --rule: #2f3936; --warn-bg: #2f2814; --warn-rule: #d9b04a;
+    --info-bg: #17243a; --info-rule: #6fa3e0; --accent-soft: #1d2f2d;
+  }
+}
+.reveal { text-align: left; }
+.reveal h1, .reveal h2 { font-size: 1.5em; line-height: 1.2; margin: 0 0 0.4em; text-wrap: balance; }
+.reveal h3 { font-size: 1.1em; }
+.reveal section { text-align: left; }
+.reveal .read { color: var(--muted); font-size: 0.75em; margin: 0.2em 0 0.5em; }
+.reveal ul { margin: 0.3em 0; }
+.reveal li { margin: 0.2em 0; }
+.reveal figure { margin: 0.3em 0; text-align: center; }
+.reveal figure img { max-height: 400px; max-width: 100%; margin: 0; background: #fff; border: 1px solid var(--rule);
+                     border-radius: 6px; box-shadow: none; }
+.reveal figcaption { color: var(--muted); font-size: 0.7em; margin-top: 0.2em; }
+.reveal .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.reveal .columns figure img { max-height: 340px; }
+.reveal .callout { border-left: 4px solid var(--info-rule); background: var(--info-bg); padding: 0.4em 0.8em;
+                   border-radius: 4px; font-size: 0.85em; }
+.reveal .callout.warn { border-color: var(--warn-rule); background: var(--warn-bg); }
+.reveal .tag { font-size: 0.45em; padding: 0.05em 0.6em; border-radius: 99px; background: var(--warn-bg);
+               border: 1px solid var(--warn-rule); vertical-align: middle; margin-left: 0.5em; font-family: var(--r-main-font); }
+.reveal table { font-size: 0.8em; border-collapse: collapse; }
+.reveal th, .reveal td { border-bottom: 1px solid var(--rule); padding: 0.25em 0.8em; text-align: left; }
+.reveal th { background: var(--accent-soft); }
+/* Methods sub-slides: press Down. Smaller text, a label, left-aligned. */
+.reveal section.methods { font-size: 0.8em; }
+.reveal section.methods::before { content: "Methods"; display: inline-block; font-size: 0.7em; font-weight: 600;
+  color: var(--r-link-color); border: 1px solid var(--rule); border-radius: 4px; padding: 0 0.6em; margin-bottom: 0.4em; }
+.reveal section.methods h2 { font-size: 1.2em; }
+.reveal code { background: var(--accent-soft); padding: 0.05em 0.3em; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Rules: slides.md and format-html.md.
+     One <section> = one slide. A slide with Methods is a stack: an outer <section> that holds
+     the slide and its Methods sub-slides (reached with the Down key). -->
+
+<section>
+  <h1>DECK NAME</h1>
+  <p class="read">Audience, date, author</p>
+  <p class="read">Status: work in progress (delete this line if the work is finished)</p>
+</section>
+
+<section>
+  <section id="example">
+    <h2>Main finding as a sentence</h2>
+    <p class="read">How to read it: axes, marks, what "no effect" looks like.</p>
+    <figure>
+      <img src="../out/figures/example/figure.png" alt="What the figure shows">
+      <figcaption>One-line caption.</figcaption>
+    </figure>
+    <ul>
+      <li>Observation with a number.</li>
+      <li>Observation with a number.</li>
+    </ul>
+  </section>
+  <section class="methods">
+    <h2>Methods: main finding (short title)</h2>
+    <p><b>Data:</b> ... <b>Processing:</b> ... </p>
+    <p><b>Math:</b> $x_i = \ldots$, with $x_i$ ...</p>
+    <p><b>Code:</b> <code>module.py:function</code>. Source: report 020, step 2.</p>
+  </section>
+  <!-- Long Methods: more <section class="methods"> sub-slides, titled "Methods (2/3): ...". -->
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/6.0.2/reveal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/6.0.2/plugin/math.min.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280, height: 720, margin: 0.04, center: false, hash: true,
+    slideNumber: 'c/t', controls: true, progress: true, transition: 'none',
+    mathjax3: { mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js' },
+    plugins: [RevealMath.MathJax3],
+  });
+</script>
+</body>
+</html>
