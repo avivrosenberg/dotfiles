@@ -52,7 +52,7 @@ exact methods and to scrutinize the results, so the methods must be complete and
   steps, methods, how-to-interpret texts and observations. A sub-page regroups them by
   experiment question. Check them against the current code (provenance SHAs) before you use
   them.
-- **Repo conventions:** the "project-hub" section of each analysis repo's `CLAUDE.local.md`:
+- **Repo conventions:** the "Analysis reports" section of each analysis repo's `CLAUDE.local.md`:
   analysis and figure folders, notebook format, runs and their metrics, other repos to record
   SHAs for, extra methods-checklist items. If a repo has no such section, infer the conventions
   from the repo, confirm them with Aviv before the first Notion write, then propose to add them.

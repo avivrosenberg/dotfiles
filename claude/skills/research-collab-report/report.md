@@ -76,7 +76,7 @@ The Methods toggle of each step holds all the details needed to do the analysis 
 from the code, not from the notebook markdown. If the code does not show a detail, write
 "unknown" and ask Aviv. Never guess.
 
-**Checklist** (each item, or "n/a"; the repo conventions in `CLAUDE.local.md` can add items):
+**Checklist** (each item, or "n/a"; the "Analysis reports" section of the repo's `CLAUDE.local.md` can add items):
 - **Data:**
   - the runs: their ids, and the checkpoint or epoch;
   - the split (train / val / test);
@@ -108,6 +108,8 @@ A long Methods toggle is fine: use the toggle for length, not for less detail.
 - One HTML file per page, a complete document (`<!doctype html>`, `<title>`, inline
   `<style>`). Plain HTML and CSS, readable width, a sticky or top table of contents for long
   pages. Utilitarian treatment: polished type and spacing, no hero, no decoration.
+- **Font size:** base 18px on `html`; every other size in `rem` (body 1rem, captions and
+  tables not below 0.86rem). Shared styles in `reports/assets/report.css`.
 - **Publish-ready by default.** Follow the Artifact page contract where it costs nothing, so a
   page can be published later with no rewrite: colors as tokens on `:root` with the two dark-mode
   blocks and an explicit `body` background, a 16px side gutter, wide tables in their own

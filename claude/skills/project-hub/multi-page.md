@@ -15,7 +15,7 @@ main agent coordinates, and each sub-page gets its own sub-agent with a clean co
     page, steps 1 to 6, and not to edit the hub;
   - the page URL (or "new page under the hub", with the hub id), the analysis folder, the
     notebooks, the repos and the SHAs to diff from, and the repo conventions (the
-    "project-hub" section of each `CLAUDE.local.md`, word for word);
+    "Analysis reports" section of each `CLAUDE.local.md`);
   - the hub questions that this page answers (their text and current answer), and the
     Review page URL if it exists;
   - Aviv's request for this page, word for word;

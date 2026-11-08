@@ -29,20 +29,22 @@ the project records. Otherwise write "Conclusion: not yet discussed".
 
 ## Build a report
 
-1. **Inputs:** the spec (question, predictions, method intent), the notebook or script and the
+1. **Repo conventions:** the "Analysis reports" section of the repo's `CLAUDE.local.md` (shared
+   code, versions to record, extra Methods items). If it is missing, ask Aviv.
+2. **Inputs:** the spec (question, predictions, method intent), the notebook or script and the
    modules it imports, its saved figures and tables, its printed outputs, the runs, and the git
    SHA of each repo (plus uncommitted changes). The code is the source of truth for the methods.
-2. **Check the inputs:** outputs missing or older than their code, partial runs, WIP results.
+3. **Check the inputs:** outputs missing or older than their code, partial runs, WIP results.
    Tell Aviv; WIP results stay off the page.
-3. **Look at every figure** and note what it shows before you read the notebook markdown.
-4. **Write** the report with `report.md`. Check before you finish: each step has its Methods
+4. **Look at every figure** and note what it shows before you read the notebook markdown.
+5. **Write** the report with `report.md`. Check before you finish: each step has its Methods
    toggle with the full checklist (or "n/a"), each symbol defined, each equation linked to its
    function, each figure with "How to interpret".
-5. **Index:** create or update `index.html` with `index.md`.
-6. **Check the render once** in the browser pane (light and dark): every image loads, math
+6. **Index:** create or update `index.html` with `index.md`.
+7. **Check the render once** in the browser pane (light and dark): every image loads, math
    renders, toggles and tabs work, links between pages work, nothing overlaps. Make one pass of
    fixes; do not loop.
-7. **Tell Aviv** the path, and the open questions for him (unknown method details, steps with no
+8. **Tell Aviv** the path, and the open questions for him (unknown method details, steps with no
    agreed conclusion).
 
 ## Update a report

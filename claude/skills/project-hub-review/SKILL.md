@@ -50,7 +50,7 @@ but with less evidence or a smaller effect), `minor` (no conclusion changes).
 - Fetch the hub and every sub-page (all of them, also outside the scope).
 - Fetch the Review page if the hub has one. Load its open flags, closed flags and the code
   version of the last run.
-- Read the sources in the hub provenance line, and the "project-hub" section of the
+- Read the sources in the hub provenance line, and the "Analysis reports" section of the
   `CLAUDE.local.md` of each analysis repo. If a repo has no such section, find the analysis
   and figure folders from the repo, and tell Aviv. Put that section in each subagent brief.
 - From each sub-page provenance line, get the notebooks and the repos with their SHAs. Map each
