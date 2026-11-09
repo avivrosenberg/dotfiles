@@ -29,7 +29,11 @@ rules below to every figure, then render it and look at it.
 1. **Descriptive title.** Give the metric, the data and the model (or method).
    - Good: "task decoding accuracy per recording device (test segments)".
    - Bad: "t", "scores", "game_id".
-   - Put method details that do not fit in the title in a second title line or a suptitle.
+   - Format: the figure title is bold, left-aligned, in a larger font (about 14 pt), and says what
+     is shown. Panel titles stay small.
+   - Below it, 1-2 short plain (not bold) lines say how to read the figure (what a marker
+     position, a color or 0 means). The title and these lines have no conclusions and no
+     observations. Never use the words "how to interpret". Keep them concise.
 
 2. **Units on every axis.** Every axis label gives the quantity and its unit or range.
    - Examples: "age (years)", "share of sessions (0-1)", "Cohen's d (pooled SD units)",
@@ -103,12 +107,26 @@ handles = [
 ]
 ```
 
+Bold left title and 1-2 reading lines above all axes (call after `fig.tight_layout()`):
+
+```python
+inv = fig.transFigure.inverted()
+x0 = min(ax.get_position().x0 for ax in fig.axes)  # leftmost axes edge
+y1 = max(ax.get_tightbbox().transformed(inv).y1 for ax in fig.axes)  # top, with panel titles
+sub = fig.text(x0, y1 + 0.02, "How the marks read.\nSecond line.", ha="left", va="bottom", fontsize=9)
+sub_top = sub.get_window_extent().transformed(inv).y1
+fig.text(x0, sub_top + 0.01, "What is shown", ha="left", va="bottom", fontsize=14,
+         fontweight="bold")
+fig.savefig(path, dpi=110, bbox_inches="tight")
+```
+
 When a module draws many figures, keep the shared texts (the definition of a statistic, the CI
 text, the meaning of bold labels) as constants, so all figures use the same words.
 
 ## Checklist (before you show a figure)
 
 - Title: metric, data, model or method.
+- Title bold, left, about 14 pt; 1-2 plain lines below say how to read the figure; no conclusions.
 - Each axis: quantity and unit (or range); categorical axes labeled.
 - No bare symbol; each statistic named and defined.
 - Each interval named, with its method.

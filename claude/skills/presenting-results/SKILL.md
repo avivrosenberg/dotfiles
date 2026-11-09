@@ -21,6 +21,8 @@ tables or diagrams, with short text. Use text alone only when a visual adds noth
   temporary folder.
 - Follow the `self-explanatory-figures` skill. Render each figure and look at it before you
   show it.
+- Figure title: bold, left-aligned, about 14 pt, says what is shown, with 1-2 plain lines below
+  on how to read it and no conclusions (rule 1 of `self-explanatory-figures`).
 
 ## Tables
 
