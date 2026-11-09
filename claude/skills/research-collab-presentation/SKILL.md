@@ -75,8 +75,8 @@ wants them to decide or think. To support this, show the inventory as a compact 
 per result, no ranking, no proposed order). Do not suggest a message.
 
 ### 4. Refine together
-Work from his sentences. Challenge them (is it supported by the inventory, what would a skeptic
-ask, what is the strongest alternative explanation, is it one message or two). Check
+Work from his sentences. Challenge them (is it supported by the inventory, what would the
+audience ask, is it one message or two). Check
 which results are key evidence. Show where the inventory has no support for a sentence,
 and where it has strong results that his sentences leave out. Iterate until he says the
 framing is right.

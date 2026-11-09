@@ -35,7 +35,9 @@ Do not write navigation or toggle code. If a need is not met, use a reveal.js op
 Parts of a result slide: `<h2>` (the finding), `<p class="read">` (how to read it), `<figure>`
 (`<img>` and `<figcaption>`), `<ul>` (observations).
 
-- Math: `$...$` inline, `$$...$$` blocks (reveal.js math plugin, MathJax 3, pinned).
+- Math: `$...$` inline for small expressions and symbols, `$$...$$` blocks for larger equations
+  (reveal.js math plugin, MathJax 3, pinned). Method content: `slides.md`, "Layout of method
+  content" (bullets, not dense, consistent with the figure).
 - Two figures to compare: `<div class="columns">` with two `<figure>`.
 - Callouts: `<div class="callout">` (blue) or `<div class="callout warn">` (caveat).
 - "Preliminary": `<span class="tag">Preliminary</span>` in the `<h2>`, reason in the `read` line.

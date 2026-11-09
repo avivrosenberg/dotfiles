@@ -16,13 +16,17 @@ Format-agnostic. The format files (`format-notion.md`, `format-html.md`) say how
 
 ## Result slide
 
-- **Title = the main finding**, as a sentence, with the key number when short. Use the verb
-  strength of the evidence ("reduces", "is consistent with", "no clear difference"). Not a
-  topic. Exceptions: title block, data slide, method slides.
+- **Title = the main finding, short.** A claim in one concise line (about 4-10 words), with no
+  full details and no exact metric values. Example: "Headset 4980 decodes games worse than the
+  rest", not "Headset 4980 game balanced accuracy is 0.41 vs 0.58 pooled (q = 0.003)". The slide
+  body holds the details. Use the verb strength of the evidence ("reduces", "is consistent with",
+  "no clear difference"). Not a topic. Exceptions: title block, data slide, method slides.
 - **One main visual:** a figure. Two only if the audience must compare them (side by side).
   Variants of one figure (per game, per headset) go in tabs or in backup.
 - One gray line: how to read it (axes, marks, what "no effect" looks like).
-- 2-4 short bullets: facts with numbers, and the claim of the title. No figure description.
+- 2-4 bullets, **very short** (a few words to one short line each). Give the key values, not all
+  of them: the figure and the Methods hold the rest. No figure description, no full sentences
+  of explanation.
 - **Methods** (out of sight until needed: a toggle in Notion, vertical sub-slides in HTML): see below.
 - Text is short. Detail goes in the Methods section.
 
@@ -41,8 +45,8 @@ slide and, if no figure fits, on the summary slide. No text-only slide.
   Only the shared data. Subsets and filters of one result go in that slide's Methods section.
   The level (`planning.md`) sets the detail.
 - **Summary:** a diagram "How the results fit together" (claims in order, caveats marked), the
-  conclusions (numbered, each names its slide), the caveats with the strongest case against the
-  main claim, and the next step. No new results.
+  conclusions (numbered, each names its slide), the caveats (the real limits of the
+  results, not a rebuttal of the main claim), and the next step. No new results.
 - **Method slide:** title says what the method does for this study ("MMD compares two embedding
   distributions without assuming a shape"). A diagram of the idea, 2-4 bullets, the one equation
   the audience needs (not for the high-level level), and a Methods section with the full math.
@@ -67,6 +71,26 @@ Notion toggle), each short enough to read without scrolling. Source: code and re
 
 Data subsets and nuances that the audience does not need to read the result go here, not on the
 slide. Link the source report step in each Methods section.
+
+### Layout of method content (method slides and Methods)
+
+Applies to method slides and to every Methods part, at all levels.
+- **Not dense.** Each slide or sub-slide has one idea. Rough limit: 5-6 bullets, 1-2 block
+  equations. More content: split into several sub-slides (HTML) or sub-headings (Notion).
+- **Bullets, not paragraphs.** Short bullets, one fact each (data, step, parameter, test). Use
+  a small table only for parameter values or counts.
+- **Math:** a block equation (`$$...$$`) for every equation of more than a few symbols, with the
+  symbols defined in short bullets right below it. Inline math only for small expressions
+  and single symbols (`$n$`, `$\lambda$`, `$x_i$`). One block equation per idea; split a long
+  derivation over several lines or sub-slides.
+- **Consistent with the method figure.** If the slide or the Methods has a method diagram:
+  - same symbols, names and step order in the text and equations as in the diagram;
+  - each step of the diagram appears in the text, and each equation maps to a box or arrow of
+    the diagram (say which, e.g. "step 2");
+  - same wording for the same thing (not "embedding" in one and "representation" in the other).
+  If they disagree, fix the diagram or the text (a simplified `slide-` diagram copy is allowed).
+    Tell Aviv if the report diagram itself is wrong.
+  - Math should be explained in words too, not only in symbols. An example helps.
 
 ## Figures
 
@@ -102,7 +126,8 @@ slide. Link the source report step in each Methods section.
   connect", "Conclusions", "Caveats", "Next steps". The same holds for the Methods sections.
 - Define each term at its first use in the deck. Spell out acronyms once.
 - Metric code names in `backticks` only in Methods sections, and only at research-team level.
-- Numbers have units, and the noise floor or null next to a difference.
+- Numbers have units. Key values are enough; do not list every number. Put the noise floor or
+  null next to a difference when it matters to read it.
 
 ## Checks before you write
 
@@ -112,4 +137,6 @@ slide. Link the source report step in each Methods section.
 3. The findings slide, the result titles and the summary say the same, in the same order.
 4. Every term and acronym is defined before use. No planning words.
 5. Each figure and diagram was looked at at slide size.
-6. The format file's checks.
+6. Method content: not dense, bullets, block equations for large math, consistent with the
+   method figure (symbols, names, step order).
+7. The format file's checks.

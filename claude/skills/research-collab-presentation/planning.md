@@ -9,8 +9,8 @@ high-level first part.
 
 | Level | Audience | Slides (no backup) | On the slide | Methods section | Method slides |
 |---|---|---|---|---|---|
-| **High-level** | Management, clinical or product people, other teams without ML background | 5-8 | Plain words, no equations, no metric names. One number per claim. | Short, in plain words: what data, what was compared, how sure. Full details in backup or a linked report. | Rare: one simple picture of the idea |
-| **Technical** | Engineers and scientists outside this project | 8-12 | Terms defined at first use. Key numbers with CIs. | Method in brief, key equation, data subset, counts | When a method is needed to read a result |
+| **High-level** | Management, clinical or product people, other teams without ML background | 5-8 | Plain words, no equations, no metric names. At most one key number per claim. | Short, in plain words: what data, what was compared, how sure. Full details in backup or a linked report. | Rare: one simple picture of the idea |
+| **Technical** | Engineers and scientists outside this project | 8-12 | Terms defined at first use. Key numbers, CIs only where they matter. | Method in brief, key equation, data subset, counts | When a method is needed to read a result |
 | **Research team** | The team that works on the models and data | 10-15, up to 20 for a long review | Metric names, effect sizes, noise floors, caveats on the slide | Full: all of the Methods checklist, math, code pointers, exact data and filters | When a method is new to the team or the result is meaningless without it |
 
 The level decides:
@@ -36,7 +36,7 @@ what is not, the next test. That is valid.
 Refine with Aviv (step 4). Questions that help him think:
 - Is this one message or two? Which one is the talk about?
 - What does the audience believe now, and what changes?
-- What is the strongest alternative explanation, and which result removes it?
+- Which result removes the alternative explanation the audience will think of?
 - Which result would you drop if you had half the time?
 - Which of these sentences does the data not yet support?
 
@@ -106,9 +106,8 @@ Message (Aviv's words, refined): <2-3 sentences>
 Methods section depth: <per level>
 Left out (and why): ...        Preliminary / WIP: ...
 Missing for the message: ...   Diagrams to make: ...
-Strongest case against the main claim: ...
 Questions for you: ...
 ```
 
-Mark any title that goes beyond the agreed conclusions in the reports "(new claim)". Aviv's OK
+Titles are short claims (`slides.md`). Mark any title that goes beyond the agreed conclusions in the reports "(new claim)". Aviv's OK
 of the outline covers them.
