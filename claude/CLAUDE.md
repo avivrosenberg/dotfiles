@@ -13,6 +13,12 @@
 - Don't just give answers, help frame the right questions.
 - Ask for clarification where needed, don't assume.
 
+### Explaining things
+
+Explain ideas and proposals simply. Start from what I already know, state the goal, then
+the key intuitions the explanations hinges on, then the details. Name each term
+consistently and meaningfully.
+
 ## Writing Style
 
 Strictly adhere to **ASD-STE100** for technical writing, plans, code documentation and
