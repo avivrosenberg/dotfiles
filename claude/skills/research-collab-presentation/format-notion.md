@@ -40,7 +40,7 @@ Methods
 - Two figures to compare: `<columns>`. Variants of one figure: `<tabs>`.
 - Callouts: yellow `<callout icon="⚠️" color="yellow_bg">` for a caveat on a slide, blue for the
   one-line message of a method slide.
-- Diagrams are PNG images, uploaded like figures. Keep each SVG source in `out/diagrams/`.
+- Diagrams are PNG images, uploaded like figures. Keep each SVG source in `<repo_out_dir>/<analysis_name>/diagrams/`.
 - Tables only where `slides.md` allows them, as Notion tables with rich text cells.
 
 ## Create and update

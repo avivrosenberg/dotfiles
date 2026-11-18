@@ -45,8 +45,8 @@ Goal: converge on the idea with Aviv. He decides; you suggest and challenge.
   - Exploration scripts go in an analysis or scripts folder in the project repo. Aviv
     names the analysis; ask if he did not.
 - Explain how a method works with a diagram or a small synthetic example, not only text.
-  Once Aviv accepts a method diagram, save it as SVG and PNG in `<analysis>/out/diagrams/`
-  (`presenting-results`). The report and later presentations reuse it.
+  Once Aviv accepts a method diagram, save it as SVG and PNG in `<repo_out_dir>/<analysis_name>/diagrams/`
+  (`presenting-results`). The report and later presentations reuse it. `<repo_out_dir>` is the output root of the repo.
 - Do not write the spec until Aviv says we converged.
 
 ## 2. Spec
@@ -75,7 +75,7 @@ Can run in a new session from the spec.
 4. Method explainers: where the method allows it and it is not trivial, add synthetic
    data or theoretical results that show how the method works and how it fails. Put them
    in separate method notebooks, not in the main analysis. These should produce visuals.
-   Each non-trivial method must have a method diagram in `<analysis>/out/diagrams/` (SVG and
+   Each non-trivial method must have a method diagram in `<repo_out_dir>/<analysis_name>/diagrams/` (SVG and
    PNG) by the end of this step. Make the missing ones now.
 5. Implementation should write all result figures and tables to files, even when they
    are generated in notebooks.

@@ -19,12 +19,14 @@ the project records. Otherwise write "Conclusion: not yet discussed".
 ## Files
 
 - Location: the reports folder that the project instructions give. Default:
-  `<analysis folder>/reports/`. Not in git: if the analysis `.gitignore` does not list
-  `reports/`, add it.
+  `<repo_out_dir>/<analysis_name>/reports/`. Not in git (`<repo_out_dir>` is ignored).
+  `<repo_out_dir>` is the output root of the repo (brain-bugs: `out/analyses/`, the constant
+  `ANALYSES_OUT_DIR`, a git-ignored folder shared by all worktrees; in the code of an
+  analysis use `BASE_OUT_DIR` from its `consts.py`).
 - One report per notebook or script: `reports/<notebook or script name>.html`.
 - One index per analysis: `reports/index.html`.
 - Shared CSS and JS, if any: `reports/assets/`.
-- Figures: relative links to the saved files (e.g. `../out/figures/020-gap/fig.png`). Do not
+- Figures: relative links to the saved files (e.g. `../figures/020-gap/fig.png`). Do not
   copy or embed them. Tables: built from the saved CSV files or the notebook outputs.
 
 ## Build a report
@@ -40,7 +42,7 @@ the project records. Otherwise write "Conclusion: not yet discussed".
 5. **Write** the report with `report.md`. Check before you finish: each step has its Methods
    toggle with the full checklist (or "n/a"), each symbol defined, each equation linked to its
    function, each figure with "How to interpret", each non-trivial method with its diagram
-   (reused from `out/diagrams/`, or made now and saved there).
+   (reused from `<repo_out_dir>/<analysis_name>/diagrams/`, or made now and saved there).
 6. **Index:** create or update `index.html` with `index.md`.
 7. **Check the render once** in the browser pane (light and dark): every image loads, math
    renders, toggles and tabs work, links between pages work, nothing overlaps. Make one pass of

@@ -104,12 +104,12 @@ Applies to method slides and to every Methods part, at all levels.
 ## Diagrams
 
 - **Reuse first.** Method diagrams are made in the `research-collab` or `research-collab-report`
-  stage and live in `<analysis>/out/diagrams/<name>.svg` (and `.png`). Use them. If a diagram
+  stage and live in `<repo_out_dir>/<analysis_name>/diagrams/<name>.svg` (and `.png`). Use them. If a diagram
   exists but is too detailed or too small for a slide, make a simplified copy with a `slide-`
   prefix.
 - **Missing:** make it. Rules for the diagram, same as in the reports: inputs, steps, output,
   what the key quantity measures; a tiny synthetic example when it helps; not a code
-  flowchart. Save as SVG in `out/diagrams/`, convert to PNG
+  flowchart. Save as SVG in `<repo_out_dir>/<analysis_name>/diagrams/`, convert to PNG
   (`rsvg-convert -w 1800 in.svg -o out.png`), look at the PNG. Tell Aviv a diagram was
   made here, and offer to add it to the report.
 - Needed on: method slides, each complex method, and the fixed slides (context, findings,

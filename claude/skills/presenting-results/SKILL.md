@@ -43,7 +43,7 @@ a data split, a study design, or how the parts of a plan fit together.
 - Synthetic examples (data with known ground truth) explain a method well. Make them as figures
   in a separate method notebook.
 - **Method diagrams are saved by default.** Each diagram that explains a non-trivial method of the
-  project is also saved as `<analysis>/out/diagrams/<name>.svg`, plus a PNG
+  project is also saved as `<repo_out_dir>/<analysis_name>/diagrams/<name>.svg`, plus a PNG
   (`rsvg-convert -w 1800 in.svg -o out.png`). Reports and presentations reuse these files. Style:
   white rounded background, dark text, at least 14 px at 900 px width, one idea per diagram.
 

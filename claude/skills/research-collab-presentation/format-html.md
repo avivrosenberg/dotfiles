@@ -9,10 +9,10 @@ Do not write navigation or toggle code. If a need is not met, use a reveal.js op
 
 ## Files
 
-- Location: `<analysis folder>/decks/<deck name>.html` (project instructions can override). Not in
-  git: if the analysis `.gitignore` does not list `decks/`, add it.
-- Figures and diagrams: relative links to the saved files (`../out/figures/...`,
-  `../out/diagrams/...`). Do not copy them.
+- Location: `<repo_out_dir>/<analysis_name>/decks/<deck name>.html` (project instructions can override). Not in
+  git (`<repo_out_dir>` is ignored).
+- Figures and diagrams: relative links to the saved files (`../figures/...`,
+  `../diagrams/...`). Do not copy them.
 - **Share as one file:** `python3 -I "<skill dir>/scripts/bundle_html.py" deck.html deck-standalone.html`
   inlines every local image as a data URI (refuses a result above 16 MB). The libraries still
   load from cdnjs, so the viewer needs internet.

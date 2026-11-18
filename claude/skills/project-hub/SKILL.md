@@ -48,7 +48,7 @@ exact methods and to scrutinize the results, so the methods must be complete and
   the first source for the question, the hypotheses and predictions (the "Expectation" of each
   step) and the method intent. The code is the source of truth for what was done.
 - **Reports:** the local `research-collab-report` pages of the analysis, if they exist
-  (`reports/index.html` and one per notebook or script). They are the first source for the
+  (`<repo_out_dir>/<analysis_name>/reports/index.html` and one per notebook or script). They are the first source for the
   steps, methods, how-to-interpret texts and observations. A sub-page regroups them by
   experiment question. Check them against the current code (provenance SHAs) before you use
   them.

@@ -33,11 +33,11 @@ subset of its results. The reports hold everything; the deck holds only what the
 
 ## Inputs
 
-- The analysis index (`reports/index.html`) and the reports it links: first source for results,
+- The analysis index (`<repo_out_dir>/<analysis_name>/reports/index.html`) and the reports it links: first source for results,
   figures, methods, diagrams and agreed conclusions. Each report has provenance SHAs.
 - The hub in Notion and its sub-pages, if they exist (`project-hub`).
 - The spec and the project note in the agent vault (motivation, decisions, who asked).
-- Method diagrams: `<analysis>/out/diagrams/*.svg`, made in the `research-collab` or
+- Method diagrams: `<repo_out_dir>/<analysis_name>/diagrams/*.svg`, made in the `research-collab` or
   `research-collab-report` stage. Reuse them.
   - A method that needs a diagram and has none: make it now (`slides.md`, "Diagrams").
 - Repo conventions: "Analysis reports" in the repo `CLAUDE.local.md`.

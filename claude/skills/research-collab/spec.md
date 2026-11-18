@@ -38,7 +38,7 @@ status: draft | approved YYYY-MM-DD
 ## Validation
 - Known-answer checks (synthetic data with ground truth, positive and negative controls).
 - Method explainer figures, if the method is not trivial.
-- Method diagrams: one per non-trivial method, saved as SVG and PNG in `out/diagrams/`.
+- Method diagrams: one per non-trivial method, saved as SVG and PNG in `<repo_out_dir>/<analysis_name>/diagrams/`.
 
 ## Outputs
 Numbered list, in the order of the results review. For each:
