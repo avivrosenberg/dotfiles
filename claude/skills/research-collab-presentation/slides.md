@@ -4,20 +4,26 @@ Format-agnostic. The format files (`format-notion.md`, `format-html.md`) say how
 
 ## Deck order
 
+The slides are grouped in the sections of the approved outline (`planning.md`). Order by
+dependency: define a thing before you use it. A method or a reference space that was built for
+this study counts as a result: show it before the results that use it.
+
 1. **Title block:** audience, date, author, status ("Work in progress" if so). Nothing else.
 2. **Motivation and goal.**
 3. **Main findings.**
 4. **Data.**
 5. **Result slides and method slides**, in the approved order.
-6. **Summary:** conclusions and caveats. For work in progress: known, unknown, next, and the
+6. **Summary:** observations and caveats. Conclusions and next steps only as Aviv stated them
+   (no placeholders). For work in progress: known, unknown, next, and the
    feedback or decision wanted.
 7. **Backup:** results left out (title, figure, one line each), other findings, provenance
    (reports and SHAs, runs, data snapshot, date).
 
 ## Result slide
 
-- **Title = the main finding, short.** A claim in one concise line (about 4-10 words), with no
-  full details and no exact metric values. Example: "Headset 4980 decodes games worse than the
+- **Title = a factual observation from the result shown, short.** One concise line (about 4-10
+  words), based only on the evidence on the slide. No interpretation, no full details, and no
+  exact metric values unless they are needed. Example: "Headset 4980 decodes games worse than the
   rest", not "Headset 4980 game balanced accuracy is 0.41 vs 0.58 pooled (q = 0.003)". The slide
   body holds the details. Use the verb strength of the evidence ("reduces", "is consistent with",
   "no clear difference"). Not a topic. Exceptions: title block, data slide, method slides.
@@ -44,9 +50,10 @@ slide and, if no figure fits, on the summary slide. No text-only slide.
   and one descriptive figure (sessions per headset, age distribution, a data-split diagram).
   Only the shared data. Subsets and filters of one result go in that slide's Methods section.
   The level (`planning.md`) sets the detail.
-- **Summary:** a diagram "How the results fit together" (claims in order, caveats marked), the
-  conclusions (numbered, each names its slide), the caveats (the real limits of the
-  results, not a rebuttal of the main claim), and the next step. No new results.
+- **Summary:** a diagram "How the results fit together" (observations in order, caveats
+  marked), the observations (numbered, each names its slide), the caveats (the real limits of the
+  results, not a rebuttal of the main claim), and the next step. Conclusions only as Aviv stated
+  them. No new results.
 - **Method slide:** title says what the method does for this study ("MMD compares two embedding
   distributions without assuming a shape"). A diagram of the idea, 2-4 bullets, the one equation
   the audience needs (not for the high-level level), and a Methods section with the full math.
@@ -54,8 +61,9 @@ slide and, if no figure fits, on the summary slide. No text-only slide.
 
 ## Methods (every slide)
 
-Every slide has them, also fixed slides and result slides. The format file says how they are
-hidden. A long Methods part can be split in several parts (sub-slides in HTML, headings in a
+Every slide has them, also fixed slides and result slides. Write them as numbered steps, from
+the data to the number, table or figure on the slide (like `../research-collab-report/report.md`,
+"Methods"). The format file says how they are hidden. A long Methods part can be split in several parts (sub-slides in HTML, headings in a
 Notion toggle), each short enough to read without scrolling. Source: code and reports, not memory.
 **Depth follows the detail level** (`planning.md`):
 - *Research team:* the full checklist of `../research-collab-report/report.md` ("Methods"):
@@ -85,8 +93,9 @@ Applies to method slides and to every Methods part, at all levels.
   derivation over several lines or sub-slides.
 - **Consistent with the method figure.** If the slide or the Methods has a method diagram:
   - same symbols, names and step order in the text and equations as in the diagram;
-  - each step of the diagram appears in the text, and each equation maps to a box or arrow of
-    the diagram (say which, e.g. "step 2");
+  - each step of the diagram appears in the text (the text can have more steps than the
+    diagram), and an equation that the diagram shows maps to its box or arrow (say which, e.g.
+    "step 2");
   - same wording for the same thing (not "embedding" in one and "representation" in the other).
   If they disagree, fix the diagram or the text (a simplified `slide-` diagram copy is allowed).
     Tell Aviv if the report diagram itself is wrong.
@@ -98,7 +107,10 @@ Applies to method slides and to every Methods part, at all levels.
 - A figure that cannot be read at slide size (small text, many panels): make a presentation
   variant in the analysis code, same data and statistics, saved next to the original with a
   `slide-` prefix, following `self-explanatory-figures`. Never change a computation.
-- Mark the claim in the figure: highlight the series or headset that the title is about.
+- Mark the observation in the figure: highlight the series or headset that the title is about.
+- A figure comes after the things it uses (a clustering, a reference space) are shown. Drop
+  what the deck does not present. Do not repeat a figure.
+- Every image opens in a zoom overlay on click (in the HTML template; Notion does it itself).
 - Each image below 10 MB.
 
 ## Diagrams
@@ -109,7 +121,9 @@ Applies to method slides and to every Methods part, at all levels.
   prefix.
 - **Missing:** make it. Rules for the diagram, same as in the reports: inputs, steps, output,
   what the key quantity measures; a tiny synthetic example when it helps; not a code
-  flowchart. Save as SVG in `<repo_out_dir>/<analysis_name>/diagrams/`, convert to PNG
+  flowchart. It shows how the method works with the real objects (data, matrices, sets): if you
+  remove the text, the structure remains. Each mark and arrow has one meaning, with no arrows
+  between everything. It shows the key idea, so it is less detailed than the Methods. Save as SVG in `<repo_out_dir>/<analysis_name>/diagrams/`, convert to PNG
   (`rsvg-convert -w 1800 in.svg -o out.png`), look at the PNG. Tell Aviv a diagram was
   made here, and offer to add it to the report.
 - Needed on: method slides, each complex method, and the fixed slides (context, findings,
@@ -124,6 +138,8 @@ Applies to method slides and to every Methods part, at all levels.
 - **No planning words on slides or in titles:** "narrative", "story", "storyline", "arc",
   "takeaway message". Use plain scientific wording: "Findings", "Summary", "How the findings
   connect", "Conclusions", "Caveats", "Next steps". The same holds for the Methods sections.
+- Facts only: slide text states what the results show. Conclusions and interpretations only as
+  Aviv stated them.
 - Define each term at its first use in the deck. Spell out acronyms once.
 - Metric code names in `backticks` only in Methods sections, and only at research-team level.
 - Numbers have units. Key values are enough; do not list every number. Put the noise floor or
@@ -133,10 +149,12 @@ Applies to method slides and to every Methods part, at all levels.
 
 1. Each slide: finding title (or an allowed exception), a visual, short bullets, a Methods
    section at the depth of the level (or "n/a").
-2. Titles match the approved outline, none stronger than its report conclusion.
+2. Titles match the approved outline, are factual, and none is stronger than its report.
 3. The findings slide, the result titles and the summary say the same, in the same order.
 4. Every term and acronym is defined before use. No planning words.
 5. Each figure and diagram was looked at at slide size.
 6. Method content: not dense, bullets, block equations for large math, consistent with the
    method figure (symbols, names, step order).
-7. The format file's checks.
+7. The slides are in the sections of the outline. A change reached the notebook, the report and
+   the deck.
+8. The format file's checks.

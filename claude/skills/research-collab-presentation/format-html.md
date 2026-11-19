@@ -22,6 +22,12 @@ Do not write navigation or toggle code. If a need is not met, use a reveal.js op
 ## Slides and Methods
 
 - One `<section>` per slide, in the order of `slides.md`.
+- **Sections of the deck** (from the outline): reveal.js has only two levels, and Methods use
+  the vertical one. So a section is a divider slide, then its slides in order:
+  - the divider: `<section class="divider">` with `<h1>` (the section title) and a
+    `<p class="read">` (the question it covers, one line). It is the intro slide of the section.
+  - each slide of the section has `<p class="crumb">Section title</p>` above its `<h2>`.
+  - `Esc` (overview) shows all slides, the dividers mark the sections.
 - **Methods are vertical sub-slides.** A slide with Methods is an outer `<section>` that holds the
   slide, then one or more `<section class="methods">` (press **Down** to open them, **Up** to go
   back). Methods stay out of sight until the presenter goes down. The template has an example.
@@ -47,6 +53,13 @@ Parts of a result slide: `<h2>` (the finding), `<p class="read">` (how to read i
 - Theme: only the CSS variables in the template (light and dark follow the system). Do not
   change them per deck. System fonts only.
 
+## Zoom (Viewer.js)
+
+A click on a figure image opens it in an overlay (Viewer.js 1.11.6, cdnjs, in the template):
+wheel or the toolbar to zoom, drag to pan, click outside the image or `Esc` to close. While it is
+open, the arrow keys do not move slides (`keyboardCondition` in the template). It is off in
+PDF print mode. Keep the `<figure><img>` markup so the script finds the images.
+
 ## Keys (reveal.js)
 
 Arrows: move (Down opens Methods). `Esc` or `O`: overview of all slides. `F`: full screen.
@@ -62,6 +75,9 @@ Arrows: move (Down opens Methods). `Esc` or `O`: overview of all slides. `F`: fu
 
 Open the deck in the browser pane (one pass of fixes, no loop). Check:
 - every image loads and math renders;
+- a click on a figure opens the zoom, `Esc` closes it, and the arrows do not move slides while
+  it is open;
+- each section has a divider slide, and each slide has its `crumb`;
 - the Down arrow shows on every slide that has Methods; every slide has Methods (or "n/a");
 - at slide size, no figure text is unreadable and no slide or Methods sub-slide overflows;
 - slide count matches the outline.

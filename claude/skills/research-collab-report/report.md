@@ -15,8 +15,9 @@ argument, reshape or drop the others. The principles are firmer than the outline
 4. **Show everything, clearly.** Every figure and table of the notebook or script is on the
    page (tangential or redundant ones in the appendix), except what Aviv says to skip and WIP
    results. Numbers go in tables, not only in prose.
-5. **Facts apart from interpretation.** Observations are facts with numbers. Conclusions are
-   interpretation, and only the ones Aviv agreed to. Mark a hypothesis as a hypothesis.
+5. **Facts first.** Observations, and titles of results, state only facts that the shown
+   figures and tables support. Exact numbers go in the body, not in titles. Add a conclusion or
+   an interpretation only after Aviv states it. Mark a hypothesis as a hypothesis.
 6. **Unexpected findings get documented.** They feed future work.
 7. **Methods are complete and exact.** A reader can do the analysis again from the page alone,
    and can find where a result could be wrong.
@@ -60,6 +61,11 @@ Core parts:
   `<repo_out_dir>/<analysis_name>/diagrams/` (inputs, steps, output, what the key quantity measures). Directly
   after "How". If none exists, make it (`presenting-results`: style and file rules), save it
   there, and tell Aviv. Presentations reuse it.
+  - It shows how the method works, with the real objects (data, matrices, sets). It is not text
+    in boxes: if you remove the text, the structure remains.
+  - Each mark and arrow has one meaning. No arrows between everything. Use only terms the team
+    uses.
+  - It shows the key idea, so it can be less detailed than the Methods text.
 - **Figure(s) or table(s).** Caption: one line on what it shows. Directly below:
   **How to interpret** (axes, colors, what one point or curve is, what "good" or "no effect"
   looks like). For a table: what each column means, and the rule for bold values.
@@ -79,6 +85,11 @@ Two related figures can share one "Why" and one "How".
 The Methods toggle of each step holds all the details needed to do the analysis again. Write it
 from the code, not from the notebook markdown. If the code does not show a detail, write
 "unknown" and ask Aviv. Never guess.
+
+**Write the Methods as numbered steps, from the data to the table or figure shown.** Each step
+has an input, an operation and an output. A reader can repeat the result from the steps alone.
+State each quantity where it is used, with its equation, units, and direction (higher =
+better or closer). The checklist below checks the steps.
 
 **Checklist** (each item, or "n/a"; the "Analysis reports" section of the repo's `CLAUDE.local.md` can add items):
 - **Data:**
@@ -121,6 +132,12 @@ A long Methods toggle is fine: use the toggle for length, not for less detail.
   scripts only from cdnjs (or jsDelivr, unpkg), pinned to an exact version. The
   `artifact-design` skill has the full contract and the design guidance: load it when you set up
   the page style of an analysis, or when a design or layout question comes up.
+- **Zoom:** a click on a figure opens it in an overlay (Viewer.js: wheel or toolbar to zoom,
+  drag to pan, click outside or Esc to close). Start every analysis from `template/` of this
+  skill: copy `template/report.css` and `template/report.js` to `reports/assets/` and link both
+  in each page (`<link rel="stylesheet" href="assets/report.css">`,
+  `<script defer src="assets/report.js">`). `report.js` also builds the tabs and loads Viewer.js
+  (pinned, cdnjs).
 - **Toggles** (`<details>`): Methods, long derivations, metric definitions, per-session
   figures, the appendix.
 - **Tabs:** variants of the same figure (per session, per array, train/test, per baseline).
@@ -144,6 +161,8 @@ A long Methods toggle is fine: use the toggle for length, not for less detail.
 
 - ASD-STE100: short sentences, simple words, active voice, bullets over prose.
 - No em or en dashes. Keyboard characters only.
+- Facts only by default: state what the figures and tables show. Conclusions and
+  interpretations only after Aviv states them.
 - Verb strength matches the evidence: "reduces", not "removes"; "is consistent with", not
   "shows", when other explanations are open; "no change beyond noise", not "no effect".
 - Numbers: give units, and the noise floor or null next to a difference. Say "within noise"

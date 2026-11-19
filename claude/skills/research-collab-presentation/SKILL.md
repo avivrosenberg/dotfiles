@@ -21,10 +21,11 @@ subset of its results. The reports hold everything; the deck holds only what the
 
 - Aviv owns the framing and the conclusions. He writes the first 2-3 sentences of the
   message. Claude challenges and refines them with him.
-- Claude drafts the outline and the deck. Aviv approves. Slide titles are claims, and
-  his OK of the outline is his OK of those claims, at the strength written there.
-  Do not write a claim that is not in the approved outline, or stronger than the reports
-  support.
+- Claude or Aviv drafts the outline and the deck. Aviv approves. Slide titles are factual
+  observations from the results shown, and his OK of the outline is his OK of those titles and
+  of the sections, at the strength written there. State facts only. Add conclusions and
+  interpretations only after Aviv states them. Do not write a title that is not in the
+  approved outline, or stronger than the reports support.
 - A result that Aviv marked WIP, or that the reports mark as not checked, goes in the deck only
   tagged "WIP", if agreed in the outline.
 - The deck should have no reference to the chat that produced it - it should be stand-alone.
@@ -82,12 +83,15 @@ and where it has strong results that his sentences leave out. Iterate until he s
 framing is right.
 
 ### 5. Propose the outline
-Use the outline format in `planning.md`. Send only the outline.
+Use the outline format in `planning.md` (sections first, then the slides under each). Send only
+the outline.
 Wait for approval before writing the actual deck.
 
 ### 6. Prepare the visuals
 - Reuse report figures and diagrams. Make a presentation variant only if a figure cannot be read
   at slide size (`slides.md`, "Figures").
+- Show all planned visuals to Aviv on one numbered review page before you write the deck
+  (`planning.md`, "Visual review").
 - Draw missing diagrams. Look at every image at slide size.
 
 ### 7. Write

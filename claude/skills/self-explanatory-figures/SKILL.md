@@ -14,14 +14,19 @@ rules below to every figure, then render it and look at it.
 
 ## Choose the plot
 
-- Choose the plot for the comparison: positions on a common scale to compare values;
-  distributions (histogram, ECDF, box or violin with points) instead of bar charts of means;
-  small multiples instead of many overlaid lines.
+- Choose the plot for the question. Compare values: bars with uncertainty. Compare
+  distributions: violins, box plots or ECDFs, with points (not bars of means). Show a relation
+  between two variables: scatter. This list is not complete. Do not use a scatter plot to
+  compare groups. Small multiples instead of many overlaid lines.
+- One topic per figure. Show the pooled value next to the groups.
 - Mention the unit of analysis and data size.
 - Show uncertainty (CIs) and say how it was computed.
 - Show the raw data when N is small.
 - Same quantity, same axis range across panels, unless stated.
-- Colorblind-safe colors; one meaning per color in a figure.
+- Colorblind-safe colors. One entity, one color, in all figures of a document. A difference or
+  derived quantity gets its own color, not the color of one input.
+- One direction for "better" or "closer" on all axes of a document. If the raw quantity runs the
+  other way (distance and similarity), convert it, and say so.
 - Mark reference values (chance, null, pooled) with labeled lines.
 
 ## Rules
@@ -31,8 +36,8 @@ rules below to every figure, then render it and look at it.
    - Bad: "t", "scores", "game_id".
    - Format: the figure title is bold, left-aligned, in a larger font (about 14 pt), and says what
      is shown. Panel titles stay small.
-   - Below it, 1-2 short plain (not bold) lines say how to read the figure (what a marker
-     position, a color or 0 means). The title and these lines have no conclusions and no
+   - Below it, 1-2 short plain (not bold) lines say how to read the figure (what the number
+     is, which direction is better, what a marker position, a color or 0 means). The title and these lines have no conclusions and no
      observations. Never use the words "how to interpret". Keep them concise.
 
 2. **Units on every axis.** Every axis label gives the quantity and its unit or range.
@@ -59,7 +64,8 @@ rules below to every figure, then render it and look at it.
 6. **Legend below the axes, in one horizontal row.** Do not put the legend on top of the data.
    The legend explains every mark: points, error bars, dashed lines, colors, highlighted points,
    bold tick labels, box plots ("box: median and quartiles; whiskers: 1.5 IQR"). For small
-   multiples, use one legend for the figure, not one per panel.
+   multiples, use one legend for the figure, not one per panel. Name colors in the legend, not
+   in text below the figure.
 
 7. **Explain encodings that are not marks.** If tick labels are bold, starred or colored, say
    why (in the legend or the title), e.g. "bold: QC-flagged headset".
@@ -132,5 +138,7 @@ text, the meaning of bold labels) as constants, so all figures use the same word
 - Each interval named, with its method.
 - Reference lines in the legend, with values.
 - Legend below the axes, one row, explains every mark and encoding.
+- Chart type fits the question; same color for the same entity as in the other figures; same
+  direction of "better" on all axes.
 - Color bars labeled.
 - Rendered and looked at.

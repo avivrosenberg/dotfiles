@@ -94,14 +94,17 @@ Deck: <name>   Audience: <who>   Level: <high-level|technical|research team>   F
 Slides: <n> (about <min> min)   Order pattern: <pattern>
 Message (Aviv's words, refined): <2-3 sentences>
 
- #  Title (claim)                          Source       Visual               Type
+    Title (factual observation)            Source       Visual               Type
+ A. <Section: the question or topic it covers>
  1  Motivation and goal                    spec, index  context diagram      fixed
  2  Main findings                          all          findings diagram     fixed
  3  Data                                   010          table + figure       fixed
- 4  <claim>                                020 s2       020-gap.png          result
+ B. <Section>
+ 4  <observation>                          020 s2       020-gap.png          result
  5  How <method> works                     040 s3       040-method.svg       method
  ...
- n  Summary: conclusions and caveats       all          summary diagram      fixed
+ C. <Section>
+ n  Summary: observations and caveats      all          summary diagram      fixed
 
 Methods section depth: <per level>
 Left out (and why): ...        Preliminary / WIP: ...
@@ -109,5 +112,18 @@ Missing for the message: ...   Diagrams to make: ...
 Questions for you: ...
 ```
 
-Titles are short claims (`slides.md`). Mark any title that goes beyond the agreed conclusions in the reports "(new claim)". Aviv's OK
-of the outline covers them.
+Titles are short factual observations (`slides.md`). Mark any title that says more than the
+observations of its report "(beyond report)". Aviv's OK of the outline covers the titles and the
+sections.
+
+**Sections** are decided here, before the deck is written. A section is one question or topic.
+It starts with a short intro slide (what we ask, why) and ends with a link to the next section.
+For more than 8 slides, sections are required. Show the sections first, then the slides under
+each.
+
+## Visual review
+
+After the outline is approved and before you write the deck: make one HTML page with all planned
+visuals, numbered in deck order, each with its slide title (save it next to the outline, for
+example `decks/figure-review.html`). Aviv comments by number. Fix the visuals, then write the
+deck.

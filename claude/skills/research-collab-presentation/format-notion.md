@@ -11,13 +11,15 @@ upload permissions are the same as for `project-hub`.
 - Slides are separated by `---` on its own line, with a blank line before and after.
 - Order: title block (gray `<p color="gray">`: audience, date, author, status), then the slides of
   `slides.md`, then a heading `# Backup` and its toggles.
-- Slide title = `# <title>` (heading 1), so the page outline lists the deck.
+- Section = `# <section>` (heading 1). Slide = `## <title>` (heading 2). A part inside a slide,
+  if needed, = `### <part>`. The page outline then shows the sections and the slides. The intro
+  slide of a section is the first `##` under it. Notion zooms an image on click by itself.
 - Optional table of contents after the title block: only for decks of more than 12 slides.
 
 ## Slide block
 
 ```
-# <Main finding>
+## <Main finding>
 
 <p color="gray">How to read it: ...</p>
 
@@ -60,5 +62,6 @@ Fetch once. Check:
 - the `---` separators: one between each pair of slides, none inside a slide;
 - image count = figures + diagrams;
 - each slide has a toggle titled "Methods";
+- each slide is under a section heading, and the sections match the outline;
 - the order of blocks is unchanged;
 - no literal `{color=`, `` $` `` or `\{`.

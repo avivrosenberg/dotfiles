@@ -13,8 +13,9 @@ fast iteration; the reports are the persistent view.
   rules): `report.md`. Read it before you write or restructure a report.
 - Index page design: `index.md`.
 
-**Conclusions are Aviv's.** Write only conclusions that he agreed to, in the chat, the spec or
-the project records. Otherwise write "Conclusion: not yet discussed".
+**Facts only by default.** Write what the figures and tables show. Conclusions and
+interpretations are Aviv's: add only the ones he stated, in the chat, the spec or the project
+records. Otherwise write "Conclusion: not yet discussed".
 
 ## Files
 
@@ -25,7 +26,8 @@ the project records. Otherwise write "Conclusion: not yet discussed".
   analysis use `BASE_OUT_DIR` from its `consts.py`).
 - One report per notebook or script: `reports/<notebook or script name>.html`.
 - One index per analysis: `reports/index.html`.
-- Shared CSS and JS, if any: `reports/assets/`.
+- Shared CSS and JS: `reports/assets/`, copied from `template/` of this skill when missing (it
+  has the figure zoom and the tabs).
 - Figures: relative links to the saved files (e.g. `../figures/020-gap/fig.png`). Do not
   copy or embed them. Tables: built from the saved CSV files or the notebook outputs.
 
@@ -44,8 +46,9 @@ the project records. Otherwise write "Conclusion: not yet discussed".
    function, each figure with "How to interpret", each non-trivial method with its diagram
    (reused from `<repo_out_dir>/<analysis_name>/diagrams/`, or made now and saved there).
 6. **Index:** create or update `index.html` with `index.md`.
-7. **Check the render once** in the browser pane (light and dark): every image loads, math
-   renders, toggles and tabs work, links between pages work, nothing overlaps. Make one pass of
+7. **Check the render once** in the browser pane (light and dark): every image loads, a click on
+   a figure opens the zoom, math renders, toggles and tabs work, links between pages work,
+   nothing overlaps. Make one pass of
    fixes; do not loop.
 8. **Tell Aviv** the path, and the open questions for him (unknown method details, steps with no
    agreed conclusion).
@@ -55,6 +58,8 @@ the project records. Otherwise write "Conclusion: not yet discussed".
 - After a notebook or script with a report is changed and re-run, offer to update its report.
 - Update only the changed steps (diff the code since the provenance SHAs, compare the outputs).
   Keep the rest, and keep Aviv's requested changes.
+- A fix to a figure or a term goes to its source (the notebook or script) first, then to every
+  report, index and deck that uses it.
 - Update the provenance, the changelog (appendix) and the index (row, and every conclusion,
   finding or caveat that cites a changed step).
 - Tell Aviv in one short list what changed: added, changed, removed.
