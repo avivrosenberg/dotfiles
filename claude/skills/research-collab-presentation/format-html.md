@@ -40,7 +40,7 @@ One HTML file that uses **reveal.js** (loaded from cdnjs, pinned to 6.0.2).
   - Depth follows the level (`slides.md`).
 
 - Math: `$...$` inline, `$$...$$` blocks (reveal.js math plugin, MathJax 3, pinned).
-  - Layout rules: `slides.md`, "Layout of method content".
+  - Layout rules: `research-methods` ("Layout") and `slides.md` ("Methods").
 - Two figures to compare: `<div class="columns">` with two `<figure>`.
 - Callouts: `<div class="callout">` (blue) or `<div class="callout warn">` (caveat).
 - "Preliminary": `<span class="tag">Preliminary</span>` in the `<h2>`, reason in the `read` line.

@@ -93,9 +93,8 @@ Format-agnostic. The format files say how it is written.
 
 Every slide has them, also fixed and result slides.
 
-- Write them as numbered steps, from the data to the number, table or figure on the slide.
-  - Like `../research-collab-report/report.md`, "Methods".
-- Source: code and reports, not memory. Link the source report step.
+- Write and check them with `research-methods` (method text, depth, layout).
+- Link the source report step.
 - Data subsets and nuances that the audience does not need to read the result go here, not on the slide.
 - A long Methods part is split in parts.
   - Sub-slides in HTML, sub-headings in a Notion toggle.
@@ -103,38 +102,16 @@ Every slide has them, also fixed and result slides.
 
 Depth follows the level (`planning.md`):
 
-- *Research team:* the full report checklist.
-  - Data with counts, processing in order, math with each symbol defined, estimator, statistics.
-  - `module.py:function`, parameter values.
-  - "n/a" where it does not apply. "unknown" where the code does not show it: ask Aviv.
-- *Technical:*
-  - the method in a few lines, and the key equation;
-  - the data subset and counts;
-  - the test and CI method;
-  - a link to the report step.
-- *High-level:* plain words.
-  - Which data, what was compared with what, how sure we are, a link.
+- research team: *Full*;
+- technical: *Brief*;
+- high-level: *Plain* (plus a link to the report step).
 
-### Layout of method content (method slides and Methods)
+Slide limits for method content:
 
-- **Not dense.** One idea per slide or sub-slide.
-  - At most about 5-6 bullets and 1-2 block equations. More: split.
-
-- **Bullets, not paragraphs,** one fact each.
-  - A small table only for parameter values or counts.
-
-- **Math:**
-  - a block equation (`$$...$$`) for every equation of more than a few symbols;
-  - the symbols defined in short bullets below it;
-  - inline math only for small expressions and single symbols;
-  - explain the math in words too. An example helps.
-
-- **Consistent with the method figure:**
-  - same symbols, names and wording as the diagram;
-  - each diagram step appears in the text (the text can have more steps);
-  - an equation that the diagram shows maps to its box or arrow (say which, e.g. "step 2");
-  - if they disagree, fix the diagram or the text (a simplified `slide-` copy is allowed);
-  - tell Aviv if the report diagram is wrong.
+- One idea per slide or sub-slide.
+- At most about 5-6 bullets and 1-2 block equations. More: split.
+- Text, equations and diagram agree (`research-methods`, "Consistent with the text").
+  - A simplified `slide-` copy of a diagram is allowed.
 
 ## Figures
 
@@ -152,28 +129,14 @@ Depth follows the level (`planning.md`):
 
 ## Diagrams
 
-- **Reuse first.**
-  - Method diagrams are made in the `research-collab` or `research-collab-report` stage.
-  - Location: `<repo_out_dir>/<analysis_name>/diagrams/<name>.svg` (and `.png`).
+Method diagrams follow `research-methods`. Slide rules:
+
+- **Reuse first.** The diagrams are made in the `research-collab` or `research-collab-report` stage.
   - If one is too detailed or small for a slide, make a simplified copy with a `slide-` prefix.
-
-- **Missing:** make it, with the same rules as in the reports.
-  - Show inputs, steps, output, and what the key quantity measures.
-  - A tiny synthetic example when it helps. Not a code flowchart.
-  - It shows how the method works with the real objects. If you remove the text, the structure remains.
-  - Each mark and arrow has one meaning. No arrows between everything.
-  - It shows the key idea, so it is less detailed than the Methods.
-  - Save as SVG there, and convert to PNG (`rsvg-convert -w 1800 in.svg -o out.png`).
-  - Look at the PNG.
-  - Tell Aviv, and offer to add it to the report.
-
+- **Missing:** make it with `research-methods`, save it, tell Aviv, and offer to add it to the report.
+- Look at the PNG at slide size.
 - Needed on: method slides, each complex method, and the fixed slides (context, findings, data split, summary).
-
-- Style:
-  - white rounded background (reads on any page background);
-  - dark text, at least 14 px at 900 px width;
-  - one idea per diagram (split a complex method into 2-3);
-  - see `artifact-diagramming`.
+- A method slide can use more than one diagram.
 
 ## Writing
 
@@ -194,7 +157,7 @@ Depth follows the level (`planning.md`):
 3. The findings slide, the result titles and the summary say the same, in the same order.
 4. Every term is defined before use. No planning words.
 5. Each figure and diagram was looked at at slide size.
-6. Method content: not dense, bullets, block equations, consistent with the method figure.
+6. Method content follows `research-methods` and the slide limits above.
 7. The slides are in the sections of the outline.
 8. A change reached the notebook, the report and the deck.
 9. The format file's checks.

@@ -31,7 +31,7 @@ Defaults for a report page.
 
 6. **Document unexpected findings.** They feed future work.
 
-7. **Methods are complete and exact.**
+7. **Methods are complete and exact** (`research-methods`).
    - A reader can redo the analysis from the page alone.
    - A reader can find where a result could be wrong.
 
@@ -86,15 +86,10 @@ Core parts:
 - **How:** 1-2 sentences in simple words, with the one equation the reader needs.
   - Directly after it: the **Methods** toggle (see "Methods").
 
-- **Method diagram** (for a non-trivial method), directly after "How".
-  - Take it from `<repo_out_dir>/<analysis_name>/diagrams/`.
-  - If none exists, make it (`presenting-results`: style and file rules), save it there, and tell Aviv.
+- **Method diagram(s)** (for a non-trivial method), directly after "How".
+  - Follow `research-methods`.
+  - Take it from `<repo_out_dir>/<analysis_name>/diagrams/`. If none exists, make it, save it there, and tell Aviv.
   - Presentations reuse it.
-  - It shows how the method works, with the real objects (data, matrices, sets).
-  - If you remove the text, the structure remains.
-  - Each mark and arrow has one meaning. No arrows between everything.
-  - Use only terms the team uses.
-  - It shows the key idea, so it can be less detailed than the Methods text.
 
 - **Figure(s) or table(s).**
   - Caption: one line on what it shows.
@@ -115,46 +110,10 @@ Two related figures can share one "Why" and one "How".
 
 ## Methods
 
-The Methods toggle of each step holds all details needed to do the analysis again.
+The Methods toggle of each step describes the method of that step.
 
-- Write it from the code, not from the notebook markdown.
-- If the code does not show a detail, write "unknown" and ask Aviv. Never guess.
-
-**Write the Methods as numbered steps, from the data to the table or figure shown.**
-
-- Each step has an input, an operation and an output.
-- State each quantity where it is used, with its equation, units and direction (higher = better or closer).
-- The checklist below checks the steps.
-
-**Checklist** (each item, or "n/a"). The repo's `CLAUDE.local.md` can add items.
-
-- **Data:**
-  - the runs (ids, checkpoint or epoch);
-  - the split;
-  - the cohorts or subsets, with inclusion criteria and filters;
-  - the unit of analysis, and the counts at that unit;
-  - the representation (e.g. embedding view) and its dimension.
-
-- **Processing:**
-  - each filter, rejection rule, normalization, aggregation and matching step, in order;
-  - the counts before and after each rejection.
-
-- **Math:**
-  - block equations for key quantities, inline math for small ones;
-  - each symbol defined where it first appears: what it is, its shape, its index sets
-    (e.g. "$X \in \mathbb{R}^{n \times d}$: the test-set sample embeddings, one row per sample");
-  - the estimator, not only the quantity (e.g. unbiased MMD, kernel, bandwidth rule);
-  - the statistics: the test, the CI method, resamples or folds, seeds.
-
-- **Math to code and data:**
-  - the function that implements each equation (`module.py:function`);
-  - implementation choices that can change the result (what data a transform is fitted on, how pairs are drawn, how data is weighted);
-  - where the code differs from the textbook form, and why;
-  - each parameter value, with the reason.
-
-- No copied code blocks.
-
-A long Methods toggle is fine: use the toggle for length, not for less detail.
+- Write and check it with `research-methods` (load it first). Depth: *Full*.
+- A long toggle is fine: use the toggle for length, not for less detail.
 
 ## HTML layout
 
@@ -206,8 +165,7 @@ A long Methods toggle is fine: use the toggle for length, not for less detail.
 
 **Diagrams:** inline SVG, with `artifact-diagramming`.
 
-- Inline the SVG files of `<repo_out_dir>/<analysis_name>/diagrams/`.
-- Make a missing one once, and save it there.
+- Inline the SVG files of `<repo_out_dir>/<analysis_name>/diagrams/` (content rules: `research-methods`).
 - Static PNG figures from analysis code follow `self-explanatory-figures`.
 
 ## Writing rules

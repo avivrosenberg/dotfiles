@@ -40,19 +40,15 @@ a data split, a study design, or how the parts of a plan fit together.
 - Interactive when a parameter changes the picture (e.g. a slider for a regularization weight
   or a kernel bandwidth, a toggle between two designs).
 - Keep each diagram sparse; split a complex topic into several diagrams, with text between them.
-- Synthetic examples (data with known ground truth) explain a method well. Make them as figures
-  in a separate method notebook.
-- **Method diagrams are saved by default.** Each diagram that explains a non-trivial method of the
-  project is also saved as `<repo_out_dir>/<analysis_name>/diagrams/<name>.svg`, plus a PNG
-  (`rsvg-convert -w 1800 in.svg -o out.png`). Reports and presentations reuse these files. Style:
-  white rounded background, dark text, at least 14 px at 900 px width, one idea per diagram.
+- **Method diagrams and explainers:** what they show, how to save them, and the style are in
+  `research-methods`. Save an accepted method diagram there.
 
 ## Format of one result
 
 ```markdown
 ### <n>. <the question this result answers>
 
-**Methods:** 1-3 lines: data, what is computed, the statistic and its CI.
+**Methods:** 1-3 lines: data, what is computed, the statistic and its CI (`research-methods`, *Brief*).
 
 ![<description>](/abs/path/fig.png)
 

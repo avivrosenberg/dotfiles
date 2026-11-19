@@ -46,7 +46,7 @@ Methods
 - Methods = `<toggle>` titled "Methods".
   - Bullets, and short sub-headings (one per part for long Methods).
   - Math: `$...$` for small expressions and symbols, `$$` blocks for larger equations (format in `notion.md`).
-  - Layout rules: `slides.md`, "Layout of method content".
+  - Layout rules: `research-methods` ("Layout") and `slides.md` ("Methods").
 - Two figures to compare: `<columns>`. Variants of one figure: `<tabs>`.
 - Callouts:
   - yellow `<callout icon="⚠️" color="yellow_bg">` for a caveat;

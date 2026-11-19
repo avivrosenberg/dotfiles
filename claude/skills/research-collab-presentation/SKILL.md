@@ -16,7 +16,7 @@ Files:
 - Audience, detail level, message, sections, choice of results: `planning.md`.
 - Slide types, layout, Methods, diagrams, writing, checks: `slides.md`.
 - Formats: `format-notion.md`, `format-html.md` (with `deck-template.html`).
-- Methods checklist: `../research-collab-report/report.md` ("Methods").
+- Methods and method diagrams: `research-methods`.
 - Figures: `self-explanatory-figures`.
 - Writing: Adhere to main `CLAUDE.md`.
 
@@ -49,7 +49,7 @@ Files:
 - The Notion hub and its sub-pages, if they exist (`project-hub`).
 - The spec and the project note in the agent vault (motivation, decisions, who asked).
 - Method diagrams: `<repo_out_dir>/<analysis_name>/diagrams/*.svg`.
-  - Reuse them. Make a missing one (`slides.md`, "Diagrams").
+  - Reuse them. Make a missing one (`research-methods`, `slides.md` "Diagrams").
 - Repo conventions: "Analysis reports" in the repo `CLAUDE.local.md`.
 
 The project need not be finished.

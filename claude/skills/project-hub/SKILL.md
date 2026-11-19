@@ -11,7 +11,7 @@ experiment** with all its current methods and results. Aviv uses the sub-pages t
 exact methods and to scrutinize the results, so the methods must be complete and exact.
 
 - Page design, shared with the local reports: `../research-collab-report/report.md`
-  (principles, step block, Methods checklist, writing rules) and
+  (principles, step block, writing rules; Methods: `research-methods`) and
   `../research-collab-report/index.md` (question-level parts).
 - Notion-specific design (hub page, sub-page from the reports, flag markers, Notion layout):
   `structure.md`. Read all three before you write or restructure a page. They are guidelines,
@@ -100,7 +100,7 @@ New page: read the full analysis. Update: work on the delta only. Make a **chang
 
 Then read the implementation of the items in scope (notebook, analysis modules, the shared code
 that loads data and computes metrics, also in other repos), and collect the methods checklist
-of each step (`research-collab-report/report.md`). Look at each figure in scope and note what it shows before you
+of each step (`research-methods`). Look at each figure in scope and note what it shows before you
 read Aviv's markdown about it. Report obvious problems (numbers that disagree, broken figures)
 in chat. A full correctness review is `project-hub-review`, only when Aviv calls it.
 
@@ -120,8 +120,8 @@ same files now, list the changes instead of making them.
 ### 5. Write and publish
 - Build tables on the page for numbers that the notebook only prints.
 - **Check before you publish:**
-  - every step has a Methods toggle that covers the checklist (or "n/a"), each symbol defined,
-    each equation linked to its function;
+  - every step has a Methods toggle written with `research-methods` (checklist covered or
+    "n/a", each symbol defined, each equation linked to its function);
   - each conclusion agrees with the numbers and figures, and is conditional on the open flags
     of its section;
   - the content passes the write checklist in `notion.md` (a failed full write costs a resend).

@@ -31,14 +31,14 @@ status: draft | approved YYYY-MM-DD
 - New runs needed (what they must produce).
 
 ## Methods
-- Each step: what is computed, on which data, with the math.
+- Each step: what is computed, on which data, with the math (`research-methods`).
 - Statistics: the test, the null, the CI method, resampling unit, multiple-comparison handling.
 - Leakage controls: what must stay separate (subjects, sessions, train and test).
 
 ## Validation
 - Known-answer checks (synthetic data with ground truth, positive and negative controls).
-- Method explainer figures, if the method is not trivial.
-- Method diagrams: one per non-trivial method, saved as SVG and PNG in `<repo_out_dir>/<analysis_name>/diagrams/`.
+- Method explainer figures, if the method is not trivial (`research-methods`).
+- Method diagram(s) of each non-trivial method (`research-methods`).
 
 ## Outputs
 Numbered list, in the order of the results review. For each:
