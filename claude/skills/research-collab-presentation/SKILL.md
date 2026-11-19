@@ -5,13 +5,16 @@ description: Build or update a presentation (slide deck) for a team or other aud
 
 # Research-collab presentation
 
-A deck that leads one audience from a question to the results of a project, with a selected
-subset of its results. The reports hold everything; the deck holds only what the message needs.
+A deck that leads one audience from a question to the results of a project.
 
-**This core is format-agnostic.** Each output format has its own file (see "Formats").
+- It holds a selected subset of the results.
+- The reports hold everything. The deck holds only what the message needs.
+- This core is format-agnostic. Each output format has its own file.
 
-- Audience, detail level, the message, choice of results: `planning.md`.
-- Slide types, layout rules, Methods section, diagrams, writing, checks: `slides.md`.
+Files:
+
+- Audience, detail level, message, sections, choice of results: `planning.md`.
+- Slide types, layout, Methods, diagrams, writing, checks: `slides.md`.
 - Formats: `format-notion.md`, `format-html.md` (with `deck-template.html`).
 - Methods checklist: `../research-collab-report/report.md` ("Methods").
 - Figures: `self-explanatory-figures`.
@@ -19,107 +22,109 @@ subset of its results. The reports hold everything; the deck holds only what the
 
 ## Ownership
 
-- Aviv owns the framing and the conclusions. He writes the first 2-3 sentences of the
-  message. Claude challenges and refines them with him.
-- Claude or Aviv drafts the outline and the deck. Aviv approves. Slide titles are factual
-  observations from the results shown, and his OK of the outline is his OK of those titles and
-  of the sections, at the strength written there. State facts only. Add conclusions and
-  interpretations only after Aviv states them. Do not write a title that is not in the
-  approved outline, or stronger than the reports support.
-- A result that Aviv marked WIP, or that the reports mark as not checked, goes in the deck only
-  tagged "WIP", if agreed in the outline.
-- The deck should have no reference to the chat that produced it - it should be stand-alone.
-- Planning words stay out of the deck. "Narrative", "story", "storyline", "arc" are for
-  planning only. The deck uses plain scientific wording (`slides.md`, "Writing").
+- Aviv owns the framing, the conclusions and the interpretations.
+  - He writes the first 2-3 sentences of the message.
+  - Claude challenges and refines them with him.
+
+- Claude or Aviv draft the outline and the deck. Aviv approves.
+  - Slide titles are factual observations from the results shown.
+  - Aviv OKs the outline, the titles and sections, at the strength written there.
+  - Do not write a title that is not in the approved outline, or stronger than the reports support.
+
+- State facts only.
+  - Add conclusions and interpretations only after Aviv states them.
+
+- A WIP result goes in the deck only tagged "WIP", if agreed in the outline.
+  - WIP = Aviv's mark, or a report that is not checked.
+
+- The deck is stand-alone.
+  - No reference to the chat that produced it.
+  - No planning words ("narrative", "story", "storyline", "arc").
 
 ## Inputs
 
-- The analysis index (`<repo_out_dir>/<analysis_name>/reports/index.html`) and the reports it links: first source for results,
-  figures, methods, diagrams and agreed conclusions. Each report has provenance SHAs.
-- The hub in Notion and its sub-pages, if they exist (`project-hub`).
+- The analysis index (`<repo_out_dir>/<analysis_name>/reports/index.html`) and the reports it links.
+  - First source for results, figures, methods, diagrams and agreed conclusions.
+  - Each report has provenance SHAs.
+- The Notion hub and its sub-pages, if they exist (`project-hub`).
 - The spec and the project note in the agent vault (motivation, decisions, who asked).
-- Method diagrams: `<repo_out_dir>/<analysis_name>/diagrams/*.svg`, made in the `research-collab` or
-  `research-collab-report` stage. Reuse them.
-  - A method that needs a diagram and has none: make it now (`slides.md`, "Diagrams").
+- Method diagrams: `<repo_out_dir>/<analysis_name>/diagrams/*.svg`.
+  - Reuse them. Make a missing one (`slides.md`, "Diagrams").
 - Repo conventions: "Analysis reports" in the repo `CLAUDE.local.md`.
 
-The project does not need to be completed before it is presented. For work in progress
-the deck says what is known, what is not, and the next step. Never invent an ending.
+The project need not be finished.
+
+- For work in progress, the deck says what is known, what is not, and the next step.
+- Never invent an ending.
 
 ## Workflow
 
 ```
-1 inventory -> 2 audience + detail level + format -> 3 Aviv writes the message
--> 4 refine together -> 5 outline (wait for OK) -> 6 visuals -> 7 write -> 8 update
+1 inventory -> 2 audience, level, format -> 3 Aviv writes the message -> 4 refine
+-> 5 outline with sections (wait for OK) -> 6 visuals + review page -> 7 write -> 8 update
 ```
 
-### 1. Inventory
-- Read the index, then each report. Check each against its code (provenance SHAs, `git diff`).
-  Stale reports and WIP results stay out until Aviv decides.
-- Make an inventory table in the scratchpad: one row per candidate result (report, step, the
-  finding in one sentence, figure, diagram if any, maturity: agreed / discussed / not discussed
-  / WIP). Look at the figures you may use. Collect the data counts for the data slide.
-- Do not propose a message or an order yet.
+1. **Inventory.**
+   - Read the index, then each report. Check each against its code (provenance SHAs, `git diff`).
+   - Stale reports and WIP results stay out until Aviv decides.
+   - Make a table in the scratchpad, one row per candidate result: report, step, finding
+     in one sentence, figure, diagram, maturity (agreed / discussed / not discussed /
+     WIP).
+   - Look at the figures. Collect the data counts.
+   - Do not propose a message or an order yet.
 
-### 2. Ask: audience, detail level, format
-Before any planning, ask in one message (use `AskUserQuestion`; the options are in
-`planning.md`, "Audience and detail level"):
-- **Audience** and what they know already.
-- **Detail level** (follows from the audience, Aviv can override): high-level, technical,
-  or research team.
-- **Output format:** Notion, local HTML. 
-- Time, and the purpose (inform, get feedback, get a decision).
+2. **Ask** in one message (`AskUserQuestion`; options in `planning.md`):
+   - audience, and what they know;
+   - detail level (Aviv can override);
+   - output format (Notion or local HTML);
+   - time, and purpose (inform, get feedback, get a decision).
 
-### 3. Ask: define the message
-Ask Aviv to write 2-3 sentences: the main message, why it matters to this audience, and what he
-wants them to decide or think. To support this, show the inventory as a compact table (one line
-per result, no ranking, no proposed order). Do not suggest a message.
+3. **Ask Aviv to write 2-3 sentences:**
+   - the main message;
+   - why it matters to this audience;
+   - what he wants them to decide or think.
 
-### 4. Refine together
-Work from his sentences. Challenge them (is it supported by the inventory, what would the
-audience ask, is it one message or two). Check
-which results are key evidence. Show where the inventory has no support for a sentence,
-and where it has strong results that his sentences leave out. Iterate until he says the
-framing is right.
+   Show the inventory as a compact table (no ranking, no order). Do not suggest a message.
 
-### 5. Propose the outline
-Use the outline format in `planning.md` (sections first, then the slides under each). Send only
-the outline.
-Wait for approval before writing the actual deck.
+4. **Refine together.**
+   - Challenge his sentences: supported by the inventory? What would the audience ask? One message or two?
+   - Show where the inventory does not support a sentence.
+   - Show strong results that his sentences leave out.
+   - Iterate until he says the framing is right.
 
-### 6. Prepare the visuals
-- Reuse report figures and diagrams. Make a presentation variant only if a figure cannot be read
-  at slide size (`slides.md`, "Figures").
-- Show all planned visuals to Aviv on one numbered review page before you write the deck
-  (`planning.md`, "Visual review").
-- Draw missing diagrams. Look at every image at slide size.
+5. **Outline:** use the format of `planning.md` (sections, then slides).
+   - Send only the outline.
+   - Wait for approval before you write the deck.
 
-### 7. Write
-- Write the slides with `slides.md` and the format file. Run the checks of both.
-- Tell Aviv: where the deck is, the slide list, what was left out, open questions. Record the
-  deck in the project note (`agent-vault`).
+6. **Visuals.**
+   - Reuse report figures and diagrams.
+   - Make a slide variant only if a figure cannot be read at slide size.
+   - Draw missing diagrams. Look at every image at slide size.
+   - Show all planned visuals on one numbered review page (`planning.md`, "Visual review").
 
-### 8. Update
-The deck changes with the project. When Aviv asks, or after new reports:
-- Read the current deck and its comments (if the format has them). Keep Aviv's edits.
-- Make a change list: slides to add, update, move, cut. If a new result changes the message,
-  go back to step 4 with Aviv.
-- A slide whose result changed: update title, figure, observations and Methods together, then
-  the findings slide and the summary slide.
-- Update the provenance (reports and SHAs) and the status line.
+7. **Write** with `slides.md` and the format file. Run both checks.
+   - Tell Aviv: where the deck is, the slide list, what was left out, open questions.
+   - Record the deck in the project note (`agent-vault`).
+
+8. **Update** when Aviv asks, or after new reports.
+   - Read the current deck and its comments. Keep Aviv's edits.
+   - Make a change list: add, update, move, cut.
+   - If a new result changes the message, go back to step 4.
+   - A slide whose result changed: update title, figure, observations and Methods together.
+   - Then update the findings and summary slides, the provenance and the status line.
 
 ## Formats
 
 | Format | File | Notes |
 |---|---|---|
-| Notion | `format-notion.md` | Default when Aviv says Notion. Uses `../project-hub/notion.md` for mechanics. |
-| Local HTML | `format-html.md`, `deck-template.html` | reveal.js (library). Methods are vertical sub-slides. |
+| Notion | `format-notion.md` | Default when Aviv says Notion. Mechanics: `../project-hub/notion.md`. |
+| Local HTML | `format-html.md`, `deck-template.html` | reveal.js. Methods are vertical sub-slides. |
 
-Aviv names the format, or the skill asks (step 2). For a format with no file (for example Google
-Slides): tell Aviv, and offer to add the file. Prepare the content with this core (outline,
-slides as title, visual, bullets, Methods text, diagram files), so that only the last step is
-missing. A new format file must define:
-- how slides are separated, and how images and diagrams are placed;
-- the Methods: how they stay out of sight until needed, and how a long one is split;
-- where the deck lives, how it is created and updated, and what carries over on an update;
-- the format-specific checks.
+For a format with no file (e.g. Google Slides): tell Aviv, and offer to add the file.
+
+- Prepare the content with this core, so that only the last step is missing.
+- A new format file defines:
+  - how slides are separated, and how images are placed;
+  - how Methods stay out of sight, and how a long one is split;
+  - where the deck lives, how it is created and updated, and what carries over on an update;
+  - the format-specific checks.

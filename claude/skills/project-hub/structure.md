@@ -1,7 +1,7 @@
 # Page structure (Notion)
 
 The page design comes from the `research-collab-report` skill. Read its `report.md` (principles,
-step block, Methods checklist, writing rules, common mistakes) and `index.md` (question-level
+step block, Methods checklist, writing rules) and `index.md` (question-level
 parts) first. This file adds only what is specific to Notion: the hub, how a sub-page maps to
 the reports, flag markers and the Notion layout. Research is fluid: reshape or drop parts that
 do not help the reader.
